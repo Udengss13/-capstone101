@@ -9,7 +9,7 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/about.css">
 
     <style>
     .nav-item {
@@ -87,9 +87,9 @@
     <div class="page-content">
         
         <div class="container">
-        <h1>ABOUT PETCO</h1>
-            <div class="row">
-                <div class="col">
+            <h1>ABOUT PETCO</h1>
+            <div class="row box">
+                <div class="col justify-content">
                   <div class="text-justify">
                     <p>Petco is a category-defining health and wellness company focused on improving the lives of pets, pet parents and our own Petco partners. Since our founding in 1965, we’ve been trailblazing new standards in pet care, delivering comprehensive wellness solutions through our products and services, and creating communities that deepen the pet-pet parent bond. We operate more than 1,500 Petco locations across the U.S., Mexico and Puerto Rico, including a growing network of more than 100 in-store veterinary hospitals, and offer a complete online resource for pet health and wellness at petco.com and on the Petco app. Petco Love (formerly Petco Foundation), has invested nearly $300 million since it was founded in 1999 to help make communities and pet families closer, stronger, and healthier. In tandem with Petco Love, an independent nonprofit changing lives, we work with and support thousands of local animal welfare organizations across the country, and through in-store adoption events, have helped find loving homes for more than 6.5 million animals.</p>
                     <p>The University has been consistently producing highly professional, ethical, and service-oriented
@@ -106,6 +106,7 @@
                     </p>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

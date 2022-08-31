@@ -7,7 +7,7 @@ $resultimage = mysqli_query($db_admin_account, $queryimage);
 $msg='';
 if(isset($_POST['upload'])){
   $image = $_FILES['image']['name'];
-  $path ='asset/sliderimage/slider'.$image;
+  $path ='asset/sliderimage/'.$image;
 
   $sql = $db_admin_account->query("INSERT INTO admin_carousel_homepage (image_path) VALUES ('$path')");
 
@@ -140,6 +140,7 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
                 </div>
             </div>
         </div>
+        
         <div class="row justify-content-center">
             <div class="col-lg-4 bg-dark rounded px-4">
                 <h4 class="text-center text-light p-1">select image for upload</h4>

@@ -11,8 +11,21 @@ cc{
 
 
 }
+/* QUICKTIPS----------------------------------------------------------------------------- */
 
-/*Css ANNOUNCEMENT*/
+
+/* Style the tab Login FOrm --------------------------------------------------------------*/
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #278cb4;
+  width: 50%;
+}
+
+
+
+
+/*Css ANNOUNCEMENT-------------------------------------------------------------------------------*/
 .container-width{
   width:100%;
   max-width:1150px;
@@ -59,7 +72,7 @@ cc{
 }
 
 
-/*Css for Footer*/
+/*Css for Footer---------------------------------------------------------------------------------------*/
 .text{
   color: white;
 }

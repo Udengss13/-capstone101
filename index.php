@@ -36,15 +36,19 @@
         border-radius: ;
 
     }
-    body {
-      background:rgb(101, 190, 208);
-    }
+    .tips{
+  font-family: cursive;
+  font-size: 30px;
+  font-style: bold;
+  color: Blue;
+}
+    
 
   
     </style>
 </head>
 
-<body>
+<body style="background-image: linear-gradient(to right, rgb(215, 238, 245), rgb(102, 185, 198),rgb(90, 187, 232));">
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
         <div class="container-fluid">
@@ -104,9 +108,9 @@
 
 
     <!-- <h2 class="text-center text-light pb-4 ">Dynamic boostrap 5 caroussel using php and mysqli</h2> -->
-    <div class="container-fluid ">      
-        <div class="row justify-content-center ">
-            <div class="col-lg-10">
+    <div class="container-fluid">
+        <div class="row mb-5 ml-0" >
+            <div class="col-xl-12" >
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <?php 
@@ -132,8 +136,8 @@
                         }
                       
                       ?>
-                        <div class="carousel-item <?= $actives; ?> bg-warning">
-                            <img src="<?= $row['image_path'] ?>" width="100%" height="400" style="backdrop-filter: blur(5px);">
+                        <div class="carousel-item <?= $actives; ?>">
+                            <img src="<?= $row['image_path'] ?>" class="img-fluid"  width="100%" height="500px" >
                         </div>
 
                         <?php $i++; } ?>
@@ -154,6 +158,11 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="row">
+           <p class="tips"> QUICKTIPSS</p>
+        </div>
+    </div>
     <!--IMage Section-->
     <section class="flex-sect" id="imagesec">
         <section id="imagesection" class="div_background_light py-4">
