@@ -92,7 +92,7 @@
                     </div>
                     <div class="text-nowrap">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="petgalery.php">PET GALERY</a>
+                            <a class="nav-link text-white" href="petgallery.php">PET GALLERY</a>
                         </li>
                     </div>
                     <!-- <div class=" text-white">
