@@ -42,9 +42,23 @@
   font-style: bold;
   color: Blue;
 }
-    
-
-  
+  .nav-item
+  {
+    font-family: arial; 
+    color #fff; 
+    list-style: none;
+    margin-right: 50px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .nav-item:first-child
+  {
+    color: #30d300;
+  }
+  .nav-item:hover
+  {
+    color: #30d300;
+  }
     </style>
 </head>
 
