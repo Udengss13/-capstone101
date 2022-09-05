@@ -11,6 +11,37 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <script>
+    function ageCalculator() {
+        var userinput = document.getElementById("DOB").value;
+        var dob = new Date(userinput);
+        if (userinput == null || userinput == '') {
+            document.getElementById("message").innerHTML = "**Choose a date please!";
+            return false;
+        } else {
+
+            //calculate month difference from current date in time
+            var month_diff = Date.now() - dob.getTime();
+
+            //convert the calculated difference in date format
+            var age_dt = new Date(month_diff);
+
+            //extract year from date    
+            var year = age_dt.getUTCFullYear();
+
+            //now calculate the age of the user
+            var age = Math.abs(year - 1970);
+
+            $age = age;
+
+            //display the calculated age
+            return document.getElementById("result").innerHTML =
+                "Age: " + $age ;
+        }
+    }
+    </script>
+
 </head>
 
 <body>
@@ -114,7 +145,7 @@
                 <div class="container ">
                     <!--1st row-->
                     <div class="row ">
-                        <div class="col-6">
+                        <div class="col-6" >
                             <!--FName-->
                             <div class="form-floating mt-3">
                                 <input class="form-control mb-2" type="text" name="first_name" placeholder="First Name"
@@ -137,10 +168,16 @@
                             </div>
 
                             <!--Suffix-->
-                            <div class="form-floating">
+                            <div class="form-floating mb-2">
                                 <input class="form-control" type="text" name="suffix" placeholder="Suffix"
                                     value="<?php echo $suffix ?>" id="floatingSuffix" autocomplete="off">
                                 <label for="floatingSuffix">Suffix</label>
+                            </div>
+
+                            <div class="form-floating">
+                                <input class="form-control" type="text" name="contact" placeholder="Suffix"
+                                     id="floatingSuffix" autocomplete="off">
+                                <label for="floatingSuffix">Contact No</label>
                             </div>
                         </div>
 
@@ -180,31 +217,48 @@
                     <!--2nd Row-->
 
                     <div class="mt-4 text-primary">
-                        <p>To continue creating account please, provide all the information need below.</p>
+                        <p style="text-shadow: 1px 1px 1px blue; ">Now To continue creating account please, provide all
+                            the information about your pets that are
+                            need below.</p>
                     </div>
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Default radio
-                        </label>
+                    <!-- 3rd row -->
+                    <div class="row">
+                        <div class="col-4">
+                            <div>
+
+                                <span style="display: block;">Pet Type:
+                                <input type="radio" name="pettype" value="dog">Dog
+                                <input type="radio" name="pettype" value="cat">Cat</span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                                 <span> Address <input type="text" ></input></span>
+                        </div>
+                        <div class="col-4">
+                            <b> Enter Date of Birth: <input type=date id=DOB> </b>
+                            <span id="message" style="color:red"> </span> <br><br>
+
+                            <!-- Choose a date and enter in input field -->
+                            <button type="submit" onclick="ageCalculator()"> Calculate age </button> <br><br>
+                            <h3 style="color:32A80F" id="result" align="center"></h3>
                         
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Default radio
-                        </label>
-                    </div>
-                    
+                            
+                        </div>
 
-                    <div class="form-group mt-4 text-center">
-                        <input class="form-control btn btn-primary w-50 " type="submit" name="signup" value="Signup">
-                    </div>
-                    <div class="link login-link text-center text-white">Already a member? <a href="login-user.php"
-                            class="text-warning">Login here</a></div>
+
+                        <div class="form-group mt-4 text-center">
+                            <input class="form-control btn btn-primary w-50 " type="submit" name="signup"
+                                value="Signup">
+                        </div>
+                        <div class="link login-link text-center text-white">Already a member? <a href="login-user.php"
+                                class="text-warning">Login here</a></div>
             </form>
         </div>
 
     </body>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
