@@ -3,10 +3,10 @@ require_once "controllerUserData.php";
      require('php/connection.php');
      
   //GET USER ID IN REGISTRATION
-  $user_id = $_SESSION['user_id'];
+  // $user_id = $_SESSION['user_id'];
 
   if(!isset($user_id)){
-    header('location: login-user.php');
+    echo "No Arder";
   }
 
   if(isset($_POST['confirmed'])){

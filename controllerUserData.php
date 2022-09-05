@@ -8,15 +8,16 @@ $mname = "";
 $lname = "";
 $suffix = "";
 $address = "";
+$pettype = "";
 $errors = array(); 
 
     //if user signup button
     if(isset($_POST['signup'])){
           //for captcha
-        if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
-            // echo "<script>alert('Incorrect verification code');</script>" ;
-            $errors[]= 'Incorrect Captcha code!';
-        }
+        // if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
+        //     // echo "<script>alert('Incorrect verification code');</script>" ;
+        //     $errors[]= 'Incorrect Captcha code!';
+        // }
 
         $fname = mysqli_real_escape_string($con, $_POST['first_name']);
         $mname = mysqli_real_escape_string($con, $_POST['middle_name']);
@@ -26,6 +27,7 @@ $errors = array();
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $password = mysqli_real_escape_string($con, $_POST['password']);
         $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
+        $pettype = mysqli_real_escape_string($con, $_POST['pettype']);
 
         if($password !== $cpassword){
             $errors['password'] = "Confirm password not matched!";
@@ -42,8 +44,8 @@ $errors = array();
          
             $code = rand(999999, 111111);
             $status = "notverified";
-            $insert_data = "INSERT INTO usertable (first_name, middle_name, last_name, suffix, address, email, password, code, status)
-                            values('$fname', '$mname', '$lname', '$suffix', '$address', '$email', '$password', '$code', '$status')";
+            $insert_data = "INSERT INTO usertable (first_name, middle_name, last_name, suffix, address, email, password, code, status, pettype)
+                            values('$fname', '$mname', '$lname', '$suffix', '$address', '$email', '$password', '$code', '$status', '$pettype')";
             $data_check = mysqli_query($con, $insert_data);
             if($data_check){
 
@@ -56,12 +58,12 @@ $errors = array();
                 $mail->SMTPAuth=true;
                 $mail->SMTPSecure='tls';
 
-                $mail->Username='melody.santiago.b@bulsu.edu.ph';
+                $mail->Username='';
                 $mail->Password='melchong131619';
 
-                $mail->setFrom('melody.santiago.b@bulsu.edu.ph', 'PETCO');
+                $mail->setFrom('', 'PETCO');
                 $mail->addAddress($email);
-                $mail->addReplyTo('melody.santiago.b@bulsu.edu.ph');
+                $mail->addReplyTo('');
 
                 $mail->isHTML(true);
                 $mail->Subject='Email Verification Code';

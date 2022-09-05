@@ -105,28 +105,33 @@
 <body class="">
   <!--Navigation Bar-->
   <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #1572A1">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="asset/logopet.png" alt="Logo" style="width:45%; height:8vh" /><span
-          class="mx-2 text-warning fw-bold">PETCO.</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="asset/logopet.png" alt="Logo" style="width:19%; height:8vh" /><span
+                    style="text-shadow: 3px 3px 3px  black" class="mx-2 text-info fw-bold">PETKO.</span>
+                <span style="border-left: 3px solid rgba(5, 13, 98, 0.767); margin-right: 3px;padding: 3px;"> </span>
+                <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
+                        CLINIC</b></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    </div>
+        </div>
+
 
     <div class="collapse navbar-collapse me-3" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 " style="--bs-scroll-height: 100px;">
         <div class="text-nowrap">
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="home.php">Home</a>
+
+            <a class="nav-link active fw-bold text-info" aria-current="page" href="#">HOME</a>
           </li>
         </div>
         <div class="text-nowrap">
           <li class="nav-item">
-            <a class="nav-link active fw-bold text-info" href="#">Product</a>
+            <a class="nav-link text-white" href="product.php">PRODUCT</a>
           </li>
         </div>
 
@@ -137,20 +142,21 @@
 
         <div class="text-nowrap">
           <li class="nav-item">
-            <a class="nav-link text-white" href="cart.php">Cart<span
+            <a class="nav-link text-white" href="cart.php">CART<span
                 class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
 
           </li>
         </div>
         <div class="text-nowrap">
           <li class="nav-item">
-            <a class="nav-link  text-white" href="logout-user.php">Logout</a>
+            <a class="nav-link  text-white" href="logout-user.php"
+              onclick="return confirm('Are you sure do you want to logout?')">LOGOUT</a>
           </li>
         </div>
-
       </ul>
     </div>
   </nav>
+   
 
   <div class="container-fluid bg-light">
     <?php
