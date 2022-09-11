@@ -68,7 +68,11 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
+<<<<<<< HEAD
                         <a class="nav-link text-white" href="petgalery.php">PET GALLERY</a>
+=======
+                        <a class="nav-link text-white" href="petgallery.php">PET GALLERY</a>
+>>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
                     </li>
                 </div>
                 <!-- <div class=" text-white">
@@ -91,19 +95,8 @@
             <div class="row box">
                 <div class="col justify-content">
                   <div class="text-justify">
-                    <p>Petco is a category-defining health and wellness company focused on improving the lives of pets, pet parents and our own Petco partners. Since our founding in 1965, we’ve been trailblazing new standards in pet care, delivering comprehensive wellness solutions through our products and services, and creating communities that deepen the pet-pet parent bond. We operate more than 1,500 Petco locations across the U.S., Mexico and Puerto Rico, including a growing network of more than 100 in-store veterinary hospitals, and offer a complete online resource for pet health and wellness at petco.com and on the Petco app. Petco Love (formerly Petco Foundation), has invested nearly $300 million since it was founded in 1999 to help make communities and pet families closer, stronger, and healthier. In tandem with Petco Love, an independent nonprofit changing lives, we work with and support thousands of local animal welfare organizations across the country, and through in-store adoption events, have helped find loving homes for more than 6.5 million animals.</p>
-                    <p>The University has been consistently producing highly professional, ethical, and service-oriented
-                        individuals who perform well in board examinations with impressive results consistently
-                        exceeding
-                        the National Passing Rate and become potent driving force in the industries in the region and
-                        beyond. BulSU has recently received its ISO 9001:2015 Certification, passed the Level II
-                        Institutional Accreditation while 50 academic programs of the different Colleges are already
-                        accredited by the Accrediting Agency of Chartered Colleges and Universities (AACCUP), Inc. This
-                        was
-                        made possible through the persistent hardwork and resolute service of its 1,138 faculty members
-                        and
-                        476 non-teaching personnel who relentlessly cater and furnish the needs of our 35,958 students.
-                    </p>
+                    <p>PetCo. Animal Clinic is a Veterinarian clinic that provides quality services for your Cat and Dog, PetCo. Animal Clinic is established in July 2, 2021 and is now located at 389 Parada Sta. Maria, Bulacan (beside Sto. Niño Parish Church). </p>
+                    
                     </div>
                 </div>
                 

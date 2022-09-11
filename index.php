@@ -42,9 +42,23 @@
   font-style: bold;
   color: Blue;
 }
-    
-
-  
+  .nav-item
+  {
+    font-family: arial; 
+    color #fff; 
+    list-style: none;
+    margin-right: 50px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .nav-item:first-child
+  {
+    color: #30d300;
+  }
+  .nav-item:hover
+  {
+    color: #30d300;
+  }
     </style>
 </head>
 
@@ -91,7 +105,11 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
+<<<<<<< HEAD
                         <a class="nav-link text-white" href="petgalery.php">PET GALLERY</a>
+=======
+                        <a class="nav-link text-white" href="petgallery.php">PET GALLERY</a>
+>>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
                     </li>
                 </div>
                 <!-- <div class=" text-white">
@@ -160,7 +178,7 @@
 
     <!-- <div class="container">
         <div class="row">
-           <p class="tips"> QUICKTIPSS</p>
+           <p class="tips"> QUICKTIPS</p>
         </div>
     </div> -->
     <!--IMage Section-->

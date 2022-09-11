@@ -105,8 +105,13 @@
 
 <body class="">
   <!--Navigation Bar-->
+<<<<<<< HEAD
   <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
         <div class="container-fluid">
+=======
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #1572A1">
+  <div class="container-fluid">
+>>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
             <a class="navbar-brand" href="#">
                 <img src="asset/logopet.png" alt="Logo" style="width:19%; height:8vh" /><span
                     style="text-shadow: 3px 3px 3px  black" class="mx-2 text-info fw-bold">PETKO.</span>
@@ -118,15 +123,25 @@
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+<<<<<<< HEAD
 
         </div>
+=======
+
+        </div>
+
+>>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
 
         <div class="collapse navbar-collapse me-3" id="navbarScroll">
             <ul class="navbar-nav me-auto my-0 my-lg-0 " style="--bs-scroll-height: 100px;">
             <div class="text-nowrap">
           <li class="nav-item">
 
+<<<<<<< HEAD
             <a class="nav-link active text-white" aria-current="page" href="home.php">HOME</a>
+=======
+            <a class="nav-link active fw-bold text-info" aria-current="page" href="#">HOME</a>
+>>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
           </li>
         </div>
         <div class="text-nowrap">
@@ -153,10 +168,17 @@
               onclick="return confirm('Are you sure do you want to logout?')">LOGOUT</a>
           </li>
         </div>
+<<<<<<< HEAD
             </ul>
         </div>
     </nav>
 
+=======
+      </ul>
+    </div>
+  </nav>
+   
+>>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
 
   <div class="container-fluid bg-light">
     <?php
