@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <!-- <link rel="stylesheet" href="style.css"> -->
 
-    <script>
+    <!-- <script>
     function ageCalculator() {
         var userinput = document.getElementById("DOB").value;
         var dob = new Date(userinput);
@@ -40,7 +40,7 @@
                 "Age: " + $age ;
         }
     }
-    </script>
+    </script> -->
 
 </head>
 
@@ -92,7 +92,7 @@
                     </div>
                     <div class="text-nowrap">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="petgalery.php">PET GALERY</a>
+                            <a class="nav-link text-white" href="petgalery.php">PET GALLERY</a>
                         </li>
                     </div>
                     <!-- <div class=" text-white">
@@ -145,7 +145,7 @@
                 <div class="container ">
                     <!--1st row-->
                     <div class="row ">
-                        <div class="col-6" >
+                        <div class="col-6">
                             <!--FName-->
                             <div class="form-floating mt-3">
                                 <input class="form-control mb-2" type="text" name="first_name" placeholder="First Name"
@@ -176,7 +176,7 @@
 
                             <div class="form-floating">
                                 <input class="form-control" type="text" name="contact" placeholder="Suffix"
-                                     id="floatingSuffix" autocomplete="off">
+                                    id="floatingSuffix" autocomplete="off">
                                 <label for="floatingSuffix">Contact No</label>
                             </div>
                         </div>
@@ -216,43 +216,68 @@
 
                     <!--2nd Row-->
 
-                    <div class="mt-4 text-primary">
-                        <p style="text-shadow: 1px 1px 1px blue; ">Now To continue creating account please, provide all
+                    <div class="mt-4">
+                        <p style="text-shadow: 1px 1px 1px blue; color:blue; ">Now To continue creating account please,
+                            provide all
                             the information about your pets that are
                             need below.</p>
                     </div>
 
                     <!-- 3rd row -->
-                    <div class="row">
-                        <div class="col-4">
-                            <div>
-
-                                <span style="display: block;">Pet Type:
-                                <input type="radio" name="pettype" value="dog">Dog
-                                <input type="radio" name="pettype" value="cat">Cat</span>
+                    <div class="row " style="  font-weight: bolder; color: blue;">
+                        <div class="col-4">Pet Type:
+                            <div class="input-group flex-nowrap">
+                                <select class="form-select form-select-md" name="pettype" required>
+                                    <option value="dog">Dog </option>
+                                    <option value="cat">Cat</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="col-4">
-                                 <span> Address <input type="text" ></input></span>
-                        </div>
-                        <div class="col-4">
-                            <b> Enter Date of Birth: <input type=date id=DOB> </b>
-                            <span id="message" style="color:red"> </span> <br><br>
 
-                            <!-- Choose a date and enter in input field -->
-                            <button type="submit" onclick="ageCalculator()"> Calculate age </button> <br><br>
-                            <h3 style="color:32A80F" id="result" align="center"></h3>
-                        
-                            
+
+                        <div class="col-4">Pet Name:
+                            <input class="form-control" type="text" name="petname" placeholder="Pet Name" required
+                                id="floatingAddress" autocomplete="off">
                         </div>
 
 
-                        <div class="form-group mt-4 text-center">
-                            <input class="form-control btn btn-primary w-50 " type="submit" name="signup"
-                                value="Signup">
+                        <div class="col-4"> Pet Breed
+                            <div class="input-group flex-nowrap">
+                                <select class="form-select form-select-md" name="petbreed" required>
+                                    <option value="shittzu" class="text-primary" Disabled>--For Dog-- </option>
+                                    <option value="americanbuly">American Bully</option>
+                                    <option value="chowchow">Chow Chow</option>
+                                    <option value="corgi">Corgi</option>
+                                    <option value="englishbulldog">English Bulldog</option>
+                                    <option value="frenchbulldog">French Bulldog</option>
+                                    <option value="goldentetriever">Golden Retriever</option>
+                                    <option value="pomeranian">Pomeranian</option>
+                                    <option value="poodle">Poodle</option>
+                                    <option value="pug">Pug</option>
+                                    <option value="siberianhusky">Siberian Husky</option>
+                                    <option value="shittzu">Shih Tzu </option>
+                                    <option value="shittzu" Disabled class="text-danger">--For Cat-- </option>
+                                    <option value="abyssinian">Abyssinian </option>
+                                    <option value="siamese">Siamese</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="link login-link text-center text-white">Already a member? <a href="login-user.php"
-                                class="text-warning">Login here</a></div>
+                    </div>
+
+                    <div class="row " style="  font-weight: bolder; color: blue;">
+                        <div>
+                            <label for="">Please enter Date of Birth</label>
+                            <input type="date" name="petbday" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group mt-4 text-center">
+                    <input class="form-control btn btn-primary w-50 " type="submit" name="signup" value="Signup">
+                </div>
+                <div class="link login-link text-center text-white">Already a member? <a href="login-user.php"
+                        class="text-warning">Login here</a></div>
             </form>
         </div>
 

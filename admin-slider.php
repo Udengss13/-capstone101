@@ -144,6 +144,7 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
         <div class="row justify-content-center">
             <div class="col-lg-4 bg-dark rounded px-4">
                 <h4 class="text-center text-light p-1">select image for upload</h4>
+               
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <input type="file" name="image" class="form-control p-1 mb-3" required>

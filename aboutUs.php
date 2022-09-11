@@ -68,7 +68,7 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="petgalery.php">PET GALERY</a>
+                        <a class="nav-link text-white" href="petgalery.php">PET GALLERY</a>
                     </li>
                 </div>
                 <!-- <div class=" text-white">
@@ -110,48 +110,7 @@
             </div>
         </div>
     </div>
-    <section class="flex-sect" id="imagesec">
-        <section id="imagesection" class="div_background_light py-4">
-            <div class="container-fluid px-5 mt-3">
-                <div class="col-lg-12 col-md-12">
-                    <div class="justify-content-center row col-md-12 rounded-3">
-                        <h3 class="col-12  text-center fw-bolder" style="text-shadow: 3px 1px 3px  lightblue; color: rgb(13, 13, 103)" >PETCO ANNOUNCEMENT</h3>
-                        <hr>
-
-                        <!--Pictures-->
-
-                        <?php while($rowimage = mysqli_fetch_array($resultimage)) {?>
-
-                        <div class="col-lg-3 col-xs-1 col-sm-5 card mx-3 my-4">
-
-                            <img src="asset/homepage/<?php echo $rowimage['Image_filename'] ?>"
-                                class="card-img-top pt-3 img-responsive " style="height:200px; width:100%;">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title text-center"><?php echo $rowimage['Image_title'] ?></h5>
-                                <h6 class="card-text text-center text-muted">
-                                    <?php echo $rowimage['Image_subtitle'] ?>
-                                </h6>
-                                <p class="card-text d-inline-block text-truncate">
-                                    <?php echo $rowimage['Image_body'];?>
-                                </p>
-                                <div class="mb-4">
-                                    <a href="index-view-image.php?id=<?php echo $rowimage['Image_id'] ?>"
-                                        class=" btn btn-success w-100">View</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <?php }?>
-
-
-                    </div>
-                </div>
-            </div>
-        </section>
-    </section>
-
-
-
+    
 
 
 

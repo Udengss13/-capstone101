@@ -3,14 +3,26 @@ cc{
 }
 
 .nav-item {
-  margin-left: 3px
+  margin-left: 3px;
 }
 
 .nav-item:hover {
   background-color: rgb(23, 171, 201);
+}
+
+.nav-items {
+  margin-left: 5px
+}
+
+.nav-items:hover {
+  background-color: rgb(23, 171, 201);
+  border-radius: 50px;
 
 
 }
+/* PRofile  */
+
+ 
 /* QUICKTIPS----------------------------------------------------------------------------- */
 
 

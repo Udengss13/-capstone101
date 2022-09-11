@@ -44,37 +44,40 @@
 </head>
 
 <body class="">
-  <!--Navbar-->
-  <nav class="navbar navbar-expand-lg nav_color navbar-dark nav_outline">
-    <h3 class=""><img src="asset/logo.png" alt="Saint Jude Logo"
-        style="width: 50px; padding-left: 10px; padding-top: 5px;"><a class="navbar-brand fw-bold c-white" href="#"
-        style="padding-left: 15px;">PET CO.</a></h3>
-    <button style="margin-right: 20px;" class="navbar-toggler" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end col-6" style="padding-right: 20px;" id="navbarNav">
+  
+
+  <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="asset/logopet.png" alt="Logo" style="width:19%; height:8vh" /><span
+                    style="text-shadow: 3px 3px 3px  black" class="mx-2 text-info fw-bold">PETKO.</span>
+                <span style="border-left: 3px solid rgba(5, 13, 98, 0.767); margin-right: 3px;padding: 3px;"> </span>
+                <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
+                        CLINIC</b></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+
+        <div class="collapse navbar-collapse justify-content-end col-6" style="padding-right: 20px;" id="navbarNav">
       <ul class="navbar-nav text-center gap-3" style="padding-left: 10px;">
 
         <li class="nav-item">
-          <a class="nav-link c-white bg_nav_menu rounded" href="#">Content</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link c-green  rounded" href="admin-category-list.php">Category</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link c-green  rounded" href="admin-menu.php">Menu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link c-green rounded" href="admin-dashboard.php">User List</a>
+        <a href="admin-content.php"><span class="btn btn-success  mx-2 float-end">Back</span></a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link c-green" href="admin-login.php">Logout</a>
+          <a class="nav-link btn btn-danger text-light mx-2" href="admin-login.php">Logout</a>
         </li>
       </ul>
     </div>
-  </nav>
+          
+    </nav>
+
+
 
   <!--All Content Here-->
   <div class="div_background_dark px-3">

@@ -3,7 +3,6 @@
 require('connection.php');
 session_start();
 
-//For editing Carousel 
     if(isset($_POST['update_image_content'])){
         $contentimageid = $_POST['contentimageid'];
         $title = $_POST['title'];

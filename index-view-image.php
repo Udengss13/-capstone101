@@ -16,17 +16,30 @@
 
   <head>
     <title>PetCo Homepage</title>
+    <link rel="icon" href="asset/logopet.png" type="image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <style>
+      .navbar{
+        margin-left: 3px
+    }
+
+    .nav-item:hover {
+        background-color: rgb(23, 171, 201);
+        border-radius: ;
+
+    }
+    </style>
   </head>
 
 <body>
   <!--navbar-->
-  <nav class="navbar navbar-expand-lg bg-deepink sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img src="asset/logopet.png" alt="Logo" style="width:100%; height:8vh" />
@@ -40,7 +53,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active text-white" aria-current="page" href="index.php">Home</a>
+            <a class="nav-link active text-white" aria-current="page" href="index.php">Back</a>
           </li>
 
         </ul>
@@ -60,9 +73,9 @@
         <div class=" container">
           <div class="news-headings">
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-12 ">
                 <!--Name-->
-                <h1 class="text-center c-green display-6 " style="color: ; text-shadow: 2px 1px 0px pink">
+                <h1 class="text-center c-green display-8 " style="color: ; text-shadow: 2px 1px 0px pink">
                   <?php echo $rowimage['Image_title']; ?></h1>
                 <!--Price-->
                 <p class="text-center text-muted pb-4" style="font-size:20px">

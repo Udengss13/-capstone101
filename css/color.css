@@ -1,5 +1,5 @@
 body{
-  background-image: url("../asset/pet1.jpg");
+  background-image: url("../asset/bg.jpg");
   background-size:     cover;                      /* <------ */
   background-repeat:   no-repeat;
   background-position: center center; 

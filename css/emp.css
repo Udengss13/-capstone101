@@ -5,6 +5,10 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+.try{
+  font-weight: bolder;
+  color: #10628e;
+}
 html,body{
   display: grid;
   height: 100%;

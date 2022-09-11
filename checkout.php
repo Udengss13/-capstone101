@@ -76,53 +76,57 @@ if($cart_query && $detail_query){
 <body>
 
   <!--Navigation Bar-->
-  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #1572A1">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="asset/logopet.png" alt="Logo" style="width:45%; height:8vh" /><span
-          class="mx-2 text-warning fw-bold">PETCO.</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="asset/logopet.png" alt="Logo" style="width:19%; height:8vh" /><span
+                    style="text-shadow: 3px 3px 3px  black" class="mx-2 text-info fw-bold">PETKO.</span>
+                <span style="border-left: 3px solid rgba(5, 13, 98, 0.767); margin-right: 3px;padding: 3px;"> </span>
+                <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
+                        CLINIC</b></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    </div>
-
-    <div class="collapse navbar-collapse me-3" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 " style="--bs-scroll-height: 100px;">
-        <div class="text-nowrap">
-          <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="home.php?id=<?php echo $user_id?>">Home</a>
-          </li>
-        </div>
-        <div class="text-nowrap">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="product.php?id=<?php echo $_SESSION['user_id'];?>">Product</a>
-          </li>
         </div>
 
-        <?php 
-            $select_rows = mysqli_query($con,"SELECT * FROM `cart` WHERE Cart_user_id = '$user_id'") or die ('query failed');
-            $row_count = mysqli_num_rows($select_rows);
-          ?>
+        <div class="collapse navbar-collapse me-3" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-0 my-lg-0 " style="--bs-scroll-height: 100px;">
+                <div class="text-nowrap">
+                    <li class="nav-item">
 
-        <div class="text-nowrap">
-          <li class="nav-item">
-            <a class="nav-link active fw-bold text-info" href="#">Cart<span
-                class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
+                        <a class="nav-link active text-white " aria-current="page" href="home.php">HOME</a>
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="product.php">PRODUCT</a>
+                    </li>
+                </div>
 
-          </li>
+                <?php 
+                    $select_rows = mysqli_query($con,"SELECT * FROM `cart` WHERE Cart_user_id = '$user_id'") or die ('query failed');
+                    $row_count = mysqli_num_rows($select_rows);
+                  ?>
+
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="cart.php">CART<span
+                                class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
+
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link  text-white" href="logout-user.php"
+                            onclick="return confirm('Are you sure do you want to logout?')">LOGOUT</a>
+                    </li>
+                </div>
+            </ul>
         </div>
-        <div class="text-nowrap">
-          <li class="nav-item">
-            <a class="nav-link  text-white" href="login-user.php">Logout</a>
-          </li>
-        </div>
-
-      </ul>
-    </div>
-  </nav>
+    </nav>
 
   <!--Call for Username -->
   <div class="container-fluid bg-light">
@@ -143,7 +147,7 @@ if($cart_query && $detail_query){
     <form action="" method="post">
 
       <div class="container  w-50 mb-4 rounded-3 border border-5"
-        style="  background: linear-gradient(to bottom, #1a2980, #26d0ce);">
+        style="  background:#26d0ce;">
         <p class="fs-5 mt-3 text-white text-center">Check your Order first!</p>
         <?php 
           $select_cart = mysqli_query($con, "SELECT * FROM `cart` WHERE Cart_user_id = '$user_id' ");
@@ -166,7 +170,7 @@ if($cart_query && $detail_query){
         ?>
 
         <div class="mt-5 text-center text-light w-100 px-2 btn btn-success mb-3 active ">
-          <span class="mb-3">Total Payment: <?= number_format($grand_total);?></span>
+          <span class="mb-3">Total Payment: ₱<?= number_format($grand_total);?></span>
         </div>
       </div>
 
@@ -212,9 +216,8 @@ if($cart_query && $detail_query){
             <span class="input-group-text " id="basic-addon1">Payment Method</span>
             <select name="paymentmethod" class="form-select" required>
               <option value="">Select your Payment Method</option>
-              <option value="Cash on Delivery">Cash On Delivery</option>
-              <option value="Gcash">Gcash</option>
-              <option value="Paypal">Paypal</option>
+              <option value="Gcash">For Pick Up</option>
+              
             </select>
           </div>
         </div>

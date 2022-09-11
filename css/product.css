@@ -1,7 +1,6 @@
 .product .box-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, 25rem);
-  gap: 1.5rem;
   margin-left:auto; margin-right: auto;
 }
 

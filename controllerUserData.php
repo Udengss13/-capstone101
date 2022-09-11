@@ -8,15 +8,19 @@ $mname = "";
 $lname = "";
 $suffix = "";
 $address = "";
+$contact = "";
+$pettype= "";
+$petname= "";
+$petbreed= "";
 $errors = array(); 
 
     //if user signup button
     if(isset($_POST['signup'])){
           //for captcha
-        if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
-            // echo "<script>alert('Incorrect verification code');</script>" ;
-            $errors[]= 'Incorrect Captcha code!';
-        }
+        // if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
+        //     // echo "<script>alert('Incorrect verification code');</script>" ;
+        //     $errors[]= 'Incorrect Captcha code!';
+        // }
 
         $fname = mysqli_real_escape_string($con, $_POST['first_name']);
         $mname = mysqli_real_escape_string($con, $_POST['middle_name']);
@@ -26,6 +30,13 @@ $errors = array();
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $password = mysqli_real_escape_string($con, $_POST['password']);
         $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
+        $contact = mysqli_real_escape_string($con, $_POST['contact']);
+        $pettype = mysqli_real_escape_string($con, $_POST['pettype']);
+        $petname = mysqli_real_escape_string($con, $_POST['petname']);
+        $petbreed = mysqli_real_escape_string($con, $_POST['petbreed']);
+        // $petbday = mysqli_real_escape_string(date('m-d-y', strtotime($con, $_POST['petbday'])));
+        $date = mysqli_real_escape_string($con, $_POST['petbday']);
+        $petbday = date (strtotime('Y-m-d',($date)));
 
         if($password !== $cpassword){
             $errors['password'] = "Confirm password not matched!";
@@ -42,8 +53,8 @@ $errors = array();
          
             $code = rand(999999, 111111);
             $status = "notverified";
-            $insert_data = "INSERT INTO usertable (first_name, middle_name, last_name, suffix, address, email, password, code, status)
-                            values('$fname', '$mname', '$lname', '$suffix', '$address', '$email', '$password', '$code', '$status')";
+            $insert_data = "INSERT INTO usertable (first_name, middle_name, last_name, suffix, address, email, password, code, status, contact, pettype, petname, petbreed, petbday)
+                            values('$fname', '$mname', '$lname', '$suffix', '$address', '$email', '$password', '$code', '$status', '$contact' ,'$pettype', '$petname', '$petbreed', '$petbday')";
             $data_check = mysqli_query($con, $insert_data);
             if($data_check){
 
@@ -56,12 +67,12 @@ $errors = array();
                 $mail->SMTPAuth=true;
                 $mail->SMTPSecure='tls';
 
-                $mail->Username='melody.santiago.b@bulsu.edu.ph';
-                $mail->Password='melchong131619';
+                $mail->Username='alexandranicole.bautista.f@bulsu.edu.ph';
+                $mail->Password='##050101';
 
-                $mail->setFrom('melody.santiago.b@bulsu.edu.ph', 'PETCO');
+                $mail->setFrom('alexandranicole.bautista.f@bulsu.edu.ph', 'PETKO');
                 $mail->addAddress($email);
-                $mail->addReplyTo('melody.santiago.b@bulsu.edu.ph');
+                $mail->addReplyTo('alexandranicole.bautista.f@bulsu.edu.ph');
 
                 $mail->isHTML(true);
                 $mail->Subject='Email Verification Code';
@@ -169,13 +180,13 @@ $errors = array();
                 $mail->SMTPAuth=true;
                 $mail->SMTPSecure='tls';
 
-                $mail->Username='melody.santiago.b@bulsu.edu.ph';
-                $mail->Password='melchong131619';
+                $mail->Username='alexandranicole.bautista.f@bulsu.edu.ph';
+                $mail->Password='##050101';
 
-                $mail->setFrom('melody.santiago.b@bulsu.edu.ph', 'PETCO');
+                $mail->setFrom('alexandranicole.bautista.f@bulsu.edu.ph', 'PETKO');
                 $mail->addAddress($email);
-                $mail->addReplyTo('melody.santiago.b@bulsu.edu.ph');
-                
+                $mail->addReplyTo('alexandranicole.bautista.f@bulsu.edu.ph');
+
                 $mail->isHTML(true);
                 $mail->Subject='Email Verification Code to Reset Password';
                 $mail->Body='<h1 align=center>Your Code is: '.$code.'</h1>';

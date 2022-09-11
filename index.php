@@ -48,7 +48,7 @@
     </style>
 </head>
 
-<body style="background-image: linear-gradient(to right, rgb(215, 238, 245), rgb(102, 185, 198),rgb(90, 187, 232));">
+<body>
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
         <div class="container-fluid">
@@ -91,7 +91,7 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="petgalery.php">PET GALERY</a>
+                        <a class="nav-link text-white" href="petgalery.php">PET GALLERY</a>
                     </li>
                 </div>
                 <!-- <div class=" text-white">
@@ -158,11 +158,11 @@
         </div>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
            <p class="tips"> QUICKTIPSS</p>
         </div>
-    </div>
+    </div> -->
     <!--IMage Section-->
     <section class="flex-sect" id="imagesec">
         <section id="imagesection" class="div_background_light py-4">

@@ -49,14 +49,22 @@
         <li class="nav-item">
           <a class="nav-link c-green" href="admin-orders.php">Order</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link c-green rounded" href="admin-content.php">Content</a>
-        </li>
+        <div class="dropdown">
+           <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"> Content</button>
+          <ul class="dropdown-menu">
+           <li class="nav-item">
+                <a class="dropdown-item" href="admin-content.php">News</a>
+           </li>
+            <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
+            <li><a class="dropdown-item" href="admin-slider.php">slider</a></li>
+            
+          </ul>
+       </div>
         <li class="nav-item">
           <a class="nav-link c-green  rounded" href="admin-category-list.php">Category</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link c-white bg_nav_menu rounded  " href="admin-menu.php">Menu</a>
+          <a class="nav-link c-white bg_nav_menu rounded  " href="admin-menu.php">Product</a>
         </li>
         <li class="nav-item">
           <a class="nav-link  c-green  rounded" href="admin-dashboard.php">User List</a>

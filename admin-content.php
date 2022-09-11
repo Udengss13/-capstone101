@@ -14,6 +14,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="asset/logopet.png" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/color.css">
@@ -37,35 +38,37 @@
         <div class="collapse navbar-collapse justify-content-end col-6" style="padding-right: 20px;" id="navbarNav">
             <ul class="navbar-nav text-center gap-3" style="padding-left: 10px;">
 
-                <li class="nav-item">
+              
+            <li class="nav-item">
                     <a class="nav-link c-green" href="admin-orders.php">Order</a>
                 </li>
 
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                    <button type="button" class=" btn btn-outline-success text-light dropdown-toggle" data-bs-toggle="dropdown">
                         Content</button>
                     <ul class="dropdown-menu">
                         <li class="nav-item">
-                            <a class="dropdown-item" href="admin-content.php">NEWS</a>
+                            <a class="dropdown-item" href="admin-content.php">News</a>
                         </li>
-                        <li><a class="dropdown-item" href="#">Normal</a></li>
-                        <li><a class="dropdown-item" href="#">Active</a></li>
-                        <li><a class="dropdown-item" href="#">Disabled</a></li>
+                        <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
+                        <li><a class="dropdown-item" href="admin-slider.php">slider</a></li>
+
                     </ul>
                 </div>
                 <li class="nav-item">
                     <a class="nav-link c-green  rounded" href="admin-category-list.php">Category</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link c-green  rounded" href="admin-menu.php">Menu</a>
+                    <a class="nav-link c-green  rounded" href="admin-menu.php">Product</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link c-green rounded" href="admin-dashboard.php">User List</a>
+                    <a class="nav-link c-white bg_nav_menu rounded" href="#">User List</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link c-green" href="admin-login.php">Logout</a>
-                </li>
+                        <a class="nav-link  text-white" href="logoutadmin.php"
+                            onclick="return confirm('Are you sure do you want to logout?')">LOGOUT</a>
+                    </li>
             </ul>
         </div>
     </nav>
