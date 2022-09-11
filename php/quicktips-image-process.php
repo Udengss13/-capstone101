@@ -7,7 +7,7 @@
         $safe_input = mysqli_real_escape_string($db_admin_account,$info);
        
       
-        $filenamedir = "../asset/quicktips/".$_FILES["photo"]["name"];
+        $filenamedir = "../asset/".$_FILES["photo"]["name"];
         $filename = $_FILES["photo"]["name"];
 
         // move file to a folder

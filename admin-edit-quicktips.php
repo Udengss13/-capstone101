@@ -35,8 +35,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/colour.css">
-  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/color.css">
+ 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -44,29 +44,39 @@
 </head>
 
 <body class="">
-  <!--Navbar-->
-  <nav class="navbar navbar-expand-lg nav_color navbar-dark nav_outline">
-    <h3 class=""><img src="asset/logo.png" alt="Saint Jude Logo"
-        style="width: 50px; padding-left: 10px; padding-top: 5px;"><a class="navbar-brand fw-bold c-white" href="#"
-        style="padding-left: 15px;">PET CO.</a></h3>
+ <!--Navbar-->
+ <nav class="navbar navbar-expand-lg nav_color navbar-dark nav_outline">
+    <h3 class=""><img src=" asset/logopet.png" alt="PETCO" style="width: 50px; padding-left: 10px; padding-top: 5px;">
+      <a class="navbar-brand fw-bold c-white" href="#" style="padding-left: 15px;">PET CO.</a>
+    </h3>
     <button style="margin-right: 20px;" class="navbar-toggler" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end col-6" style="padding-right: 20px;" id="navbarNav">
       <ul class="navbar-nav text-center gap-3" style="padding-left: 10px;">
-
         <li class="nav-item">
-          <a class="nav-link c-white bg_nav_menu rounded" href="#">Content</a>
+          <a class="nav-link c-green" href="admin-orders.php">Order</a>
         </li>
+        <div class="dropdown">
+           <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"> Content</button>
+          <ul class="dropdown-menu">
+           <li class="nav-item">
+                <a class="dropdown-item" href="admin-content.php">News</a>
+           </li>
+            <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
+            <li><a class="dropdown-item" href="admin-slider.php">slider</a></li>
+            
+          </ul>
+       </div>
         <li class="nav-item">
           <a class="nav-link c-green  rounded" href="admin-category-list.php">Category</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link c-green  rounded" href="admin-menu.php">Menu</a>
+          <a class="nav-link c-white bg_nav_menu rounded  " href="admin-menu.php">Product</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link c-green rounded" href="admin-dashboard.php">User List</a>
+          <a class="nav-link  c-green  rounded" href="admin-dashboard.php">User List</a>
         </li>
 
         <li class="nav-item">
@@ -77,8 +87,8 @@
   </nav>
 
   <!--All Content Here-->
-  <div class="div_background_dark px-3">
-    <h4 class="text-center c-white py-3">Edit Information Content for Home </h4>
+  <div class="div_background_light px-3">
+    <h4 class="text-center c-white py-3">Edit Information Content for Home(Quicktips) </h4>
 
     <form action="php/quicktips-image-edit-process.php" method="post" enctype="multipart/form-data"
       class="row gap-2 justify-content-center">
@@ -86,7 +96,7 @@
         <div class="col-lg-7 col-md-6 col-sm-12">
           <div class="card d-flex justify-content-center">
             <div class="card-header">
-              Edit Information for Homepage
+              Edit Information for Quicktips
             </div>
             <!--Success Message-->
             <?php if($applychanges!=""){?>
