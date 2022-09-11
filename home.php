@@ -33,15 +33,11 @@
 </head>
 
 <body>
-<<<<<<< HEAD
+
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
         <div class="container-fluid">
-=======
-  <!--Navigation Bar-->
-  <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #1572A1">
-  <div class="container-fluid">
->>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
+
             <a class="navbar-brand" href="#">
                 <img src="asset/logopet.png" alt="Logo" style="width:19%; height:8vh" /><span
                     style="text-shadow: 3px 3px 3px  black" class="mx-2 text-info fw-bold">PETKO.</span>
@@ -53,26 +49,6 @@
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-<<<<<<< HEAD
-
-=======
-
-        </div>
-
-
-    <div class="collapse navbar-collapse me-3" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 " style="--bs-scroll-height: 100px;">
-        <div class="text-nowrap">
-          <li class="nav-item">
-
-            <a class="nav-link active fw-bold text-info" aria-current="page" href="#">HOME</a>
-          </li>
-        </div>
-        <div class="text-nowrap">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="product.php">PRODUCT</a>
-          </li>
->>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
         </div>
 
         <div class="collapse navbar-collapse me-3" id="navbarScroll">
@@ -122,32 +98,6 @@
 
     <div class="container-fluid bg-light">
         <?php 
-<<<<<<< HEAD
-=======
-            $select_rows = mysqli_query($con,"SELECT * FROM `cart` WHERE Cart_user_id = '$user_id'") or die ('query failed');
-            $row_count = mysqli_num_rows($select_rows);
-          ?>
-
-        <div class="text-nowrap">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="cart.php">CART<span
-                class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
-
-          </li>
-        </div>
-        <div class="text-nowrap">
-          <li class="nav-item">
-            <a class="nav-link  text-white" href="logout-user.php"
-              onclick="return confirm('Are you sure do you want to logout?')">LOGOUT</a>
-          </li>
-        </div>
-      </ul>
-    </div>
-  </nav>
-   
-  <div class="container-fluid bg-light">
-    <?php 
->>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
         $select_user = mysqli_query($con, "SELECT * FROM usertable WHERE id = '$user_id'");
         if(mysqli_num_rows($select_user) > 0){
           $fetch_user = mysqli_fetch_assoc($select_user); 

@@ -46,26 +46,23 @@
 <html lang="en">
 
 <head>
-  <title>Dashboard</title>
-  <link rel="icon" href="asset/logopet.png" type="image/x-icon">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>Dashboard</title>
+    <link rel="icon" href="asset/logopet.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 
 <body>
-<<<<<<< HEAD
-<nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
+
+       <!--Navigation Bar-->
+       <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
         <div class="container-fluid">
-=======
-   <!--Navigation Bar-->
-   <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #1572A1">
-  <div class="container-fluid">
->>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
+
             <a class="navbar-brand" href="#">
                 <img src="asset/logopet.png" alt="Logo" style="width:19%; height:8vh" /><span
                     style="text-shadow: 3px 3px 3px  black" class="mx-2 text-info fw-bold">PETKO.</span>
@@ -77,35 +74,21 @@
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-<<<<<<< HEAD
-
-=======
-
-        </div>
-
-
-    <div class="collapse navbar-collapse me-3" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 " style="--bs-scroll-height: 100px;">
-        <div class="text-nowrap">
-          <li class="nav-item">
-
-            <a class="nav-link active fw-bold text-info" aria-current="page" href="#">HOME</a>
-          </li>
-        </div>
-        <div class="text-nowrap">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="product.php">PRODUCT</a>
-          </li>
->>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
         </div>
 
         <div class="collapse navbar-collapse me-3" id="navbarScroll">
             <ul class="navbar-nav me-auto my-0 my-lg-0 " style="--bs-scroll-height: 100px;">
-                <div class="text-nowrap">
+            <div class="text-nowrap">
+            <li class="nav-items">
+            <a href="userprofile.php"><img src=" asset/profile.png" alt="PETCO"
+                style="width: 50px;"></a>
+            </li>
+            </div>    
+            
+            <div class="text-nowrap">
                     <li class="nav-item">
 
-<<<<<<< HEAD
-                        <a class="nav-link active text-white " aria-current="page" href="home.php">HOME</a>
+                        <a class="nav-link active text-white" aria-current="page" href="home.php">HOME</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
@@ -113,12 +96,6 @@
                         <a class="nav-link text-white" href="product.php">PRODUCT</a>
                     </li>
                 </div>
-=======
-        <div class="text-nowrap">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="cart.php">CART<span
-                class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
->>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
 
                 <?php 
                     $select_rows = mysqli_query($con,"SELECT * FROM `cart` WHERE Cart_user_id = '$user_id'") or die ('query failed');
@@ -127,7 +104,7 @@
 
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="cart.php"><b>CART</b><span
+                        <a class="nav-link text-white" href="cart.php">CART<span
                                 class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
 
                     </li>
@@ -140,122 +117,114 @@
                 </div>
             </ul>
         </div>
-<<<<<<< HEAD
     </nav>
-=======
-        <div class="text-nowrap">
-          <li class="nav-item">
-            <a class="nav-link  text-white" href="logout-user.php"
-              onclick="return confirm('Are you sure do you want to logout?')">LOGOUT</a>
-          </li>
-        </div>
-      </ul>
-    </div>
-  </nav>
-   
->>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
 
-  <!--Call for Username -->
-  <div class="container-fluid bg-light">
-    <?php
+
+    <!--Call for Username -->
+    <div class="container-fluid bg-light">
+        <?php
       $select_user = mysqli_query($con, "SELECT * FROM `usertable` WHERE id = '$user_id'");
       if(mysqli_num_rows($select_user) > 0){
         $fetch_user = mysqli_fetch_assoc($select_user);
       }
     ?>
-    <p class="text-capitalize text-center">Welcome
-      <?php echo $fetch_user['first_name'] ." " .$fetch_user['last_name'] ?></p>
-  </div>
-
-
-  <div class="container">
-    <div class="text-center fs-5">
-      <h1>Shopping Cart</h1>
+        <p class="text-capitalize text-center">Welcome
+            <?php echo $fetch_user['first_name'] ." " .$fetch_user['last_name'] ?></p>
     </div>
-    <!--Table-->
-    <div class="table-responsive-sm table-responsive-md table-responsive-lg">
-      <table class="table table-success table-striped table-sm-responsive">
-        <thead class="thead bg-light">
-          <tr>
-            <th scope="col">Image</th>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Total</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php 
+
+
+    <div class="container">
+        <div class="text-center fs-5">
+            <h1>Shopping Cart</h1>
+        </div>
+        <!--Table-->
+        <div class="table-responsive-sm table-responsive-md table-responsive-lg">
+            <table class="table table-success table-striped table-sm-responsive">
+                <thead class="thead bg-light">
+                    <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
           $select_cart = mysqli_query($con, "SELECT * FROM `cart`WHERE Cart_user_id = '$user_id' ");
           $grand_total = 0;
 
           if(mysqli_num_rows($select_cart) > 0){
             while($fetch_cart = mysqli_fetch_assoc($select_cart)){    
         ?>
-          <tr>
-            <!--Image-->
-            <td><img src="asset/menu/<?= $fetch_cart['Cart_image'];?>" height="50"
-                style=" display:block; margin-left:auto; margin-right:auto" alt="Images"></td>
-            <!--Name-->
-            <td class="align-middle"><?= $fetch_cart['Cart_name'];?></td>
-            <!--Price-->
-            <td class="align-middle">
-              <?php echo number_format($fetch_cart['Cart_price']);?>
-            </td>
-            <!--Input Number and Update Button-->
-            <td class="align-middle" class="">
-              <form action="" method="post">
-                <input type="hidden" name="update_quantity_id" min="1" value="<?php echo $fetch_cart['Cart_id'] ?>">
-                <input type="number" name="update_quantity" min="1" value="<?php echo $fetch_cart['Cart_quantity'] ?>"
-                  class="col-5">
-                <input type="submit" value="Update" name="update_update_btn" class="btn btn-success">
-              </form>
-            </td>
-            <!--Quantity-->
-            <td class="align-middle">Php
-              <?php echo $sub_total = $fetch_cart['Cart_price'] * $fetch_cart['Cart_quantity'];?>
-            </td>
-            <!--Remove Button-->
-            <td class="align-middle"><a href="cart.php?remove=<?php echo $fetch_cart['Cart_id'] ?>"
-                class="btn btn-warning" onclick="return confirm('Do you want to remove it from your Cart?')"><i
-                  class="bi bi-trash"></i>Remove</a>
-            </td>
+                    <tr>
+                        <!--Image-->
+                        <td><img src="asset/menu/<?= $fetch_cart['Cart_image'];?>" height="50"
+                                style=" display:block; margin-left:auto; margin-right:auto" alt="Images"></td>
+                        <!--Name-->
+                        <td class="align-middle"><?= $fetch_cart['Cart_name'];?></td>
+                        <!--Price-->
+                        <td class="align-middle">
+                            <?php echo number_format($fetch_cart['Cart_price']);?>
+                        </td>
+                        <!--Input Number and Update Button-->
+                        <td class="align-middle" class="">
+                            <form action="" method="post">
+                                <input type="hidden" name="update_quantity_id" min="1"
+                                    value="<?php echo $fetch_cart['Cart_id'] ?>">
+                                <input type="number" name="update_quantity" min="1"
+                                    value="<?php echo $fetch_cart['Cart_quantity'] ?>" class="col-5">
+                                <input type="submit" value="Update" name="update_update_btn" class="btn btn-success">
+                            </form>
+                        </td>
+                        <!--Quantity-->
+                        <td class="align-middle">Php
+                            <?php echo $sub_total = $fetch_cart['Cart_price'] * $fetch_cart['Cart_quantity'];?>
+                        </td>
+                        <!--Remove Button-->
+                        <td class="align-middle"><a href="cart.php?remove=<?php echo $fetch_cart['Cart_id'] ?>"
+                                class="btn btn-warning"
+                                onclick="return confirm('Do you want to remove it from your Cart?')"><i
+                                    class="bi bi-trash"></i>Remove</a>
+                        </td>
 
-          </tr>
-          <?php
+                    </tr>
+                    <?php
             $grand_total += $sub_total;
             };
           }else {
             echo '<tr><td colspan="6" class="text-center fs-5 text-danger">No item added</td></tr>'; 
           };
         ?>
-          <tr>
-            <!--Button-->
-            <td><a href="product.php" class="btn btn-success w-100 text-white">Continue Shopping</a></td>
-            <!--Total-->
-            <td colspan="3" class="text-center fw-bold align-middle">Total Cart:</td>
-            <td class="fw-bold fs-6 align-middle">Php
-              <?php echo number_format($grand_total) ?></td>
-            <td><a href="cart.php?delete_all" class="btn btn-danger   <?php  echo ($grand_total > 1),'disabled'; ?>"
-                onclick="return confirm('Do you want remove all your items from your cart?')">Delete All</a></td>
-          </tr>
-        </tbody>
-      </table>
-      <!--Proceed to Checkout BUtton-->
-      <div class="text-center">
-        <a href="checkout.php?user_id=<?php echo $_SESSION['user_id'];?>"
-          class="btn btn-primary <?php  echo ($grand_total > 1),'disabled'; ?>">Proceed to Checkout</a>
-      </div>
+                    <tr>
+                        <!--Button-->
+                        <td><a href="product.php" class="btn btn-success w-100 text-white">Continue Shopping</a></td>
+                        <!--Total-->
+                        <td colspan="3" class="text-center fw-bold align-middle">Total Cart:</td>
+                        <td class="fw-bold fs-6 align-middle">Php
+                            <?php echo number_format($grand_total) ?></td>
+                        <td><a href="cart.php?delete_all"
+                                class="btn btn-danger   <?php  echo ($grand_total > 1),'disabled'; ?>"
+                                onclick="return confirm('Do you want remove all your items from your cart?')">Delete
+                                All</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!--Proceed to Checkout BUtton-->
+            <div class="text-center">
+                <a href="checkout.php?user_id=<?php echo $_SESSION['user_id'];?>"
+                    class="btn btn-primary <?php  echo ($grand_total > 1),'disabled'; ?>">Proceed to Checkout</a>
+            </div>
+
+        </div>
 
     </div>
 
-  </div>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

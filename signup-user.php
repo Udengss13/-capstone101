@@ -92,11 +92,9 @@
                     </div>
                     <div class="text-nowrap">
                         <li class="nav-item">
-<<<<<<< HEAD
-                            <a class="nav-link text-white" href="petgalery.php">PET GALLERY</a>
-=======
+
                             <a class="nav-link text-white" href="petgallery.php">PET GALLERY</a>
->>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
+
                         </li>
                     </div>
                     <!-- <div class=" text-white">

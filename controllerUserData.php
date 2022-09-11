@@ -8,14 +8,10 @@ $mname = "";
 $lname = "";
 $suffix = "";
 $address = "";
-<<<<<<< HEAD
 $contact = "";
 $pettype= "";
 $petname= "";
 $petbreed= "";
-=======
-$pettype = "";
->>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
 $errors = array(); 
 
     //if user signup button
@@ -34,7 +30,6 @@ $errors = array();
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $password = mysqli_real_escape_string($con, $_POST['password']);
         $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
-<<<<<<< HEAD
         $contact = mysqli_real_escape_string($con, $_POST['contact']);
         $pettype = mysqli_real_escape_string($con, $_POST['pettype']);
         $petname = mysqli_real_escape_string($con, $_POST['petname']);
@@ -42,9 +37,6 @@ $errors = array();
         // $petbday = mysqli_real_escape_string(date('m-d-y', strtotime($con, $_POST['petbday'])));
         $date = mysqli_real_escape_string($con, $_POST['petbday']);
         $petbday = date (strtotime('Y-m-d',($date)));
-=======
-        $pettype = mysqli_real_escape_string($con, $_POST['pettype']);
->>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
 
         if($password !== $cpassword){
             $errors['password'] = "Confirm password not matched!";
@@ -61,13 +53,8 @@ $errors = array();
          
             $code = rand(999999, 111111);
             $status = "notverified";
-<<<<<<< HEAD
             $insert_data = "INSERT INTO usertable (first_name, middle_name, last_name, suffix, address, email, password, code, status, contact, pettype, petname, petbreed, petbday)
                             values('$fname', '$mname', '$lname', '$suffix', '$address', '$email', '$password', '$code', '$status', '$contact' ,'$pettype', '$petname', '$petbreed', '$petbday')";
-=======
-            $insert_data = "INSERT INTO usertable (first_name, middle_name, last_name, suffix, address, email, password, code, status, pettype)
-                            values('$fname', '$mname', '$lname', '$suffix', '$address', '$email', '$password', '$code', '$status', '$pettype')";
->>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
             $data_check = mysqli_query($con, $insert_data);
             if($data_check){
 
@@ -80,21 +67,13 @@ $errors = array();
                 $mail->SMTPAuth=true;
                 $mail->SMTPSecure='tls';
 
-<<<<<<< HEAD
+
                 $mail->Username='alexandranicole.bautista.f@bulsu.edu.ph';
                 $mail->Password='##050101';
 
                 $mail->setFrom('alexandranicole.bautista.f@bulsu.edu.ph', 'PETKO');
                 $mail->addAddress($email);
                 $mail->addReplyTo('alexandranicole.bautista.f@bulsu.edu.ph');
-=======
-                $mail->Username='';
-                $mail->Password='melchong131619';
-
-                $mail->setFrom('', 'PETCO');
-                $mail->addAddress($email);
-                $mail->addReplyTo('');
->>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
 
                 $mail->isHTML(true);
                 $mail->Subject='Email Verification Code';

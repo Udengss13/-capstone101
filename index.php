@@ -36,33 +36,18 @@
         border-radius: ;
 
     }
-    .tips{
-  font-family: cursive;
-  font-size: 30px;
-  font-style: bold;
-  color: Blue;
-}
-  .nav-item
-  {
-    font-family: arial; 
-    color #fff; 
-    list-style: none;
-    margin-right: 50px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  .nav-item:first-child
-  {
-    color: #30d300;
-  }
-  .nav-item:hover
-  {
-    color: #30d300;
-  }
+
+    .tips {
+        font-family: cursive;
+        font-size: 30px;
+        font-style: bold;
+        color: Blue;
+    }
     </style>
 </head>
 
 <body>
+    <!--Navigation Bar-->
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
         <div class="container-fluid">
@@ -105,11 +90,9 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-<<<<<<< HEAD
-                        <a class="nav-link text-white" href="petgalery.php">PET GALLERY</a>
-=======
+
                         <a class="nav-link text-white" href="petgallery.php">PET GALLERY</a>
->>>>>>> 0013f140bb6751910bfde7917b3e7eea2c534428
+
                     </li>
                 </div>
                 <!-- <div class=" text-white">
@@ -127,8 +110,8 @@
 
     <!-- <h2 class="text-center text-light pb-4 ">Dynamic boostrap 5 caroussel using php and mysqli</h2> -->
     <div class="container-fluid">
-        <div class="row mb-5 ml-0" >
-            <div class="col-xl-12" >
+        <div class="row mb-5 ml-0">
+            <div class="col-xl-12">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <?php 
@@ -155,7 +138,7 @@
                       
                       ?>
                         <div class="carousel-item <?= $actives; ?>">
-                            <img src="<?= $row['image_path'] ?>" class="img-fluid"  width="100%" height="500px" >
+                            <img src="<?= $row['image_path'] ?>" class="img-fluid" width="100%" height="500px">
                         </div>
 
                         <?php $i++; } ?>
@@ -187,7 +170,8 @@
             <div class="container-fluid px-5 mt-3">
                 <div class="col-lg-12 col-md-12">
                     <div class="justify-content-center row col-md-12 rounded-3">
-                        <h3 class="col-12  text-center fw-bolder" style="text-shadow: 3px 1px 3px  lightblue; color: rgb(13, 13, 103)" >PETCO ANNOUNCEMENT</h3>
+                        <h3 class="col-12  text-center fw-bolder"
+                            style="text-shadow: 3px 1px 3px  lightblue; color: rgb(13, 13, 103)">PETCO ANNOUNCEMENT</h3>
                         <hr>
 
                         <!--Pictures-->
@@ -234,8 +218,9 @@
                 <div class="col-sm-3">
                     <ul class="follow">
                         <h3>FOLLOW US!</h3>
-                        <p></p><a href="https://www.google.com/maps/place/Petco.+Animal+Clinic/@14.8109306,120.9831885,17z/data=!3m1!4b1!4m5!3m4!1s0x3397add6664b08bf:0x5a91f2a8b8c4db95!8m2!3d14.8109306!4d120.9853772">Facebook <i
-                                class="fa-brands fa-facebook-square"></i></a><br>
+                        <p></p><a
+                            href="https://www.google.com/maps/place/Petco.+Animal+Clinic/@14.8109306,120.9831885,17z/data=!3m1!4b1!4m5!3m4!1s0x3397add6664b08bf:0x5a91f2a8b8c4db95!8m2!3d14.8109306!4d120.9853772">Facebook
+                            <i class="fa-brands fa-facebook-square"></i></a><br>
                         <a href="https://www.facebook.com/messages/t/100008437094309">Messenger <i
                                 class="fa-brands fa-facebook-messenger"></i></a><br>
                         <a href="https://www.facebook.com/Udeng13">Instagram <i class="fa-brands fa-instagram"></i></a>
