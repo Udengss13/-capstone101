@@ -27,6 +27,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
     .nav-item {
         margin-left: 3px
     }
@@ -38,10 +40,24 @@
     }
 
     .tips {
-        font-family: cursive;
+        font-family: 'Poppins';font-size: 22px;
         font-size: 30px;
         font-style: bold;
         color: Blue;
+    }
+
+    .navbar-brand {
+        font-family: 'poppins-bold', sans-serif !important;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .nav-item {
+        font-family: 'poppins-bold', sans-serif !important;
+        font-size: 22px;
+    }
+    .footer-banner {
+        background-color: #2E313A;
     }
     </style>
 </head>
@@ -49,14 +65,13 @@
 <body>
     <!--Navigation Bar-->
     <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
+    <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #9FBACD;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="asset/logopet.png" alt="Logo" style="width:19%; height:8vh" /><span
-                    style="text-shadow: 3px 3px 3px  black" class="mx-2 text-info fw-bold">PETKO.</span>
-                <span style="border-left: 3px solid rgba(5, 13, 98, 0.767); margin-right: 3px;padding: 3px;"> </span>
-                <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
-                        CLINIC</b></span>
+                <img src="asset/logopet.png" alt="Logo" style="width:40%; height:8vh" />
+                <!-- <span style="border-left: 3px solid rgba(5, 13, 98, 0.767); margin-right: 3px;padding: 3px;"> --> </span>
+                <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PET KO
+                        </b></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,28 +85,28 @@
                 <div class="text-nowrap">
                     <li class="nav-item">
                         <a class="nav-link active text-white" style="border-radius:10px; margin-left:3px;"
-                            aria-current="page" href="index.php">HOME</a>
+                            aria-current="page" href="index.php">Contact Us</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="aboutUs.php">ABOUT US</a>
+                        <a class="nav-link text-white" href="aboutUs.php">Services</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="services.php">SERVICES</a>
+                        <a class="nav-link text-white" href="services.php">Shop</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="shop.php">SHOP</a>
+                        <a class="nav-link text-white" href="shop.php">Pet Gallery</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
 
-                        <a class="nav-link text-white" href="petgallery.php">PET GALLERY</a>
+                        <a class="nav-link text-white" href="petgallery.php">Log In</a>
 
                     </li>
                 </div>
@@ -100,7 +115,7 @@
         </div> -->
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link  text-white" href="login-user.php">SIGN IN</a>
+                        <a class="nav-link  text-white" href="login-user.php">Sign Up</a>
                     </li>
                 </div>
             </ul>
@@ -171,7 +186,7 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="justify-content-center row col-md-12 rounded-3">
                         <h3 class="col-12  text-center fw-bolder"
-                            style="text-shadow: 3px 1px 3px  lightblue; color: rgb(13, 13, 103)">PETCO ANNOUNCEMENT</h3>
+                            style="text-shadow: 3px 1px 3px  lightblue; color: rgb(13, 13, 103)">ANNOUNCEMENT BOARD</h3>
                         <hr>
 
                         <!--Pictures-->
@@ -211,9 +226,7 @@
     <!--Footer-->
     <footer class=" footer-banner" id="about">
         <div class="container text">
-            <h1>PETCO SHOP</h1>
-            <p>Thank you for Visiting Petco Shop Enjoy An GodBless!</p>
-            <br>
+            
             <div class="row">
                 <div class="col-sm-3">
                     <ul class="follow">
@@ -231,7 +244,7 @@
                         <h3>Company</h3>
                         <a href="https://www.facebook.com/Udeng13"> About Us<i
                                 class="fa-solid fa-table-layout"></i></a><br>
-                        <a href="https://www.facebook.com/messages/t/100008437094309">Our Service <i
+                        <a href="https://www.facebook.com/messages/t/100008437094309">Promos <i
                                 class="fa-brands fa-facebook-messenger"></i></a><br>
                         <a href="https://www.facebook.com/Udeng13">Privacy Policy <i
                                 class="fa-brands fa-instagram"></i></a>
