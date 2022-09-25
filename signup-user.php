@@ -1,4 +1,9 @@
-<?php require_once "controllerUserData.php";  ?>
+<?php require_once "controllerUserData.php";  
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,56 +12,77 @@
     <title>Signup Form</title>
     <link rel="icon" href="asset/logopet.png" type="image/x-icon">
     <!-- CSS only -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        crossorigin="anonymous">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <!-- <link rel="stylesheet" href="style.css"> -->
 
-    <!-- <script>
-    function ageCalculator() {
-        var userinput = document.getElementById("DOB").value;
-        var dob = new Date(userinput);
-        if (userinput == null || userinput == '') {
-            document.getElementById("message").innerHTML = "**Choose a date please!";
-            return false;
-        } else {
-
-            //calculate month difference from current date in time
-            var month_diff = Date.now() - dob.getTime();
-
-            //convert the calculated difference in date format
-            var age_dt = new Date(month_diff);
-
-            //extract year from date    
-            var year = age_dt.getUTCFullYear();
-
-            //now calculate the age of the user
-            var age = Math.abs(year - 1970);
-
-            $age = age;
-
-            //display the calculated age
-            return document.getElementById("result").innerHTML =
-                "Age: " + $age ;
+    <script>
+    function populate(s1, s2) {
+        var s1 = document.getElementById(s1);
+        var s2 = document.getElementById(s2);
+        s2.innerHTML = "";
+        if (s1.value == "Dog") {
+            var optionArray = ["americanbuly|American Bully", "chowchow|Chow Chow", "corgi|Corgi",
+                "englishbulldog|English Bulldog", "frenchbulldog|French Bulldog",
+                "goldentetriever|Golden Retriever", "pomeranian|Pomeranian", "poodle|Poodle", "pug|Pug",
+                "siberianhusky|Siberian Husky", "shittzu|Shih Tzu"
+            ];
+        } else if (s1.value == "Cat") {
+            var optionArray = ["abyssinian|Abyssinian", "siamese|Siamese"];
+        }
+        for (var option in optionArray) {
+            var pair = optionArray[option].split("|");
+            var newOption = document.createElement("option");
+            newOption.value = pair[0];
+            newOption.innerHTML = pair[1];
+            s2.options.add(newOption);
         }
     }
-    </script> -->
+    </script>
+
+    <style>
+    .mystyle {
+        width: 100%;
+        padding: 25px;
+        background-color: coral;
+        color: white;
+        font-size: 25px;
+        box-sizing: border-box;
+    }
+
+    .pettype_box {
+        background: white;
+        height: 35px;
+        border-radius: 10px;
+        color: black;
+        border-color: transparent;
+        padding: 5px;
+    }
+
+    .inline {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+    </style>
 
 </head>
 
 <body>
-    <!--Navigation Bar-->
 
     <body
-        style="background-image: linear-gradient(to right, rgb(215, 238, 245), rgb(102, 185, 198),rgb(90, 187, 232));">
+        style="background-image:url(asset/bgpala.png); background-repeat: no-repeat; background-size:cover">
+
         <!--Navigation Bar-->
-        <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
+        <nav class="navbar navbar-expand-lg navbar-light ; "
+            style="border-bottom: 2px solid darkblue; background-image:url(asset/bgpala.png); background-repeat: no-repeat; background-size:cover">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="asset/logopet.png" alt="Logo" style="width:19%; height:8vh" /><span
-                        style="text-shadow: 3px 3px 3px  black" class="mx-2 text-info fw-bold">PETKO.</span>
-                    <span style="border-left: 3px solid rgba(5, 13, 98, 0.767); margin-right: 3px;padding: 3px;">
-                    </span>
+                    <img src="asset/logopet.png" alt="Logo" style="width:23%; height:8vh" />
+                   
                     <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
                             CLINIC</b></span>
                 </a>
@@ -71,43 +97,45 @@
                 <ul class="navbar-nav me-auto my-0 my-lg-0 " style="--bs-scroll-height: 100px;">
                     <div class="text-nowrap">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" style="border-radius:10px; margin-left:3px;"
-                                aria-current="page" href="index.php">HOME</a>
+                            <a class="nav-link active " style="border-radius:10px; margin-left:3px;" aria-current="page"
+                                href="index.php">HOME</a>
                         </li>
                     </div>
                     <div class="text-nowrap">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="aboutUs.php">ABOUT US</a>
+                            <a class="nav-link active" href="aboutUs.php">ABOUT US</a>
                         </li>
                     </div>
                     <div class="text-nowrap">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="services.php">SERVICES</a>
+                            <a class="nav-link active" href="services.php">SERVICES</a>
                         </li>
                     </div>
                     <div class="text-nowrap">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="shop.php">SHOP</a>
+                            <a class="nav-link active" href="shop.php">SHOP</a>
                         </li>
                     </div>
                     <div class="text-nowrap">
                         <li class="nav-item">
 
-                            <a class="nav-link text-white" href="petgallery.php">PET GALLERY</a>
+                            <a class="nav-link active" href="petgallery.php">PET GALLERY</a>
 
                         </li>
                     </div>
                     <!-- <div class=" text-white">
-          <?php echo  date("m/d/y") . "<br>"; ?>
-        </div> -->
+         <?php echo  date("m/d/y") . "<br>"; ?>
+       </div> -->
                     <div class="text-nowrap">
                         <li class="nav-item">
-                            <a class="nav-link  text-white" href="login-user.php">SIGN IN</a>
+                            <a class="nav-link active bg-primary" href="login-user.php">SIGN IN</a>
                         </li>
                     </div>
                 </ul>
             </div>
         </nav>
+
+
 
         <!--Sign Up form-->
         <div class="container py-3 mt-5 mb-5 rounded-3">
@@ -217,73 +245,106 @@
                     </div>
 
                     <!--2nd Row-->
-
-                    <div class="mt-4">
-                        <p style="text-shadow: 1px 1px 1px blue; color:blue; ">Now To continue creating account please,
-                            provide all
-                            the information about your pets that are
-                            need below.</p>
+                    <div class="row">
+                        <div class="col mt-4">
+                            <p style="text-shadow: 1px 1px 1px blue; color:blue; ">Now To continue creating account
+                                please,
+                                provide all
+                                the information about your pets that are
+                                need below.</p>
+                        </div>
                     </div>
 
-                    <!-- 3rd row -->
-                    <div class="row " style="  font-weight: bolder; color: blue;">
-                        <div class="col-4">Pet Type:
-                            <div class="input-group flex-nowrap">
-                                <select class="form-select form-select-md" name="pettype" required>
-                                    <option value="dog">Dog </option>
-                                    <option value="cat">Cat</option>
-                                </select>
+
+                    <div id="dynamic_field">
+                        <div class="row inline" id="row">
+                            <div class="col-4 ">Pet Type:
+                                <!-- <div class=" flex-nowrap"> -->
+                                    <select class="pettype_box"  id="slct1" name="pettype"
+                                        onchange="populate(this.id,'slct2')" value="<?php echo $pettype ?>">
+                                        <option value=""></option>
+                                        <option value="Dog">Dog</option>
+                                        <option value="Cat">Cat</option>
+
+                                    </select>
+                                <!-- </div> -->
+                            </div>
+
+
+                            <div class="col-4"> Pet Breed
+                                <!-- <div class=" flex-nowrap"> -->
+                                    <select class="pettype_box" id="slct2" name="petbreed"></select>
+                                <!-- </div> -->
+                            </div>
+
+                            <div class="col-4">Pet Name:
+                                <input class="form-control pettype_box" type="text" name="petname"
+                                    placeholder="Pet Name" required id="floatingAddress" autocomplete="off">
+                            </div>
+                        </div>
+                        
+
+
+                        <div class="row mt-4">
+                            <div class="col-4">Pet Sex:
+                                <!-- <div class=" flex-nowrap"> -->
+                                    <select class="pettype_box" name="petsex">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+
+                                    </select>
+
+                                <!-- </div> -->
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group mb-3">
+                                    <label for="">Date of Birth</label>
+                                    <input type="date" name="petbday" class="form-control" />
+                                </div>
                             </div>
                         </div>
 
-
-                        <div class="col-4">Pet Name:
-                            <input class="form-control" type="text" name="petname" placeholder="Pet Name" required
-                                id="floatingAddress" autocomplete="off">
-                        </div>
-
-
-                        <div class="col-4"> Pet Breed
-                            <div class="input-group flex-nowrap">
-                                <select class="form-select form-select-md" name="petbreed" required>
-                                    <option value="shittzu" class="text-primary" Disabled>--For Dog-- </option>
-                                    <option value="americanbuly">American Bully</option>
-                                    <option value="chowchow">Chow Chow</option>
-                                    <option value="corgi">Corgi</option>
-                                    <option value="englishbulldog">English Bulldog</option>
-                                    <option value="frenchbulldog">French Bulldog</option>
-                                    <option value="goldentetriever">Golden Retriever</option>
-                                    <option value="pomeranian">Pomeranian</option>
-                                    <option value="poodle">Poodle</option>
-                                    <option value="pug">Pug</option>
-                                    <option value="siberianhusky">Siberian Husky</option>
-                                    <option value="shittzu">Shih Tzu </option>
-                                    <option value="shittzu" Disabled class="text-danger">--For Cat-- </option>
-                                    <option value="abyssinian">Abyssinian </option>
-                                    <option value="siamese">Siamese</option>
-                                </select>
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="row " style="  font-weight: bolder; color: blue;">
-                        <div>
-                            <label for="">Please enter Date of Birth</label>
-                            <input type="date" name="petbday" />
-                        </div>
+
+
+
+
+
+
+                    <div class="form-group mt-4 text-center">
+                        <input class="form-control btn  " style="background-color: #d27150; width: 20%" type="submit" name="signup" value="Signup">
                     </div>
-                </div>
-
-
-                <div class="form-group mt-4 text-center">
-                    <input class="form-control btn btn-primary w-50 " type="submit" name="signup" value="Signup">
-                </div>
-                <div class="link login-link text-center text-white">Already a member? <a href="login-user.php"
-                        class="text-warning">Login here</a></div>
+                    <div class="link login-link text-center text-white">Already have an account? <a
+                            href="login-user.php" class="text-primary">Login here</a></div>
             </form>
         </div>
 
+
     </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+    <script>
+    $(document).ready(function() {
+        var i = 1;
+        $('#add').click(function() {
+            i++;
+            $('#dynamic_field').append('<div class="row" id="row' + i +
+                '"> <div class="col-4">Pet Type:<select id="slct1" name="pettype[]" onchange="populate(this.id,'
+                slct2 ')" ><option value="dog">Dog</option>option value="cat">Cat</option> </select><div class="col"><input type="text" class="form-control" name="durchgefuhrte_arbeiten[]"><input class="form-check-input" type="radio" name="f5" id="exampleRadios2" value="option2"><label class="form-check-label" for="exampleRadios1">Ja</label><br><input class="form-check-input" type="radio" name="f5" id="exampleRadios2" value="option2"><label class="form-check-label" for="exampleRadios1">Ja</label> </div> <div class="col"> <input type="text" class="form-control" name="von[]"> </div> <div class="col"> <input type="text" class="form-control" name="bis[]"> </div> <div class="col"> <input type="text" class="form-control" name="std[]"> </div> <di<div class="col"> <td><button type="button" name="add" class="btn btn-danger btn_remove" id="' +
+                i + '"><i class="fa fa fa-trash"></i></button></td> </div> </div>');
+        });
+        $(document).on('click', '.btn_remove', function() {
+            var button_id = $(this).attr("id");
+
+            $('#row' + button_id + '').remove();
+        });
+
+
+    });
+    </script>
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

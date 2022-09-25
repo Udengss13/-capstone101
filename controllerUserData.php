@@ -32,11 +32,12 @@ $errors = array();
         $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
         $contact = mysqli_real_escape_string($con, $_POST['contact']);
         $pettype = mysqli_real_escape_string($con, $_POST['pettype']);
-        $petname = mysqli_real_escape_string($con, $_POST['petname']);
         $petbreed = mysqli_real_escape_string($con, $_POST['petbreed']);
-        // $petbday = mysqli_real_escape_string(date('m-d-y', strtotime($con, $_POST['petbday'])));
-        $date = mysqli_real_escape_string($con, $_POST['petbday']);
-        $petbday = date (strtotime('Y-m-d',($date)));
+        $petname = mysqli_real_escape_string($con, $_POST['petname']);
+        $petsex = mysqli_real_escape_string($con, $_POST['petsex']);
+        $petbday = date('Y-m-d', strtotime($_POST['petbday']));
+        
+       
 
         if($password !== $cpassword){
             $errors['password'] = "Confirm password not matched!";
@@ -53,11 +54,19 @@ $errors = array();
          
             $code = rand(999999, 111111);
             $status = "notverified";
-            $insert_data = "INSERT INTO usertable (first_name, middle_name, last_name, suffix, address, email, password, code, status, contact, pettype, petname, petbreed, petbday)
-                            values('$fname', '$mname', '$lname', '$suffix', '$address', '$email', '$password', '$code', '$status', '$contact' ,'$pettype', '$petname', '$petbreed', '$petbday')";
-            $data_check = mysqli_query($con, $insert_data);
-            if($data_check){
+          
 
+            $insert_data = "INSERT INTO usertable (first_name, middle_name, last_name, suffix, address, email, password, code, status, contact)
+                            values('$fname', '$mname', '$lname', '$suffix', '$address', '$email', '$password', '$code', '$status', '$contact')";
+            $data_check1 = mysqli_query($con, $insert_data);
+
+            $user_id = $con->insert_id;
+
+            if($data_check1){
+                 $query1 = "INSERT INTO `pettable`(`user_id`, `pettype`, `petbreed`, `petname` ,`petsex`, `petbday`) VALUES ('$user_id','$pettype', '$petbreed', '$petname' , '$petsex', '$petbday')";
+                 $data_check = mysqli_query($con, $query1); 
+          
+              if($data_check){
                 require 'phpmailer/PHPMailerAutoload.php';
                 $mail = new PHPMailer;
                 
@@ -95,10 +104,14 @@ $errors = array();
                 else{
                     echo"Message has been Sent";
                 }
-            }else{
+              }
+              else{
                 $errors['db-error'] = "Failed while inserting data into database!";
+                }
             }
+
         }
+        
 
     }
     //--------------------------------------------------------------------------
