@@ -197,8 +197,8 @@ if($cart_query && $detail_query){
         <div class="col-6 mb-2">
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Contact number</span>
-            <input type="number" class="form-control" name="contact" placeholder="e.g. 639832456922" min="639123456789"
-              required>
+            <input type="number" class="form-control bg-light" name="contact" value="<?=  $rowInfo['contact']?>"
+              readonly>
           </div>
         </div>
         <div class="col-6 mb-2">

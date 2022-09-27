@@ -15,14 +15,12 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body style="background-image: linear-gradient(to right, rgb(215, 238, 245), rgb(102, 185, 198),rgb(90, 187, 232));">
+<body style="background:  #9FBACD;">
     <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
+    <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background:  #9FBACD;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="asset/logopet.png" alt="Logo" style="width:19%; height:8vh" /><span
-                    style="text-shadow: 3px 3px 3px  black" class="mx-2 text-info fw-bold">PETKO.</span>
-                <span style="border-left: 3px solid rgba(5, 13, 98, 0.767); margin-right: 3px;padding: 3px;"> </span>
+                <img src="asset/logopet.png" alt="Logo" style="width:22%; height:8vh" /> </span>
                 <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
                         CLINIC</b></span>
             </a>

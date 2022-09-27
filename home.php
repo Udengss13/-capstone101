@@ -35,13 +35,11 @@
 <body>
 
     <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
+    <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #9FBACD;">
         <div class="container-fluid">
 
             <a class="navbar-brand" href="#">
-                <img src="asset/logopet.png" alt="Logo" style="width:19%; height:8vh" /><span
-                    style="text-shadow: 3px 3px 3px  black" class="mx-2 text-info fw-bold">PETKO.</span>
-                <span style="border-left: 3px solid rgba(5, 13, 98, 0.767); margin-right: 3px;padding: 3px;"> </span>
+                <img src="asset/logopet.png" alt="Logo" style="width:22%; height:8vh" />
                 <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
                         CLINIC</b></span>
             </a>
@@ -53,14 +51,9 @@
 
         <div class="collapse navbar-collapse me-3" id="navbarScroll">
             <ul class="navbar-nav me-auto my-0 my-lg-0 " style="--bs-scroll-height: 100px;">
-            <div class="text-nowrap">
-            <li class="nav-items">
-            <a href="userprofile.php"><img src=" asset/profile.png" alt="PETCO"
-                style="width: 50px;"></a>
-            </li>
-            </div>    
-            
-            <div class="text-nowrap">
+
+
+                <div class="text-nowrap">
                     <li class="nav-item">
 
                         <a class="nav-link active text-white" aria-current="page" href="home.php">HOME</a>
@@ -69,6 +62,12 @@
                 <div class="text-nowrap">
                     <li class="nav-item">
                         <a class="nav-link text-white" href="product.php">PRODUCT</a>
+                    </li>
+                </div>
+
+                <div class="text-nowrap">
+                    <li class="nav-items">
+                        <a href="userprofile.php"><img src=" asset/picon.png" alt="PETCO" style="width: 50px;"></a>
                     </li>
                 </div>
 
@@ -138,7 +137,19 @@
                       
                       ?>
                         <div class="carousel-item <?= $actives; ?>">
-                            <img src="<?= $row['image_path'] ?>" class="img-fluid" width="100%" height="500px">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <center>
+                                        <h1>PetCo. Animal Clinic
+                                        </h1>
+                                        <h3>is an Animal Clinic for your Cat and Dog.</h3>
+                                    </center>
+                                </div>
+                                <div class="col-md-8">
+                                    <img src="<?= $row['image_path'] ?>" class="img-fluid" width="100%" height="500px">
+                                </div>
+                            </div>
+
                         </div>
 
                         <?php $i++; } ?>

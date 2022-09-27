@@ -53,6 +53,16 @@
         box-sizing: border-box;
     }
 
+    .nav-item {
+        margin-left: 3px;
+        text-shadow: 2px 2px 2px rgba(49, 44, 44, 0.767);
+        /* font-weight: bolder; */
+        font-family: montserrat;
+
+
+    }
+
+
     .pettype_box {
         background: white;
         height: 35px;
@@ -73,16 +83,14 @@
 
 <body>
 
-    <body
-        style="background-image:url(asset/bgpala.png); background-repeat: no-repeat; background-size:cover">
+    <body style="background: #9FBACD;">
 
         <!--Navigation Bar-->
         <nav class="navbar navbar-expand-lg navbar-light ; "
-            style="border-bottom: 2px solid darkblue; background-image:url(asset/bgpala.png); background-repeat: no-repeat; background-size:cover">
+            style="border-bottom: 2px solid darkblue; background:  #9FBACD;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img src="asset/logopet.png" alt="Logo" style="width:23%; height:8vh" />
-                   
                     <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
                             CLINIC</b></span>
                 </a>
@@ -97,29 +105,29 @@
                 <ul class="navbar-nav me-auto my-0 my-lg-0 " style="--bs-scroll-height: 100px;">
                     <div class="text-nowrap">
                         <li class="nav-item">
-                            <a class="nav-link active " style="border-radius:10px; margin-left:3px;" aria-current="page"
-                                href="index.php">HOME</a>
+                            <a class="nav-link text-white " style="border-radius:10px; margin-left:3px;"
+                                aria-current="page" href="index.php">HOME</a>
                         </li>
                     </div>
                     <div class="text-nowrap">
                         <li class="nav-item">
-                            <a class="nav-link active" href="aboutUs.php">ABOUT US</a>
+                            <a class="nav-link text-white" href="aboutUs.php">ABOUT US</a>
                         </li>
                     </div>
                     <div class="text-nowrap">
                         <li class="nav-item">
-                            <a class="nav-link active" href="services.php">SERVICES</a>
+                            <a class="nav-link text-white" href="services.php">SERVICES</a>
                         </li>
                     </div>
                     <div class="text-nowrap">
                         <li class="nav-item">
-                            <a class="nav-link active" href="shop.php">SHOP</a>
+                            <a class="nav-link text-white" href="shop.php">SHOP</a>
                         </li>
                     </div>
                     <div class="text-nowrap">
                         <li class="nav-item">
 
-                            <a class="nav-link active" href="petgallery.php">PET GALLERY</a>
+                            <a class="nav-link text-white" href="petgallery.php">PET GALLERY</a>
 
                         </li>
                     </div>
@@ -128,7 +136,13 @@
        </div> -->
                     <div class="text-nowrap">
                         <li class="nav-item">
-                            <a class="nav-link active bg-primary" href="login-user.php">SIGN IN</a>
+                            <a class="nav-link text-white" href="login-user.php">SIGN IN</a>
+                        </li>
+                    </div>
+
+                    <div class="text-nowrap">
+                        <li class="nav-item">
+                            <a class="nav-link text-white bg-primary" href="signup-user.php">SIGN UP</a>
                         </li>
                     </div>
                 </ul>
@@ -260,20 +274,20 @@
                         <div class="row inline" id="row">
                             <div class="col-4 ">Pet Type:
                                 <!-- <div class=" flex-nowrap"> -->
-                                    <select class="pettype_box"  id="slct1" name="pettype"
-                                        onchange="populate(this.id,'slct2')" value="<?php echo $pettype ?>">
-                                        <option value=""></option>
-                                        <option value="Dog">Dog</option>
-                                        <option value="Cat">Cat</option>
+                                <select class="pettype_box" id="slct1" name="pettype"
+                                    onchange="populate(this.id,'slct2')" value="<?php echo $pettype ?>">
+                                    <option value=""></option>
+                                    <option value="Dog">Dog</option>
+                                    <option value="Cat">Cat</option>
 
-                                    </select>
+                                </select>
                                 <!-- </div> -->
                             </div>
 
 
                             <div class="col-4"> Pet Breed
                                 <!-- <div class=" flex-nowrap"> -->
-                                    <select class="pettype_box" id="slct2" name="petbreed"></select>
+                                <select class="pettype_box" id="slct2" name="petbreed"></select>
                                 <!-- </div> -->
                             </div>
 
@@ -282,17 +296,17 @@
                                     placeholder="Pet Name" required id="floatingAddress" autocomplete="off">
                             </div>
                         </div>
-                        
+
 
 
                         <div class="row mt-4">
                             <div class="col-4">Pet Sex:
                                 <!-- <div class=" flex-nowrap"> -->
-                                    <select class="pettype_box" name="petsex">
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
+                                <select class="pettype_box" name="petsex">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
 
-                                    </select>
+                                </select>
 
                                 <!-- </div> -->
                             </div>
@@ -313,7 +327,8 @@
 
 
                     <div class="form-group mt-4 text-center">
-                        <input class="form-control btn  " style="background-color: #d27150; width: 20%" type="submit" name="signup" value="Signup">
+                        <input class="form-control btn  " style="background-color: #EA6D52; width: 20%" type="submit"
+                            name="signup" value="Signup">
                     </div>
                     <div class="link login-link text-center text-white">Already have an account? <a
                             href="login-user.php" class="text-primary">Login here</a></div>
