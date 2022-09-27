@@ -34,7 +34,7 @@
     <style>
     @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
 
-    .nav-item {
+    /* .nav-item {
         margin-left: 3px
     }
 
@@ -50,37 +50,18 @@
         font-size: 30px;
         font-style: bold;
         color: Blue;
-    }
-
-    .navbar-brand {
-        font-family: 'poppins-bold', sans-serif !important;
-        font-size: 40px;
-        font-weight: bold;
-    }
-
-    .nav-item {
-        font-family: 'poppins-bold', sans-serif !important;
-        font-size: 20px;
-        text-shadow: 2px 2px 2px rgba(49, 44, 44, 0.767);
-    }
-
-    .footer-banner {
-        background-color: #2E313A;
-    }
+    } */
     </style>
 </head>
 
 <body>
     <!--Navigation Bar-->
-    <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #9FBACD;">
+    <nav class="navbar navbar-expand-lg navbar-light ; ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="asset/logopet.png" alt="Logo" style="width:40%; height:8vh" />
-                <!-- <span style="border-left: 3px solid rgba(5, 13, 98, 0.767); margin-right: 3px;padding: 3px;"> -->
-                </span>
-                <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETKO
-                    </b></span>
+                <img src="asset/logopet.png" alt="Logo" class="logo" />
+                <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
+                        CLINIC</b></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,43 +74,51 @@
             <ul class="navbar-nav me-auto my-0 my-lg-0 " style="--bs-scroll-height: 100px;">
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" style="border-radius:10px; margin-left:3px;"
-                            aria-current="page" href="index.php">Contact Us</a>
+                        <a class="nav-link text-white bg-primary " style="border-radius:10px;" aria-current="page"
+                            href="index.php">HOME</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="aboutUs.php">Services</a>
+                        <a class="nav-link text-white" href="aboutUs.php">ABOUT US</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="services.php">Shop</a>
+                        <a class="nav-link text-white" href="services.php">SERVICES</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="shop.php">Pet Gallery</a>
+                        <a class="nav-link text-white" href="shop.php">SHOP</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
 
-                        <a class="nav-link text-white" href="petgallery.php">Log In</a>
+                        <a class="nav-link text-white" href="petgallery.php">PET GALLERY</a>
 
                     </li>
                 </div>
                 <!-- <div class=" text-white">
-          <?php echo  date("m/d/y") . "<br>"; ?>
-        </div> -->
+         <?php echo  date("m/d/y") . "<br>"; ?>
+       </div> -->
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link  text-white" href="login-user.php">Sign Up</a>
+                        <a class="nav-link text-white" href="login-user.php">SIGN IN</a>
+                    </li>
+                </div>
+
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="signup-user.php">SIGN UP</a>
                     </li>
                 </div>
             </ul>
         </div>
     </nav>
+
+
 
 
     <!-- SLIDER Images -->
@@ -187,7 +176,13 @@
             <div class="container-fluid px-5 mt-3">
                 <div class="col-lg-12 col-md-12">
                     <div class="justify-content-center row col-md-12 rounded-3">
-                        <h3 class="col-12  text-center fw-bolder text-light">QUICKTIPS</h3>
+
+                        <div style="width: 100%; height: 20px; border-bottom: 2px solid white; text-align: center">
+                            <span style="font-size: 40px; background-color:#9FBACD; color: white">
+                                QUICKTIPS
+                                <!--Padding is optional-->
+                            </span>
+                        </div>
 
 
                         <!--Pictures-->
@@ -196,7 +191,7 @@
 
                         <div class="col-lg-4 col-xs-1 col-sm-5  m-5" style="height:400px;">
                             <img src="asset/<?php echo $rowimages['image_filename'] ?>"
-                                class="card-img-top img-responsive" style="height:300px; width:100%;">
+                                class="card-img-top img-responsive" style="height:400px; width:100%;">
 
                             <div class="mb-4">
                                 <br>

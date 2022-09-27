@@ -1,28 +1,40 @@
+body{
+  background:  #9FBACD;
+}
+.logo{
+  width:22%;
+   height:8vh;
+}
 
-  
+.navbar{
+  background:  #9FBACD;
+  border-bottom: 2px solid white;
+}
+ .navbar-brand {
+  font-family: 'poppins-bold', sans-serif !important;
+  font-size: 20px;
+  font-weight: bold;
+}
 
 .nav-item {
-  margin-left: 3px;
+  font-family: 'poppins-bold', sans-serif !important;
+  font-size: 15px;
   text-shadow: 2px 2px 2px rgba(49, 44, 44, 0.767);
-  /* font-weight: bolder; */
-  font-family: montserrat;
-
 }
-
-.nav-item:hover {
-  background-color: rgb(23, 171, 201);
-}
-
-.nav-items {
-  margin-left: 5px
-}
-
 .nav-items:hover {
   background-color: rgb(23, 171, 201);
   border-radius: 50px;
-
-
 }
+
+.nav-link{
+  border-radius: 10px;
+}
+
+.footer-banner {
+  background-color: #2E313A;
+}
+
+
 #imagesec{
   background: #9FBACD;
 }
@@ -41,6 +53,7 @@
   background-color: #278cb4;
   width: 50%;
 }
+
 
 
 

@@ -83,14 +83,13 @@
 
 <body>
 
-    <body style="background: #9FBACD;">
+    <body>
 
         <!--Navigation Bar-->
-        <nav class="navbar navbar-expand-lg navbar-light ; "
-            style="border-bottom: 2px solid darkblue; background:  #9FBACD;">
+        <nav class="navbar navbar-expand-lg navbar-light ; ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="asset/logopet.png" alt="Logo" style="width:23%; height:8vh" />
+                    <img src="asset/logopet.png" alt="Logo" class="logo" />
                     <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
                             CLINIC</b></span>
                 </a>

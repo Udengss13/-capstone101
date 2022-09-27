@@ -15,12 +15,12 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body style="background:  #9FBACD;">
+<body>
     <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background:  #9FBACD;">
+    <nav class="navbar navbar-expand-lg navbar-light;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="asset/logopet.png" alt="Logo" style="width:22%; height:8vh" /> </span>
+                <img src="asset/logopet.png" alt="Logo" class="logo" /> </span>
                 <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
                         CLINIC</b></span>
             </a>
@@ -61,14 +61,20 @@
 
                     </li>
                 </div>
+                
                 <!-- <div class=" text-white">
           <?php echo  date("m/d/y") . "<br>"; ?>
         </div> -->
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link  text-white" href="login-user.php">SIGN IN</a>
+                        <a class="nav-link  text-white bg-primary" href="login-user.php">SIGN IN</a>
                     </li>
                 </div>
+                <div class="text-nowrap">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="signup-user.php">SIGN UP</a>
+                        </li>
+                    </div>
             </ul>
         </div>
     </nav>

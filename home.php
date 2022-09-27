@@ -30,6 +30,8 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <script src="cute-alert.js"></script>
 </head>
 
 <body>
@@ -92,7 +94,13 @@
             </ul>
         </div>
     </nav>
-
+<script>
+    cuteToast({
+    type: "success", // or 'info', 'error', 'warning'
+    message: "Toast Message",
+    timer: 5000
+    })
+</script>
 
 
     <div class="container-fluid bg-light">
