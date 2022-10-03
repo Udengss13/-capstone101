@@ -5,182 +5,132 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-.try{
-  font-weight: bolder;
-  color: #10628e;
+body{
+  background:  #9FBACD;
 }
-html,body{
-  display: grid;
-  height: 100%;
-  width: 100%;
-  place-items: center;
-  background: -webkit-linear-gradient(left, #76bacd, #42b3fa);
+
+h2{
+  color: #034D73;
+  font-style: 'Gothic A1', sans-serif;
 }
-::selection{
-  background: #42b6fa;
-  color: #fff;
+h1, p{
+  color: #034D73;
 }
-.wrapper{
-  overflow: hidden;
-  max-width: 390px;
-  background: #fff;
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+.buttonbg{
+  background: #034D73;
 }
-.wrapper .title-text{
-  display: flex;
-  width: 200%;
+
+.Box{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
-.wrapper .title{
-  width: 50%;
-  font-size: 35px;
-  font-weight: 600;
-  text-align: center;
-  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+
+
+::selection {
+    color: #fff;
+    background: #fff;
 }
-.wrapper .slide-controls{
-  position: relative;
-  display: flex;
-  height: 50px;
-  width: 100%;
-  overflow: hidden;
-  margin: 30px 0 10px 0;
-  justify-content: space-between;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
+
+body{
+  background:  #9FBACD;
 }
-.slide-controls .slide{
-  height: 100%;
-  width: 100%;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  text-align: center;
-  line-height: 48px;
-  cursor: pointer;
-  z-index: 1;
-  transition: all 0.6s ease;
+.logo{
+  width:22%;
+  height:8vh;
 }
-.slide-controls label.signup{
-  color: #000;
+
+.navbar{
+  background:  #9FBACD;
+  border-bottom: 2px solid white;
+  
 }
-.slide-controls .slider-tab{
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  left: 0;
-  z-index: 0;
-  border-radius: 5px;
-  background: -webkit-linear-gradient(left, #acedf2, #58ade6);
-  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
-}
-input[type="radio"]{
-  display: none;
-}
-#signup:checked ~ .slider-tab{
-  left: 50%;
-}
-#signup:checked ~ label.signup{
-  color: #fff;
-  cursor: default;
-  user-select: none;
-}
-#signup:checked ~ label.login{
-  color: #000;
-}
-#login:checked ~ label.signup{
-  color: #000;
-}
-#login:checked ~ label.login{
-  cursor: default;
-  user-select: none;
-}
-.wrapper .form-container{
-  width: 100%;
-  overflow: hidden;
-}
-.form-container .form-inner{
-  display: flex;
-  width: 200%;
-}
-.form-container .form-inner form{
-  width: 50%;
-  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
-}
-.form-inner form .field{
-  height: 50px;
-  width: 100%;
-  margin-top: 20px;
-}
-.form-inner form .field input{
-  height: 100%;
-  width: 100%;
-  outline: none;
-  padding-left: 15px;
-  border-radius: 5px;
-  border: 1px solid lightgrey;
-  border-bottom-width: 2px;
-  font-size: 17px;
-  transition: all 0.3s ease;
-}
-.form-inner form .field input:focus{
-  border-color: #fc83bb;
-  /* box-shadow: inset 0 0 3px #fb6aae; */
-}
-.form-inner form .field input::placeholder{
-  color: #999;
-  transition: all 0.3s ease;
-}
-form .field input:focus::placeholder{
-  color: #b3b3b3;
-}
-.form-inner form .pass-link{
-  margin-top: 5px;
-}
-.form-inner form .signup-link{
-  text-align: center;
-  margin-top: 30px;
-}
-.form-inner form .pass-link a,
-.form-inner form .signup-link a{
-  color: #64c9eb;
-  text-decoration: none;
-}
-.form-inner form .pass-link a:hover,
-.form-inner form .signup-link a:hover{
-  text-decoration: underline;
-}
-form .btn{
-  height: 50px;
-  width: 100%;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-}
-form .btn .btn-layer{
-  height: 100%;
-  width: 300%;
-  position: absolute;
-  left: -100%;
-  background: -webkit-linear-gradient(right, #7ebaf3, #4ebafe, #30a8e9, #6abdde);
-  border-radius: 5px;
-  transition: all 0.4s ease;;
-}
-form .btn:hover .btn-layer{
-  left: 0;
-}
-form .btn input[type="submit"]{
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  position: relative;
-  background: none;
-  border: none;
-  color: #fff;
-  padding-left: 0;
-  border-radius: 5px;
+ .navbar-brand {
+  font-family: 'Gothic A1', sans-serif;
   font-size: 20px;
-  font-weight: 500;
-  cursor: pointer;
+  font-weight: bold;
 }
+
+.nav-item {
+  font-family: 'Gothic A1', sans-serif;
+  font-size: 15px;
+  text-shadow: 2px 2px 2px rgba(49, 44, 44, 0.767);
+}
+.nav-item:hover {
+  background-color: rgb(23, 171, 201);
+  border-radius: 50px;
+}
+
+.nav-link{
+  border-radius: 10px;
+}
+
+/* Login form Employee */
+.container{
+  justify-content: center;
+}
+.container .form {
+    background: rgba(238, 249, 255, 0.942);
+    width: 37%;
+    /* padding: 30px 35px; */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container .form form .form-control {
+ 
+    height: 50px;
+    font-size: 15px;
+    
+}
+select, option {
+  width: 550px;
+  height: 40px;
+}
+
+
+
+.container .form form .forget-pass {
+    margin: -15px 0 15px 0;
+}
+
+.container .form form .forget-pass a {
+    font-size: 15px;
+}
+
+.container .form form .button {
+    background: #1c1cb2;
+    color: #fff;
+    font-size: 17px;
+    
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.container .form form .button:hover {
+    background: #5757d1;
+   
+}
+
+.container .form form .link {
+    padding: 5px 0;
+}
+
+.container .form form .link a {
+    color: #6665ee;
+}
+
+.container .login-form form p {
+    font-size: 14px;
+}
+
+.container .row .alert {
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 992px) {
+    .dog{
+        display: none;
+    }
+  }

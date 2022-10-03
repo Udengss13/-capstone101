@@ -3,7 +3,7 @@
 
     //https://www.codepile.net/pile/NYN5P9Qq
        //call all Category
-      $querycategory = "SELECT * FROM admin_category"; //You don't need a ; like you do in SQL
+      $querycategory = "SELECT * FROM admin_category"; 
       $resultcategory = mysqli_query($db_admin_account, $querycategory);   
 
       $user_id = $_SESSION['user_id'];
@@ -92,27 +92,25 @@
 <html lang="en">
 
 <head>
-  <title>Dashboard</title>
-  <link rel="icon" href="asset/logopet.png" type="image/x-icon">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <link rel="stylesheet" type="text/css" href="css/product.css">
+    <title>Dashboard</title>
+    <link rel="icon" href="asset/logopet.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/product.css">
 </head>
 
 <body class="">
-  <!--Navigation Bar-->
-
-  <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
+    <!--Navigation Bar-->
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
 
             <a class="navbar-brand" href="#">
-                <img src="asset/logopet.png" alt="Logo" style="width:19%; height:8vh" /><span
-                    style="text-shadow: 3px 3px 3px  black" class="mx-2 text-info fw-bold">PETKO.</span>
-                <span style="border-left: 3px solid rgba(5, 13, 98, 0.767); margin-right: 3px;padding: 3px;"> </span>
+                <img src="asset/logopet.png" alt="Logo" style="width:22%; height:8vh" />
                 <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
                         CLINIC</b></span>
             </a>
@@ -120,128 +118,131 @@
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
         </div>
 
         <div class="collapse navbar-collapse me-3" id="navbarScroll">
             <ul class="navbar-nav me-auto my-0 my-lg-0 " style="--bs-scroll-height: 100px;">
-            <div class="text-nowrap">
-          <li class="nav-item">
 
 
-            <a class="nav-link active text-white" aria-current="page" href="home.php">HOME</a>
+                <div class="text-nowrap">
+                    <li class="nav-item">
 
-          </li>
-        </div>
-        <div class="text-nowrap">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="product.php">PRODUCT</a>
-          </li>
-        </div>
+                        <a class="nav-link active text-white mt-2" aria-current="page" href="home.php">HOME</a>
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white mt-2" href="product.php">SHOP</a>
+                    </li>
+                </div>
 
-        <?php 
-            $select_rows = mysqli_query($con,"SELECT * FROM `cart` WHERE Cart_user_id = '$user_id'") or die ('query failed');
-            $row_count = mysqli_num_rows($select_rows);
-          ?>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a href="userprofile.php" class="nav-link text-white"><img src=" asset/picon.png" alt="PETCO"
+                                style="width: 40px;"></a>
+                    </li>
+                </div>
 
-        <div class="text-nowrap">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="cart.php">CART<span
-                class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
+                <?php 
+                    $select_rows = mysqli_query($con,"SELECT * FROM `cart` WHERE Cart_user_id = '$user_id'") or die ('query failed');
+                    $row_count = mysqli_num_rows($select_rows);
+                  ?>
 
-          </li>
-        </div>
-        <div class="text-nowrap">
-          <li class="nav-item">
-            <a class="nav-link  text-white" href="logout-user.php"
-              onclick="return confirm('Are you sure do you want to logout?')">LOGOUT</a>
-          </li>
-        </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="cart.php"><img src=" asset/cart.png" alt="PETCO"
+                                style="width: 40px;"><span
+                                class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
+
+                    </li>
+                </div>
+
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link  text-white mt-2" href="logout-user.php"
+                            onclick="return confirm('Are you sure do you want to logout?')">LOGOUT</a>
+                    </li>
+                </div>
             </ul>
         </div>
     </nav>
 
+    <!--Search-->
+    <!--Search Form-->
+    <form action="product.php" method="GET">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" required name="search" value="<?php if(isset($_GET['search'])) {
+                        echo $_GET['search'];
+                      }?>" placeholder="Search Data">
+            <!--Button Search-->
+            <button class="btn btn-primary">Search</button>
+        </div>
+    </form>
 
-  <div class="container-fluid bg-light">
-    <?php
-      $select_user = mysqli_query($con, "SELECT * FROM `usertable` WHERE id = '$user_id'");
-      if(mysqli_num_rows($select_user) > 0){
-        $fetch_user = mysqli_fetch_assoc($select_user);
-      }
-    ?>
-    <p class="text-capitalize text-center">Welcome
-      <?php echo $fetch_user['first_name'] ." " .$fetch_user['last_name'] ?></p>
-  </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 float-end">
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
 
-
-
-
-  <!--Search-->
-
-  <div class="container">
-    <div class="row">
-      <div class="col-6 float-end">
-        <div class="card mt-4">
-          <div class="card-header">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-12">
-
-                  <!--Search Form-->
-                  <form action="product.php" method="GET">
+                                    <!--Search Form-->
+                                    <!-- <form action="product.php" method="GET">
                     <div class="input-group mb-3">
                       <input type="text" class="form-control" required name="search" value="<?php if(isset($_GET['search'])) {
                         echo $_GET['search'];
                       }?>" placeholder="Search Data">
-                      <!--Button Search-->
+                     Button Search
                       <button class="btn btn-primary">Search</button>
                     </div>
-                  </form>
+                  </form> -->
 
-                  <!--Select Form-->
-                  <form action="product.php" method="GET">
-                    <div class="input-group mb-3">
-                      <div class="input-group flex-nowrap">
-                        <select class="form-select form-select-md" name="select_category" required
-                          onchange="this.form.submit()">
-                          <option value="">Select Category</option>
-                          <?php while($rowcategory =  mysqli_fetch_array($resultcategory)){ ?>
-                          <option value=" <?php echo $rowcategory['category_name']; ?>">
-                            <?php echo $rowcategory['category_name']; ?>
-                          </option>
-                          <?php } ?>
-                        </select>
-                      </div>
+                                    <!--Select Form-->
+                                    <form action="product.php" method="GET">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group flex-nowrap">
+                                                <select class="form-select form-select-md" name="select_category"
+                                                    required onchange="this.form.submit()">
+                                                    <option value="">Select Category</option>
+                                                    <?php while($rowcategory =  mysqli_fetch_array($resultcategory)){ ?>
+                                                    <option value=" <?php echo $rowcategory['category_name']; ?>">
+                                                        <?php echo $rowcategory['category_name']; ?>
+                                                    </option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </form>
-
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 
 
-  <div class="container mt-3">
-    <div class="fs-5 fw-bold">Search Result:</div>
-    <!--DISPLAYING DATA OF SELECT-->
-    <table class="table table-striped table-hover">
-      <thead class="bg-dark text-white">
-        <tr >
-          <th class="text-center">Image</th>
-          <th class="text-center">Name</th>
-          <th class="text-center">Price</th>
-          <th class="text-center">Category</th>
-          <th class="text-center" colspan="2">Action</th>
-        </tr>
-      </thead>
-      <tbody>
+    <div class="container mt-3">
+        <div class="fs-5 fw-bold">Search Result:</div>
+        <!--DISPLAYING DATA OF SELECT-->
+        <table class="table table-striped table-hover">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th class="text-center">Image</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Category</th>
+                    <th class="text-center" colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
 
-        <!--Select-->
-        <?php   
+                <!--Select-->
+                <?php   
           if(isset($_GET['select_category'])){
            $filtervalues = $_GET['select_category']; 
            $querysearchmenu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu WHERE CONCAT(Menu_name, Menu_price, Menu_category,Menu_filename) LIKE '%$filtervalues%'"); //You dont need like you do in SQL;
@@ -249,111 +250,112 @@
              if(mysqli_num_rows($querysearchmenu)>0 ){
                while($fetch_product_select = mysqli_fetch_assoc($querysearchmenu)){
                ?>
-        <form action="product.php" method="post">
-          <tr>
-            <td> <img src="asset/menu/<?php echo $fetch_product_select['Menu_filename']?>" alt="Image section"
-                class="card-img-top pt-3 img-responsive "
-                style="height:10rem; width:40%; display:block; margin-left:auto; margin-right:auto"></td>
-            <td>
-              <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_name']?></p>
-            </td>
-            <td>
-              <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_price']?></p>
-            </td>
-            <td>
-              <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_category']?></p>
-            </td>
-            <td>
-              <!--hidden inputs-->
-              <input type="hidden" name="product_category_name"
-                value="<?php echo $fetch_product_select['Menu_name'] ?>">
+                <form action="product.php" method="post">
+                    <tr>
+                        <td> <img src="asset/menu/<?php echo $fetch_product_select['Menu_filename']?>"
+                                alt="Image section" class="card-img-top pt-3 img-responsive "
+                                style="height:10rem; width:40%; display:block; margin-left:auto; margin-right:auto">
+                        </td>
+                        <td>
+                            <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_name']?></p>
+                        </td>
+                        <td>
+                            <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_price']?></p>
+                        </td>
+                        <td>
+                            <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_category']?></p>
+                        </td>
+                        <td>
+                            <!--hidden inputs-->
+                            <input type="hidden" name="product_category_name"
+                                value="<?php echo $fetch_product_select['Menu_name'] ?>">
 
-              <input type="hidden" name="product_category_price"
-                value="<?php echo $fetch_product_select['Menu_price'] ?>">
+                            <input type="hidden" name="product_category_price"
+                                value="<?php echo $fetch_product_select['Menu_price'] ?>">
 
-              <input type="hidden" name="product_category_category"
-                value="<?php echo $fetch_product_select['Menu_category'] ?>">
-              <input type="hidden" name="product_category_image"
-                value="<?php echo $fetch_product_select['Menu_filename'] ?>">
-            </td>
-            <td>
-              <!--Add to cart button-->
-              <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
-                class=" btn btn-outline-secondary w-100 mb-3">View</a>
-              <input type="submit" name="add_to_cart_select" value="Add to Cart" class="btn btn-success w-100">
-            </td>
-          </tr>
-        </form>
-        <?php
+                            <input type="hidden" name="product_category_category"
+                                value="<?php echo $fetch_product_select['Menu_category'] ?>">
+                            <input type="hidden" name="product_category_image"
+                                value="<?php echo $fetch_product_select['Menu_filename'] ?>">
+                        </td>
+                        <td>
+                            <!--Add to cart button-->
+                            <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
+                                class=" btn btn-outline-secondary w-100 mb-3">View</a>
+                            <input type="submit" name="add_to_cart_select" value="Add to Cart"
+                                class="btn btn-success w-100">
+                        </td>
+                    </tr>
+                </form>
+                <?php
                 };
                 };?>
 
-        <?php } ?>
+                <?php } ?>
 
 
 
 
-        <!--SEARCH SECTION-->
-        <?php   
+                <!--SEARCH SECTION-->
+                <?php   
           if(isset($_GET['search'])){
            $filtervalues = $_GET['search']; 
-           $querysearchmenu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu WHERE CONCAT(Menu_name, Menu_price, Menu_category,Menu_filename) LIKE '%$filtervalues%'"); //You dont need like you do in SQL;
+           $querysearchmenu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu WHERE CONCAT(Menu_name, Menu_price) LIKE '%$filtervalues%'"); //You dont need like you do in SQL;
                    
              if(mysqli_num_rows($querysearchmenu)>0 ){
                while($fetch_product_select = mysqli_fetch_assoc($querysearchmenu)){
                ?>
-        <form action="product.php" method="post">
-          <tr>
-            <td> <img src="asset/menu/<?php echo $fetch_product_select['Menu_filename']?>" alt="Image section"
-                class="card-img-top pt-3 img-responsive "
-                style="height:10rem; width:40%; display:block; margin-left:auto; margin-right:auto"></td>
-            <td>
-              <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_name']?></p>
-            </td>
-            <td>
-              <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_price']?></p>
-            </td>
-            <td>
-              <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_category']?></p>
-            </td>
-            <td>
-              <!--hidden inputs-->
-              <input type="hidden" name="product_category_name"
-                value="<?php echo $fetch_product_select['Menu_name'] ?>">
+                <form action="product.php" method="post">
+                    <tr>
+                        <td> <img src="asset/menu/<?php echo $fetch_product_select['Menu_filename']?>"
+                                alt="Image section" class="card-img-top pt-3 img-responsive "
+                                style="height:10rem; width:40%; display:block; margin-left:auto; margin-right:auto">
+                        </td>
+                        <td>
+                            <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_name']?></p>
+                        </td>
+                        <td>
+                            <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_price']?></p>
+                        </td>
+                        <td>
+                            <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_category']?></p>
+                        </td>
+                        <td>
+                            <!--hidden inputs-->
+                            <input type="hidden" name="product_category_name"
+                                value="<?php echo $fetch_product_select['Menu_name'] ?>">
 
-              <input type="hidden" name="product_category_price"
-                value="<?php echo $fetch_product_select['Menu_price'] ?>">
+                            <input type="hidden" name="product_category_price"
+                                value="<?php echo $fetch_product_select['Menu_price'] ?>">
 
-              <input type="hidden" name="product_category_category"
-                value="<?php echo $fetch_product_select['Menu_category'] ?>">
-              <input type="hidden" name="product_category_image"
-                value="<?php echo $fetch_product_select['Menu_filename'] ?>">
-            </td>
-            <td>
-              <!--Add to cart button-->
-              <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
-                class=" btn btn-outline-secondary w-100 mb-3">View</a>
-              <input type="submit" name="add_to_cart_select" value="Add to Cart" class="btn btn-success w-100">
-            </td>
-          </tr>
-        </form>
-        <?php
+                            <input type="hidden" name="product_category_category"
+                                value="<?php echo $fetch_product_select['Menu_category'] ?>">
+                            <input type="hidden" name="product_category_image"
+                                value="<?php echo $fetch_product_select['Menu_filename'] ?>">
+                        </td>
+                        <td>
+                            <!--Add to cart button-->
+                            <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
+                                class=" btn btn-outline-secondary w-100 mb-3">View</a>
+                            <input type="submit" name="add_to_cart_select" value="Add to Cart"
+                                class="btn btn-success w-100">
+                        </td>
+                    </tr>
+                </form>
+                <?php
                 };
                 };?>
 
-        <?php } ?>
+                <?php } ?>
 
 
-      </tbody>
-    </table>
-
-
-
-
-  </div>
+            </tbody>
+        </table>
 
 
 
+
+    </div>
 
 
 
@@ -361,59 +363,64 @@
 
 
 
-  <!--IMage Section-->
-  <section class="product ms-5 mb-4">
-    <h1 class="text-center mt-5 mb-3">Products</h1>
-    <div class="box-container justify-content-center">
 
-      <?php
+
+
+    <!--IMage Section-->
+    <section class="product ms-5 mb-4">
+        <h1 class="text-center mt-5 mb-3">Products</h1>
+        <div class="box-container justify-content-center">
+
+            <?php
         $start_from = ($page - 1 )*06;
   
         $select_product = mysqli_query($db_admin_account,"SELECT * FROM (SELECT * FROM admin_menu LIMIT $start_from, $num_per_page) _t ORDER BY RAND()"); //You dont need like you do in SQL;
         if(mysqli_num_rows($select_product)>0){
           while($fetch_product = mysqli_fetch_assoc($select_product)){
       ?>
-      <form action="product.php" method="post">
-        <div class="box rounded-3 " style="background-image: linear-gradient(to right, rgb(215, 238, 245), rgb(102, 185, 198),rgb(90, 187, 232));">
-          <img src="asset/menu/<?php echo $fetch_product['Menu_filename']?>" alt="Image section"
-            class="card-img-top pt-3 img-responsive " style="height:20rem; width:100%;">
-          <h3 class="mt-2 text-center"><?php echo $fetch_product['Menu_name']?></h3>
-          <div class="mt-2 text-center"><?php echo $fetch_product['Menu_price']?></h3>
-          </div>
+            <form action="product.php" method="post">
+                <div class="box rounded-3 "
+                    style="background-image: linear-gradient(to right, rgb(215, 238, 245), rgb(102, 185, 198),rgb(90, 187, 232));">
+                    <img src="asset/menu/<?php echo $fetch_product['Menu_filename']?>" alt="Image section"
+                        class="card-img-top pt-3 img-responsive " style="height:20rem; width:100%;">
+                    <h3 class="mt-2 text-center"><?php echo $fetch_product['Menu_name']?></h3>
+                    <div class="mt-2 text-center"><?php echo $fetch_product['Menu_price']?></h3>
+                    </div>
 
 
-          <!--hidden inputs-->
-          <input type="hidden" name="product_name" value="<?php echo $fetch_product['Menu_name'] ?>">
-          <input type="hidden" name="product_price" value="<?php echo $fetch_product['Menu_price'] ?>">
-          <input type="hidden" name="product_description" value="<?php echo $fetch_product['Menu_description'] ?>">
-          <input type="hidden" name="product_image" value="<?php echo $fetch_product['Menu_filename'] ?>">
+                    <!--hidden inputs-->
+                    <input type="hidden" name="product_name" value="<?php echo $fetch_product['Menu_name'] ?>">
+                    <input type="hidden" name="product_price" value="<?php echo $fetch_product['Menu_price'] ?>">
+                    <input type="hidden" name="product_description"
+                        value="<?php echo $fetch_product['Menu_description'] ?>">
+                    <input type="hidden" name="product_image" value="<?php echo $fetch_product['Menu_filename'] ?>">
 
-          <!--Add to cart button-->
-          <a href="home-view-image.php?id=<?php echo $fetch_product['Menu_id'] ?>"
-            class=" btn btn-outline-secondary w-100 mb-3">View</a>
-          <input type="submit" name="add_to_cart" value="Add to Cart" class="btn btn-success w-100">
-        </div>
-      </form>
+                    <!--Add to cart button-->
+                    <a href="home-view-image.php?id=<?php echo $fetch_product['Menu_id'] ?>"
+                        class=" btn btn-outline-secondary w-100 mb-3">View</a>
+                    <input type="submit" name="add_to_cart" value="Add to Cart" class="btn btn-success w-100">
+                </div>
+            </form>
 
-      <?php
+            <?php
                };
               };?>
-    </div>
-  </section>
+        </div>
+    </section>
 
 
-  <!--Page content-->
-  <?php
+    <!--Page content-->
+    <?php
     $sql = "SELECT * FROM admin_menu";
     $resultsql = mysqli_query($db_admin_account, $sql);
     $total_records = mysqli_num_rows($resultsql);
     $total_pages = ceil($total_records/$num_per_page);
     
   ?>
-  <nav aria-label=" Page navigation example">
-    <ul class="pagination justify-content-center ">
-      <li class="page-item mx-1">
-        <?php 
+    <nav aria-label=" Page navigation example">
+        <ul class="pagination justify-content-center ">
+            <li class="page-item mx-1">
+                <?php 
          if($page > 1){
           echo "  
           <a href='product.php?page=".($page-1)."' class='page-link  btn btn-primary '>
@@ -421,34 +428,34 @@
         </a>";
         }
         ?>
-      </li>
+            </li>
 
-      <li class="page-item active">
-        <?php
+            <li class="page-item active">
+                <?php
           for($i=1; $i<$total_pages; $i++){
             echo "<li class='page-item mx-1'><a href='product.php?page=".$i."' class='page-link'> ".$i."</a></li>";
            }  
         ?>
-      </li>
+            </li>
 
-      <li class="page-item mx-1">
-        <?php
+            <li class="page-item mx-1">
+                <?php
           if($i > $page){
             echo "
             <a href='product.php?page=".($page+1)."' class='page-link'>Next</a>";
           }
          ?>
-      </li>
-    </ul>
-  </nav>
+            </li>
+        </ul>
+    </nav>
 
 
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

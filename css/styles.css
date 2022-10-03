@@ -3,25 +3,26 @@ body{
 }
 .logo{
   width:22%;
-   height:8vh;
+  height:8vh;
 }
 
 .navbar{
   background:  #9FBACD;
   border-bottom: 2px solid white;
+  /* height: 100px; */
 }
  .navbar-brand {
-  font-family: 'poppins-bold', sans-serif !important;
+  font-family: 'Gothic A1', sans-serif;
   font-size: 20px;
   font-weight: bold;
 }
 
 .nav-item {
-  font-family: 'poppins-bold', sans-serif !important;
+  font-family: 'Gothic A1', sans-serif;
   font-size: 15px;
   text-shadow: 2px 2px 2px rgba(49, 44, 44, 0.767);
 }
-.nav-items:hover {
+.nav-item:hover {
   background-color: rgb(23, 171, 201);
   border-radius: 50px;
 }
@@ -52,6 +53,11 @@ body{
   border: 1px solid #ccc;
   background-color: #278cb4;
   width: 50%;
+}
+
+/* Button */
+.bg-button{
+  background:#EA6D52;
 }
 
 

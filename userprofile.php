@@ -35,14 +35,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 
-<body style="background-image: linear-gradient(to right, rgb(215, 238, 245), rgb(102, 185, 198),rgb(90, 187, 232));">
-    <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
+<body>
+       <!--Navigation Bar-->
+          <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
+
             <a class="navbar-brand" href="#">
-                <img src="asset/logopet.png" alt="Logo" style="width:19%; height:8vh" /><span
-                    style="text-shadow: 3px 3px 3px  black" class="mx-2 text-info fw-bold">PETKO.</span>
-                <span style="border-left: 3px solid rgba(5, 13, 98, 0.767); margin-right: 3px;padding: 3px;"> </span>
+                <img src="asset/logopet.png" alt="Logo" style="width:22%; height:8vh" />
                 <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
                         CLINIC</b></span>
             </a>
@@ -50,27 +50,27 @@
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
         </div>
 
         <div class="collapse navbar-collapse me-3" id="navbarScroll">
             <ul class="navbar-nav me-auto my-0 my-lg-0 " style="--bs-scroll-height: 100px;">
-            <div class="text-nowrap">
-            <li class="nav-item1">
-            <a href="userprofile.php"><img src=" asset/profile.png" alt="PETCO"
-                style="width: 50px;"></a>
-            </li>
-            </div>    
-            
-            <div class="text-nowrap">
+
+
+                <div class="text-nowrap">
                     <li class="nav-item">
 
-                        <a class="nav-link active text-white" aria-current="page" href="home.php">HOME</a>
+                        <a class="nav-link active text-white mt-2" aria-current="page" href="home.php">HOME</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="product.php">PRODUCT</a>
+                        <a class="nav-link text-white mt-2" href="product.php">SHOP</a>
+                    </li>
+                </div>
+
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a href="userprofile.php" class="nav-link text-white" ><img src=" asset/picon.png" alt="PETCO" style="width: 40px;"></a>
                     </li>
                 </div>
 
@@ -81,14 +81,15 @@
 
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="cart.php">CART<span
+                        <a class="nav-link text-white" href="cart.php"><img src=" asset/cart.png" alt="PETCO" style="width: 40px;"><span
                                 class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
 
                     </li>
                 </div>
+               
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link  text-white" href="logout-user.php"
+                        <a class="nav-link  text-white mt-2" href="logout-user.php"
                             onclick="return confirm('Are you sure do you want to logout?')">LOGOUT</a>
                     </li>
                 </div>

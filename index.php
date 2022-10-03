@@ -96,7 +96,7 @@
                 <div class="text-nowrap">
                     <li class="nav-item">
 
-                        <a class="nav-link text-white" href="petgallery.php">PET GALLERY</a>
+                        <a class="nav-link text-white" href="#imagesec">PET GALLERY</a>
 
                     </li>
                 </div>
@@ -182,7 +182,7 @@
                                 QUICKTIPS
                                 <!--Padding is optional-->
                             </span>
-                        </div>
+                        </div>  
 
 
                         <!--Pictures-->
@@ -193,7 +193,7 @@
                             <img src="asset/<?php echo $rowimages['image_filename'] ?>"
                                 class="card-img-top img-responsive" style="height:400px; width:100%;">
 
-                            <div class="mb-4">
+                            <div class="mb-4 justify-content-center">
                                 <br>
                                 <a href="index-view-image.php?id=<?php echo $rowimages['Image_id'] ?>"
                                     style="background:#EA6D52" class=" btn btn-warning w-50 text-light">Read</a>
