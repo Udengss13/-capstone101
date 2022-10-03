@@ -67,35 +67,23 @@
       <div class="row">
         <?php while($rowimage =  mysqli_fetch_array($resultimage)){ ?>
         <div class="col-12 d-flex justify-content-center mt-4">
-          <img src="asset/homepage/<?php echo $rowimage['Image_filename']; ?>" style="width:100%; height:90vh; ">
+          <img src="asset/homepage/<?php echo $rowimage['image_filename']; ?>" style="width:100%; height:90vh; ">
         </div>
 
         <div class=" container">
-          <div class="news-headings">
+          <div class="info">
             <div class="row">
               <div class="col-md-12 ">
                 <!--Name-->
                 <h1 class="text-center c-green display-8 " style="color: ; text-shadow: 2px 1px 0px pink">
                   <?php echo $rowimage['Image_title']; ?></h1>
-                <!--Price-->
-                <p class="text-center text-muted pb-4" style="font-size:20px">
-                  <?php echo $rowimage['Image_subtitle']; ?>
-                </p>
+               
 
               </div>
             </div>
           </div>
 
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12">
-                <div class="news-body">
-                  <label>Information:</label>
-                  <p class="c-white mb-5 " style="font-size: 20px"><?php echo $rowimage['Image_body']; ?></p>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
         <?php } ?>
       </div>

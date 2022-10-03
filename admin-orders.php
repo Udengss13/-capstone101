@@ -6,7 +6,7 @@ require_once "controllerUserData.php";
   // $user_id = $_SESSION['user_id'];
 
   if(!isset($user_id)){
-    echo "No Arder";
+    echo "No Order";
   }
 
   if(isset($_POST['confirmed'])){

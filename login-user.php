@@ -143,11 +143,7 @@
     </div>
 
 
-
-
-
-
-    <!--Footer-->
+    <!--Footer -->
     <footer class=" footer-banner" id="about">
         <div class="container text">
             <h1>PETCO SHOP</h1>

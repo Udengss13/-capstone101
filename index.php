@@ -9,7 +9,7 @@
   ?>
 
 <?php
-  $quicktipsquery = "SELECT * FROM `admin_quicktips`"; //You dont need like you do in SQL;
+  $quicktipsquery = "SELECT * FROM admin_quicktips"; //You dont need like you do in SQL;
   $quicktipsresult = mysqli_query($db_admin_account, $quicktipsquery);
   ?>
 
@@ -96,7 +96,7 @@
                 <div class="text-nowrap">
                     <li class="nav-item">
 
-                        <a class="nav-link text-white" href="petgallery.php">PET GALLERY</a>
+                        <a class="nav-link text-white" href="#imagesec">PET GALLERY</a>
 
                     </li>
                 </div>
@@ -170,7 +170,7 @@
         </div>
     </div>
 
-    <!--ANNOUNCEMENT-->
+    <!--QUICKTIPS-->
     <section class="flex-sect" id="imagesec">
         <section id="imagesection" class="div_background_light py-4">
             <div class="container-fluid px-5 mt-3">
@@ -182,34 +182,35 @@
                                 QUICKTIPS
                                 <!--Padding is optional-->
                             </span>
-                        </div>
+                        </div>  
 
 
                         <!--Pictures-->
 
                         <?php while($rowimages = mysqli_fetch_array($quicktipsresult)) {?>
 
-                        <div class="col-lg-4 col-xs-1 col-sm-5  m-5" style="height:400px;">
+
+                         <div class="col-lg-4 col-xs-1 col-sm-5  m-5" style="height:400px;">
                             <img src="asset/<?php echo $rowimages['image_filename'] ?>"
                                 class="card-img-top img-responsive" style="height:400px; width:100%;">
 
-                            <div class="mb-4">
+                            <div class="mb-4 justify-content-center">
                                 <br>
-                                <a href="index-view-image.php?id=<?php echo $rowimages['Image_id'] ?>"
+                                <a href="quicktips-view-image.php?id=<?php echo $rowimages['id'] ?>"
                                     style="background:#EA6D52" class=" btn btn-warning w-50 text-light">Read</a>
                             </div>
 
 
-                        </div>
+                        </div> 
 
-                        <?php }?>
+                        <?php }?> 
 
 
                     </div>
                 </div>
             </div>
         </section>
-    </section>
+    </section> 
     <!--ANNOUNCEMENT-->
     <section class="flex-sect" id="imagesec">
         <section id="imagesection" class="div_background_light py-4">
@@ -259,52 +260,23 @@
     <!--Footer-->
     <footer class=" footer-banner" id="about">
         <div class="container text">
-
+            
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-13 text-center">
                     <ul class="follow">
-                        <h3>FOLLOW US!</h3>
-                        <p></p><a
-                            href="https://www.google.com/maps/place/Petco.+Animal+Clinic/@14.8109306,120.9831885,17z/data=!3m1!4b1!4m5!3m4!1s0x3397add6664b08bf:0x5a91f2a8b8c4db95!8m2!3d14.8109306!4d120.9853772">Facebook
-                            <i class="fa-brands fa-facebook-square"></i></a><br>
-                        <a href="https://www.facebook.com/messages/t/100008437094309">Messenger <i
-                                class="fa-brands fa-facebook-messenger"></i></a><br>
-                        <a href="https://www.facebook.com/Udeng13">Instagram <i class="fa-brands fa-instagram"></i></a>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <ul class="company">
-                        <h3>Company</h3>
-                        <a href="https://www.facebook.com/Udeng13"> About Us<i
-                                class="fa-solid fa-table-layout"></i></a><br>
-                        <a href="https://www.facebook.com/messages/t/100008437094309">Promos <i
-                                class="fa-brands fa-facebook-messenger"></i></a><br>
-                        <a href="https://www.facebook.com/Udeng13">Privacy Policy <i
-                                class="fa-brands fa-instagram"></i></a>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <ul class="company">
-                        <h3>Company</h3>
-                        <a href="https://www.facebook.com/Udeng13">Facebook <i
-                                class="fa-brands fa-facebook-square"></i></a><br>
-                        <a href="https://www.facebook.com/messages/t/100008437094309">Messenger <i
-                                class="fa-brands fa-facebook-messenger"></i></a><br>
-                        <a href="https://www.facebook.com/Udeng13">Instagram <i class="fa-brands fa-instagram"></i></a>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <ul class="company">
-                        <h3>Company</h3>
-                        <a href="https://www.facebook.com/Udeng13">Facebook <i
-                                class="fa-brands fa-facebook-square"></i></a><br>
-                        <a href="https://www.facebook.com/messages/t/100008437094309">Messenger <i
-                                class="fa-brands fa-facebook-messenger"></i></a><br>
-                        <a href="https://www.facebook.com/Udeng13">Instagram <i class="fa-brands fa-instagram"></i></a>
-                    </ul>
-                </div>
-            </div>
-        </div>
+                        <h3>Please follow us</h3>
+
+                        <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="50px" height="40px"></a>
+                        <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="50px" height="40px"></a>
+                        <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="50px" height="40px"></a>
+                     
+                        </ul>
+                        
+
+                    
+                </div> 
+                
+               
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

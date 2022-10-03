@@ -1,10 +1,4 @@
-body{
-  background-image: url("../asset/bg.jpg");
-  background-size:     cover;                      /* <------ */
-  background-repeat:   no-repeat;
-  background-position: center center; 
-  background-attachment: fixed;
-}
+
 /*Background Color*/
 .nav_color{
   background-color: #1a497a !important;
