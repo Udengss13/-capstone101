@@ -43,15 +43,14 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
      <link rel="icon" href="asset/logopet.png" type="image/x-icon">
 </head>
 
-<body>
+<body style="background:  #9FBACD;">
 
 
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg nav_color navbar-dark nav_outline">
         <h3 class=""><img src=" asset/logopet.png" alt="PETCO"
                 style="width: 50px; padding-left: 10px; padding-top: 5px;">
-            <a class="navbar-brand fw-bold c-white" href="#" style="padding-left: 15px;">PET CO.</a>
-        </h3>
+            <a class="navbar-brand fw-bold c-white" href="#" style="padding-left: 15px;">PET CO.</a></h3>
         <button style="margin-right: 20px;" class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -67,7 +66,7 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
                         Content</button>
                     <ul class="dropdown-menu">
                         <li class="nav-item">
-                            <a class="dropdown-item" href="admin-content.php">News</a>
+                            <a class="dropdown-item" href="admin-content.php">Announcement and Promos</a>
                         </li>
                         <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
                         <li><a class="dropdown-item" href="admin-slider.php">slider</a></li>

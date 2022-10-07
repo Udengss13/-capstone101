@@ -43,8 +43,7 @@
   <title>Admin Content</title>
 </head>
 
-<body class="">
-  
+
 
   <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
         <div class="container-fluid">
@@ -76,9 +75,7 @@
     </div>
           
     </nav>
-
-
-
+    
   <!--All Content Here-->
   <div class="div_background_dark px-3">
     <h4 class="text-center c-white py-3">Edit Information Content for Home </h4>

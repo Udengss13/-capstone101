@@ -24,7 +24,7 @@
   <title>Admin || Content</title>
 </head>
 
-<body class="">
+<body style="background:  #9FBACD;">
   <!--Navbar-->
  <!--Navbar-->
  <nav class="navbar navbar-expand-lg nav_color navbar-dark nav_outline">

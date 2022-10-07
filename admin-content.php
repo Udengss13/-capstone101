@@ -25,7 +25,7 @@
     <title>Admin || Content</title>
 </head>
 
-<body class="">
+<body style="background:  #9FBACD;">
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg nav_color navbar-dark nav_outline">
         <h3 class=""><img src="asset/logopet.png" alt="Petco Logo"
@@ -48,7 +48,7 @@
                         Content</button>
                     <ul class="dropdown-menu">
                         <li class="nav-item">
-                            <a class="dropdown-item" href="admin-content.php">News</a>
+                            <a class="dropdown-item" href="admin-content.php">Announcement and Promos</a>
                         </li>
                         <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
                         <li><a class="dropdown-item" href="admin-slider.php">slider</a></li>
