@@ -2,70 +2,56 @@
 //https://www.codepile.net/pile/ap07x5A1
 session_start();
 require "php/connection.php";
-$email = "";
+
 $fname = "";
 $mname = "";
 $lname = "";
 $suffix = "";
 $address = "";
 $contact = "";
-$pettype= "";
-$petname= "";
-$petbreed= "";
 $errors = array(); 
+$position= "";
+$email= "";
+$idno = "";
+$empstatus="";
 
     //if user signup button
     if(isset($_POST['signup'])){
-          //for captcha
-        // if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
-        //     // echo "<script>alert('Incorrect verification code');</script>" ;
-        //     $errors[]= 'Incorrect Captcha code!';
-        // }
-
-        $fname = mysqli_real_escape_string($con, $_POST['first_name']);
-        $mname = mysqli_real_escape_string($con, $_POST['middle_name']);
-        $lname = mysqli_real_escape_string($con, $_POST['last_name']);
-        $suffix = mysqli_real_escape_string($con, $_POST['suffix']);
-        $address = mysqli_real_escape_string($con, $_POST['address']);
-        $email = mysqli_real_escape_string($con, $_POST['email']);
-        $password = mysqli_real_escape_string($con, $_POST['password']);
-        $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
-        $contact = mysqli_real_escape_string($con, $_POST['contact']);
-        $pettype = mysqli_real_escape_string($con, $_POST['pettype']);
-        $petbreed = mysqli_real_escape_string($con, $_POST['petbreed']);
-        $petname = mysqli_real_escape_string($con, $_POST['petname']);
-        $petsex = mysqli_real_escape_string($con, $_POST['petsex']);
-        $petbday = date('Y-m-d', strtotime($_POST['petbday']));
-        
        
+        $idno = mysqli_real_escape_string($db_emp, $_POST['idno']);
+        $fname = mysqli_real_escape_string($db_emp, $_POST['firstname']);
+        $mname = mysqli_real_escape_string($db_emp, $_POST['middle_name']);
+        $lname = mysqli_real_escape_string($db_emp, $_POST['last_name']);
+        $suffix = mysqli_real_escape_string($db_emp, $_POST['suffix']);
+        $position = mysqli_real_escape_string($db_emp, $_POST['position']);
+        $contact = mysqli_real_escape_string($db_emp, $_POST['contact']);
+        $email = mysqli_real_escape_string($db_emp, $_POST['email']);
+        $address = mysqli_real_escape_string($db_emp, $_POST['address']);       
+        $password = mysqli_real_escape_string($db_emp, $_POST['password']);
+        $cpassword = mysqli_real_escape_string($db_emp, $_POST['cpassword']);       
+        
+
 
         if($password !== $cpassword){
             $errors['password'] = "Confirm password not matched!";
         }
-        $email_check = "SELECT * FROM usertable WHERE email = '$email'";
-        $res = mysqli_query($con, $email_check);
+        $email_check = "SELECT * FROM employee_info WHERE email = '$email'";
+        $res = mysqli_query($db_emp, $email_check);
         
         if(mysqli_num_rows($res) > 0){
             $errors['email'] = "Email that you have entered is already exist!";
         }
         
 
-        if(count($errors) === 0){
+         if(count($errors) === 0){
          
-            $code = rand(999999, 111111);
-            $status = "notverified";
+             $code = rand(999999, 111111);
+             $status = "notverified";
           
+             $insert_data= "INSERT INTO `employee_info`(`emp_idno`, `emp_fname`, `emp_mname`, `emp_lname`, `emp_suffix`, `position`, `contact`, `email`, `address`, `password`, `code` , `status`, `emp_status`)
+                                    VALUES ('$idno', '$fname', '$mname', '$lname', '$suffix', '$position' ,'$contact', '$email','$address', '$password', '$code', '$status', '$empstatus')";
+             $data_check = mysqli_query($db_emp, $insert_data);
 
-            $insert_data = "INSERT INTO usertable (first_name, middle_name, last_name, suffix, address, email, password, code, status, contact)
-                            values('$fname', '$mname', '$lname', '$suffix', '$address', '$email', '$password', '$code', '$status', '$contact')";
-            $data_check1 = mysqli_query($con, $insert_data);
-
-            $user_id = $con->insert_id;
-
-            if($data_check1){
-                 $query1 = "INSERT INTO `pettable`(`user_id`, `pettype`, `petbreed`, `petname` ,`petsex`, `petbday`) VALUES ('$user_id','$pettype', '$petbreed', '$petname' , '$petsex', '$petbday')";
-                 $data_check = mysqli_query($con, $query1); 
-          
               if($data_check){
                 require 'phpmailer/PHPMailerAutoload.php';
                 $mail = new PHPMailer;
@@ -92,7 +78,7 @@ $errors = array();
                     $_SESSION['info'] = $info;
                     $_SESSION['email'] = $email;
                     $_SESSION['password'] = $password;
-                    header('location: user-otp.php');
+                    header('location: employeeotp.php');
                     exit();
                 }else{
                     $errors['otp-error'] = "Failed while sending code!";
@@ -105,66 +91,71 @@ $errors = array();
                     echo"Message has been Sent";
                 }
               }
-              else{
+            else{
                 $errors['db-error'] = "Failed while inserting data into database!";
                 }
-            }
-
         }
-        
 
     }
+    
     //--------------------------------------------------------------------------
     //if user click verification code submit button
     if(isset($_POST['check'])){
         $_SESSION['info'] = "";
-        $otp_code = mysqli_real_escape_string($con, $_POST['otp']);
-        $check_code = "SELECT * FROM usertable WHERE code = $otp_code";
-        $code_res = mysqli_query($con, $check_code);
-        if(mysqli_num_rows($code_res) > 0){
+        $otp_code = mysqli_real_escape_string($db_emp, $_POST['emp_otp']);
+        $check_code = "SELECT * FROM `employee_info` WHERE code = $otp_code";
+        $code_res = mysqli_query($db_emp, $check_code);
+        if(mysqli_num_rows($code_res) > 0)
+        {
             $fetch_data = mysqli_fetch_assoc($code_res);
             $fetch_code = $fetch_data['code'];
             $email = $fetch_data['email'];
             $code = 0;
             $status = 'verified';
-            $update_otp = "UPDATE usertable SET code = $code, status = '$status' WHERE code = $fetch_code";
-            $update_res = mysqli_query($con, $update_otp);
-            if($update_res){
+            $update_otp = "UPDATE `employee_info` SET code = $code, status = '$status' WHERE code = $fetch_code";
+            $update_res = mysqli_query($db_emp, $update_otp);
+            if($update_res)
+            {
                 // $_SESSION['name'] = $name;
                 $_SESSION['email'] = $email;
                  echo '<script> alert("You are now verified! You may now Login!");
-                        window.location.href="login-user.php";
+                        window.location.href="employee.php";
                         </script>';
                 exit();
-            }else{
+            }
+            else
+            {
                 $errors['otp-error'] = "Failed while updating code!";
             }
-        }else{
+        }
+        else{
             $errors['otp-error'] = "You've entered incorrect code!";
         }
     }
 
+
+
     //----------------------------------------------------------------------------
     //if user click login button
     if(isset($_POST['login'])){
-        $email = mysqli_real_escape_string($con, $_POST['email']);
-        $password = mysqli_real_escape_string($con, $_POST['password']);
+        $email = mysqli_real_escape_string($db_emp, $_POST['email']);
+        $password = mysqli_real_escape_string($db_emp, $_POST['password']);
         
-        $check_email = "SELECT * FROM usertable WHERE email = '$email' and password='$password'";
+        $check_email = "SELECT * FROM employee_info WHERE email = '$email' and password='$password'";
         
-        $res = mysqli_query($con, $check_email);
+        $res = mysqli_query($db_emp, $check_email);
         if(mysqli_num_rows($res) > 0){
             $fetch = mysqli_fetch_assoc($res);
             $status = $fetch['status'];
             if($status == 'verified'){
-                $_SESSION['user_id']= $fetch['id'];
+                $_SESSION['emp_id']= $fetch['id'];
                 $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
-                  header('location: home.php');
+                  header('location: employee-dashboard.php');
               }else{
                   $info = "It's look like you haven't still verify your email - $email";
                   $_SESSION['info'] = $info;
-                  header('location: user-otp.php');
+                  header('location: employeeotp.php');
               }
            
         }else{
