@@ -85,7 +85,7 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="services.php">SERVICES</a>
+                        <a class="nav-link text-white" href="#service">SERVICES</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
@@ -117,8 +117,6 @@
             </ul>
         </div>
     </nav>
-
-
 
 
     <!-- SLIDER Images -->
@@ -171,13 +169,13 @@
     </div>
 
     <!--QUICKTIPS-->
+    
     <section class="flex-sect" id="imagesec">
         <section id="imagesection" class="div_background_light py-4">
-            <div class="container-fluid px-5 mt-3">
+            <div class="container-fluid px-5">
                 <div class="col-lg-12 col-md-12">
                     <div class="justify-content-center row col-md-12 rounded-3">
-
-                        <div style="width: 100%; height: 20px; border-bottom: 2px solid white; text-align: center">
+                        <div style="width: 100%; height: 30px; border-bottom: 2px solid white; text-align: center">
                             <span style="font-size: 40px; background-color:#9FBACD; color: white">
                                 QUICKTIPS
                                 <!--Padding is optional-->
@@ -200,17 +198,16 @@
                                     style="background:#EA6D52" class=" btn btn-warning w-50 text-light">Read</a>
                             </div>
 
-
                         </div> 
 
                         <?php }?> 
-
 
                     </div>
                 </div>
             </div>
         </section>
     </section> 
+
     <!--ANNOUNCEMENT-->
     <section class="flex-sect" id="imagesec">
         <section id="imagesection" class="div_background_light py-4">
@@ -255,9 +252,26 @@
         </section>
     </section>
 
+    <!--SERVICES-->
+    <section class="d-flex align-content-start flex-wrap" id="service">
+    <div class="justify-content-center row col-md-12 rounded-3">
+                        <div style="width: 100%; height: 30px; border-bottom: 2px solid white; text-align: center">
+                            <span style="font-size: 40px; background-color:#9FBACD; color: white">
+                               SERVICES
+                                <!--Padding is optional-->
+                            </span>
+                        </div>  
+        
+    <div class="p-2">Vaccination</div>
+    <div class="p-2">Consultation</div>
+  <div class="p-2">Deworming</div>
 
 
-    <!--Footer-->
+</section>
+
+
+
+    <!--Footer 
     <footer class=" footer-banner" id="about">
         <div class="container text">
             
@@ -277,7 +291,7 @@
                 </div> 
                 
                
-    </footer>
+    </footer> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
