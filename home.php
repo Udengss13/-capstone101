@@ -51,7 +51,7 @@
         <p class="text-capitalize text-center">Welcome
             <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></p>
     </div>
-    
+
 
 
 
@@ -76,7 +76,7 @@
                 <div class="text-nowrap">
                     <li class="nav-item">
 
-                        <a class="nav-link active text-white mt-2" aria-current="page" href="home.php">HOME</a>
+                        <a class="nav-link bg-primary text-white mt-2" aria-current="page" href="home.php">HOME</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
@@ -87,7 +87,8 @@
 
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a href="userprofile.php" class="nav-link text-white" ><img src=" asset/picon.png" alt="PETCO" style="width: 40px;"></a>
+                        <a href="userprofile.php" class="nav-link text-white"><img src=" asset/picon.png" alt="PETCO"
+                                style="width: 40px;"></a>
                     </li>
                 </div>
 
@@ -98,12 +99,13 @@
 
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="cart.php"><img src=" asset/cart.png" alt="PETCO" style="width: 40px;"><span
+                        <a class="nav-link text-white" href="cart.php"><img src=" asset/cart.png" alt="PETCO"
+                                style="width: 40px;"><span
                                 class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
 
                     </li>
                 </div>
-               
+
                 <div class="text-nowrap">
                     <li class="nav-item">
                         <a class="nav-link  text-white mt-2" href="logout-user.php"
@@ -114,7 +116,7 @@
         </div>
     </nav>
 
-<!-- 
+    <!-- 
     <div style="height: 100px;">
   <button onclick="fireSweetAlert()">Show sweet alert example</button>
 </div>
@@ -263,7 +265,28 @@
         </section>
     </section>
 
+    <!--Footer-->
+    <footer class=" footer-banner" id="about">
+        <div class="container text">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <ul class="follow">
+                        <h3>Please follow us</h3>
 
+                        <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="50px"
+                                height="40px"></a>
+                        <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="50px"
+                                height="40px"></a>
+                        <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="50px"
+                                height="40px"></a>
+                    </ul>
+                    <h5>© 2022 All Rights Reserved. PetCo. Animal Clinic.</h5>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
 
 
 

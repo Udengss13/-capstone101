@@ -1,4 +1,4 @@
-<?php require_once "controllerUserData.php";  
+<?php require_once "contollerEmployeeData.php";  
 
 ?>
 <!DOCTYPE html>
@@ -69,7 +69,7 @@
         <!--Sign Up form-->
         <div class="container py-3 mt-5 mb-5 rounded-3">
 
-            <form action="signup-user.php" method="POST" autocomplete="">
+            <form action="emp_signup.php" method="POST" autocomplete="">
 
                 <!--Message Alert-->
                 <?php if(count($errors) == 1){ ?>
@@ -105,7 +105,7 @@
                         <div class="col-6">
                             <!--FName-->
                             <div class="form-floating mt-3">
-                                <input class="form-control mb-2" type="text" name="first_name" placeholder="First Name"
+                                <input class="form-control mb-2" type="text" name="firstname" placeholder="First Name"
                                     required value="<?php echo $fname ?>" id="floatingFirst" autocomplete="off">
                                 <label for="floatingFirst">First Name</label>
                             </div>
@@ -139,8 +139,8 @@
 
                             <div class="form-group">
                                 <!-- <label for="exampleFormControlSelect1">Position</label> -->
-                                <select class="form-control" id="exampleFormControlSelect1" >
-                                    <option value="" disabled selected> Select Position ▼</option>
+                                <select class="form-control" id="exampleFormControlSelect1" name="position" value="<?php echo $position ?>">
+                                    <option value="" disabled selected> Select Position ▼ </option>
                                     <option value="veterinarian">Veterinarian</option>
                                     <option value="receptionist">Receptionist</option>
                                 </select>
@@ -152,8 +152,8 @@
                         <div class="col-6 mt-3">
                             <!-- ID Number -->
                             <div class="form-floating mb-2">
-                                <input class="form-control" type="email" name="email" placeholder="Email Address"
-                                    required value="<?php echo $email ?>" id="floatingEmail" autocomplete="off">
+                                <input class="form-control" type="text" name="idno" placeholder="Email Address"
+                                    required value="<?php echo $idno ?>" id="floatingEmail" autocomplete="off">
                                 <label for="floatingEmail">ID Number</label>
                             </div>
                             <!--Email-->
