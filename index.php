@@ -21,6 +21,7 @@
     <link rel="icon" href="asset/logopet.png" type="image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -31,27 +32,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-    @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
-
-    /* .nav-item {
-        margin-left: 3px
-    }
-
-    .nav-item:hover {
-        background-color: rgb(23, 171, 201);
-        border-radius: ;
-
-    }
-
-    .tips {
-        font-family: 'Poppins';
-        font-size: 22px;
-        font-size: 30px;
-        font-style: bold;
-        color: Blue;
-    } */
-    </style>
+    
 </head>
 
 <body>
@@ -168,8 +149,8 @@
         </div>
     </div>
 
+
     <!--QUICKTIPS-->
-    
     <section class="flex-sect" id="imagesec">
         <section id="imagesection" class="div_background_light py-4">
             <div class="container-fluid px-5">
@@ -184,7 +165,6 @@
 
 
                         <!--Pictures-->
-
                         <?php while($rowimages = mysqli_fetch_array($quicktipsresult)) {?>
 
 
@@ -198,12 +178,8 @@
                                     style="background:#EA6D52" class=" btn btn-warning w-50 text-light">Read</a>
                             </div>
 
-<<<<<<< HEAD
-                        </div> 
-=======
 
                         </div>
->>>>>>> 2998de537e48941273c23511a72e2a874dea993c
 
                         <?php }?>
 
@@ -211,12 +187,8 @@
                 </div>
             </div>
         </section>
-<<<<<<< HEAD
-    </section> 
-
-=======
     </section>
->>>>>>> 2998de537e48941273c23511a72e2a874dea993c
+    
     <!--ANNOUNCEMENT-->
     <section class="flex-sect" id="imagesec">
         <section id="imagesection" class="div_background_light py-4">
@@ -262,7 +234,7 @@
     </section>
 
     <!--SERVICES-->
-    <section class="d-flex align-content-start flex-wrap" id="service">
+    <section class="d-flex justify-content-around" id="service">
     <div class="justify-content-center row col-md-12 rounded-3">
                         <div style="width: 100%; height: 30px; border-bottom: 2px solid white; text-align: center">
                             <span style="font-size: 40px; background-color:#9FBACD; color: white">
@@ -271,9 +243,33 @@
                             </span>
                         </div>  
         
-    <div class="p-2">Vaccination</div>
-    <div class="p-2">Consultation</div>
-  <div class="p-2">Deworming</div>
+    
+
+  <div class="d-flex justify-content-around mt-4">
+    
+  <!-- <div class="p-2">Vaccination</div> -->
+  <button type="button" class="btn btn-outline-primary">Vaccination</button>
+  <button type="button" class="btn btn-outline-primary">Confinement</button>
+  <button type="button" class="btn btn-outline-primary">Pet Supplies</button>
+                        </div>
+
+    <div class="d-flex justify-content-around mt-4">
+    
+    <button type="button" class="btn btn-outline-primary">Consultation</button>
+    <button type="button" class="btn btn-outline-primary">Surgery</button>
+    <button type="button" class="btn btn-outline-primary">Treatment</button>
+                          </div>
+
+    <div class="d-flex justify-content-around mt-4">
+    
+    <button type="button" class="btn btn-outline-primary">Deworming</button>
+    <button type="button" class="btn btn-outline-primary">Grooming</button>
+    <button type="button" class="btn btn-outline-primary">Laboratory Test</button>
+                          </div>
+
+  
+
+
 
 
 </section>
@@ -299,15 +295,7 @@
                 </div>
 
 
-<<<<<<< HEAD
-                    
-                </div> 
-                
-               
-    </footer> -->
-=======
     </footer>
->>>>>>> 2998de537e48941273c23511a72e2a874dea993c
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">

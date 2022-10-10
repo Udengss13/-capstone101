@@ -7,7 +7,7 @@ body{
   background:  #9FBACD;
 }
 .logo{
-  width:22%;
+  width:23%;
   height:8vh;
 }
 
@@ -88,7 +88,7 @@ body{
 .flex-sect{
   background-color:white;
   padding:50px 0;
-  font-family:Helvetica, serif;
+  font-family: 'Poppins', sans-serif;
 }
 .flex-title{
   margin-bottom:15px;

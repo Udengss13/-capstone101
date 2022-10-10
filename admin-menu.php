@@ -17,7 +17,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/color.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -34,59 +34,94 @@
 </style>
 
 <body class="">
-  <!--Navbar
--->
-  <nav class="navbar navbar-expand-lg nav_color navbar-dark nav_outline">
-    <h3 class=""><img src=" asset/logopet.png" alt="PETCO" style="width: 50px; padding-left: 10px; padding-top: 5px;">
-      <a class="navbar-brand fw-bold c-white" href="#" style="padding-left: 15px;">PET CO.</a>
-    </h3>
-    <button style="margin-right: 20px;" class="navbar-toggler" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end col-6" style="padding-right: 20px;" id="navbarNav">
-      <ul class="navbar-nav text-center gap-3" style="padding-left: 10px;">
-        <li class="nav-item">
-          <a class="nav-link c-green" href="admin-orders.php">Order</a>
-        </li>
-        <div class="dropdown">
-           <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"> Content</button>
-          <ul class="dropdown-menu">
-           <li class="nav-item">
-                <a class="dropdown-item" href="admin-content.php">News</a>
-           </li>
-            <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
-            <li><a class="dropdown-item" href="admin-slider.php">slider</a></li>
-            
-          </ul>
-       </div>
-        <li class="nav-item">
-          <a class="nav-link c-green  rounded" href="admin-category-list.php">Category</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link c-white bg_nav_menu rounded  " href="admin-menu.php">Product</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link  c-green  rounded" href="admin-dashboard.php">User List</a>
-        </li>
+<nav class="navbar navbar-expand-lg navbar-light ; ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="asset/logopet.png" alt="Logo" class="logo" />
+                <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
+                        CLINIC</b></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <li class="nav-item">
-          <a class="nav-link c-green" href="admin-login.php">Logout</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+        </div>
+
+        <div class="collapse navbar-collapse me-3" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-0 my-lg-0 " style="--bs-scroll-height: 100px;">
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white bg-primary " style="border-radius:10px;" aria-current="page"
+                            href="index.php">HOME</a>
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="shop.php">Products</a>
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="appointments.php">Appointments</a>
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="messages.php">Messages</a>
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+
+                        <a class="nav-link text-white" href="employee-dashboard.php">My Profile</a>
+
+                    </li>
+                </div>
+                <!-- <div class=" text-white">
+         <?php echo  date("m/d/y") . "<br>"; ?>
+       </div> -->
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="employee.php">Log-out</a>
+                    </li>
+                </div>
+
+                
+            </ul>
+        </div>
+    </nav>
+
 
   <!--Content of Menu-->
   <div class="container-xl-fluid mt-5 mb-5">
     <div class="px-3">
-      <h4 class="text-center c-white py-3">- Add New Product -</h4>
+      <h4 class="text-center c-white py-3">All Products</h4>
 
-      <!--Card-->
+      <!-- Modal -->
+
+      <div class="d-flex flex-row-reverse">
+  <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#myModal">
+    Add
+  </button>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add products</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
       <form action="php/menu-process.php" method="post" enctype="multipart/form-data"
         class="row gap-2 justify-content-center">
-        <div class="row justify-content-md-center">
-          <div class="col-lg-7 col-md-6 col-sm-12">
+        
             <div class="card d-flex justify-content-center">
               <div class="card-header">
                 Product Information
@@ -129,21 +164,30 @@
                 </li>
                 <li class="list-group-item">
                   <button type="submit" name="news" class="btn btn-outline-success float-end"
-                    style="max-width:450px;">Add</button>
+                    style="max-width:450px;">Confirm</button>
                 </li>
               </ul>
 
-            </div>
-          </div>
+            
         </div>
-      </form>
+      </form> 
+      </div>
 
-      <!--Displaying Data-->
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      <!--Displaying Data -->
       <div class="div_background_light">
         <div class="table-responsive mt-4 mx-auto" style="width:95%;">
           <table class="table mt-3">
             <thead class="table-dark c-white">
-              <th> ID</th>
+              <!-- <th> ID</th> -->
               <th>Product Name</th>
               <th>Description</th>
               <th>Price</th>
@@ -153,7 +197,7 @@
             </thead>
             <?php while($rowmenu =  mysqli_fetch_array($resultmenu)){ ?>
             <tbody>
-              <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_id']; ?></td>
+              <!-- <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_id']; ?></td> -->
               <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_name']; ?></td>
               <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_description']; ?></td>
               <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_price']; ?></td>
@@ -163,14 +207,14 @@
                   <img src=" asset/menu/<?php echo $rowmenu['Menu_filename']; ?> "
                     class="zoom img-thumbnail img-responsive images_menu"></a>
               </td>
-
+              
               <td class=" c-red ">
-                <!--Edit-->
+                <!-- Edit -->
                 <a href="admin-edit-menu.php?editid=<?php echo $rowmenu['Menu_id']; ?>"
                   class="text-decoration-none c-green">
                   <button class="btn btn-outline-success mx-2 my-2">Edit</button></a>
 
-                <!--Delete-->
+               <!--  Delete -->
                 <a href="php/menu-process.php?id=<?php echo $rowmenu['Menu_id'];?>"><input type="button"
                     class="btn btn-outline-danger" value="Delete"></a>
               </td>
@@ -180,7 +224,8 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
