@@ -74,9 +74,42 @@ body{
 .c-blue{
   color: #034D73;
 }
+.c-darkblue{
+  color: #030552;
+}
 
+/*Css PROFILE-------------------------------------------------------------------------------*/
+.labels{
+  color: white;
+}
+.blue{
+  background: #008ae6;
+}
 
+.profilebg{
+  background-color: rgba(255, 255, 255, 0.156);
+  border-radius: 10px;
+}
 
+/*Css Image View-------------------------------------------------------------------------------*/
+.imgview{
+  box-shadow:0 1px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.imgview:hover{
+  box-shadow:0 20px 30px 0 skyblue;
+}
+.img-responsive{
+  width: 100%;
+  
+}
+.img-responsive:hover{
+  box-shadow:0 1px 4px 10px #75b3dd;
+  
+}
+.img-body{
+  background-color: rgba(255, 255, 255, 0.549);
+  border-radius: 10px;
+}
 /*Css ANNOUNCEMENT-------------------------------------------------------------------------------*/
 .container-width{
   width:100%;
@@ -111,7 +144,6 @@ body{
 }
 .card{
   background-color:white;
-
   box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.2);
   border-radius:2px;
   transition:all 0.5s ease;

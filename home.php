@@ -206,7 +206,7 @@
 
                             <div class="mb-4 justify-content-center">
                                 <br>
-                                <a href="index-view-image.php?id=<?php echo $rowimages['Image_id'] ?>"
+                                <a href="user-view-image.php?id=<?php echo $rowimages['Image_id'] ?>"
                                     style="background:#EA6D52" class=" btn btn-warning w-50 text-light">Read</a>
                             </div>
 
@@ -249,7 +249,7 @@
                                     <?php echo $rowimage['Image_body'];?>
                                 </p> -->
                                 <div class="mb-4">
-                                    <a href="index-view-image.php?id=<?php echo $rowimage['Image_id'] ?>"
+                                    <a href="user-view-image.php?id=<?php echo $rowimage['Image_id'] ?>"
                                         class=" btn btn-success w-100">View Details</a>
                                 </div>
 

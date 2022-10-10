@@ -14,6 +14,10 @@
 
       $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepage");
 ?>
+<?php
+$users = "SELECT * FROM usertable where id='$user_id'"; //You dont need like you do in SQL;
+$userresult = mysqli_query($con, $queryimage);
+?>
 
 
 
@@ -36,8 +40,8 @@
 </head>
 
 <body>
-       <!--Navigation Bar-->
-          <!--Navigation Bar-->
+    <!--Navigation Bar-->
+    <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
 
@@ -70,7 +74,8 @@
 
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a href="userprofile.php" class="nav-link text-white" ><img src=" asset/picon.png" alt="PETCO" style="width: 40px;"></a>
+                        <a href="userprofile.php" class="nav-link text-white"><img src=" asset/picon.png" alt="PETCO"
+                                style="width: 40px;"></a>
                     </li>
                 </div>
 
@@ -81,12 +86,13 @@
 
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="cart.php"><img src=" asset/cart.png" alt="PETCO" style="width: 40px;"><span
+                        <a class="nav-link text-white" href="cart.php"><img src=" asset/cart.png" alt="PETCO"
+                                style="width: 40px;"><span
                                 class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
 
                     </li>
                 </div>
-               
+
                 <div class="text-nowrap">
                     <li class="nav-item">
                         <a class="nav-link  text-white mt-2" href="logout-user.php"
@@ -96,80 +102,214 @@
             </ul>
         </div>
     </nav>
-    
-    <div class="container ">
-                    <!--1st row-->
-                    <div class="row ">
-                        <div class="col-6">
-                            <!--FName-->
-                            <div class="form-floating mt-3">
-                                <input class="form-control mb-2" type="text" name="first_name" placeholder="First Name"
-                                    required value="<?php echo $fname ?>" id="floatingFirst" autocomplete="off">
-                                <label for="floatingFirst">First Name</label>
-                            </div>
 
-                            <!--MName-->
-                            <div class="form-floating mb-2">
-                                <input class="form-control" type="text" name="middle_name" placeholder="Middle Name"
-                                    required value="<?php echo $mname ?>" id="floatingMiddle" autocomplete="off">
-                                <label for="floatingMiddle">Middle Name</label>
-                            </div>
+    <div class="container-fluid bg-light">
+        <div class="container ">
+            <!--1st row-->
+            <div class="row mt-4">
+                <div class="col-7">
+                    <h2>My Profile</h2>
 
-                            <!--LName-->
-                            <div class="form-floating">
-                                <input class="form-control mb-2" type="text" name="last_name" placeholder="Last Name"
-                                    required value="<?php echo $lname ?>" id="floatingLast" autocomplete="off">
-                                <label for="floatingLast">Last Name</label>
-                            </div>
+                </div>
+                <div class="col-5 mt-2">
+                    <a href="edi_profile.php"> Edit <img src="asset/profile/edit.png" alt="Logo" style="width:7%; height:4vh" /></a>
+                    Message <img src="asset/profile/messages.png" alt="Logo" style="width:7%; height:4vh" /> 
+                    <a href="#imagesec"> My Pet <img src="asset/profile/paw.png" alt="Logo" style="width:7%; height:4vh" /></a>
 
-                            <!--Suffix-->
-                            <div class="form-floating mb-2">
-                                <input class="form-control" type="text" name="suffix" placeholder="Suffix"
-                                    value="<?php echo $suffix ?>" id="floatingSuffix" autocomplete="off">
-                                <label for="floatingSuffix">Suffix</label>
-                            </div>
-
-                            <div class="form-floating">
-                                <input class="form-control" type="text" name="contact" placeholder="Suffix"
-                                    id="floatingSuffix" autocomplete="off">
-                                <label for="floatingSuffix">Contact No</label>
-                            </div>
-                        </div>
-
-                        <!--2nd Column-->
-                        <div class="col-6 mt-3">
-                            <!--Email-->
-                            <div class="form-floating mb-2">
-                                <input class="form-control" type="email" name="email" placeholder="Email Address"
-                                    required value="<?php echo $email ?>" id="floatingEmail" autocomplete="off">
-                                <label for="floatingEmail">Email</label>
-                            </div>
-
-                            <!--Address-->
-                            <div class="form-floating mb-2">
-                                <input class="form-control" type="text" name="address" placeholder="Address" required
-                                    value="<?php echo $address ?>" id="floatingAddress" autocomplete="off">
-                                <label for="floatingAddress">Complete Address</label>
-                            </div>
-
-                            <!--Password-->
-                            <div class="form-floating mb-2">
-                                <input class="form-control" type="password" name="password" placeholder="Password"
-                                    required id="floatingPass">
-                                <label for="floatingPassword">Password</label>
-                            </div>
-
-                            <!--Confirm Password-->
-                            <div class="form-floating">
-                                <input class="form-control" type="password" name="cpassword"
-                                    placeholder="Confirm password" required id="floatingConfirm">
-                                <label for="floatingConfirm">Confirm Password</label>
-                            </div>
-                        </div>
-                        <!--end of row-->
-                    </div>
-
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col ">
+                <?php 
+                    $select_user = mysqli_query($con, "SELECT * FROM usertable WHERE id = '$user_id'");
+                    if(mysqli_num_rows($select_user) > 0){
+                    $fetch_user = mysqli_fetch_assoc($select_user); 
+                    };
+                ?>
+                <!-- <p class="text-capitalize text-center">Welcome
+                    <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></p> -->
+                <div class="col-lg-5 profilebg p-4">
+                    <!-- <div class="card mb-4">
+                            <div class="card-body"> -->
+                    <div class="row">
+                        <!-- <div class="col-sm-4 labels"> -->
+                        <img src="asset/profile/user.png" alt="Logo" style="width:40%; height:17vh" />
+                        <!-- </div> -->
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4 labels">
+                            <p class="mb-0">First Name:</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="c-blue mb-0"><?php echo $fetch_user['first_name']; ?></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4 labels">
+                            <p class="mb-0">Middle Name:</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="c-blue mb-0"><?php echo $fetch_user['middle_name']; ?></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4 labels">
+                            <p class="mb-0">Last Name:</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="c-blue mb-0"><?php echo $fetch_user['last_name']; ?></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4 labels">
+                            <p class="mb-0">Suffix:</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="c-blue mb-0"><?php echo $fetch_user['suffix']; ?></p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-4 labels">
+                            <p class="mb-0">Contact Number:</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="c-blue mb-0"><?php echo $fetch_user['contact']; ?></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4 labels">
+                            <p class="mb-0">Address:</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="c-blue mb-0"><?php echo $fetch_user['address']; ?></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4 labels">
+                            <p class="mb-0">Email:</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="c-blue mb-0"><?php echo $fetch_user['email']; ?></p>
+                        </div>
+                    </div>
+                    <!-- </div>
+                        </div> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <hr>
+        <!--ANNOUNCEMENT-->
+    <section class="flex-sect" id="imagesec">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col ">
+                <?php 
+                    $select_pet = mysqli_query($con, "SELECT * FROM pettable WHERE user_id = '$user_id'");
+                    if(mysqli_num_rows($select_user) > 0){
+                    $fetch_user = mysqli_fetch_assoc($select_pet); 
+                    };
+                ?>
+                
+                <div class="col-lg-5 profilebg p-4">
+                    <!-- <div class="card mb-4">
+                            <div class="card-body"> -->
+                    <div class="row">
+                        <!-- <div class="col-sm-4 labels"> -->
+                        <img src="asset/profile/pets.png" alt="Logo" style="width:40%; height:17vh" />
+                        <!-- </div> -->
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4 labels">
+                            <p class="mb-0">Pet Name:</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="c-blue mb-0"><?php echo $fetch_user['petname']; ?></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4 labels">
+                            <p class="mb-0">Pet Type:</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="c-blue mb-0"><?php echo $fetch_user['pettype']; ?></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4 labels">
+                            <p class="mb-0">Pet Breed:</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="c-blue mb-0"><?php echo $fetch_user['petbreed']; ?></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4 labels">
+                            <p class="mb-0">Pet Sex:</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="c-blue mb-0"><?php echo $fetch_user['petsex']; ?></p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-4 labels">
+                            <p class="mb-0">Pet Birthday:</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="c-blue mb-0"><?php echo $fetch_user['petbday']; ?></p>
+                        </div>
+                    </div>
+                    <hr>
+                    
+                    <!-- </div>
+                        </div> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </section>
+     <!--Footer-->
+     <footer class=" footer-banner mt-5" id="about">
+        <div class="container text">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <ul class="follow">
+                        <h3>Please follow us</h3>
+
+                        <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="50px"
+                                height="40px"></a>
+                        <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="50px"
+                                height="40px"></a>
+                        <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="50px"
+                                height="40px"></a>
+                    </ul>
+                    <h5>© 2022 All Rights Reserved. PetCo. Animal Clinic.</h5>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
 
 
 

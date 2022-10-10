@@ -1,5 +1,7 @@
 <?php
    require("connection.php");
+
+   $user_id = $_SESSION['user_id'];
   
    //Add new Category
    if(isset($_POST['submit_category'])){

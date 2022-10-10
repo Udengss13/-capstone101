@@ -161,14 +161,14 @@
                             <td class="align-middle"><?= $fetch_cart['Cart_name'];?></td>
                             <!--Price-->
                             <td class="align-middle">Php
-                                <?php echo number_format($fetch_cart['Cart_price']);?>
+                                <?php echo number_format($fetch_cart['Cart_price'],2);?>
                             </td>
                             <!--Input Number and Update Button-->
                             <td class="align-middle" class="">
                                 <form action="" method="post">
-                                <input type="hidden" name="update_quantity_id" min="1"
+                                <input type="hidden" name="update_quantity_id" min="1" max="10"
                                     value="<?php echo $fetch_cart['Cart_id'] ?>">
-                                <input type="number" name="update_quantity" min="1"
+                                <input type="number" name="update_quantity" min="1" max="10"
                                     value="<?php echo $fetch_cart['Cart_quantity'] ?>" class="col-5 prc">
                                 <input type="submit" value="Update" name="update_update_btn"
                                         class="btn btn-success">
@@ -178,7 +178,8 @@
                             <!--Quantity-->
 
                             <td class="align-middle">Php
-                                <?php echo $sub_total = $fetch_cart['Cart_price'] * $fetch_cart['Cart_quantity'];?>
+                                <?php $sub_total = $fetch_cart['Cart_price'] * $fetch_cart['Cart_quantity'];
+                                echo number_format($sub_total,2)?>
                             </td>
                             <!--Remove Button-->
                             <td class="align-middle"><a href="cart.php?remove=<?php echo $fetch_cart['Cart_id'] ?>"
@@ -203,7 +204,7 @@
                             <!--Total-->
                             <td colspan="1" class="text-center fw-bold align-middle">Total Cart:</td>
                             <td class="fw-bold fs-6 align-middle">Php
-                                <?php echo number_format($grand_total) ?></td>
+                                <?php echo number_format($grand_total,2) ?></td>
                                 <output id="result"></output>
                             <td><a href="cart.php?delete_all"
                                     class="btn btn-danger   <?php  echo ($grand_total > 1),'disabled'; ?>"

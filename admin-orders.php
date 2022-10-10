@@ -30,6 +30,19 @@ require_once "controllerUserData.php";
      header('location: admin-orders.php');
    }
   }
+
+  if(isset($_POST['pickup'])){
+    $update_status = $_POST['update_status'];
+    $update_status_id = $_POST['update_status_id'];
+    $update_status = 2;
+    
+    $update_status_query = mysqli_query($con, "UPDATE `order` SET  order_status = '2'
+    WHERE order_user_id = '$user_id'");
+
+   if($update_status_query){
+     header('location: admin-orders.php');
+   }
+  }
   
 ?>
 <!DOCTYPE html>
@@ -109,7 +122,7 @@ require_once "controllerUserData.php";
                         <tbody>
                             <?php 
                                       $i = 1;
-                                      $order_query = mysqli_query($con, "SELECT * FROM `order` " );
+                                      $order_query = mysqli_query($con, "SELECT * FROM `order` JOIN usertable on order.order_user_id=usertable.id ORDER BY `order`.`id` DESC " );
                                       
                                       if(mysqli_num_rows($order_query) > 0){
                                         while($row = mysqli_fetch_assoc($order_query)){    
@@ -133,7 +146,7 @@ require_once "controllerUserData.php";
 
                                 <?php elseif($row['order_status'] == 2): ?>
                                 <td class="text-center">
-                                    <span class="badge badge-success bg-success text-white">For Pick Up</span>
+                                    <span class="badge badge-success bg-warning text-white">For Pick Up</span>
                                     <input type="hidden" value="<?php echo $row['order_status'] ?>"
                                         name="update_status">
                                     <input type="hidden" value="<?php echo $row['order_user_id'] ?>"
@@ -184,12 +197,12 @@ require_once "controllerUserData.php";
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title"> View Order</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal"></button> -->
                 </div>
 
                 <!-- Modal body -->
 
-                <form action="php/category-list-process.php" method="post" class="row gap-2 justify-content-center">
+                <form action=" " method="post" class="row gap-2 justify-content-center">
                     <div class="modal-body">
                         <div class="container-fluid">
 
@@ -215,14 +228,14 @@ require_once "controllerUserData.php";
                                     <tr>
                                         <td><?php echo $row['quantity'] ?></td>
                                         <td><?php echo $row['product_name'] ?></td>
-                                        <td><?php echo $row['price'] ?></td>
+                                        <td>Php <?php echo number_Format($row['price'],2 )?></td>
                                     </tr>
                                     
 
                                     <?php endwhile; ?>
                                     <tr>
                                         <th colspan="2" class="text-right">TOTAL</th>
-                                        <th><?php echo number_format($total,2) ?></th>
+                                        <th>Php <?php echo number_format($total,2) ?></th>
                                     </tr>
 
 
@@ -232,9 +245,9 @@ require_once "controllerUserData.php";
                                 <!-- </tfoot> -->
                             </table>
                             <div class="text-center">
-                                <button class="btn btn-primary" id="confirm" type="button"
-                                    onclick="confirm_order()">Confirm</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary" type="submit" name="confirmed">Confirm</a></button>
+                            <button class="btn btn-primary" type="submit" name="pickup">For Pick Up</a></button>
+                                    <a href="admin-orders.php"><span class="btn btn-outline-danger mx-2 float-end">Back</span></a>
 
                             </div>
                         </div>

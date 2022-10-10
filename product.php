@@ -76,7 +76,7 @@
 ?>
 
 <?php
-  $num_per_page = 06;
+  $num_per_page = 20;
 
   if(isset($_GET["page"])){
     $page = $_GET['page'];
@@ -169,24 +169,24 @@
 
 
     <!-- For Category Container -->
-    <div class="container">
-        <div class="row">
-            <div class="col-6 ">
-                <form action="product.php" method="GET">
-                    <div class="input-group flex-nowrap ">
-                        <select class="form-select form-select-md" name="select_category" required
-                            onchange="this.form.submit()">
-                            <option value="" disabled selected>Select Category</option>
-                            <?php while($rowcategory =  mysqli_fetch_array($resultcategory)){ ?>
-                            <option value=" <?php echo $rowcategory['category_name']; ?>">
-                                <?php echo $rowcategory['category_name']; ?>
-                            </option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                </form>
+    <div class="container search">
+        <!-- <div class="row">
+            <div class="col-6 "> -->
+        <form action="product.php" method="GET">
+            <div class="input-group flex-nowrap ">
+                <select class="form-select form-select-md" name="select_category" required
+                    onchange="this.form.submit()">
+                    <option value="" disabled selected>Select Category</option>
+                    <?php while($rowcategory =  mysqli_fetch_array($resultcategory)){ ?>
+                    <option value=" <?php echo $rowcategory['category_name']; ?>">
+                        <?php echo $rowcategory['category_name']; ?>
+                    </option>
+                    <?php } ?>
+                </select>
             </div>
-        </div>
+        </form>
+        <!-- </div>
+        </div> -->
     </div>
 
 
@@ -201,7 +201,7 @@
                                 <div class="col-12">
                                     <form action="product.php" method="GET">
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" required name="search" value="<?php if(isset($_GET['search'])) {
+                                            <input type="text" class="form-control"  name="search" value="<?php if(isset($_GET['search'])) {
                         echo $_GET['search'];
                       }?>" placeholder="Search Data">
                                             <!--Button Search-->
@@ -220,173 +220,168 @@
 
 
 
-    <div class="container mt-3">
-        <tbody>
-            <!--Select-->
-            <?php   
+
+    <!--Select-->
+    <?php   
           if(isset($_GET['select_category'])){
            $filtervalues = $_GET['select_category']; 
            $querysearchmenu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu WHERE CONCAT(Menu_name, Menu_price, Menu_category,Menu_filename) LIKE '%$filtervalues%'"); //You dont need like you do in SQL;
                    
-             if(mysqli_num_rows($querysearchmenu)>0 ){
-                ?> <div class="fs-5 fw-bold">Search Result:</div>
-            <table class="table table-striped table-hover">
-                <thead class="bg-dark text-white">
-                    <tr>
-                        <th class="text-center">Image</th>
-                        <th class="text-center">Name</th>
-                        <th class="text-center">Price</th>
-                        <th class="text-center">Category</th>
-                        <th class="text-center" colspan="2">Action</th>
-                    </tr>
-                </thead>
-                <?php while($fetch_product_select = mysqli_fetch_assoc($querysearchmenu)){
+           if(mysqli_num_rows($querysearchmenu)>0 ){
+                ?> 
+    <section class="product ms-5 mb-4">
+    <div class="fs-5 fw-bold">Category Result:</div>
+        <div class="box-container justify-content-center">
+            <?php while($fetch_product_select = mysqli_fetch_assoc($querysearchmenu)){
                ?>
 
-                <!--DISPLAYING DATA OF SELECT-->
+            <!--DISPLAYING DATA OF SELECT-->
+            <form action="product.php" method="post">
+                <div class="m-3 mb-3 rounded-3 ">
 
+                    <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
+                        class=" w-100 mb-3"><img src="asset/menu/<?php echo $fetch_product_select['Menu_filename']?>"
+                            alt="Image section" class="card-img-top  img-responsive "
+                            style="height:17rem; width:100%;"></a>
+                    <h4 class="mt-2"><?php echo $fetch_product_select['Menu_name']?></h4>
+                    <div class="mt-2 text-light">Php <?php echo $fetch_product_select['Menu_price']?></h3>
 
-                <form action="product.php" method="post">
-                    <tr>
-                        <td> <img src="asset/menu/<?php echo $fetch_product_select['Menu_filename']?>"
-                                alt="Image section" class="card-img-top pt-3 img-responsive "
-                                style="height:10rem; width:40%; display:block; margin-left:auto; margin-right:auto">
-                        </td>
-                        <td>
-                            <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_name']?></p>
-                        </td>
-                        <td>
-                            <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_price']?></p>
-                        </td>
-                        <td>
-                            <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_category']?></p>
-                        </td>
-                        <td>
-                            <!--hidden inputs-->
-                            <input type="hidden" name="product_category_name"
-                                value="<?php echo $fetch_product_select['Menu_name'] ?>">
+                    </div>
 
-                            <input type="hidden" name="product_category_price"
-                                value="<?php echo $fetch_product_select['Menu_price'] ?>">
+                    <!--hidden inputs-->
+                    <input type="hidden" name="product_name" value="<?php echo $fetch_product_select['Menu_name'] ?>">
+                    <input type="hidden" name="product_price" value="<?php echo $fetch_product_select['Menu_price'] ?>">
+                    <input type="hidden" name="product_description"
+                        value="<?php echo $fetch_product_select['Menu_description'] ?>">
+                    <input type="hidden" name="product_image"
+                        value="<?php echo $fetch_product_select['Menu_filename'] ?>">
 
-                            <input type="hidden" name="product_category_category"
-                                value="<?php echo $fetch_product_select['Menu_category'] ?>">
-                            <input type="hidden" name="product_category_image"
-                                value="<?php echo $fetch_product_select['Menu_filename'] ?>">
-                        </td>
-                        <td>
-                            <!--Add to cart button-->
-                            <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
-                                class=" btn btn-outline-secondary w-100 mb-3">View</a>
-                            <input type="submit" name="add_to_cart_select" value="Add to Cart"
-                                class="btn btn-success w-100">
-                        </td>
-                    </tr>
-                </form>
-                <?php
-                };
-                };?>
+                    <!--Add to cart button-->
+                    <!-- <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
+                        class=" btn btn-outline-secondary w-100 mb-3">View</a> -->
+                    <input type="submit" name="add_to_cart" value="Add to Cart"
+                        class="btn btn-danger bg-button text w-90">
 
-                <?php } ?>
+                </div>
+            </form>
+            <?php
+                        }; ?>
+        </div>
+    </section>
+    <?php };?>
+
+    <?php } ?>
 
 
 
 
-                <!--SEARCH SECTION-->
-                <?php   
-          if(isset($_GET['search'])){
-           $filtervalues = $_GET['search']; 
-           $querysearchmenu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu WHERE CONCAT(Menu_name, Menu_price) LIKE '%$filtervalues%'"); //You dont need like you do in SQL;
-                   
-             if(mysqli_num_rows($querysearchmenu)>0 ){
-                ?><div class="fs-5 fw-bold">Search Result:</div>
-
-                <table class="table table-striped table-hover">
-                    <thead class="bg-dark text-white">
-                        <tr>
-                            <th class="text-center">Image</th>
-                            <th class="text-center">Name</th>
-                            <th class="text-center">Price</th>
-                            <th class="text-center">Category</th>
-                            <th class="text-center" colspan="2">Action</th>
-                        </tr>
-                    </thead>
-                    <?php
+    <!--SEARCH SECTION-->
+    <?php   
+                if(isset($_GET['search'])){
+                $filtervalues = $_GET['search']; 
+                $querysearchmenu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu WHERE CONCAT(Menu_name, Menu_price, Menu_category, Menu_filename) LIKE '%$filtervalues%'"); //You dont need like you do in SQL;
+                        
+                    if(mysqli_num_rows($querysearchmenu)>0 ){
+                        ?>
+    <section class="product ms-5 mb-4">
+        <div class="fs-5 fw-bold">Search Result:</div>
+        <div class="box-container justify-content-center">
+            <?php
                while($fetch_product_select = mysqli_fetch_assoc($querysearchmenu)){
                ?>
-                    <form action="product.php" method="post">
-                        <tr>
-                            <td> <img src="asset/menu/<?php echo $fetch_product_select['Menu_filename']?>"
-                                    alt="Image section" class="card-img-top pt-3 img-responsive "
-                                    style="height:10rem; width:40%; display:block; margin-left:auto; margin-right:auto">
-                            </td>
-                            <td>
-                                <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_name']?></p>
-                            </td>
-                            <td>
-                                <p class="mt-2 text-center">Php <?php echo $fetch_product_select['Menu_price']?></p>
-                            </td>
-                            <td>
-                                <p class="mt-2 text-center"><?php echo $fetch_product_select['Menu_category']?></p>
-                            </td>
-                            <td>
-                                <!--hidden inputs-->
-                                <input type="hidden" name="product_category_name"
-                                    value="<?php echo $fetch_product_select['Menu_name'] ?>">
+            <form action="product.php" method="post">
+                <div class="m-3 mb-3 rounded-3 ">
 
-                                <input type="hidden" name="product_category_price"
-                                    value="<?php echo $fetch_product_select['Menu_price'] ?>">
+                    <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
+                        class=" w-100 mb-3"><img src="asset/menu/<?php echo $fetch_product_select['Menu_filename']?>"
+                            alt="Image section" class="card-img-top  img-responsive "
+                            style="height:17rem; width:100%;"></a>
+                    <h4 class="mt-2"><?php echo $fetch_product_select['Menu_name']?></h4>
+                    <div class="mt-2 text-light">Php <?php echo $fetch_product_select['Menu_price']?>
+                        </h3>
 
-                                <input type="hidden" name="product_category_category"
-                                    value="<?php echo $fetch_product_select['Menu_category'] ?>">
-                                <input type="hidden" name="product_category_image"
-                                    value="<?php echo $fetch_product_select['Menu_filename'] ?>">
-                            </td>
-                            <td>
-                                <!--Add to cart button-->
-                                <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
-                                    class=" btn btn-outline-secondary w-100 mb-3">View</a>
-                                <input type="submit" name="add_to_cart_select" value="Add to Cart"
-                                    class="btn btn-success w-100">
-                            </td>
-                        </tr>
-                    </form>
-                    <?php
-                };
-                };?>
+                    </div>
 
-                    <?php } ?>
+                    <!--hidden inputs-->
+                    <input type="hidden" name="product_name" value="<?php echo $fetch_product_select['Menu_name'] ?>">
+                    <input type="hidden" name="product_price" value="<?php echo $fetch_product_select['Menu_price'] ?>">
+                    <input type="hidden" name="product_description"
+                        value="<?php echo $fetch_product_select['Menu_description'] ?>">
+                    <input type="hidden" name="product_image"
+                        value="<?php echo $fetch_product_select['Menu_filename'] ?>">
 
+                    <!--Add to cart button-->
+                    <!-- <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
+                        class=" btn btn-outline-secondary w-100 mb-3">View</a> -->
+                    <input type="submit" name="add_to_cart" value="Add to Cart"
+                        class="btn btn-danger bg-button text w-90">
 
-        </tbody>
-        </table>
-
-
-
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-    <!--IMage Section-->
-    <section class="product ms-5 mb-4">
-        <h1 class="text-center mt-5 mb-3">Products</h1>
-        <div class="box-container justify-content-center">
-
+                </div>
+            </form>
             <?php
-        $start_from = ($page - 1 )*06;
-  
-        $select_product = mysqli_query($db_admin_account,"SELECT * FROM (SELECT * FROM admin_menu LIMIT $start_from, $num_per_page) _t ORDER BY RAND()"); //You dont need like you do in SQL;
-        if(mysqli_num_rows($select_product)>0){
-          while($fetch_product = mysqli_fetch_assoc($select_product)){
-      ?>
+                        }; ?>
+        </div>
+    </section>
+    <?php };?>
+   <?php if(mysqli_num_rows($querysearchmenu)<0 ){
+                        ?>
+    <section class="product ms-5 mb-4">
+        <div class="fs-5 fw-bold">Search Result:</div>
+        <div class="box-container justify-content-center">
+            <?php
+               while($fetch_product_select = mysqli_fetch_assoc($querysearchmenu)){
+               ?>
+            <form action="product.php" method="post">
+                <div class="m-3 mb-3 rounded-3 ">
+
+                    <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
+                        class=" w-100 mb-3"><img src="asset/menu/<?php echo $fetch_product_select['Menu_filename']?>"
+                            alt="Image section" class="card-img-top  img-responsive "
+                            style="height:17rem; width:100%;"></a>
+                    <h4 class="mt-2"><?php echo $fetch_product_select['Menu_name']?></h4>
+                    <div class="mt-2 text-light">Php <?php echo $fetch_product_select['Menu_price']?>
+                        </h3>
+
+                    </div>
+
+                    <!--hidden inputs-->
+                    <input type="hidden" name="product_name" value="<?php echo $fetch_product_select['Menu_name'] ?>">
+                    <input type="hidden" name="product_price" value="<?php echo $fetch_product_select['Menu_price'] ?>">
+                    <input type="hidden" name="product_description"
+                        value="<?php echo $fetch_product_select['Menu_description'] ?>">
+                    <input type="hidden" name="product_image"
+                        value="<?php echo $fetch_product_select['Menu_filename'] ?>">
+
+                    <!--Add to cart button-->
+                    <!-- <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
+                        class=" btn btn-outline-secondary w-100 mb-3">View</a> -->
+                    <input type="submit" name="add_to_cart" value="Add to Cart"
+                        class="btn btn-danger bg-button text w-90">
+
+                </div>
+            </form>
+            <?php
+                        }; ?>
+        </div>
+    </section>
+    <?php };?>
+
+    <?php } ?>
+
+    <?php   
+                if(!isset($_GET['search']) && !isset($_GET['select_category']) ){
+                // $filtervalues = $_GET['search']; 
+                $menu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu "); //You dont need like you do in SQL;
+                        
+                    if(mysqli_num_rows($menu)>0 ){
+                        ?>
+
+    <section class="product ms-5 mb-4">
+    <div class="fs-5 fw-bold">All Product</div>
+        <div class="box-container justify-content-center">
+            <?php
+                            while($fetch_product = mysqli_fetch_assoc($menu)){
+                            ?>
             <form action="product.php" method="post">
                 <div class="m-3 mb-3 rounded-3 ">
 
@@ -394,7 +389,8 @@
                             src="asset/menu/<?php echo $fetch_product['Menu_filename']?>" alt="Image section"
                             class="card-img-top  img-responsive " style="height:17rem; width:100%;"></a>
                     <h4 class="mt-2"><?php echo $fetch_product['Menu_name']?></h4>
-                    <div class="mt-2 text-light">Php <?php echo $fetch_product['Menu_price']?></h3>
+                    <div class="mt-2 text-light">Php <?php echo $fetch_product['Menu_price']?>
+                        </h3>
 
                     </div>
 
@@ -413,53 +409,25 @@
 
                 </div>
             </form>
-
             <?php
-               };
-              };?>
+                        }; ?>
         </div>
     </section>
+    <?php };?>
+
+    <?php } ?>
 
 
-    <!--Page content-->
-    <?php
-    $sql = "SELECT * FROM admin_menu";
-    $resultsql = mysqli_query($db_admin_account, $sql);
-    $total_records = mysqli_num_rows($resultsql);
-    $total_pages = ceil($total_records/$num_per_page);
-    
-  ?>
-    <nav aria-label=" Page navigation example">
-        <ul class="pagination justify-content-center ">
-            <li class="page-item mx-1">
-                <?php 
-         if($page > 1){
-          echo "  
-          <a href='product.php?page=".($page-1)."' class='page-link  btn btn-primary '>
-          Previous
-        </a>";
-        }
-        ?>
-            </li>
+    </tbody>
+    </table>
 
-            <li class="page-item active">
-                <?php
-          for($i=1; $i<$total_pages; $i++){
-            echo "<li class='page-item mx-1'><a href='product.php?page=".$i."' class='page-link'> ".$i."</a></li>";
-           }  
-        ?>
-            </li>
 
-            <li class="page-item mx-1">
-                <?php
-          if($i > $page){
-            echo "
-            <a href='product.php?page=".($page+1)."' class='page-link'>Next</a>";
-          }
-         ?>
-            </li>
-        </ul>
-    </nav>
+
+
+    </div>
+
+
+
 
 
     <footer class=" footer-banner" id="about">
