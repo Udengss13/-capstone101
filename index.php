@@ -21,6 +21,7 @@
     <link rel="icon" href="asset/logopet.png" type="image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -31,27 +32,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-    @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
-
-    /* .nav-item {
-        margin-left: 3px
-    }
-
-    .nav-item:hover {
-        background-color: rgb(23, 171, 201);
-        border-radius: ;
-
-    }
-
-    .tips {
-        font-family: 'Poppins';
-        font-size: 22px;
-        font-size: 30px;
-        font-style: bold;
-        color: Blue;
-    } */
-    </style>
+    
 </head>
 
 <body>
@@ -85,7 +66,7 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="services.php">SERVICES</a>
+                        <a class="nav-link text-white" href="#service">SERVICES</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
@@ -117,8 +98,6 @@
             </ul>
         </div>
     </nav>
-
-
 
 
     <!-- SLIDER Images -->
@@ -170,14 +149,14 @@
         </div>
     </div>
 
+
     <!--QUICKTIPS-->
     <section class="flex-sect" id="imagesec">
         <section id="imagesection" class="div_background_light py-4">
-            <div class="container-fluid px-5 mt-3">
+            <div class="container-fluid px-5">
                 <div class="col-lg-12 col-md-12">
                     <div class="justify-content-center row col-md-12 rounded-3">
-
-                        <div style="width: 100%; height: 20px; border-bottom: 2px solid white; text-align: center">
+                        <div style="width: 100%; height: 30px; border-bottom: 2px solid white; text-align: center">
                             <span style="font-size: 40px; background-color:#9FBACD; color: white">
                                 QUICKTIPS
                                 <!--Padding is optional-->
@@ -186,7 +165,6 @@
 
 
                         <!--Pictures-->
-
                         <?php while($rowimages = mysqli_fetch_array($quicktipsresult)) {?>
 
 
@@ -205,12 +183,12 @@
 
                         <?php }?>
 
-
                     </div>
                 </div>
             </div>
         </section>
     </section>
+    
     <!--ANNOUNCEMENT-->
     <section class="flex-sect" id="imagesec">
         <section id="imagesection" class="div_background_light py-4">
@@ -255,9 +233,50 @@
         </section>
     </section>
 
+    <!--SERVICES-->
+    <section class="d-flex justify-content-around" id="service">
+    <div class="justify-content-center row col-md-12 rounded-3">
+                        <div style="width: 100%; height: 30px; border-bottom: 2px solid white; text-align: center">
+                            <span style="font-size: 40px; background-color:#9FBACD; color: white">
+                               SERVICES
+                                <!--Padding is optional-->
+                            </span>
+                        </div>  
+        
+    
+
+  <div class="d-flex justify-content-around mt-4">
+    
+  <!-- <div class="p-2">Vaccination</div> -->
+  <button type="button" class="btn btn-outline-primary">Vaccination</button>
+  <button type="button" class="btn btn-outline-primary">Confinement</button>
+  <button type="button" class="btn btn-outline-primary">Pet Supplies</button>
+                        </div>
+
+    <div class="d-flex justify-content-around mt-4">
+    
+    <button type="button" class="btn btn-outline-primary">Consultation</button>
+    <button type="button" class="btn btn-outline-primary">Surgery</button>
+    <button type="button" class="btn btn-outline-primary">Treatment</button>
+                          </div>
+
+    <div class="d-flex justify-content-around mt-4">
+    
+    <button type="button" class="btn btn-outline-primary">Deworming</button>
+    <button type="button" class="btn btn-outline-primary">Grooming</button>
+    <button type="button" class="btn btn-outline-primary">Laboratory Test</button>
+                          </div>
+
+  
 
 
-    <!--Footer-->
+
+
+</section>
+
+
+
+    <!--Footer 
     <footer class=" footer-banner" id="about">
         <div class="container text">
             <div class="row">
