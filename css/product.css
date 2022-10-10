@@ -14,3 +14,13 @@
   border: 3px solid rgb(22, 117, 134);
   
 }
+.search{
+  float: right;
+  width: 300px;
+  background: #9FBACD;
+  margin-right: 10px;
+}
+select{
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.85);
+}

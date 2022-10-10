@@ -1,4 +1,4 @@
-<?php
+<<?php
     
     require('php/connection.php');
 
@@ -43,7 +43,8 @@
   <title>Admin Content</title>
 </head>
 
-
+<body class="">
+  
 
   <nav class="navbar navbar-expand-lg navbar-light ; border-bottom border-secondary" style="background: #1572A1;">
         <div class="container-fluid">

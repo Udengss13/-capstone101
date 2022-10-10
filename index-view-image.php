@@ -90,7 +90,7 @@
             <div class="row">
               <div class="col-xs-12">
                 <div class="news-body">
-                  <label>Information:</label>
+                  <!-- <label>Information:</label> -->
                   <p class="c-white mb-5 " style="font-size: 20px"><?php echo $rowimage['Image_body']; ?></p>
                 </div>
               </div>

@@ -182,7 +182,7 @@
                                 QUICKTIPS
                                 <!--Padding is optional-->
                             </span>
-                        </div>  
+                        </div>
 
 
                         <!--Pictures-->
@@ -190,7 +190,7 @@
                         <?php while($rowimages = mysqli_fetch_array($quicktipsresult)) {?>
 
 
-                         <div class="col-lg-4 col-xs-1 col-sm-5  m-5" style="height:400px;">
+                        <div class="col-lg-4 col-xs-1 col-sm-5  m-5" style="height:400px;">
                             <img src="asset/<?php echo $rowimages['image_filename'] ?>"
                                 class="card-img-top img-responsive" style="height:400px; width:100%;">
 
@@ -201,16 +201,16 @@
                             </div>
 
 
-                        </div> 
+                        </div>
 
-                        <?php }?> 
+                        <?php }?>
 
 
                     </div>
                 </div>
             </div>
         </section>
-    </section> 
+    </section>
     <!--ANNOUNCEMENT-->
     <section class="flex-sect" id="imagesec">
         <section id="imagesection" class="div_background_light py-4">
@@ -260,23 +260,22 @@
     <!--Footer-->
     <footer class=" footer-banner" id="about">
         <div class="container text">
-            
             <div class="row">
                 <div class="col-13 text-center">
                     <ul class="follow">
                         <h3>Please follow us</h3>
 
-                        <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="50px" height="40px"></a>
-                        <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="50px" height="40px"></a>
-                        <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="50px" height="40px"></a>
-                     
-                        </ul>
-                        
+                        <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="50px"
+                                height="40px"></a>
+                        <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="50px"
+                                height="40px"></a>
+                        <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="50px"
+                                height="40px"></a>
+                    </ul>
+                    <h5>© 2022 All Rights Reserved. PetCo. Animal Clinic.</h5>
+                </div>
 
-                    
-                </div> 
-                
-               
+
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
