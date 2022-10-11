@@ -21,12 +21,12 @@
       
 
 ?>
-<?php 
-  //FOR MAIN CONTENT
+<!-- <?php 
+  
   if(isset($_POST['add_to_cart'])){
-    $product_name = $_POST['product_name']; //it is get on hidden input
-    $product_price = $_POST['product_price']; //it is get on hidden input
-    $product_image = $_POST['product_image']; //it is get on hidden input
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price']; 
+    $product_image = $_POST['product_image']; 
     $product_quantity = 1;
 
     $select_cart = mysqli_query($con, "SELECT * FROM `cart` WHERE Cart_name = '$product_name' AND Cart_user_id = '$user_id'");
@@ -39,7 +39,7 @@
       $message[] = "Product successfully add to cart!" ;
     }
   }
-?>
+?> -->
 <?php 
   if(isset($message)){
     foreach($message as $message){
@@ -154,8 +154,8 @@
                     <?php while($rowimage =  mysqli_fetch_array($resultimage)){ ?>
                     <form action="product.php" method="post">
                         <div class=" col-12 d-flex justify-content-center ">
-                            <img src="asset/menu/<?php echo $rowimage['Menu_filename']; ?>"
-                                style="width:100%; height:70vh; ">
+                            <img class="img-responsive" src="asset/menu/<?php echo $rowimage['Menu_filename']; ?>"
+                            width="70vh" height="70vh">
                         </div>
                 </div>
 
@@ -182,12 +182,10 @@
                         <td>
                             <!--hidden inputs-->
                             <input type="hidden" name="product_name" value="<?php echo $rowimage['Menu_name'] ?>">
-                            <input type="hidden" name="product_price"
-                                value="<?php echo $rowimage['Menu_price'] ?>">
+                            <input type="hidden" name="product_price" value="<?php echo $rowimage['Menu_price'] ?>">
                             <input type="hidden" name="product_description"
                                 value="<?php echo $rowimage['Menu_description'] ?>">
-                            <input type="hidden" name="product_image"
-                                value="<?php echo $rowimage['Menu_filename'] ?>">
+                            <input type="hidden" name="product_image" value="<?php echo $rowimage['Menu_filename'] ?>">
                         </td>
 
                         <div class="container">
@@ -197,7 +195,7 @@
                                     <?php echo $rowimage['Menu_description']; ?></p>
                             </div>
                             <input type="submit" name="add_to_cart" value="Add to Cart"
-                                class="btn btn-danger bg-button text w-100">
+                                class="btn btn-danger bg-button text w-50">
 
                         </div>
                     </div>

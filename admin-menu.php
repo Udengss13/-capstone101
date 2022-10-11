@@ -11,6 +11,7 @@
 ?>
 
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html>
 <meta charset="UTF-8">
 <link rel="icon" href="asset/logopet.png" type="image/x-icon">
@@ -21,6 +22,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+=======
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+>>>>>>> a08257c27767f0812f22125a4f60e5c8ce2099fb
   <title>Admin || Category</title>
 </head>
 <style>
@@ -32,6 +46,7 @@
 }
 </style>
 
+<<<<<<< HEAD
 <body style="background:  #9FBACD;">
 
     <!--Navbar-->
@@ -89,12 +104,105 @@
                     <h1 class="text-center c-white py-3">Add New Product</h1>
                 </div>
         </div>
+=======
+<body class="">
+<nav class="navbar navbar-expand-lg navbar-light ; ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="asset/logopet.png" alt="Logo" class="logo" />
+                <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
+                        CLINIC</b></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <!--Card-->
+        </div>
+
+        <div class="collapse navbar-collapse me-3" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-0 my-lg-0 " style="--bs-scroll-height: 100px;">
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white bg-primary " style="border-radius:10px;" aria-current="page"
+                            href="index.php">HOME</a>
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="shop.php">Products</a>
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="appointments.php">Appointments</a>
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="messages.php">Messages</a>
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+
+                        <a class="nav-link text-white" href="employee-dashboard.php">My Profile</a>
+
+                    </li>
+                </div>
+                <!-- <div class=" text-white">
+         <?php echo  date("m/d/y") . "<br>"; ?>
+       </div> -->
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="employee.php">Log-out</a>
+                    </li>
+                </div>
+
+                
+            </ul>
+        </div>
+    </nav>
+
+
+  <!--Content of Menu-->
+  <div class="container-xl-fluid mt-5 mb-5">
+    <div class="px-3">
+      <h4 class="text-center c-white py-3">All Products</h4>
+
+<<<<<<< HEAD
+=======
+      <!-- Modal -->
+
+>>>>>>> 0bf0d055037a82e64781beb0dd79c56af628497b
+      <div class="d-flex flex-row-reverse">
+  <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#myModal">
+    Add
+  </button>
+</div>
+>>>>>>> a08257c27767f0812f22125a4f60e5c8ce2099fb
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add products</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
       <form action="php/menu-process.php" method="post" enctype="multipart/form-data"
         class="row gap-2 justify-content-center">
-        <div class="row justify-content-md-center">
-          <div class="col-lg-7 col-md-6 col-sm-12">
+<<<<<<< HEAD
+        <!-- <div class="row justify-content-md-center">
+          <div class="col-lg-7 col-md-6 col-sm-12"> -->
+=======
+        
+>>>>>>> 0bf0d055037a82e64781beb0dd79c56af628497b
             <div class="card d-flex justify-content-center">
               <div class="card-header">
                 Product Information
@@ -137,21 +245,47 @@
                 </li>
                 <li class="list-group-item">
                   <button type="submit" name="news" class="btn btn-outline-success float-end"
-                    style="max-width:450px;">Add</button>
+                    style="max-width:450px;">Confirm</button>
                 </li>
               </ul>
 
-            </div>
-          </div>
+<<<<<<< HEAD
+            <!-- </div>
+          </div> -->
         </div>
-      </form>
+      </form> 
+      </div>
 
-      <!--Displaying Data-->
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+=======
+            
+        </div>
+      </form> 
+      </div>
+>>>>>>> 0bf0d055037a82e64781beb0dd79c56af628497b
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      <!--Displaying Data -->
       <div class="div_background_light">
         <div class="table-responsive mt-4 mx-auto" style="width:95%;">
           <table class="table mt-3">
             <thead class="table-dark c-white">
-              <th> ID</th>
+              <!-- <th> ID</th> -->
               <th>Product Name</th>
               <th>Description</th>
               <th>Price</th>
@@ -161,7 +295,7 @@
             </thead>
             <?php while($rowmenu =  mysqli_fetch_array($resultmenu)){ ?>
             <tbody>
-              <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_id']; ?></td>
+              <!-- <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_id']; ?></td> -->
               <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_name']; ?></td>
               <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_description']; ?></td>
               <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_price']; ?></td>
@@ -171,14 +305,14 @@
                   <img src=" asset/menu/<?php echo $rowmenu['Menu_filename']; ?> "
                     class="zoom img-thumbnail img-responsive images_menu"></a>
               </td>
-
+              
               <td class=" c-red ">
-                <!--Edit-->
+                <!-- Edit -->
                 <a href="admin-edit-menu.php?editid=<?php echo $rowmenu['Menu_id']; ?>"
                   class="text-decoration-none c-green">
                   <button class="btn btn-outline-success mx-2 my-2">Edit</button></a>
 
-                <!--Delete-->
+               <!--  Delete -->
                 <a href="php/menu-process.php?id=<?php echo $rowmenu['Menu_id'];?>"><input type="button"
                     class="btn btn-outline-danger" value="Delete"></a>
               </td>
@@ -188,7 +322,8 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"

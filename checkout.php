@@ -49,7 +49,7 @@
 if($cart_query && $detail_query){
   mysqli_query($con, "DELETE FROM `cart` WHERE Cart_user_id = '$user_id'");
   echo '<script>
-  alert("Thank you for ordering on Petco. Continue Shopping!");
+  alert("Your reservation has been made!");
   window.location.href="product.php";
   </script>';
 }
@@ -150,111 +150,135 @@ if($cart_query && $detail_query){
       <?php echo $fetch_user['first_name'] ." " .$fetch_user['last_name'] ?></p>
   </div> -->
 
+  <div class="float-left col-2">
+        <a href="cart.php" class=" btn w-100"><span class="text fw-bold" style="color:#034D73"><i
+                    class="bi bi-arrow-left"> </i>Back</span></a>
+    </div>
+
     <div class="container mt-4">
-        <?php while($rowInfo = mysqli_fetch_array($sqlInfo)){ ?>
-        <form action="" method="post">
+        <div class="container bg-light w-50 mb-4 rounded-4 border border-5">
+            <table class="table table-bordered">
 
-            <div class="container bg-light w-50 mb-4 rounded-3 border border-5">
-                <h5 class="color-blue">Order Summary
-                  <hr>
-                </h5>
-                <p class="fs-5 mt-3 text-danger text-center">Check your Order first!</p>
-                <?php 
-          $select_cart = mysqli_query($con, "SELECT * FROM `cart` WHERE Cart_user_id = '$user_id' ");
-          $total = 0;
-          $grand_total= 0;
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-          if(mysqli_num_rows($select_cart)>0){
-            while($fetch_cart = mysqli_fetch_assoc($select_cart)){
-              $total_price =$fetch_cart['Cart_price'] * $fetch_cart['Cart_quantity'] ;
-              $grand_total = $total += $total_price;
-        ?>
-                <span class="px-4 color-blue d-flex justify-content-center mt-2 mx-auto w-75">
-                    <?= $fetch_cart['Cart_name'];?>
-                   ( <?= $fetch_cart['Cart_quantity'];?> ) </span>
-                <?php   
-            }
-          }else{
-            echo "<div><span>Your cart is empty!</span></div>";
-          }
-        ?>
+                    <?php while($rowInfo = mysqli_fetch_array($sqlInfo)){ ?>
+                    <form action="" method="post">
 
-                <div class="mt-5 text-center text-light w-100 px-2 btn btn-primary bg-blue mb-3 active ">
-                    <span class="mb-3">Total Payment: Php <?= number_format($grand_total);?></span>
-                </div>
+
+                        <h5 class="color-blue">Order Summary
+                            <hr>
+                        </h5>
+                        <p class="fs-5 mt-3 text-danger text-center">Check your Order first!</p>
+                        <?php 
+                        $select_cart = mysqli_query($con, "SELECT * FROM `cart` WHERE Cart_user_id = '$user_id' ");
+                        $total = 0;
+                        $grand_total= 0;
+
+                            if(mysqli_num_rows($select_cart)>0):
+                            while($fetch_cart = mysqli_fetch_assoc($select_cart)):
+                            $total_price =$fetch_cart['Cart_price'] * $fetch_cart['Cart_quantity'] ;
+                            $grand_total = $total += $total_price;
+                        ?>
+                        <tr>
+                            <td><?php echo $fetch_cart['Cart_name'] ?></td>
+                            <td><?php echo $fetch_cart['Cart_quantity'] ?></td>
+                            <td>Php <?php echo number_format($fetch_cart['Cart_price'],2) ?></td>
+                        </tr>
+
+
+                        <?php endwhile; ?>
+                        <tr>
+                            <th colspan="2" class="text-right">TOTAL</th>
+                            <th>Php <?php echo number_format($grand_total,2) ?></th>
+                        </tr>
+
+                        <?php endif; ?>
+
+        </div>
+
+        </tbody>
+        <!-- <tfoot> -->
+
+        <!-- </tfoot> -->
+        </table>
+    </div>
+    <p><strong>Instruction: </strong>Check out your information and select a payment option to continue.</p>
+
+    <div class="row">
+        <div class="col-6 mb-2">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">First Name</span>
+                <input type="text" class="form-control bg-light" name="fname" value="<?=  $rowInfo['first_name']?>"
+                    readonly required>
             </div>
-
-            <div>
-                <p><strong>Instruction: </strong>Check out your information and select a payment option to continue.</p>
+        </div>
+        <div class="col-6 mb-2">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Last Name</span>
+                <input type="text" class="form-control bg-light" name="lname" value="<?=  $rowInfo['last_name']?>"
+                    readonly required>
             </div>
-            <div class="row">
-                <div class="col-6 mb-2">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">First Name</span>
-                        <input type="text" class="form-control bg-light" name="fname"
-                            value="<?=  $rowInfo['first_name']?>" readonly required>
-                    </div>
-                </div>
-                <div class="col-6 mb-2">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Last Name</span>
-                        <input type="text" class="form-control bg-light" name="lname"
-                            value="<?=  $rowInfo['last_name']?>" readonly required>
-                    </div>
-                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 mb-2">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Contact number</span>
+                <input type="number" class="form-control bg-light" name="contact" value="<?=  $rowInfo['contact']?>"
+                    readonly>
             </div>
-            <div class="row">
-                <div class="col-6 mb-2">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Contact number</span>
-                        <input type="number" class="form-control bg-light" name="contact"
-                            value="<?=  $rowInfo['contact']?>" readonly>
-                    </div>
-                </div>
-                <div class="col-6 mb-2">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Email</span>
-                        <input type="email" class="form-control bg-light" name="email" value="<?=  $rowInfo['email']?>"
-                            readonly required>
-                    </div>
-                </div>
+        </div>
+        <div class="col-6 mb-2">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Email</span>
+                <input type="email" class="form-control bg-light" name="email" value="<?=  $rowInfo['email']?>" readonly
+                    required>
             </div>
-            <div class="row">
+        </div>
+    </div>
+    <div class="row">
 
-                <div class="col-6 mb-2">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text " id="basic-addon1">Payment Method</span>
-                        <select name="paymentmethod" class="form-select" required>
-                            <option value="">Select your Payment Method</option>
-                            <option value="For pick up">For Pick Up</option>
+        <div class="col-6 mb-2">
+            <div class="input-group mb-3">
+                <span class="input-group-text " id="basic-addon1">Payment Method</span>
+                <select name="paymentmethod" class="form-select" required>
+                    <option value="">Select your Payment Method</option>
+                    <option value="For pick up">For Pick Up</option>
 
-                        </select>
-                    </div>
-                </div>
+                </select>
+            </div>
+        </div>
 
-                <div class="col-6 mb-2">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Address</span>
-                        <input type="text" class="form-control bg-light" name="address"
-                            value="<?= $rowInfo['address'];?>" required readonly>
-                    </div>
-                </div>
+        <div class="col-6 mb-2">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Address</span>
+                <input type="text" class="form-control bg-light" name="address" value="<?= $rowInfo['address'];?>"
+                    required readonly>
+            </div>
+        </div>
 
-                <div class=" text-center">
-                    <button class="form-control btn btn-primary mb-5 w-50 " name="submit_order">PLACE ORDER</button>
-                </div>
+        <div class=" text-center">
+            <button class="form-control btn btn-primary mb-5 w-50 " name="submit_order">PLACE ORDER</button>
+        </div>
 
         </form>
         <?php }?>
     </div>
 
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-    < /scrip>
+    </script>
 
-    <
-    script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js" >
+    <script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js" >
     </script>
 
 </body>
