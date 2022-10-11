@@ -237,7 +237,7 @@
                     <div id="dynamic_field">
                         <div class="row inline" id="row">
 
-                        <div class="col-4 form-group">Pet Type
+                        <div class="col-4 form-group">
                                 <!-- <label for="exampleFormControlSelect1">Position</label> -->
                                 <select class="form-control" id="slct1" name="pettype"
                                     onchange="populate(this.id,'slct2')" value="<?php echo $pettype ?>">
@@ -265,7 +265,7 @@
 
 
                         <div class="row mt-4">
-                            <div class="col-4 form-group">
+                            <div class="col-4 form-group">Pet Sex:
                                 <!-- <div class=" flex-nowrap"> -->
                                 <select class="form-control" name="petsex">
                                     <option value="male">Male</option>
@@ -275,7 +275,7 @@
 
                                 <!-- </div> -->
                             </div>
-                            <div class="col-4">
+                            <div class="col-4">Pet Birthday
                                 <div class="form-group mb-3">
                                     <!-- <label for=""></label> -->
                                     <input type="date" name="petbday" class="form-control" />

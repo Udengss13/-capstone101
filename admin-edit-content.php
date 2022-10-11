@@ -1,4 +1,4 @@
-<?php
+<<?php
     
     require('php/connection.php');
 
@@ -76,9 +76,7 @@
     </div>
           
     </nav>
-
-
-
+    
   <!--All Content Here-->
   <div class="div_background_dark px-3">
     <h4 class="text-center c-white py-3">Edit Information Content for Home </h4>

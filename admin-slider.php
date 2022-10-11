@@ -31,9 +31,13 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" href="asset/logopet.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+       <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/color.css">
-    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -43,53 +47,59 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
      <link rel="icon" href="asset/logopet.png" type="image/x-icon">
 </head>
 
-<body>
 
+
+
+<body style="background:  #9FBACD;">
 
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg nav_color navbar-dark nav_outline">
-        <h3 class=""><img src=" asset/logopet.png" alt="PETCO"
-                style="width: 50px; padding-left: 10px; padding-top: 5px;">
-            <a class="navbar-brand fw-bold c-white" href="#" style="padding-left: 15px;">PET CO.</a>
-        </h3>
-        <button style="margin-right: 20px;" class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end col-6" style="padding-right: 20px;" id="navbarNav">
-            <ul class="navbar-nav text-center gap-3" style="padding-left: 10px;">
-                <li class="nav-item">
-                    <a class="nav-link c-green" href="admin-orders.php">Order</a>
+        
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+  <h3 class=""><img src="asset/logopet.png" alt="Saint Jude Logo"
+                style="width: 50px; padding-left: 10px; padding-top: 5px;"><a class="navbar-brand fw-bold c-DarkBlue"
+                href="#" style="padding-left: 15px;">PET CO.</a></h3>
+            <ul class="navbar-nav text-center gap-1" style="padding-left: 5px;">
+                <a href="#" class="w3-bar-item w3-button">Order</a>
+                </li>
+    
+           <div class="dropdown">
+           <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"> Content</button>
+          <ul class="dropdown-menu">
+           <li class="nav-item">
+                <a class="dropdown-item" href="admin-content.php">Announcement and Promos</a>
+           </li>
+            <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
+            <li><a class="dropdown-item" href="admin-slider.php">slider</a></li>
+            
+          </ul>
+                    
+                
+                 <a href="admin-category-list.php" class="w3-bar-item w3-button">Category</a>
+                 </li>
+
+                
+                <a class="w3-bar-item w3-button" href="admin-menu.php">Product</a>
                 </li>
 
-                <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                        Content</button>
-                    <ul class="dropdown-menu">
-                        <li class="nav-item">
-                            <a class="dropdown-item" href="admin-content.php">News</a>
-                        </li>
-                        <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
-                        <li><a class="dropdown-item" href="admin-slider.php">slider</a></li>
-                        <li><a class="dropdown-item" href="#">Disabled</a></li>
-                    </ul>
-                </div>
-                <li class="nav-item">
-                    <a class="nav-link c-green  rounded" href="admin-category-list.php">Category</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link c-green  rounded" href="admin-menu.php">Menu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link c-white bg_nav_menu rounded" href="#">User List</a>
+                
+                <a class="w3-bar-item w3-button" href="admin-dashboard.php">User List</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link c-green" href="admin-login.php">Logout</a>
+                
+                <a class="w3-bar-item w3-button" href="admin-login.php">Logout</a>
                 </li>
-            </ul>
+                <div class="social_media">
+                <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="35px"
+                                height="40px"></a>
+                <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="35px"
+                                height="40px"></a>
+                <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="35px"
+                                height="40px"></a>
+            </ul> 
         </div>
-    </nav>
+
+
 
     <!-- <h2 class="text-center text-light pb-4 ">Dynamic boostrap 5 caroussel using php and mysqli</h2> -->
     <div class="container-fluid bg-black">

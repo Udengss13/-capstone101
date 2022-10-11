@@ -51,8 +51,8 @@ session_start();
   <title>Document</title>
 </head>
 
-<body class="">
-  <!--Navbar-->
+  <body class="">
+<!--Navbar-->
   <nav class="navbar navbar-expand-lg nav_color navbar-dark nav_outline">
     <h3 class=""><img src=" asset/logopet.png" alt="PETCO" style="width: 50px; padding-left: 10px; padding-top: 5px;">
       <a class="navbar-brand fw-bold c-white" href="#" style="padding-left: 15px;">PET CO.</a>
