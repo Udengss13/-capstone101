@@ -8,9 +8,9 @@ require_once "controllerUserData.php";
     //GET USER ID IN REGISTRATION
     $user_id = $_SESSION['user_id'];
 
-    if(!isset($user_id)){
-      header('location: login-user.php');
-    }
+    // if(!isset($user_id)){
+    //   header('location: login-user.php');
+    // }
 ?>
 <?php
   //This is for calling the informaiton of user in fields.
@@ -111,7 +111,7 @@ require_once "controllerUserData.php";
                     <table class="table table-striped table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col">Number</th>
+                                <!-- <th scope="col">Number</th> -->
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Address</th>
@@ -129,7 +129,7 @@ require_once "controllerUserData.php";
                                   ?>
 
                             <tr>
-                                <td><?php echo $i++ ?></td>
+                                <!-- <td><?php echo $i++ ?></td> -->
                                 <td><?php echo $row['first_name']." ".$row['last_name']  ?></td>
                                 <td><?php echo $row['email'] ?></td>
                                 <td><?php echo $row['address'] ?></td>

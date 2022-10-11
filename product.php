@@ -201,7 +201,7 @@
                                 <div class="col-12">
                                     <form action="product.php" method="GET">
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control"  name="search" value="<?php if(isset($_GET['search'])) {
+                                            <input type="text" class="form-control" name="search" value="<?php if(isset($_GET['search'])) {
                         echo $_GET['search'];
                       }?>" placeholder="Search Data">
                                             <!--Button Search-->
@@ -221,16 +221,16 @@
 
 
 
-    <!--Select-->
+    <!--THE PRODUCT CATEGORY IS SELECTED-->
     <?php   
           if(isset($_GET['select_category'])){
            $filtervalues = $_GET['select_category']; 
            $querysearchmenu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu WHERE CONCAT(Menu_name, Menu_price, Menu_category,Menu_filename) LIKE '%$filtervalues%'"); //You dont need like you do in SQL;
                    
            if(mysqli_num_rows($querysearchmenu)>0 ){
-                ?> 
+                ?>
     <section class="product ms-5 mb-4">
-    <div class="fs-5 fw-bold">Category Result:</div>
+        <div class="fs-5 fw-bold">Category Result:</div>
         <div class="box-container justify-content-center">
             <?php while($fetch_product_select = mysqli_fetch_assoc($querysearchmenu)){
                ?>
@@ -321,53 +321,15 @@
             <?php
                         }; ?>
         </div>
+
     </section>
     <?php };?>
-   <?php if(mysqli_num_rows($querysearchmenu)<0 ){
-                        ?>
-    <section class="product ms-5 mb-4">
-        <div class="fs-5 fw-bold">Search Result:</div>
-        <div class="box-container justify-content-center">
-            <?php
-               while($fetch_product_select = mysqli_fetch_assoc($querysearchmenu)){
-               ?>
-            <form action="product.php" method="post">
-                <div class="m-3 mb-3 rounded-3 ">
-
-                    <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
-                        class=" w-100 mb-3"><img src="asset/menu/<?php echo $fetch_product_select['Menu_filename']?>"
-                            alt="Image section" class="card-img-top  img-responsive "
-                            style="height:17rem; width:100%;"></a>
-                    <h4 class="mt-2"><?php echo $fetch_product_select['Menu_name']?></h4>
-                    <div class="mt-2 text-light">Php <?php echo $fetch_product_select['Menu_price']?>
-                        </h3>
-
-                    </div>
-
-                    <!--hidden inputs-->
-                    <input type="hidden" name="product_name" value="<?php echo $fetch_product_select['Menu_name'] ?>">
-                    <input type="hidden" name="product_price" value="<?php echo $fetch_product_select['Menu_price'] ?>">
-                    <input type="hidden" name="product_description"
-                        value="<?php echo $fetch_product_select['Menu_description'] ?>">
-                    <input type="hidden" name="product_image"
-                        value="<?php echo $fetch_product_select['Menu_filename'] ?>">
-
-                    <!--Add to cart button-->
-                    <!-- <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
-                        class=" btn btn-outline-secondary w-100 mb-3">View</a> -->
-                    <input type="submit" name="add_to_cart" value="Add to Cart"
-                        class="btn btn-danger bg-button text w-90">
-
-                </div>
-            </form>
-            <?php
-                        }; ?>
-        </div>
-    </section>
-    <?php };?>
-
     <?php } ?>
+   
 
+
+
+    <!-- FOR THE DISPLAY OF ALL PRODUCTS [IF THE CATEGORY AND THE SEARCH IS NOT TRIGGERED] -->
     <?php   
                 if(!isset($_GET['search']) && !isset($_GET['select_category']) ){
                 // $filtervalues = $_GET['search']; 
@@ -377,7 +339,9 @@
                         ?>
 
     <section class="product ms-5 mb-4">
-    <div class="fs-5 fw-bold">All Product</div>
+        <center>
+            <div class="fs-5 fw-bold ">All Product</div>
+        </center>
         <div class="box-container justify-content-center">
             <?php
                             while($fetch_product = mysqli_fetch_assoc($menu)){
@@ -416,15 +380,7 @@
     <?php };?>
 
     <?php } ?>
-
-
-    </tbody>
-    </table>
-
-
-
-
-    </div>
+  
 
 
 

@@ -98,13 +98,10 @@
     <div class="px-3">
       <h4 class="text-center c-white py-3">All Products</h4>
 
-<<<<<<< HEAD
-=======
       <!-- Modal -->
 
->>>>>>> 0bf0d055037a82e64781beb0dd79c56af628497b
       <div class="d-flex flex-row-reverse">
-  <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#myModal">
+  <button type="button" class="btn btn " style="background: orange" data-bs-toggle="modal" data-bs-target="#myModal">
     Add
   </button>
 </div>
@@ -124,12 +121,7 @@
       <div class="modal-body">
       <form action="php/menu-process.php" method="post" enctype="multipart/form-data"
         class="row gap-2 justify-content-center">
-<<<<<<< HEAD
-        <!-- <div class="row justify-content-md-center">
-          <div class="col-lg-7 col-md-6 col-sm-12"> -->
-=======
         
->>>>>>> 0bf0d055037a82e64781beb0dd79c56af628497b
             <div class="card d-flex justify-content-center">
               <div class="card-header">
                 Product Information
@@ -176,27 +168,10 @@
                 </li>
               </ul>
 
-<<<<<<< HEAD
-            <!-- </div>
-          </div> -->
-        </div>
-      </form> 
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-=======
             
         </div>
       </form> 
       </div>
->>>>>>> 0bf0d055037a82e64781beb0dd79c56af628497b
 
       <!-- Modal footer -->
       <div class="modal-footer">
