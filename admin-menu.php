@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
   <title>Admin || Category</title>
 </head>
 <style>
@@ -101,8 +103,10 @@
       <!-- Modal -->
 
       <div class="d-flex flex-row-reverse">
-  <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#myModal">
+  <button type="button" class="btn bg-button" style="background: #EA6D52; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#myModal">
     Add
+   <i class="fa solid fa-plus" style="font-size:30px;color:blue;"></i>
+
   </button>
 </div>
 
