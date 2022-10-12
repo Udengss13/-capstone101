@@ -245,42 +245,37 @@
         
     
 
-  <div class="d-flex justify-content-around mt-4">
+  <div class="d-flex justify-content-around mt-5">
     
   <!-- <div class="p-2">Vaccination</div> -->
-  <button type="button" class="btn btn-outline-primary">Vaccination</button>
-  <button type="button" class="btn btn-outline-primary">Confinement</button>
-  <button type="button" class="btn btn-outline-primary">Pet Supplies</button>
+  
+  <button type="button" class="btn bg-button" style="background: #EA6D52; border-radius: 10px;">Vaccination</button>
+  <button type="button" class="btn bg-button" style="background: #EA6D52; border-radius: 10px;">Confinement</button>
+  <button type="button" class="btn bg-button" style="background: #EA6D52; border-radius: 10px;">Pet Supplies</button>
                         </div>
 
     <div class="d-flex justify-content-around mt-4">
     
-    <button type="button" class="btn btn-outline-primary">Consultation</button>
-    <button type="button" class="btn btn-outline-primary">Surgery</button>
-    <button type="button" class="btn btn-outline-primary">Treatment</button>
+    <button type="button" class="btn bg-button" style="background: #EA6D52; border-radius: 10px;">Consultation</button>
+    <button type="button" class="btn bg-button" style="background: #EA6D52; border-radius: 10px;">Surgery</button>
+    <button type="button" class="btn bg-button" style="background: #EA6D52; border-radius: 10px;">Treatment</button>
                           </div>
 
     <div class="d-flex justify-content-around mt-4">
     
-    <button type="button" class="btn btn-outline-primary">Deworming</button>
-    <button type="button" class="btn btn-outline-primary">Grooming</button>
-    <button type="button" class="btn btn-outline-primary">Laboratory Test</button>
+    <button type="button" class="btn bg-button" style="background: #EA6D52; border-radius: 10px;">Deworming</button>
+    <button type="button" class="btn bg-button" style="background: #EA6D52; border-radius: 10px;">Grooming</button>
+    <button type="button" class="btn bg-button" style="background: #EA6D52; border-radius: 10px;">Laboratory Test</button>
                           </div>
-
-  
-
-
 
 
 </section>
 
-
-
-    <!--Footer 
-    <footer class=" footer-banner" id="about">
+   <!--Footer-->
+   <footer class=" footer-banner" id="about">
         <div class="container text">
             <div class="row">
-                <div class="col-13 text-center">
+                <div class="col-12 text-center">
                     <ul class="follow">
                         <h3>Please follow us</h3>
 
@@ -293,6 +288,8 @@
                     </ul>
                     <h5>© 2022 All Rights Reserved. PetCo. Animal Clinic.</h5>
                 </div>
+            </div>
+        </div>
 
 
     </footer>
