@@ -25,6 +25,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="css/color.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -41,45 +42,35 @@
                 style="width: 50px; padding-left: 10px; padding-top: 5px;"><a class="navbar-brand fw-bold c-DarkBlue"
                 href="#" style="padding-left: 15px;">PET CO.</a></h3>
             <ul class="navbar-nav text-center gap-1" style="padding-left: 5px;">
-                <a href="#" class="w3-bar-item w3-button">Order</a>
-                </li>
-    
-           <div class="dropdown">
-           <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"> Content</button>
-          <ul class="dropdown-menu">
-           <li class="nav-item">
-                <a class="dropdown-item" href="admin-content.php">Announcement and Promos</a>
-           </li>
-            <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
-            <li><a class="dropdown-item" href="admin-slider.php">slider</a></li>
+            <a href="#" class="btn1"><i class="fa fa-home"></i> Dashboard</a>
             
-          </ul>
+            <div class="dropdown">     
+            <button class="btn1"><i class="fa fa-bars"></i> Content</button>
+                     <div class="dropdown-content">
+                    <a href="admin-content.php">Announcement and Promos</a>
+                    <a href="admin-quicktips.php">Quicktips</a>
+                    <a href="admin-slider.php">Slider</a>
+             </div>
+        </div>
                     
+         
+             <a href="admin-category-list.php" class="btn1"><i class="fa fa-archive"></i> Category</a>
+         
+             <a href="admin-dashboard.php" class="btn1"><i class="fa fa-folder"></i> User List</a>
                 
-                 <a href="admin-category-list.php" class="w3-bar-item w3-button">Category</a>
-                 </li>
+             <a href="admin-login.php" class="btn1"><i class="fa fa-close"></i> Log-out</a>
 
-                
-                <a class="w3-bar-item w3-button" href="admin-menu.php">Product</a>
-                </li>
-
-                
-                <a class="w3-bar-item w3-button" href="#">User List</a>
-                </li>
-
-                
-                <a class="w3-bar-item w3-button" href="admin-login.php">Logout</a>
-                </li>
-                <div class="social_media">
+            <div class="social_media">
                 <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="35px"
                                 height="40px"></a>
                 <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="35px"
                                 height="40px"></a>
                 <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="35px"
                                 height="40px"></a>
-            </ul> 
+         
+                
+            </ul>
         </div>
-
         <div class="w3-main" style="margin-left:200px">
             <div class="w3-black">
             <button class="w3-button w3-blue w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>

@@ -35,6 +35,65 @@
 }
 </style>
 
+<<<<<<< HEAD
+<body style="background:  #9FBACD;">
+
+    <!--Navbar-->
+        
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+  <h3 class=""><img src="asset/logopet.png" alt="Saint Jude Logo"
+                style="width: 50px; padding-left: 10px; padding-top: 5px;"><a class="navbar-brand fw-bold c-DarkBlue"
+                href="#" style="padding-left: 15px;">PET CO.</a></h3>
+            <ul class="navbar-nav text-center gap-1" style="padding-left: 5px;">
+                <a href="#" class="w3-bar-item w3-button">Order</a>
+                </li>
+    
+           <div class="dropdown">
+           <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"> Content</button>
+          <ul class="dropdown-menu">
+           <li class="nav-item">
+                <a class="dropdown-item" href="admin-content.php">Announcement and Promos</a>
+           </li>
+            <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
+            <li><a class="dropdown-item" href="admin-slider.php">slider</a></li>
+            
+          </ul>
+                    
+                
+                 <a href="admin-category-list.php" class="w3-bar-item w3-button">Category</a>
+                 </li>
+
+                
+                <a class="w3-bar-item w3-button" href="admin-menu.php">Product</a>
+                </li>
+
+                
+                <a class="w3-bar-item w3-button" href="#">User List</a>
+                </li>
+
+                
+                <a class="w3-bar-item w3-button" href="admin-login.php">Logout</a>
+                </li>
+                <div class="social_media">
+                <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="35px"
+                                height="40px"></a>
+                <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="35px"
+                                height="40px"></a>
+                <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="35px"
+                                height="40px"></a>
+            </ul> 
+        </div>
+
+  <!--Content of Menu-->
+    <div class="w3-main" style="margin-left:200px">
+            <div class="w3-black">
+            <button class="w3-button w3-blue w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+             <div class="w3-container">
+                    <h1 class="text-center c-white py-3">Add New Product</h1>
+                </div>
+        </div>
+=======
 <body class="">
 <nav class="navbar navbar-expand-lg navbar-light ; ">
         <div class="container-fluid">
