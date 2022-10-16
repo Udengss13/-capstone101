@@ -1,13 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;800;900&family=Reem+Kufi+Ink&display=swap');
 
-*{
-  font-family: 'Poppins', sans-serif;
-}
+
 body{
   background:  #9FBACD;
 }
 .logo{
-  width:23%;
+  width:22%;
   height:8vh;
 }
 
@@ -17,13 +15,13 @@ body{
   /* height: 100px; */
 }
  .navbar-brand {
-  
+  font-family: 'Gothic A1', sans-serif;
   font-size: 20px;
   font-weight: bold;
 }
 
 .nav-item {
- 
+  font-family: 'Gothic A1', sans-serif;
   font-size: 15px;
   /* font-weight: bolder; */
   /* text-shadow: 2px 2px 2px rgba(49, 44, 44, 0.767); */
@@ -66,7 +64,7 @@ body{
   background:#EA6D52;
 }
 .bg-blue{
-  background: #bddff0;
+  background: #034D73;
 }
 /* .text{
   
@@ -76,42 +74,9 @@ body{
 .c-blue{
   color: #034D73;
 }
-.c-darkblue{
-  color: #030552;
-}
 
-/*Css PROFILE-------------------------------------------------------------------------------*/
-.labels{
-  color: white;
-}
-.blue{
-  background: #008ae6;
-}
 
-.profilebg{
-  background-color: rgba(255, 255, 255, 0.156);
-  border-radius: 10px;
-}
 
-/*Css Image View-------------------------------------------------------------------------------*/
-.imgview{
-  box-shadow:0 1px 4px 0 rgba(0, 0, 0, 0.2);
-}
-.imgview:hover{
-  box-shadow:0 20px 30px 0 skyblue;
-}
-.img-responsive{
-  width: 100%;
-  
-}
-.img-responsive:hover{
-  box-shadow:0 1px 4px 10px #75b3dd;
-  
-}
-.img-body{
-  background-color: rgba(255, 255, 255, 0.549);
-  border-radius: 10px;
-}
 /*Css ANNOUNCEMENT-------------------------------------------------------------------------------*/
 .container-width{
   width:100%;
@@ -121,7 +86,7 @@ body{
 .flex-sect{
   background-color:white;
   padding:50px 0;
-  font-family: 'Poppins', sans-serif;
+  font-family:Helvetica, serif;
 }
 .flex-title{
   margin-bottom:15px;
@@ -146,6 +111,7 @@ body{
 }
 .card{
   background-color:white;
+
   box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.2);
   border-radius:2px;
   transition:all 0.5s ease;
@@ -176,7 +142,6 @@ body{
   font-size: 20px;
   color: yellow;
 }
-<<<<<<< HEAD
 
 /*Css for Admin Try---------------------------------------------------------------------------------------*/
 *{
@@ -278,5 +243,3 @@ body{
 .wrapper .main_content .info div{
   margin-bottom: 20px;
 }
-=======
->>>>>>> a08257c27767f0812f22125a4f60e5c8ce2099fb

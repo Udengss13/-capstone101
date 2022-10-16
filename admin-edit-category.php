@@ -40,7 +40,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/color.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -60,35 +60,35 @@
     <div class="collapse navbar-collapse justify-content-end col-6" style="padding-right: 20px;" id="navbarNav">
       <ul class="navbar-nav text-center gap-3" style="padding-left: 10px;">
         <li class="nav-item">
-          <a class="nav-link text-light" href="admin-orders.php">Order</a>
-        </li>
-        <div class="dropdown">
-           <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"> Content</button>
-          <ul class="dropdown-menu">
-           <li class="nav-item">
-                <a class="dropdown-item" href="admin-content.php">News</a>
-           </li>
-            <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
-            <li><a class="dropdown-item" href="admin-slider.php">slider</a></li>
+        <a href="#" class="btn1"><i class="fa fa-home"></i> Dashboard</a>
             
-          </ul>
-       </div>
-        <li class="nav-item">
-          <a class="nav-link text-light  rounded" href="admin-category-list.php">Category</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light rounded  " href="admin-menu.php">Product</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link  text-light  rounded" href="admin-dashboard.php">User List</a>
-        </li>
+            <div class="dropdown">     
+            <button class="btn1"><i class="fa fa-bars"></i> Content</button>
+                     <div class="dropdown-content">
+                    <a href="admin-content.php">Announcement and Promos</a>
+                    <a href="admin-quicktips.php">Quicktips</a>
+                    <a href="admin-slider.php">Slider</a>
+             </div>
+        </div>
+                    
+         
+             <a href="admin-category-list.php" class="btn1"><i class="fa fa-archive"></i> Category</a>
+         
+             <a href="admin-dashboard.php" class="btn1"><i class="fa fa-folder"></i> User List</a>
+                
+             <a href="admin-login.php" class="btn1"><i class="fa fa-close"></i> Log-out</a>
 
-        <li class="nav-item">
-          <a class="nav-link text-light" href="admin-login.php">Logout</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+            <div class="social_media">
+                <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="35px"
+                                height="40px"></a>
+                <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="35px"
+                                height="40px"></a>
+                <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="35px"
+                                height="40px"></a>
+         
+                
+            </ul>
+        </div>
   <!--Content of Categories-->
   <div class="container mt-5">
     <div class="div_background_light px-3">
