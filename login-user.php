@@ -115,7 +115,7 @@
                         <input class="form-control button" type="submit" name="login" value="Login">
                     </div>
                     <div class="link login-link text-center mb-3 mt-3">Don't have an account? <a
-                            href="signup-user.php">Signup
+                            href="signup-user.php">Sign up
                             now</a></div>
                 </form>
 
@@ -143,7 +143,7 @@
     </div>
 
 
-    <!--Footer -->
+    <!--Footer 
     <footer class=" footer-banner" id="about">
         <div class="container text">
             <h1>PETCO SHOP</h1>
@@ -193,7 +193,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">

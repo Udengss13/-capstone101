@@ -26,13 +26,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <script src="https://kit.fontawesome.com/f8f3c8a43b.js" crossorigin="anonymous"></script>
+
     <!-- slider -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
+
 </head>
 
 <body>
@@ -188,7 +190,7 @@
             </div>
         </section>
     </section>
-    
+
     <!--ANNOUNCEMENT-->
     <section class="flex-sect" id="imagesec">
         <section id="imagesection" class="div_background_light py-4">
@@ -234,53 +236,69 @@
     </section>
 
     <!--SERVICES-->
-    <section class="d-flex justify-content-around" id="service">
-    <div class="justify-content-center row col-md-12 rounded-3">
-                        <div style="width: 100%; height: 30px; border-bottom: 2px solid white; text-align: center">
-                            <span style="font-size: 40px; background-color:#9FBACD; color: white">
-                               SERVICES
-                                <!--Padding is optional-->
-                            </span>
-                        </div>  
-        
-    
+    <section class="d-flex justify-content-around" id="service" style="background-color:#9FBACD;">
+        <div class="justify-content-center row col-md-12 rounded-3">
+            <div style="width: 100%; height: 30px; border-bottom: 2px solid white; text-align: center">
+                <span style="font-size: 40px; background-color:#9FBACD; color: white">
+                    SERVICES
+                    <!--Padding is optional-->
+                </span>
+            </div>
 
-  <div class="d-flex justify-content-around mt-4">
-    
-  <!-- <div class="p-2">Vaccination</div> -->
-  <button type="button" class="btn btn-outline-primary">Vaccination</button>
-  <button type="button" class="btn btn-outline-primary">Confinement</button>
-  <button type="button" class="btn btn-outline-primary">Pet Supplies</button>
+
+            <div class="container mb-5">
+            <div class="d-flex justify-content-around mt-5">
+
+                <!-- <div class="p-2">Vaccination</div> -->
+
+                <a href='login-user.php'>
+                <button type="button" class="btn bg-button"
+                    style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Vaccination
+                    <i class="fa-solid fa-arrow-right" style="color:blue;"></i></button></a>
+                <button type="button" class="btn bg-button"
+                    style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Confinement
+                    <i class="fa-solid fa-arrow-right" style="color:blue;"></i></button></button>
+
+                <button type="button" class="btn bg-button"
+                    style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Pet Supplies
+                    <i class="fa-solid fa-arrow-right" style="color:blue;"></i></button></button>
+            </div>
+
+            <div class="d-flex justify-content-around mt-4">
+
+                <button type="button" class="btn bg-button"
+                    style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Consultation
+                    <i class="fa-solid fa-arrow-right" style="color:blue;"></i></button></button>
+                <button type="button" class="btn bg-button"
+                    style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Surgery
+                    <i class="fa-solid fa-arrow-right" style="color:blue;"></i></button></button>
+                <button type="button" class="btn bg-button"
+                    style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Treatment
+                    <i class="fa-solid fa-arrow-right" style="color:blue;"></i></button></button>
+            </div>
+
+            <div class="d-flex justify-content-around mt-4">
+
+                <button type="button" class="btn bg-button"
+                    style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Deworming
+                    <i class="fa-solid fa-arrow-right" style="color:blue;"></i></button></button>
+                <button type="button" class="btn bg-button"
+                    style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Grooming
+                    <i class="fa-solid fa-arrow-right" style="color:blue;"></i></button></button>
+                <button type="button" class="btn bg-button"
+                    style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Laboratory Test
+                    <i class="fa-solid fa-arrow-right" style="color:blue;"></i></button></button>
+            </div>
                         </div>
 
-    <div class="d-flex justify-content-around mt-4">
-    
-    <button type="button" class="btn btn-outline-primary">Consultation</button>
-    <button type="button" class="btn btn-outline-primary">Surgery</button>
-    <button type="button" class="btn btn-outline-primary">Treatment</button>
-                          </div>
 
-    <div class="d-flex justify-content-around mt-4">
-    
-    <button type="button" class="btn btn-outline-primary">Deworming</button>
-    <button type="button" class="btn btn-outline-primary">Grooming</button>
-    <button type="button" class="btn btn-outline-primary">Laboratory Test</button>
-                          </div>
+    </section>
 
-  
-
-
-
-
-</section>
-
-
-
-    <!--Footer 
+    <!--Footer-->
     <footer class=" footer-banner" id="about">
         <div class="container text">
             <div class="row">
-                <div class="col-13 text-center">
+                <div class="col-12 text-center">
                     <ul class="follow">
                         <h3>Please follow us</h3>
 
@@ -293,6 +311,8 @@
                     </ul>
                     <h5>© 2022 All Rights Reserved. PetCo. Animal Clinic.</h5>
                 </div>
+            </div>
+        </div>
 
 
     </footer>
