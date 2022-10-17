@@ -3,6 +3,12 @@
 
     //https://www.codepile.net/pile/NYN5P9Qq
        //call all Category
+    //    $id = $_GET['id'];
+
+    //    //call all Menu's
+    //    $querymenu = "SELECT * FROM admin_menu WHERE Menu_id = $id"; //You don't need a ; like you do in SQL
+    //    $resultimage = mysqli_query($db_admin_account, $querymenu);
+
       $querycategory = "SELECT * FROM admin_category"; 
       $resultcategory = mysqli_query($db_admin_account, $querycategory);   
 
@@ -16,6 +22,7 @@
 <?php 
   //FOR MAIN CONTENT
   if(isset($_POST['add_to_cart'])){
+    $product_id = $_POST['product_id']; //it is get on hidden input
     $product_name = $_POST['product_name']; //it is get on hidden input
     $product_price = $_POST['product_price']; //it is get on hidden input
     $product_image = $_POST['product_image']; //it is get on hidden input
@@ -26,8 +33,8 @@
     if(mysqli_num_rows($select_cart) > 0){
         $message[] = "Product is already added to your cart!" ;
     }else{
-      $insert_product = mysqli_query($con, "INSERT INTO `cart`(Cart_user_id, Cart_name, Cart_price, Cart_image, Cart_quantity) 
-      VALUES ('$user_id','$product_name', '$product_price', '$product_image', '$product_quantity')");
+      $insert_product = mysqli_query($con, "INSERT INTO `cart`(Cart_user_id, product_id, Cart_name, Cart_price, Cart_image, Cart_quantity) 
+      VALUES ('$user_id', '$product_id','$product_name', '$product_price', '$product_image', '$product_quantity')");
       $message[] = "Product successfully add to cart!" ;
     }
   }
@@ -46,9 +53,9 @@
     if(mysqli_num_rows($select_cart) > 0){
         $message[] = "Product is already in added in your cart!!" ;
     }else{
-      $insert_product = mysqli_query($con, "INSERT INTO `cart`(Cart_user_id, Cart_name, Cart_price, Cart_image, Cart_quantity) 
-      VALUES ('$user_id','$product_select_name', '$product_select_price', '$product_select_image', '$product_select_quantity' )");
-      $message[] = "Product successfully add to cart!" ;
+        $insert_product = mysqli_query($con, "INSERT INTO `cart`(Cart_user_id, product_id, Cart_name, Cart_price, Cart_image, Cart_quantity) 
+        VALUES ('$user_id', '$product_id','$product_name', '$product_price', '$product_image', '$product_quantity')");
+        $message[] = "Product successfully add to cart!" ;
     }
   }
 ?>
@@ -225,7 +232,7 @@
     <?php   
           if(isset($_GET['select_category'])){
            $filtervalues = $_GET['select_category']; 
-           $querysearchmenu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu WHERE CONCAT(Menu_name, Menu_price, Menu_category,Menu_filename) LIKE '%$filtervalues%'"); //You dont need like you do in SQL;
+           $querysearchmenu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu WHERE CONCAT(Menu_id, Menu_name, Menu_price, Menu_category,Menu_filename) LIKE '%$filtervalues%'"); //You dont need like you do in SQL;
                    
            if(mysqli_num_rows($querysearchmenu)>0 ){
                 ?>
@@ -249,6 +256,7 @@
                     </div>
 
                     <!--hidden inputs-->
+                    <input type="hidden" name="product_id" value="<?php echo $fetch_product_select['Menu_id'] ?>">
                     <input type="hidden" name="product_name" value="<?php echo $fetch_product_select['Menu_name'] ?>">
                     <input type="hidden" name="product_price" value="<?php echo $fetch_product_select['Menu_price'] ?>">
                     <input type="hidden" name="product_description"
@@ -303,6 +311,7 @@
                     </div>
 
                     <!--hidden inputs-->
+                    <input type="hidden" name="product_id" value="<?php echo $fetch_product_select['Menu_id'] ?>">
                     <input type="hidden" name="product_name" value="<?php echo $fetch_product_select['Menu_name'] ?>">
                     <input type="hidden" name="product_price" value="<?php echo $fetch_product_select['Menu_price'] ?>">
                     <input type="hidden" name="product_description"
@@ -359,6 +368,7 @@
                     </div>
 
                     <!--hidden inputs-->
+                    <input type="hidden" name="product_id" value="<?php echo $fetch_product['Menu_id'] ?>">
                     <input type="hidden" name="product_name" value="<?php echo $fetch_product['Menu_name'] ?>">
                     <input type="hidden" name="product_price" value="<?php echo $fetch_product['Menu_price'] ?>">
                     <input type="hidden" name="product_description"

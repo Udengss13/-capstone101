@@ -4,9 +4,6 @@
     
         $id = $_GET['id'];
 
-     
-        
-
         //call all Menu's
         $querymenu = "SELECT * FROM admin_menu WHERE Menu_id = $id"; //You don't need a ; like you do in SQL
         $resultimage = mysqli_query($db_admin_account, $querymenu);
@@ -181,6 +178,7 @@
 
                         <td>
                             <!--hidden inputs-->
+                            <input type="hidden" name="product_id" value="<?php echo $rowimage['Menu_id'] ?>">
                             <input type="hidden" name="product_name" value="<?php echo $rowimage['Menu_name'] ?>">
                             <input type="hidden" name="product_price" value="<?php echo $rowimage['Menu_price'] ?>">
                             <input type="hidden" name="product_description"

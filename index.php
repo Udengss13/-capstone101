@@ -276,7 +276,7 @@
 
 
 
-    <!--Footer 
+    
     <footer class=" footer-banner" id="about">
         <div class="container text">
             <div class="row">

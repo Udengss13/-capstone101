@@ -217,16 +217,16 @@ require_once "controllerUserData.php";
                                 </thead>
                                 <tbody>
                                     <?php 
-                                        $select_cart = mysqli_query($con, "SELECT * FROM `order` WHERE order_user_id = '$user_id' ");
+                                        $select_cart = mysqli_query($con, "SELECT * FROM `order_list` WHERE order_user_id = '$user_id' ");
                                         $total = 0;
                                         $grand_total= 0;
 
 
                                     while($row=$select_cart->fetch_assoc()):
-                                        $total += $row['quantity'] * $row['price'];
+                                        $total += $row['qty'] * $row['price'];
                                                 ?>
                                     <tr>
-                                        <td><?php echo $row['quantity'] ?></td>
+                                        <td><?php echo $row['qty'] ?></td>
                                         <td><?php echo $row['product_name'] ?></td>
                                         <td>Php <?php echo number_Format($row['price'],2 )?></td>
                                     </tr>
