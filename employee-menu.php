@@ -2,7 +2,7 @@
     require('php/connection.php');
 
    //call all Menu
-  $querymenu = "SELECT * FROM admin_menu"; //You don't need a ; like you do in SQL
+  $querymenu = "SELECT * FROM employee_menu"; //You don't need a ; like you do in SQL
   $resultmenu = mysqli_query($db_admin_account, $querymenu);
  
    //call all Category
@@ -227,7 +227,7 @@
 
                             <td class=" c-red ">
                                 <!-- Edit -->
-                                <a href="admin-edit-menu.php?editid=<?php echo $rowmenu['Menu_id']; ?>"
+                                <a href="employee-edit-menu.php?editid=<?php echo $rowmenu['Menu_id']; ?>"
                                     class="text-decoration-none c-green">
 
 
