@@ -176,9 +176,8 @@
 
 
     <!-- For Category Container -->
-    <div class="container search">
-        <!-- <div class="row">
-            <div class="col-6 "> -->
+    <div class="container search mt-4">
+        
         <form action="product.php" method="GET">
             <div class="input-group flex-nowrap ">
                 <select class="form-select form-select-md" name="select_category" required
@@ -198,7 +197,7 @@
 
 
     <!--Search Form-->
-    <div class="container">
+    <div class="container ">
         <div class="row">
             <div class="col-6 float-end">
                 <div class="card mt-4">
@@ -237,7 +236,9 @@
            if(mysqli_num_rows($querysearchmenu)>0 ){
                 ?>
     <section class="product ms-5 mb-4">
-        <div class="fs-5 fw-bold">Category Result:</div>
+    <center>
+            <div class="fs-5 fw-bold ">Category Result:</div>
+        </center>
         <div class="box-container justify-content-center">
             <?php while($fetch_product_select = mysqli_fetch_assoc($querysearchmenu)){
                ?>
@@ -292,7 +293,9 @@
                     if(mysqli_num_rows($querysearchmenu)>0 ){
                         ?>
     <section class="product ms-5 mb-4">
-        <div class="fs-5 fw-bold">Search Result:</div>
+    <center>
+            <div class="fs-5 fw-bold ">Search Result:</div>
+        </center>
         <div class="box-container justify-content-center">
             <?php
                while($fetch_product_select = mysqli_fetch_assoc($querysearchmenu)){

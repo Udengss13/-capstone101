@@ -26,13 +26,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <script src="https://kit.fontawesome.com/f8f3c8a43b.js" crossorigin="anonymous"></script>
+
     <!-- slider -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
+
 </head>
 
 <body>
@@ -61,7 +63,7 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="aboutUs.php">ABOUT US</a>
+                        <a class="nav-link text-white" href="#about">ABOUT US</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
@@ -188,118 +190,174 @@
             </div>
         </section>
     </section>
-    
-    <!--ANNOUNCEMENT-->
-    <section class="flex-sect" id="imagesec">
+
+    <!-- About us -->
+    <section class="flex-sect" id="about" style="background-color:#9FBACD;">>
         <section id="imagesection" class="div_background_light py-4">
-            <div class="container-fluid px-5 mt-3">
+            <div class="container-fluid px-5">
                 <div class="col-lg-12 col-md-12">
                     <div class="justify-content-center row col-md-12 rounded-3">
-                        <h3 class="col-12  text-center fw-bolder"
-                            style="text-shadow: 3px 1px 3px  lightblue; color: rgb(13, 13, 103)">ANNOUNCEMENT</h3>
-                        <hr>
-
-                        <!--Pictures-->
-
-                        <?php while($rowimage = mysqli_fetch_array($resultimage)) {?>
-
-                        <div class="col-lg-3 col-xs-1 col-sm-5 card mx-3 my-4" style="height:350px;">
-
-
-                            <img src="asset/homepage/<?php echo $rowimage['Image_filename'] ?>"
-                                class="card-img-top pt-3 img-responsive " style="height:200px; width:100%;">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title text-center"><?php echo $rowimage['Image_title'] ?></h5>
-                                <!-- <h6 class="card-text text-center text-muted">
-                                    <?php echo $rowimage['Image_subtitle'] ?>
-                                </h6>
-                                <p class="card-text d-inline-block text-truncate">
-                                    <?php echo $rowimage['Image_body'];?>
-                                </p> -->
-                                <div class="mb-4">
-                                    <a href="index-view-image.php?id=<?php echo $rowimage['Image_id'] ?>"
-                                        class=" btn btn-success w-100">View Details</a>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <?php }?>
-
-
-                    </div>
-                </div>
-            </div>
-        </section>
-    </section>
-
-    <!--SERVICES-->
-    <section class="d-flex justify-content-around" id="service">
-    <div class="justify-content-center row col-md-12 rounded-3">
                         <div style="width: 100%; height: 30px; border-bottom: 2px solid white; text-align: center">
                             <span style="font-size: 40px; background-color:#9FBACD; color: white">
-                               SERVICES
+                                ABOUT US
                                 <!--Padding is optional-->
                             </span>
-                        </div>  
-        
-    
-
-  <div class="d-flex justify-content-around mt-4">
-    
-  <!-- <div class="p-2">Vaccination</div> -->
-  <button type="button" class="btn btn-outline-primary">Vaccination</button>
-  <button type="button" class="btn btn-outline-primary">Confinement</button>
-  <button type="button" class="btn btn-outline-primary">Pet Supplies</button>
+                        </div>
+                        <div class="row box" style="height:300px;">
+                            <h4 style="color: white">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type specimen
+                                book. It has survived not only five centuries, but also the leap into electronic
+                                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                                release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h4>
                         </div>
 
-    <div class="d-flex justify-content-around mt-4">
-    
-    <button type="button" class="btn btn-outline-primary">Consultation</button>
-    <button type="button" class="btn btn-outline-primary">Surgery</button>
-    <button type="button" class="btn btn-outline-primary">Treatment</button>
-                          </div>
+                        <!--ANNOUNCEMENT-->
+                        <section class="flex-sect" id="imagesec">
+                            <section id="imagesection" class="div_background_light py-4">
+                                <div class="container-fluid px-5 mt-3">
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="justify-content-center row col-md-12 rounded-3">
+                                            <h3 class="col-12  text-center fw-bolder"
+                                                style="text-shadow: 3px 1px 3px  lightblue; color: rgb(13, 13, 103)">
+                                                ANNOUNCEMENT</h3>
+                                            <hr>
 
-    <div class="d-flex justify-content-around mt-4">
-    
-    <button type="button" class="btn btn-outline-primary">Deworming</button>
-    <button type="button" class="btn btn-outline-primary">Grooming</button>
-    <button type="button" class="btn btn-outline-primary">Laboratory Test</button>
-                          </div>
+                                            <!--Pictures-->
 
-  
+                                            <?php while($rowimage = mysqli_fetch_array($resultimage)) {?>
 
-
-
-
-</section>
+                                            <div class="col-lg-3 col-xs-1 col-sm-5 card mx-3 my-4"
+                                                style="height:350px;">
 
 
+                                                <img src="asset/homepage/<?php echo $rowimage['Image_filename'] ?>"
+                                                    class="card-img-top pt-3 img-responsive "
+                                                    style="height:200px; width:100%;">
+                                                <div class="card-body d-flex flex-column">
+                                                    <h5 class="card-title text-center">
+                                                        <?php echo $rowimage['Image_title'] ?></h5>
+                                                                        <!-- <h6 class="card-text text-center text-muted">
+                                                            <?php echo $rowimage['Image_subtitle'] ?>
+                                                        </h6>
+                                                        <p class="card-text d-inline-block text-truncate">
+                                                        <?php echo $rowimage['Image_body'];?>
+                                                        </p> -->
+                                                    <div class="mb-4">
+                                                        <a href="index-view-image.php?id=<?php echo $rowimage['Image_id'] ?>"
+                                                            class=" btn btn-success w-100">View Details</a>
+                                                    </div>
 
-    
-    <footer class=" footer-banner" id="about">
-        <div class="container text">
-            <div class="row">
-                <div class="col-13 text-center">
-                    <ul class="follow">
-                        <h3>Please follow us</h3>
+                                                </div>
+                                            </div>
 
-                        <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="50px"
-                                height="40px"></a>
-                        <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="50px"
-                                height="40px"></a>
-                        <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="50px"
-                                height="40px"></a>
-                    </ul>
-                    <h5>© 2022 All Rights Reserved. PetCo. Animal Clinic.</h5>
-                </div>
+                                            <?php }?>
 
 
-    </footer>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-    </script>
+                        <!--SERVICES-->
+                        <section class="d-flex justify-content-around" id="service" style="background-color:#9FBACD;">
+                            <div class="justify-content-center row col-md-12 rounded-3">
+                                <div
+                                    style="width: 100%; height: 30px; border-bottom: 2px solid white; text-align: center">
+                                    <span style="font-size: 40px; background-color:#9FBACD; color: white">
+                                        SERVICES
+                                        <!--Padding is optional-->
+                                    </span>
+                                </div>
+
+
+                                <div class="container mb-5">
+                                    <div class="d-flex justify-content-around mt-5">
+
+                                        <!-- <div class="p-2">Vaccination</div> -->
+
+                                        <a href='vaccination.php'>
+                                            <button type="button" class="btn bg-button"
+                                                style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Vaccination
+                                                <i class="fa-solid fa-arrow-right" style="color:blue;"></i></button></a>
+                                        <button type="button" class="btn bg-button"
+                                            style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Confinement
+                                            <i class="fa-solid fa-arrow-right"
+                                                style="color:blue;"></i></button></button>
+
+                                        <button type="button" class="btn bg-button"
+                                            style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Pet
+                                            Supplies
+                                            <i class="fa-solid fa-arrow-right"
+                                                style="color:blue;"></i></button></button>
+                                    </div>
+
+                                    <div class="d-flex justify-content-around mt-4">
+
+                                        <button type="button" class="btn bg-button"
+                                            style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Consultation
+                                            <i class="fa-solid fa-arrow-right"
+                                                style="color:blue;"></i></button></button>
+                                        <button type="button" class="btn bg-button"
+                                            style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Surgery
+                                            <i class="fa-solid fa-arrow-right"
+                                                style="color:blue;"></i></button></button>
+                                        <button type="button" class="btn bg-button"
+                                            style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Treatment
+                                            <i class="fa-solid fa-arrow-right"
+                                                style="color:blue;"></i></button></button>
+                                    </div>
+
+                                    <div class="d-flex justify-content-around mt-4">
+
+                                        <button type="button" class="btn bg-button"
+                                            style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Deworming
+                                            <i class="fa-solid fa-arrow-right"
+                                                style="color:blue;"></i></button></button>
+                                        <button type="button" class="btn bg-button"
+                                            style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Grooming
+                                            <i class="fa-solid fa-arrow-right"
+                                                style="color:blue;"></i></button></button>
+                                        <button type="button" class="btn bg-button"
+                                            style="background: #FFFFFF; border-radius: 20px; border-width: 10px; padding: 10px;">Laboratory
+                                            Test
+                                            <i class="fa-solid fa-arrow-right"
+                                                style="color:blue;"></i></button></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+
+                        <!--Footer-->
+                        <footer class=" footer-banner" id="about">
+                            <div class="container text">
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <ul class="follow">
+                                            <h3>Please follow us</h3>
+
+                                            <a href="https://www.facebook.com/"><img src="asset/facebook.png"
+                                                    width="50px" height="40px"></a>
+                                            <a href="https://www.instagram.com//"><img src="asset/instagram.png"
+                                                    width="50px" height="40px"></a>
+                                            <a href="https://www.messenger.com/"><img src="asset/messenger.png"
+                                                    width="50px" height="40px"></a>
+                                        </ul>
+                                        <h5>© 2022 All Rights Reserved. PetCo. Animal Clinic.</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </footer>
+
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+                            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+                            crossorigin="anonymous">
+                        </script>
 </body>
 
 </html>

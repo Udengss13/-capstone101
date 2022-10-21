@@ -225,7 +225,7 @@
                     <!--2nd Row-->
                     <div class="row">
                         <div class="col mt-4">
-                            <p style="text-shadow: 1px 1px 1px blue; color:blue; ">Now To continue creating account
+                            <p style="color:white; ">To continue creating account
                                 please,
                                 provide all
                                 the information about your pets that are
@@ -293,7 +293,7 @@
 
                     <div class="form-group mt-4 text-center">
                         <input class="form-control btn  " style="background-color: #EA6D52; width: 20%" type="submit"
-                            name="signup" value="Signup">
+                            name="signup" value="Sign up">
                     </div>
                     <div class="link login-link text-center text-white">Already have an account? <a
                             href="login-user.php" class="text-primary">Login here</a></div>

@@ -75,17 +75,17 @@
                 <div class="text-nowrap">
                     <li class="nav-item">
                         <a class="nav-link text-white bg-primary " style="border-radius:10px;" aria-current="page"
-                            href="index.php">HOME</a>
+                            href="employee-dashboard.php">HOME</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="shop.php">PRODUCTS</a>
+                        <a class="nav-link text-white " href="admin-menu.php">PRODUCTS</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="services.php">APPOINTMENT</a>
+                        <a class="nav-link text-white " href="services.php">APPOINTMENT</a>
                     </li>
                 </div>
                 <div class="text-nowrap">

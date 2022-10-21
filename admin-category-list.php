@@ -12,58 +12,93 @@
 <link rel="icon" href="asset/logopet.png" type="image/x-icon">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="css/color.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="css/admin.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <title>Admin || Category</title>
 </head>
-<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
-  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
-  <h3 class=""><img src="asset/logopet.png" alt="Saint Jude Logo"
-                style="width: 50px; padding-left: 10px; padding-top: 5px;"><a class="navbar-brand fw-bold c-DarkBlue"
-                href="#" style="padding-left: 15px;">PET CO.</a></h3>
-            <ul class="navbar-nav text-center gap-1" style="padding-left: 5px;">
-                <a href="#" class="w3-bar-item w3-button">Order</a>
-                </li>
-            <div class="dropdown">
-           <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"> Content</button>
-          <ul class="dropdown-menu">
-           <li class="nav-item">
-                <a class="dropdown-item" href="admin-content.php">Announcement and Promos</a>
-           </li>
-            <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
-            <li><a class="dropdown-item" href="admin-slider.php">slider</a></li>
-            
-          </ul>
-                    
-                
-                 <a href="admin-category-list.php" class="w3-bar-item w3-button">Category</a>
-                 </li>
+<body style="background:  #9FBACD;">
 
+    <!--Navbar-->
+        
+    <div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"><img src="asset/logopet.png" alt="Saint Jude Logo"
+                style="width: 50px; padding-left: 10px; padding-top: 5px;">
+                    <span class="fs-5 d-none d-sm-inline">PETCO. ADMIN</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-person-lines-fill"></i> <span class="ms-1 d-none d-sm-inline">Accounts</span> </a>
+                        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Admin Accounts</span></a>
+                            </li>
+                            <li>
+                                <a href="admin-user-accounts.php" class="nav-link px-0"> <span class="d-none d-sm-inline">User Accounts</span></a>
+                            </li>
+                            <li>
+                                <a href="admin-user-accounts.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Employee Accounts</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Sales</span></a>
+                    </li>
+                    <li>
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-archive"></i> <span class="ms-1 d-none d-sm-inline">Pet Archives</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Pet Profile</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Pet Owner</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-pencil-square"></i> <span class="ms-1 d-none d-sm-inline">Content</span> </a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="admin-slider.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Slider</span> </a>
+                    </li>
+                    </ul>
+                    <li>
+                        <a href="admin-view-orders.php" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-bag-check"></i> <span class="ms-1 d-none d-sm-inline">Orders</span> </a>
+                    </li>
                 
-                <a class="w3-bar-item w3-button" href="admin-menu.php">Product</a>
-                </li>
-
-                
-                <a class="w3-bar-item w3-button" href="admin-dashboard.php">User List</a>
-                </li>
-                
-                <a class="w3-bar-item w3-button" href="admin-login.php">Logout</a>
-                </li>
-                <div class="social_media">
-                <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="35px"
-                                height="40px"></a>
-                <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="35px"
-                                height="40px"></a>
-                <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="35px"
-                                height="40px"></a>
-         
-                
-            </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="Admin" width="30" height="30" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1">Charlize</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="admin-login.php">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
+        <div class="col py-3">
+        <h3>Category List</h3> 
+        <p class="lead"> 
         <div class="w3-main" style="margin-left:200px">
             <div class="w3-black">
             <button class="w3-button w3-blue w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
@@ -121,49 +156,7 @@
             </div>
         </div>
     </div>
-
-   
-
-
-
-    <!--Displaying Data in table-->
-    <div class="div_background_light">
-        <div class="table-responsive mt-3 mx-auto" style="width:95%;">
-            <table class="table mt-3">
-                <thead class="table-dark c-white">
-                    <th class="text-center">Category ID</th>
-                    <th class="text-center">Category Name</th>
-                    <th class="text-center">Category Details</th>
-                    <th class="text-center">Delete</th>
-                </thead>
-                <?php while($rowslide =  mysqli_fetch_array($resultslide)){ ?>
-                <tbody>
-                    <td class="text-nowrap text-center c-white"><?php echo $rowslide['category_id']; ?></td>
-                    <td class="text-nowrap text-center c-white"><?php echo $rowslide['category_name']; ?>
-                    </td>
-                    <td class="text-nowrap text-center c-white"><?php echo $rowslide['category_details']; ?>
-                    </td>
-                    <td class="c-red text-center">
-                        <!--Edit-->
-                        <a href="admin-edit-category.php?updateid=<?php echo $rowslide['category_id'];  ?>"
-                            class="text-decoration-none c-green">
-                            <button class="btn btn-outline-success mx-2 my-2">Edit</button></a>
-
-                        <!--Delete-->
-                        <a href="php/category-list-process.php?id=<?php echo $rowslide['category_id']; ?>"><input
-                                type="button" class="btn btn-outline-danger " value="Delete">
-                        </a>
-                    </td>
-                </tbody>
-                <?php } ?>
-            </table>
-        </div>
-    </div>
-    </div>
-    </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
     <script src="/js/script.js"></script>

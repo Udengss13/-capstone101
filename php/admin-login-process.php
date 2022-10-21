@@ -16,7 +16,7 @@
       
       // If result matched $myusername and $mypassword, table row must be 1 row
       if($count == 1) {
-         header("location: ../admin-dashboard.php");
+         header("location: ../admin-content.php");
       }
       else{
          header("location: ../admin-login.php");
