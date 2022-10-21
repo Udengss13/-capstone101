@@ -68,9 +68,26 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#service">SERVICES</a>
+                        <div class="dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="#" id="dropdownMenuLink"
+                                data-bs-toggle="dropdown" aria-expanded="false">SERVICES</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Vaccination</a></li>
+                                <li><a class="dropdown-item" href="#">Confinement</a></li>
+                                <li><a class="dropdown-item" href="#">Pet Supplies</a></li>
+                                <li><a class="dropdown-item" href="#">Consultation</a></li>
+                                <li><a class="dropdown-item" href="#">Surgery</a></li>
+                                <li><a class="dropdown-item" href="#">Treatment</a></li>
+                                <li><a class="dropdown-item" href="#">Deworming</a></li>
+                                <li><a class="dropdown-item" href="#">Grooming</a></li>
+                                <li><a class="dropdown-item" href="#">Laboratory Tests</a></li>
+
+                            </ul>
+
+                        </div>
                     </li>
                 </div>
+
                 <div class="text-nowrap">
                     <li class="nav-item">
                         <a class="nav-link text-white" href="shop.php">SHOP</a>
@@ -86,6 +103,7 @@
                 <!-- <div class=" text-white">
          <?php echo  date("m/d/y") . "<br>"; ?>
        </div> -->
+                <!--
                 <div class="text-nowrap">
                     <li class="nav-item">
                         <a class="nav-link text-white" href="login-user.php">SIGN IN</a>
@@ -98,6 +116,7 @@
                     </li>
                 </div>
             </ul>
+-->
         </div>
     </nav>
 
@@ -172,7 +191,7 @@
 
                         <div class="col-lg-4 col-xs-1 col-sm-5  m-5" style="height:400px;">
                             <img src="asset/<?php echo $rowimages['image_filename'] ?>"
-                                class="card-img-top img-responsive" style="height:400px; width:100%;">
+                                class="card-img-top img-responsive" style="height:400px; width:120%;">
 
                             <div class="mb-4 justify-content-center">
                                 <br>
@@ -238,12 +257,21 @@
                                                 <div class="card-body d-flex flex-column">
                                                     <h5 class="card-title text-center">
                                                         <?php echo $rowimage['Image_title'] ?></h5>
+<<<<<<< HEAD
                                                                         <!-- <h6 class="card-text text-center text-muted">
                                                             <?php echo $rowimage['Image_subtitle'] ?>
                                                         </h6>
                                                         <p class="card-text d-inline-block text-truncate">
                                                         <?php echo $rowimage['Image_body'];?>
                                                         </p> -->
+=======
+                                                    <!-- <h6 class="card-text text-center text-muted">
+                                    <?php echo $rowimage['Image_subtitle'] ?>
+                                </h6>
+                                <p class="card-text d-inline-block text-truncate">
+                                    <?php echo $rowimage['Image_body'];?>
+                                </p> -->
+>>>>>>> 705e3a30e3f118d8ad174ee4197788cd46577247
                                                     <div class="mb-4">
                                                         <a href="index-view-image.php?id=<?php echo $rowimage['Image_id'] ?>"
                                                             class=" btn btn-success w-100">View Details</a>
@@ -257,6 +285,7 @@
 
                                         </div>
                                     </div>
+<<<<<<< HEAD
                                 </div>
                             </section>
                         </section>
@@ -270,9 +299,14 @@
                                         SERVICES
                                         <!--Padding is optional-->
                                     </span>
+=======
+>>>>>>> 705e3a30e3f118d8ad174ee4197788cd46577247
                                 </div>
+                            </section>
+                        </section>
 
 
+<<<<<<< HEAD
                                 <div class="container mb-5">
                                     <div class="d-flex justify-content-around mt-5">
 
@@ -350,6 +384,27 @@
                                     </div>
                                 </div>
                             </div>
+=======
+                        <!--Footer-->
+                        <footer class=" footer-banner" id="about">
+                            <div class="container text">
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <ul class="follow">
+                                            <h3>Please follow us</h3>
+
+                                            <a href="https://www.facebook.com/"><img src="asset/facebook.png"
+                                                    width="50px" height="40px"></a>
+                                            <a href="https://www.instagram.com//"><img src="asset/instagram.png"
+                                                    width="50px" height="40px"></a>
+                                            <a href="https://www.messenger.com/"><img src="asset/messenger.png"
+                                                    width="50px" height="40px"></a>
+                                        </ul>
+                                        <h5>© 2022 All Rights Reserved. PetCo. Animal Clinic.</h5>
+                                    </div>
+                                </div>
+                            </div>
+>>>>>>> 705e3a30e3f118d8ad174ee4197788cd46577247
 
 
                         </footer>

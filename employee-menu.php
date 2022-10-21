@@ -2,7 +2,7 @@
     require('php/connection.php');
 
    //call all Menu
-  $querymenu = "SELECT * FROM admin_menu"; //You don't need a ; like you do in SQL
+  $querymenu = "SELECT * FROM employee_menu"; //You don't need a ; like you do in SQL
   $resultmenu = mysqli_query($db_admin_account, $querymenu);
  
    //call all Category
@@ -115,6 +115,7 @@
 
                 </button>
             </div>
+            
 
             <!-- The Modal -->
             <div class="modal" id="myModal">
@@ -148,7 +149,7 @@
                                         </li>
                                         <li class="list-group-item">
                                             <label>Price:</label>
-                                            <input name="price" class="col-md-5" type="number" min="0" step="0.01"
+                                            <input name="price" class="col-12" type="number" min="0" step="0.01"
                                                 required>
                                         </li>
                                         <li class="list-group-item">
@@ -196,6 +197,8 @@
                 </div>
             </div>
 
+
+
             <!--Displaying Data -->
             <div class="div_background_light">
                 <div class="table-responsive mt-4 mx-auto" style="width:95%;">
@@ -227,7 +230,7 @@
 
                             <td class=" c-red ">
                                 <!-- Edit -->
-                                <a href="admin-edit-menu.php?editid=<?php echo $rowmenu['Menu_id']; ?>"
+                                <a href="employee-edit-menu.php?editid=<?php echo $rowmenu['Menu_id']; ?>"
                                     class="text-decoration-none c-green">
 
 
@@ -249,6 +252,8 @@
             </div>
         </div>
     </div>
+
+    
 
 
 
