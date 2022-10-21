@@ -115,6 +115,7 @@
 
                 </button>
             </div>
+            
 
             <!-- The Modal -->
             <div class="modal" id="myModal">
@@ -148,7 +149,7 @@
                                         </li>
                                         <li class="list-group-item">
                                             <label>Price:</label>
-                                            <input name="price" class="col-md-5" type="number" min="0" step="0.01"
+                                            <input name="price" class="col-12" type="number" min="0" step="0.01"
                                                 required>
                                         </li>
                                         <li class="list-group-item">
@@ -195,6 +196,8 @@
                     </div>
                 </div>
             </div>
+
+
 
             <!--Displaying Data -->
             <div class="div_background_light">
@@ -249,6 +252,8 @@
             </div>
         </div>
     </div>
+
+    
 
 
 
