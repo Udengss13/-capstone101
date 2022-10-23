@@ -41,8 +41,8 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
 
 <body style="background:  #9FBACD;">
 
-    <!--Navbar-->
-        
+
+    <!--Navbar--> 
     <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
@@ -97,7 +97,7 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
                     </li>
                     </ul>
                     <li>
-                        <a href="admin-view-orders.php" class="nav-link px-0 align-middle">
+                        <a href="admin-orders.php" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-bag-check"></i> <span class="ms-1 d-none d-sm-inline">Orders</span> </a>
                     </li>
                 
@@ -119,7 +119,7 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
             </div>
         </div>
         <!-- <h2 class="text-center text-light pb-4 ">Dynamic boostrap 5 caroussel using php and mysqli</h2> -->
-        <div class="col py-3">
+    <div class="col py-3">
     <div class="container-fluid bg-black">
         <div class="row justify-content-center mb-5 ">
             <div class="col-lg-12">
