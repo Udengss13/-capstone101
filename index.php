@@ -1,8 +1,9 @@
+
 <?php
   require('php/connection.php');
   
   $start_from = 0; 
-  $queryimage = "SELECT * FROM admin_content_homepage ORDER BY admin_content_homepage.`Image_id` DESC"; //You dont need like you do in SQL;
+  $queryimage = "SELECT * FROM admin_content_homepage ORDER BY `admin_content_homepage`.`Image_id` DESC"; //You dont need like you do in SQL;
   $resultimage = mysqli_query($db_admin_account, $queryimage);
 
   $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepage");
@@ -119,10 +120,6 @@
 -->
         </div>
     </nav>
-
-    <!-- LOG IN -->
-
-    
 
 
     <!-- SLIDER Images -->
@@ -288,7 +285,6 @@
 
         </section>
     </section>
-    
     <footer class=" footer-banner" id="about">
         <div class="container text">
             <div class="row">

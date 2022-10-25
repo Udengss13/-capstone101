@@ -4,6 +4,8 @@
     //GET USER ID IN REGISTRATION
     $user_id = $_SESSION['user_id'];
 
+    // $cart = $_SESSION['submit_order'];
+
     if(!isset($user_id)){
       header('location: login-user.php');
     }
@@ -29,32 +31,53 @@
   
     
     if(mysqli_num_rows($cart_query)>0){
-      while($product_item = mysqli_fetch_assoc($cart_query)){
-        $product_name = $product_item['Cart_name'];
-        $quantity= $product_item['Cart_quantity'];
-        $price =$product_item['Cart_price'];
-        $product_price = $product_item['Cart_price'] * $product_item['Cart_quantity'];  
-        $price_total =  $totalofprice += $product_price;
+        foreach($cart_query as $product_item){
+        // while($product_item = mysqli_fetch_assoc($cart_query)){
+            
+          $product_id = $product_item['product_id'];
+          $product_name = $product_item['Cart_name'];
+          $quantity= $product_item['Cart_quantity'];
+          $price =$product_item['Cart_price'];
+          $product_price = $product_item['Cart_price'] * $product_item['Cart_quantity'];  
+          $price_total =  $totalofprice += $product_price;
+        };
       };
-    };
   
     
-    // $total_product = implode(', ',$product_name);
-    $detail_query = mysqli_query($con, "INSERT INTO  `order` (order_user_id, first_name,  last_name, contact, email, address, payment_method, product_name, quantity, price ,total_price)
-                                                     VALUES ('$user_id' , '$fname',  '$lname', '$contact', '$email', '$address', '$paymentmethod', '$product_name', '$quantity', '$price', '$price_total' )") or die('Query failed!');
-
+     // $total_product = implode(', ',$product_name);
+        $insertOrder = mysqli_query($con, "INSERT INTO  `order` (order_user_id, first_name,  last_name, contact, email, address, payment_method)
+                                                        VALUES ('$user_id' , '$fname',  '$lname', '$contact', '$email', '$address', '$paymentmethod')") or die('Query failed!'); // '$paymentmethod', '$product_name', '$quantity', '$price', '$price_total'
  
-  // header('location: cart.php');
 
-if($cart_query && $detail_query){
-  mysqli_query($con, "DELETE FROM `cart` WHERE Cart_user_id = '$user_id'");
-  echo '<script>
-  alert("Your reservation has been made!");
-  window.location.href="product.php";
-  </script>';
-}
+        if($insertOrder){
+            $order_id = mysqli_insert_id($con);  
 
-}
+            foreach($cart_query as $cart ){
+
+                $sql_cart ="SELECT * FROM admin_menu where Menu_id = '".$cart['product_id']."' ";
+                $result_cart = mysqli_query($db_admin_account, $sql_cart);
+                $row_cart= mysqli_fetch_assoc($result_cart);
+
+                $price = $row_cart['Menu_price'];
+                $quantity= $cart['Cart_quantity'];
+                
+               
+                $insertorderlist= mysqli_query($con, "INSERT INTO  `order_list` (order_id, product_id, qty, product_price) 
+                                                                VALUES ('$order_id' , '".$cart['product_id']."',  '$quantity', '$price')") or die('Query failed!'); // '$paymentmethod', '$product_name', '$quantity', '$price', '$price_total'
+             
+             if($insertorderlist){
+                mysqli_query($con, "DELETE FROM `cart` WHERE Cart_user_id = '$user_id'");
+                echo '<script>
+                alert("Thank You! Your reservation has been made!");
+                window.location.href="product.php";
+                </script>';}
+                
+             }
+            };              
+        };     
+     
+
+
 
 ?>
 
@@ -150,7 +173,7 @@ if($cart_query && $detail_query){
       <?php echo $fetch_user['first_name'] ." " .$fetch_user['last_name'] ?></p>
   </div> -->
 
-  <div class="float-left col-2">
+    <div class="float-left col-2">
         <a href="cart.php" class=" btn w-100"><span class="text fw-bold" style="color:#034D73"><i
                     class="bi bi-arrow-left"> </i>Back</span></a>
     </div>
@@ -278,7 +301,7 @@ if($cart_query && $detail_query){
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
 
-    <script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js" >
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">
     </script>
 
 </body>

@@ -58,13 +58,13 @@
             <ul class="navbar-nav me-auto my-0 my-lg-0 " style="--bs-scroll-height: 100px;">
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white bg-primary " style="border-radius:10px;" aria-current="page"
-                            href="index.php">HOME</a>
+                        <a class="nav-link text-white  " style="border-radius:10px;" aria-current="page"
+                            href="employee-dashboard.php">HOME</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="shop.php">Products</a>
+                        <a class="nav-link text-white bg-primary" href="shop.php">Products</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
@@ -117,7 +117,7 @@
             
 
             <!-- The Modal -->
-            <div class="modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
 
