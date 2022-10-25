@@ -225,7 +225,7 @@
     <?php   
           if(isset($_GET['select_category'])){
            $filtervalues = $_GET['select_category']; 
-           $querysearchmenu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu WHERE CONCAT(Menu_name, Menu_price, Menu_category,Menu_filename) LIKE '%$filtervalues%'"); //You dont need like you do in SQL;
+           $querysearchmenu = mysqli_query($db_admin_account,"SELECT * FROM employee_menu WHERE CONCAT(Menu_name, Menu_price, Menu_category,Menu_filename) LIKE '%$filtervalues%'"); //You dont need like you do in SQL;
                    
            if(mysqli_num_rows($querysearchmenu)>0 ){
                 ?> 
@@ -279,7 +279,7 @@
     <?php   
                 if(isset($_GET['search'])){
                 $filtervalues = $_GET['search']; 
-                $querysearchmenu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu WHERE CONCAT(Menu_name, Menu_price, Menu_category, Menu_filename) LIKE '%$filtervalues%'"); //You dont need like you do in SQL;
+                $querysearchmenu = mysqli_query($db_admin_account,"SELECT * FROM employee_menu WHERE CONCAT(Menu_name, Menu_price, Menu_category, Menu_filename) LIKE '%$filtervalues%'"); //You dont need like you do in SQL;
                         
                     if(mysqli_num_rows($querysearchmenu)>0 ){
                         ?>
@@ -371,7 +371,7 @@
     <?php   
                 if(!isset($_GET['search']) && !isset($_GET['select_category']) ){
                 // $filtervalues = $_GET['search']; 
-                $menu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu "); //You dont need like you do in SQL;
+                $menu = mysqli_query($db_admin_account,"SELECT * FROM employee_menu "); //You dont need like you do in SQL;
                         
                     if(mysqli_num_rows($menu)>0 ){
                         ?>

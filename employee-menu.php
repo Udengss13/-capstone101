@@ -102,14 +102,13 @@
     <!--Content of Menu-->
     <div class="container-xl-fluid mt-5 mb-5">
         <div class="px-3">
-            <h4 class="text-center c-white py-3">All Products</h4>
+            <h3 class="text-center c-white py-3">All Products</h3>
 
             <!-- Modal -->
-
             <div class="d-flex flex-row-reverse">
                 <button type="button" class="btn bg-button"
                     style="background: #EA6D52; border-radius: 15px; border-width: 7px;" data-bs-toggle="modal"
-                    data-bs-target="#myModal">
+                    data-bs-target="#staticBackdrop">
                     Add
 
 
@@ -118,7 +117,7 @@
             
 
             <!-- The Modal -->
-            <div class="modal" id="myModal">
+            <div class="modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">>
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
 
@@ -177,10 +176,7 @@
                                             </div>
                                             <!-- <input name="photo" class="col-md-6 c-white" id="upload-news" type="file" required> -->
                                         </li>
-                                        <li class="list-group-item">
-                                            <button type="submit" name="news" class="btn btn-outline-success float-end"
-                                                style="max-width:450px;">Confirm</button>
-                                        </li>
+                                       
                                     </ul>
 
 
@@ -190,6 +186,8 @@
 
                         <!-- Modal footer -->
                         <div class="modal-footer">
+                     <button type="submit" name="news" class="btn btn-outline-success float-end"
+                                                style="max-width:450px;">Confirm</button>
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                         </div>
 
@@ -201,7 +199,7 @@
 
             <!--Displaying Data -->
             <div class="div_background_light">
-                <div class="table-responsive mt-4 mx-auto" style="width:95%;">
+                <div class="table-responsive mt-4 mx-auto">
                     <table class="table mt-3">
                         <thead class="table-dark c-white">
                             <!-- <th> ID</th> -->
@@ -227,7 +225,7 @@
                             <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_price']; ?></td>
                             <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_category']; ?></td>
 
-
+                            
                             <td class=" c-red ">
                                 <!-- Edit -->
                                 <a href="employee-edit-menu.php?editid=<?php echo $rowmenu['Menu_id']; ?>"
@@ -252,9 +250,6 @@
             </div>
         </div>
     </div>
-
-    
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"

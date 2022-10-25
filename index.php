@@ -2,7 +2,7 @@
   require('php/connection.php');
   
   $start_from = 0; 
-  $queryimage = "SELECT * FROM admin_content_homepage ORDER BY `admin_content_homepage`.`Image_id` DESC"; //You dont need like you do in SQL;
+  $queryimage = "SELECT * FROM admin_content_homepage ORDER BY admin_content_homepage.`Image_id` DESC"; //You dont need like you do in SQL;
   $resultimage = mysqli_query($db_admin_account, $queryimage);
 
   $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepage");
@@ -119,6 +119,10 @@
 -->
         </div>
     </nav>
+
+    <!-- LOG IN -->
+
+    
 
 
     <!-- SLIDER Images -->
@@ -277,37 +281,40 @@
                                         </div>
                                     </div>
                                 </div>
-                            </section>
-                        </section>
+                    </div>
+                </div>
+            </div>
 
 
-                        <!--Footer-->
-                        <footer class=" footer-banner" id="about">
-                            <div class="container text">
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <ul class="follow">
-                                            <h3>Please follow us</h3>
+        </section>
+    </section>
+    
+    <footer class=" footer-banner" id="about">
+        <div class="container text">
+            <div class="row">
+                <div class="col-13 text-center">
+                    <ul class="follow">
+                        <h3>Please follow us</h3>
 
-                                            <a href="https://www.facebook.com/"><img src="asset/facebook.png"
-                                                    width="50px" height="40px"></a>
-                                            <a href="https://www.instagram.com//"><img src="asset/instagram.png"
-                                                    width="50px" height="40px"></a>
-                                            <a href="https://www.messenger.com/"><img src="asset/messenger.png"
-                                                    width="50px" height="40px"></a>
-                                        </ul>
-                                        <h5>© 2022 All Rights Reserved. PetCo. Animal Clinic.</h5>
-                                    </div>
-                                </div>
-                            </div>
+                        <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="50px"
+                                height="40px"></a>
+                        <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="50px"
+                                height="40px"></a>
+                        <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="50px"
+                                height="40px"></a>
+                    </ul>
+                    <h5>© 2022 All Rights Reserved. PetCo. Animal Clinic.</h5>
+                </div>
 
 
-                        </footer>
+    </footer>
 
-                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-                            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-                            crossorigin="anonymous">
-                        </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
