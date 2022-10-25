@@ -31,7 +31,8 @@
   
     
     if(mysqli_num_rows($cart_query)>0){
-        while($product_item = mysqli_fetch_assoc($cart_query)){
+        foreach($cart_query as $product_item){
+        // while($product_item = mysqli_fetch_assoc($cart_query)){
             
           $product_id = $product_item['product_id'];
           $product_name = $product_item['Cart_name'];
@@ -53,22 +54,23 @@
 
             foreach($cart_query as $cart ){
 
-                $sql_cart ="SELECT * FROM admin_menu where Menu_id = '$product_id'";
+                $sql_cart ="SELECT * FROM admin_menu where Menu_id = '".$cart['product_id']."' ";
                 $result_cart = mysqli_query($db_admin_account, $sql_cart);
                 $row_cart= mysqli_fetch_assoc($result_cart);
+
                 $price = $row_cart['Menu_price'];
                 $quantity= $cart['Cart_quantity'];
                 
                
                 $insertorderlist= mysqli_query($con, "INSERT INTO  `order_list` (order_id, product_id, qty, product_price) 
-                                                                VALUES ('$order_id' , '$product_id',  '$quantity', '$price')") or die('Query failed!'); // '$paymentmethod', '$product_name', '$quantity', '$price', '$price_total'
+                                                                VALUES ('$order_id' , '".$cart['product_id']."',  '$quantity', '$price')") or die('Query failed!'); // '$paymentmethod', '$product_name', '$quantity', '$price', '$price_total'
              
              if($insertorderlist){
                 mysqli_query($con, "DELETE FROM `cart` WHERE Cart_user_id = '$user_id'");
                 echo '<script>
                 alert("Thank You! Your reservation has been made!");
                 window.location.href="product.php";
-                </script>'; }
+                </script>';}
                 
              }
             };              

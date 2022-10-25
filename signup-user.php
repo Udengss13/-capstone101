@@ -304,26 +304,31 @@
     </body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 
-    <script>
-    $(document).ready(function() {
-        var i = 1;
-        $('#add').click(function() {
-            i++;
-            $('#dynamic_field').append('<div class="row" id="row' + i +
-                '"> <div class="col-4">Pet Type:<select id="slct1" name="pettype[]" onchange="populate(this.id,'
-                slct2 ')" ><option value="dog">Dog</option>option value="cat">Cat</option> </select><div class="col"><input type="text" class="form-control" name="durchgefuhrte_arbeiten[]"><input class="form-check-input" type="radio" name="f5" id="exampleRadios2" value="option2"><label class="form-check-label" for="exampleRadios1">Ja</label><br><input class="form-check-input" type="radio" name="f5" id="exampleRadios2" value="option2"><label class="form-check-label" for="exampleRadios1">Ja</label> </div> <div class="col"> <input type="text" class="form-control" name="von[]"> </div> <div class="col"> <input type="text" class="form-control" name="bis[]"> </div> <div class="col"> <input type="text" class="form-control" name="std[]"> </div> <di<div class="col"> <td><button type="button" name="add" class="btn btn-danger btn_remove" id="' +
-                i + '"><i class="fa fa fa-trash"></i></button></td> </div> </div>');
-        });
-        $(document).on('click', '.btn_remove', function() {
-            var button_id = $(this).attr("id");
-
-            $('#row' + button_id + '').remove();
-        });
-
-
-    });
-    </script>
-
+    <script>  
+ $(document).ready(function(){  
+      var i=1;  
+      $('#add').click(function(){  
+           i++;  
+           $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
+      });  
+      $(document).on('click', '.btn_remove', function(){  
+           var button_id = $(this).attr("id");   
+           $('#row'+button_id+'').remove();  
+      });  
+      $('#submit').click(function(){            
+           $.ajax({  
+                url:"name.php",  
+                method:"POST",  
+                data:$('#add_name').serialize(),  
+                success:function(data)  
+                {  
+                     alert(data);  
+                     $('#add_name')[0].reset();  
+                }  
+           });  
+      });  
+ });  
+ </script>
 
 
 

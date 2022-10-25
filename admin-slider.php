@@ -97,7 +97,7 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
                     </li>
                     </ul>
                     <li>
-                        <a href="admin-view-orders.php" class="nav-link px-0 align-middle">
+                        <a href="admin-orders.php" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-bag-check"></i> <span class="ms-1 d-none d-sm-inline">Orders</span> </a>
                     </li>
                 

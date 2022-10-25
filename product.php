@@ -31,11 +31,18 @@
     $select_cart = mysqli_query($con, "SELECT * FROM `cart` WHERE Cart_name = '$product_name' AND Cart_user_id = '$user_id'");
 
     if(mysqli_num_rows($select_cart) > 0){
-        $message[] = "Product is already added to your cart!" ;
+        // $insert_product = mysqli_query($con," UPDATE `cart` SET `Cart_quantity` = '4' WHERE `cart`.`Cart_id` = '$user_id'");
+        echo '<script>
+        alert("Product is already in your cart!");
+        window.location.href="product.php";
+        </script>';
     }else{
       $insert_product = mysqli_query($con, "INSERT INTO `cart`(Cart_user_id, product_id, Cart_name, Cart_price, Cart_image, Cart_quantity) 
       VALUES ('$user_id', '$product_id','$product_name', '$product_price', '$product_image', '$product_quantity')");
-      $message[] = "Product successfully add to cart!" ;
+       echo '<script>
+       alert("Product successfully add to cart!");
+       window.location.href="product.php";
+       </script>';
     }
   }
 ?>
@@ -51,11 +58,17 @@
     $select_cart = mysqli_query($con, "SELECT * FROM `cart` WHERE Cart_name = '$product_select_name' AND Cart_user_id = '$user_id'");
 
     if(mysqli_num_rows($select_cart) > 0){
-        $message[] = "Product is already in added in your cart!!" ;
+        echo '<script>
+        alert("Product is already in your cart!");
+        window.location.href="product.php";
+        </script>';
     }else{
         $insert_product = mysqli_query($con, "INSERT INTO `cart`(Cart_user_id, product_id, Cart_name, Cart_price, Cart_image, Cart_quantity) 
         VALUES ('$user_id', '$product_id','$product_name', '$product_price', '$product_image', '$product_quantity')");
-        $message[] = "Product successfully add to cart!" ;
+        echo '<script>
+        alert("Product successfully add to cart!");
+        window.location.href="product.php";
+        </script>';
     }
   }
 ?>
@@ -177,12 +190,12 @@
 
     <!-- For Category Container -->
     <div class="container search mt-4">
-        
+
         <form action="product.php" method="GET">
             <div class="input-group flex-nowrap ">
                 <select class="form-select form-select-md" name="select_category" required
                     onchange="this.form.submit()">
-                    <option value="" disabled selected>Select Category</option>
+                    <option value="" name="select_all">Select Category</option>
                     <?php while($rowcategory =  mysqli_fetch_array($resultcategory)){ ?>
                     <option value=" <?php echo $rowcategory['category_name']; ?>">
                         <?php echo $rowcategory['category_name']; ?>
@@ -234,9 +247,9 @@
            $querysearchmenu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu WHERE CONCAT(Menu_id, Menu_name, Menu_price, Menu_category,Menu_filename) LIKE '%$filtervalues%'"); //You dont need like you do in SQL;
                    
            if(mysqli_num_rows($querysearchmenu)>0 ){
-                ?>
+                    ?>
     <section class="product ms-5 mb-4">
-    <center>
+        <center>
             <div class="fs-5 fw-bold ">Category Result:</div>
         </center>
         <div class="box-container justify-content-center">
@@ -293,7 +306,7 @@
                     if(mysqli_num_rows($querysearchmenu)>0 ){
                         ?>
     <section class="product ms-5 mb-4">
-    <center>
+        <center>
             <div class="fs-5 fw-bold ">Search Result:</div>
         </center>
         <div class="box-container justify-content-center">
@@ -337,13 +350,13 @@
     </section>
     <?php };?>
     <?php } ?>
-   
+
 
 
 
     <!-- FOR THE DISPLAY OF ALL PRODUCTS [IF THE CATEGORY AND THE SEARCH IS NOT TRIGGERED] -->
     <?php   
-                if(!isset($_GET['search']) && !isset($_GET['select_category']) ){
+                if(!isset($_GET['search']) && !isset($_GET['select_category'])){
                 // $filtervalues = $_GET['search']; 
                 $menu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu "); //You dont need like you do in SQL;
                         
@@ -393,7 +406,7 @@
     <?php };?>
 
     <?php } ?>
-  
+
 
 
 
