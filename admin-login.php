@@ -8,7 +8,7 @@
     <!-- <link rel="stylesheet" href="css/color.css"> -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/emp.css">
-
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -35,20 +35,12 @@
         <div class="collapse navbar-collapse me-3" id="navbarScroll">
             <ul class="navbar-nav me-auto my-0 my-lg-0 " style="--bs-scroll-height: 100px;">
 
-                <div class="text-nowrap">
-                    <li class="nav-item">
-                        <a class="nav-link  text-white btn btn-primary" href="admin-login.php">Log In</a>
-                    </li>
-                </div>
+                
                 
             </ul>
         </div>
     </nav>
-    <div>
-        <center>
-            <h2 class="bg-light p-2">Welcome, this is for PetCo. Admin only!</h2>
-        </center>
-    </div>
+    
 
 
     <div class="container mt-5 mb-5">
@@ -57,7 +49,7 @@
                 <form action="php/admin-login-process.php" method="post">
 
                     <h1 class="text-center mt-3">Sign-in</h1>
-                    <p class="text-center mt-3">Login with your Username and Password.</p>
+                    
                     <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
                         <strong>Warning!</strong> This page is for authorized personnel only.
                     </div>
@@ -71,8 +63,8 @@
                         <input type="password" class="form-control" name="password" placeholder="Password"
                             aria-label="Username" aria-describedby="addon-wrapping" required>
                     </div>
-                    <div class="form-group mt-5 pb-3 mb-3">
-                        <input class="form-control button" type="submit" name="admin-login" value="Login">
+                    <div class="form-group mt-4 pb-3 mb-3">
+                        <input class="form-control button" type="submit" name="admin-login" value="Sign In">
                     </div>
                     <!-- <div class="d-grid d-md-flex justify-content-center mt-5 pb-5 mb-3">
                         <button class="btn btn-success" type="submit" name="admin-login">Login</button>

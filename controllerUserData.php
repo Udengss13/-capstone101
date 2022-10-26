@@ -77,12 +77,12 @@ $errors = array();
                 $mail->SMTPSecure='tls';
 
 
-                $mail->Username='alexandranicole.bautista.f@bulsu.edu.ph';
-                $mail->Password='##050101';
+                $mail->Username='markanthony.perez.r@bulsu.edu.ph';
+                $mail->Password='anthonyandaxlroses';
 
-                $mail->setFrom('alexandranicole.bautista.f@bulsu.edu.ph', 'PETKO');
+                $mail->setFrom('markanthony.perez.r@bulsu.edu.ph', 'PETKO');
                 $mail->addAddress($email);
-                $mail->addReplyTo('alexandranicole.bautista.f@bulsu.edu.ph');
+                $mail->addReplyTo('markanthony.perez.r@bulsu.edu.ph');
 
                 $mail->isHTML(true);
                 $mail->Subject='Email Verification Code';
@@ -194,12 +194,12 @@ $errors = array();
                 $mail->SMTPAuth=true;
                 $mail->SMTPSecure='tls';
 
-                $mail->Username='alexandranicole.bautista.f@bulsu.edu.ph';
-                $mail->Password='##050101';
+                $mail->Username='markanthony.perez.r@bulsu.edu.ph';
+                $mail->Password='anthonyandaxlroses';
 
-                $mail->setFrom('alexandranicole.bautista.f@bulsu.edu.ph', 'PETKO');
+                $mail->setFrom('markanthony.peres.r@bulsu.edu.ph', 'PETKO');
                 $mail->addAddress($email);
-                $mail->addReplyTo('alexandranicole.bautista.f@bulsu.edu.ph');
+                $mail->addReplyTo('markanthony.peres.r@bulsu.edu.ph');
 
                 $mail->isHTML(true);
                 $mail->Subject='Email Verification Code to Reset Password';

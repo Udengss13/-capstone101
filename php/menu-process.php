@@ -19,8 +19,12 @@
         {
             $sql = "INSERT INTO admin_menu (Menu_name, Menu_description, Menu_price, Menu_category,  Menu_dir, Menu_filename) 
             VALUES('$title', '$safe_input', '$price', '$category_name', '$filenamedir', '$filename')";
-            mysqli_query($db_admin_account,$sql);
-            header("location: ../admin-menu.php");
+            mysqli_query($db_admin_account,$sql);            
+            echo '<script> alert("Product Added Successfully");
+                    window.location.href="../admin-menu.php";
+                    </script>'; 
+        
+            
         }
         else
         {
@@ -40,7 +44,9 @@
         $sqldelete = "DELETE FROM admin_menu WHERE Menu_id=$id";
         $resultdelete = mysqli_query($db_admin_account, $sqldelete);
         unlink($filedir);
-        header("location: ../admin-menu.php");
+        echo '<script> alert("Product Deleted Succesfully");
+        window.location.href="../admin-menu.php";
+        </script>'; 
     }
 
     

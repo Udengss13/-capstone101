@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>User Log In</title>
     <link rel="icon" href="asset/logopet.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -65,7 +65,7 @@
                 <!-- <div class=" text-white">
           <?php echo  date("m/d/y") . "<br>"; ?>
         </div> -->
-                <div class="text-nowrap">
+                <!-- <div class="text-nowrap">
                     <li class="nav-item">
                         <a class="nav-link  text-white bg-primary" href="login-user.php">SIGN IN</a>
                     </li>
@@ -75,7 +75,7 @@
                             <a class="nav-link text-white" href="signup-user.php">SIGN UP</a>
                         </li>
                     </div>
-            </ul>
+            </ul> -->
         </div>
     </nav>
 
@@ -83,8 +83,8 @@
         <div class="row">
             <div class="col-md-7 col-lg-4 col-sm- 4 form login-form">
                 <form action="login-user.php" method="POST" autocomplete="">
-                    <h1 class="text-center  mt-3 text-primary">Sign-in</h1>
-                    <p class="text-center">Login with your email and password.</p>
+                    <h1 class="text-center  mt-3 text-primary">Sign In</h1>
+                    
                     <?php
                         if(count($errors) > 0)
                         {
@@ -112,7 +112,7 @@
                             password?</a>
                     </div>
                     <div class="form-group">
-                        <input class="form-control button" type="submit" name="login" value="Login">
+                        <input class="form-control button" type="submit" name="login" value="Sign In">
                     </div>
                     <div class="link login-link text-center mb-3 mt-3">Don't have an account? <a
                             href="signup-user.php">Sign up
@@ -141,7 +141,6 @@
 
     </div>
     </div>
-
 
     <!--Footer 
     <footer class=" footer-banner" id="about">

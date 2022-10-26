@@ -8,9 +8,9 @@ require_once "controllerUserData.php";
     //GET USER ID IN REGISTRATION
     $user_id = $_SESSION['user_id'];
 
-    if(!isset($user_id)){
-      header('location: login-user.php');
-    }
+    // if(!isset($user_id)){
+    //   header('location: login-user.php');
+    // }
 ?>
 <?php
   //This is for calling the informaiton of user in fields.
@@ -52,66 +52,91 @@ require_once "controllerUserData.php";
     <title>Admin || Order</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="css/admin.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 
-<body class="">
-    <!--Navbar-->
-    <nav class="navbar navbar-expand-lg nav_color navbar-dark nav_outline">
-        <h3 class=""><img src="asset/logopet.png" alt="Petco Logo"
-                style="width: 50px; padding-left: 10px; padding-top: 5px;"><a class="navbar-brand fw-bold c-white"
-                href="#" style="padding-left: 15px;">PET CO.</a></h3>
-        <button style="margin-right: 20px;" class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end col-6" style="padding-right: 20px;" id="navbarNav">
-            <ul class="navbar-nav text-center gap-3" style="padding-left: 10px;">
+<body style="background:  #9FBACD;">
 
-                <li class="nav-item">
-                    <a class="nav-link c-white bg_nav_menu rounded" href="#">Orders</a>
-                </li>
-                <div class="dropdown">
-                    <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown">
-                        Content</button>
-                    <ul class="dropdown-menu">
-                        <li class="nav-item">
-                            <a class="dropdown-item" href="admin-content.php">News</a>
+    <div class="container-fluid overflow-hidden">
+        <div class="row vh-100 overflow-auto">
+             <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top">
+                 <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"><img src="asset/logopet.png" alt="Saint Jude Logo" style="width: 50px; padding-left: 10px; padding-top: 5px;">
+                  <span class="fs-5 d-none d-sm-inline">PETCO. ADMIN</span>
+                </a>
+                <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                           <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fs-4 bi-person-lines-fill"></i><span class="ms-1 d-none d-sm-inline">Accounts</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                            <li><a class="dropdown-item" href="#">Admin Accounts</a></li>
+                            <li><a class="dropdown-item" href="admin-user-accounts.php">User Accounts</a></li>
+                            <li><a class="dropdown-item" href="#">Employee Accounts</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-sm-0 px-2">
+                            <i class="fs-4 bi-table"></i><span class="ms-1 d-none d-sm-inline">Sales</span></a>
+                    </li>
+			  <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fs-4 bi-archive"></i><span class="ms-1 d-none d-sm-inline">Pet Archives</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                            <li><a class="dropdown-item" href="#">Pet Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Pet Owners</a></li>
+                        </ul>
+                    </li>
+			 <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fs-4 bi-pencil-square"></i><span class="ms-1 d-none d-sm-inline">Content</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                            <li><a class="dropdown-item" href="admin-slider.php">Slider</a></li>
+                            <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="admin-orders.php" class="nav-link px-sm-0 px-2">
+                            <i class="fs-4 bi-bag-check"></i><span class="ms-1 d-none d-sm-inline">Orders</span> </a>
+                    </li>
+                </ul>
+                <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="Admin" width="28" height="28" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1">Cha</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
-                        <li><a class="dropdown-item" href="admin-slider.php">slider</a></li>
-
+                        <li><a class="dropdown-item" href="admin-login.php">Sign out</a></li>
                     </ul>
                 </div>
-                <li class="nav-item">
-                    <a class="nav-link c-green  rounded" href="admin-category-list.php">Category</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link c-green  rounded" href="admin-menu.php">Menu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link c-green rounded" href="admin-dashboard.php">User List</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link c-green" href="admin-login.php">Logout</a>
-                </li>
-            </ul>
+            </div>
         </div>
-    </nav>
 
-    <div class="container mt-4">
+    <div class="col-md-9 col-xl-10 py-3">
         <div class="card">
             <div class="card-body">
                 <form action="" method="POST">
                     <table class="table table-striped table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col">Number</th>
+                                <!-- <th scope="col">Number</th> -->
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Address</th>
@@ -129,7 +154,7 @@ require_once "controllerUserData.php";
                                   ?>
 
                             <tr>
-                                <td><?php echo $i++ ?></td>
+                                <!-- <td><?php echo $i++ ?></td> -->
                                 <td><?php echo $row['first_name']." ".$row['last_name']  ?></td>
                                 <td><?php echo $row['email'] ?></td>
                                 <td><?php echo $row['address'] ?></td>
@@ -217,16 +242,16 @@ require_once "controllerUserData.php";
                                 </thead>
                                 <tbody>
                                     <?php 
-                                        $select_cart = mysqli_query($con, "SELECT * FROM `order` WHERE order_user_id = '$user_id' ");
+                                        $select_cart = mysqli_query($con, "SELECT * FROM `order_list` WHERE order_user_id = '$user_id' ");
                                         $total = 0;
                                         $grand_total= 0;
 
 
                                     while($row=$select_cart->fetch_assoc()):
-                                        $total += $row['quantity'] * $row['price'];
+                                        $total += $row['qty'] * $row['price'];
                                                 ?>
                                     <tr>
-                                        <td><?php echo $row['quantity'] ?></td>
+                                        <td><?php echo $row['qty'] ?></td>
                                         <td><?php echo $row['product_name'] ?></td>
                                         <td>Php <?php echo number_Format($row['price'],2 )?></td>
                                     </tr>

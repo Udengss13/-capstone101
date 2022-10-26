@@ -181,14 +181,13 @@
         </div>
     </div>
 
-    <!--ANNOUNCEMENT-->
+    <!--QUICKTIPS-->
     <section class="flex-sect" id="imagesec">
         <section id="imagesection" class="div_background_light py-4">
-            <div class="container-fluid px-5 mt-3">
+            <div class="container-fluid px-5">
                 <div class="col-lg-12 col-md-12">
                     <div class="justify-content-center row col-md-12 rounded-3">
-
-                        <div style="width: 100%; height: 20px; border-bottom: 2px solid white; text-align: center">
+                        <div style="width: 100%; height: 30px; border-bottom: 2px solid white; text-align: center">
                             <span style="font-size: 40px; background-color:#9FBACD; color: white">
                                 QUICKTIPS
                                 <!--Padding is optional-->
@@ -197,8 +196,8 @@
 
 
                         <!--Pictures-->
-
                         <?php while($rowimages = mysqli_fetch_array($quicktipsresult)) {?>
+
 
                         <div class="col-lg-4 col-xs-1 col-sm-5  m-5" style="height:400px;">
                             <img src="asset/<?php echo $rowimages['image_filename'] ?>"
@@ -206,7 +205,7 @@
 
                             <div class="mb-4 justify-content-center">
                                 <br>
-                                <a href="user-view-image.php?id=<?php echo $rowimages['Image_id'] ?>"
+                                <a href="quicktips-view-image.php?id=<?php echo $rowimages['id'] ?>"
                                     style="background:#EA6D52" class=" btn btn-warning w-50 text-light">Read</a>
                             </div>
 
@@ -215,12 +214,28 @@
 
                         <?php }?>
 
-
                     </div>
                 </div>
             </div>
         </section>
     </section>
+
+    <!-- About us -->
+    <section class="flex-sect" id="about" style="background-color:#9FBACD;">>
+        <section id="imagesection" class="div_background_light py-4">
+            <div class="container-fluid px-5">
+                <div class="col-lg-12 col-md-12">
+                    <div class="justify-content-center row col-md-12 rounded-3">
+                        <div style="width: 100%; height: 30px; border-bottom: 2px solid white; text-align: center">
+                            <span style="font-size: 40px; background-color:#9FBACD; color: white">
+                               ABOUT US
+                                <!--Padding is optional-->
+                            </span>
+                        </div>
+                        <div class="row box" style="height:300px;">
+                        <h4 style="color: white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h4>
+                        </div>
+
     <!--ANNOUNCEMENT-->
     <section class="flex-sect" id="imagesec">
         <section id="imagesection" class="div_background_light py-4">
@@ -266,7 +281,7 @@
     </section>
 
     <!--Footer-->
-    <footer class=" footer-banner" id="about">
+    <footer class="footer-banner" id="about">
         <div class="container text">
             <div class="row">
                 <div class="col-12 text-center">
