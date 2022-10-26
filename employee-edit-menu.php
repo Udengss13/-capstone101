@@ -118,7 +118,7 @@ session_start();
       <h4 class="text-center c-white py-3">- Edit Menu -</h4>
       <!--Success Message-->
       <?php if($applychanges!=""){?>
-      <div class="alert alert-primary alert-dismissible fade show mt-3 mx-auto" role="alert" style="width: 90%;">
+      <div class="alert alert-primary alert-dismissible fade show mt-2 mx-auto" role="alert" style="width: 90%;">
         <strong>Apply Changes Successfully!</strong> <?php echo $applychanges; ?>.
       </div>
       <?php } ?>

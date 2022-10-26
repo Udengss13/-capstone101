@@ -37,6 +37,22 @@ $userresult = mysqli_query($con, $queryimage);
 
     <!-- bootstrap Icon Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.11.3/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.11.3/main.min.js"></script>
+
+    <link href='fullcalendar/main.css' rel='stylesheet' />
+    <script src='fullcalendar/main.js'></script>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+
+    </script>
 </head>
 
 <body>
@@ -107,7 +123,7 @@ $userresult = mysqli_query($con, $queryimage);
         <div class="container ">
             <!--1st row-->
             <div class="row mt-4">
-                <div class="col-7">
+                <div class="col">
                     <h2>My Profile</h2>
 
                 </div>
@@ -132,7 +148,7 @@ $userresult = mysqli_query($con, $queryimage);
                 ?>
                 <!-- <p class="text-capitalize text-center">Welcome
                     <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></p> -->
-                <div class="col-lg-5 profilebg p-4">
+                <div class="col profilebg ">
                     <!-- <div class="card mb-4">
                             <div class="card-body"> -->
                     <div class="row">
@@ -209,11 +225,16 @@ $userresult = mysqli_query($con, $queryimage);
                 </div>
 
             </div>
+            <div class="col">
+            <div id='calendar'></div>
+            </div>
         </div>
     </div>
+
+    <!-- <div id='calendar'></div> -->
     <hr>
         <!--ANNOUNCEMENT-->
-    <section class="flex-sect" id="imagesec">
+    <!-- <section class="flex-sect" id="imagesec"> -->
     <div class="container mt-5">
         <div class="row">
             <div class="col ">
@@ -224,7 +245,7 @@ $userresult = mysqli_query($con, $queryimage);
                     };
                 ?>
                 
-                <div class="col-lg-5 profilebg p-4">
+                <div class="col-lg-5 profilebg">
                     <!-- <div class="card mb-4">
                             <div class="card-body"> -->
                     <div class="row">
