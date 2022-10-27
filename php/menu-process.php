@@ -17,35 +17,35 @@
         // move file to a folder
         if(move_uploaded_file($_FILES["photo"]["tmp_name"], $filenamedir))
         {
-            $sql = "INSERT INTO admin_menu (Menu_name, Menu_description, Menu_price, Menu_category,  Menu_dir, Menu_filename) 
+            $sql = "INSERT INTO employee_menu (Menu_name, Menu_description, Menu_price, Menu_category,  Menu_dir, Menu_filename) 
             VALUES('$title', '$safe_input', '$price', '$category_name', '$filenamedir', '$filename')";
             mysqli_query($db_admin_account,$sql);            
             echo '<script> alert("Product Added Successfully");
-                    window.location.href="../admin-menu.php";
-                    </s cript>'; 
+                    window.location.href="../employee-menu.php";
+                    </script>'; 
         
             
         }
         else
         {
-            header("location: ../admin-menu.php");
+            header("location: ../employee-menu.php");
         }
     }
 
     //For deleting menu by ID
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-        $querymenu = "SELECT * FROM admin_menu WHERE Menu_id=$id"; 
+        $querymenu = "SELECT * FROM employee_menu WHERE Menu_id=$id"; 
         $resultmenu = mysqli_query($db_admin_account, $querymenu);
         $rowmenu =  mysqli_fetch_array($resultmenu);
 
         $filedir = $rowmenu['Menu_dir'];
 
-        $sqldelete = "DELETE FROM admin_menu WHERE Menu_id=$id";
+        $sqldelete = "DELETE FROM employee_menu WHERE Menu_id=$id";
         $resultdelete = mysqli_query($db_admin_account, $sqldelete);
         unlink($filedir);
         echo '<script> alert("Product Deleted Succesfully");
-        window.location.href="../admin-menu.php";
+        window.location.href="../employee-menu.php";
         </script>'; 
     }
 

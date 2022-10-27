@@ -118,7 +118,8 @@
 
 
             <!-- The Modal -->
-            <div class="modal" id="myModal">
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
 
@@ -190,90 +191,100 @@
 
                         <!-- Modal footer -->
                         <div class="modal-footer">
+                            <button type="submit" name="news" class="btn btn-outline-success float-end"
+                                style="max-width:450px;">Confirm</button>
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                         </div>
 
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
 
 
-    <!--Displaying Data -->
-    <div class="container mt-4">
-        <table class="table table-striped table table-bordered">
-            <!-- <div class="row"> -->
-            <thead>
-                <tr>
-                    <div class="row">
+            <!--Displaying Data -->
+            <div class="container-fluid mt-4">
+                <table class="table table-striped table table-bordered">
+                    <!-- <div class="row"> -->
+                    <thead>
+                        <tr>
+                            <div class="row">
 
-                        <th scope="col">
-                            <div class="col">Image</div>
-                        </th>
-                        <th scope="col">
-                            <div class="col">Product Name</div>
-                        </th>
-                        <th scope="col">
-                            <div class="col">Description</div>
-                        </th>
-                        <th scope="col">
-                            <div class="col">Price</div>
-                        </th>
-                        <th scope="col">
-                            <div class="col">Product Type</div>
-                        </th>
-                        <th scope="col">
-                            <div class="col">Action</div>
-                        </th>
-                    </div>
-                </tr>
-            </thead>
-            <?php while($rowmenu =  mysqli_fetch_array($resultmenu)){ ?>
-            <tbody>
-                <td class="text-nowrap c-white">
-                    <a href="Petkoproj/<?php echo $rowmenu['Menu_dir']; ?>" class="fancybox " rel="ligthbox">
-                        <img src=" asset/menu/<?php echo $rowmenu['Menu_filename']; ?> "
-                            class="zoom img-thumbnail img-responsive images_menu"></a>
-                </td>
-                <!-- <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_id']; ?></td> -->
-                <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_name']; ?></td>
-                <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_description']; ?></td>
-                <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_price']; ?></td>
-                <td class="text-nowrap c-white"><?php echo $rowmenu['Menu_category']; ?></td>
-
-
-                <td class=" c-red ">
-                    <!-- Edit -->
-                    <a href="employee-edit-menu.php?editid=<?php echo $rowmenu['Menu_id']; ?>"
-                        class="text-decoration-none c-green">
-
-
-                        <i class="fa-solid fa-pen" style="font-size:25px; padding: 10px"></i>
-
-                        </button></a>
-
-
-                    <!--  Delete -->
-                    <a href="php/menu-process.php?id=<?php echo $rowmenu['Menu_id'];?>">
-                        <i class="fa-solid fa-trash-can" style="font-size:25px; color:red; padding: 10px"></i>
-                    </a>
-                </td>
-            </tbody>
-            <?php } ?>
-        </table>
-    </div>
-
-    </div>
+                                <th scope="col">
+                                    <div class="col">Image</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Product Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Description</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Price</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Product Type</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Action</div>
+                                </th>
+                        </tr>
+                    </thead>
+                    <?php while($rowmenu =  mysqli_fetch_array($resultmenu)){ ?>
+                        <tr>
+                            <td>
+                                <div class="col">
+                            <a href="Petkoproj/<?php echo $rowmenu['Menu_dir']; ?>" class="fancybox "
+                                    rel="ligthbox">
+                                    <img src=" asset/menu/<?php echo $rowmenu['Menu_filename']; ?> "
+                                        class="zoom img-thumbnail img-responsive images_menu"></a></div>
+                    </td>
+                            <td>
+                                <div class="col">
+                                <?php echo $rowmenu['Menu_name']; ?></div>
+                    </td>
+                    <td>
+                                <div class="col">
+                                <?php echo $rowmenu['Menu_description']; ?></div>
+                    </td>
+                    <td>
+                                <div class="col">
+                                <?php echo $rowmenu['Menu_price']; ?></div>
+                    </td>
+                    <td>
+                                <div class="col">
+                                <?php echo $rowmenu['Menu_category']; ?></div>
+                    </td>
+                    <td class="col-1">
+                                <div class="col">
+                                <a href="employee-edit-menu.php?editid=<?php echo $rowmenu['Menu_id']; ?>"
+                                    class="text-decoration-none c-green">
 
 
+                                    <i class="fa-solid fa-pen" style="font-size:25px; padding: 10px"></i>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-    </script>
-    <script src="/js/script.js"></script>
-    <script src="js/gallery_menu.js"></script>
+                                   
+                                    <a href="php/menu-process.php?id=<?php echo $rowmenu['Menu_id'];?>">
+                                    <i class="fa-solid fa-trash-can"
+                                        style="font-size:25px; color:red; padding: 10px"></i>
+                                </a>
+                                </a></div>
+
+                    </td>
+                    
+                    <?php } ?>
+                    
+
+
+
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+                crossorigin="anonymous">
+            </script>
+            <script src="/js/script.js"></script>
+            <script src="js/gallery_menu.js"></script>
 </body>
 
 </html>

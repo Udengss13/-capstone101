@@ -20,14 +20,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-<title>Admin || Content</title>
+<title>Admin Content</title>
 </head>
 
 <body style="background:  #9FBACD;">
 
     <!--Navbar-->
-
-
     <div class="container-fluid">
         <div class="row flex-nowrap">
             <div class=" col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
@@ -35,7 +33,7 @@
                     <a href="/"
                         class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"><img
                             src="asset/logopet.png" alt="Saint Jude Logo"
-                            style="width: 50px; padding-left: 10px; padding-top: 5px;">
+                            style="width: 60px; height: 50px; padding-top: 5px; padding-right: 5px;">
                         <span class="fs-5 d-none d-sm-inline">PETCO. ADMIN</span>
                     </a>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
@@ -47,24 +45,16 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-person-lines-fill"></i> <span
-                                    class="ms-1 d-none d-sm-inline">Accounts</span> </a>
-                            <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Admin
-                                            Accounts</span></a>
-                                </li>
-                                <li>
-                                    <a href="admin-user-accounts.php" class="nav-link px-0"> <span
-                                            class="d-none d-sm-inline">User Accounts</span></a>
-                                </li>
-                                <li>
-                                    <a href="admin-user-accounts.php" class="nav-link px-0"> <span
-                                            class="d-none d-sm-inline">Employee Accounts</span></a>
-                                </li>
-                            </ul>
-                        </li>
+                        <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fs-4 bi-person-lines-fill"></i><span class="ms-1 d-none d-sm-inline">Accounts</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                            <li><a class="dropdown-item" href="#">Admin Accounts</a></li>
+                            <li><a class="dropdown-item" href="admin-user-accounts.php">User Accounts</a></li>
+                            <li><a class="dropdown-item" href="#">Employee Accounts</a></li>
+                        </ul>
+                    </li>
                         <li>
                             <a href="#" class="nav-link px-0 align-middle">
                                 <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Sales</span></a>
@@ -128,7 +118,7 @@
                 <div class="w3-black">
                     <button class="w3-button w3-blue w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
                     <div class="w3-container">
-                        <h1 class="text-center c-white py-3">Image Content for Home</h1>
+                        <h3 class="text-center c-white py-3">Image Content for Home</h3>
                     </div>
                 </div>
                 <!--All Content for Image Here-->
@@ -137,7 +127,7 @@
                     class="row gap-2 justify-content-center">
                     <div class="row justify-content-md-center mb-5">
                         <div class="col-lg-7 col-md-6 col-sm-12">
-                            <div class="card d-flex justify-content-center">
+                            <div class="card d-flex justify-content-center mt-5">
                                 <div class="card-header">
                                     Upload New Image for Homepage
 
@@ -188,40 +178,68 @@
                         </div>
                 </form>
 
-                <!--Displaying data in table-->
-                <div class="div_background_light">
-                    <div class="table-responsive mt-4 mx-auto" style="width:95%;">
-                        <table class="table mt-3">
-                            <thead class="table-dark c-white">
-                                <th>Image ID</th>
-                                <th>Title</th>
-                                <th>Subtitle</th>
-                                <th>Body</th>
-                                <th>Delete</th>
-                            </thead>
-                            <?php while($rowimage =  mysqli_fetch_array($resultimage)){ ?>
-                            <tbody>
-                                <td class="text-nowrap c-white"><?php echo $rowimage['Image_id']; ?></td>
-                                <td class="text-nowrap c-white"><?php echo $rowimage['Image_title']; ?></td>
-                                <td class="text-nowrap c-white"><?php echo $rowimage['Image_subtitle']; ?></td>
-                                <td class="text-nowrap c-white"><?php echo $rowimage['Image_body']; ?></td>
+               
+            <!--Displaying data in table-->
+           <!--Displaying Data -->
+           <div class="container-fluid mt-4">
+                <table class="table table-striped table table-bordered">
+                    <!-- <div class="row"> -->
+                    <thead>
+                        <tr>
+                            <div class="row">
 
-                                <td class="c-red d-flex mt-1">
-
-                                    <a href="admin-edit-content.php?updateid=<?php echo $rowimage['Image_id'];?>">
+                                <th scope="col">
+                                    <div class="col">Image ID</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Title</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Subtitle</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Body</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Delete</div>
+                                </th>
+                        </tr>
+                    </thead>
+                    <?php while($rowimage =  mysqli_fetch_array($resultimage)){ ?>
+                        <tr>
+                            
+                            <td>
+                                <div class="col">
+                                <?php echo $rowimage['Image_id']; ?></div>
+                    </td>
+                    <td>
+                                <div class="col">
+                                <?php echo $rowimage['Image_title']; ?></div>
+                    </td>
+                    <td>
+                                <div class="col">
+                                <?php echo $rowimage['Image_subtitle']; ?></div>
+                    </td>
+                    <td>
+                                <div class="col">
+                                <?php echo $rowimage['Image_body']; ?></div>
+                    </td>
+                    <td class="col-1">
+                                <div class="col">
+                                <a href="admin-edit-content.php?updateid=<?php echo $rowimage['Image_id'];?>">
                                         <span class="btn btn-outline-success mx-2">Edit </span>
                                     </a>
+                                
 
                                     <a href="php/content-image-process.php?id=<?php echo $rowimage['Image_id'];?>"><input
                                             type="button" class="btn btn-outline-danger" value="Delete"></a>
-                                </td>
-                            </tbody>
-                            <?php } ?>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+                                    
+                                </a></div>
+
+                    </td>
+                    
+                    
+                    <?php } ?>
     
 
 
