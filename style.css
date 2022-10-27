@@ -15,8 +15,8 @@ body {
 
 .container .form {
     background: rgba(238, 249, 255, 0.942);
-    padding: 30px 35px;
-    
+    padding: 20px 25px;
+    border-radius: 10px;   
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -67,5 +67,8 @@ body {
 @media only screen and (max-width: 992px) {
     .dog{
         display: none;
+    }
+    .text{
+        display:none;
     }
   }

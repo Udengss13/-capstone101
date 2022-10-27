@@ -25,6 +25,11 @@
     <link rel="icon" href="asset/logopet.png" type="image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
+=======
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+>>>>>>> ee0a484716b819ed1cd4de910f4d1748aad97173
     <link rel="stylesheet" href="css/admin.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,6 +37,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ee0a484716b819ed1cd4de910f4d1748aad97173
 <body style="background:  #9FBACD;">
 
     <div class="container-fluid overflow-hidden">
@@ -102,6 +111,7 @@
             </div>
         </div>
 
+<<<<<<< HEAD
     <div class="col-md-9 col-xl-10 py-3">
         <div class="card">
             <div class="card-body">
@@ -119,6 +129,46 @@
                         </thead>
                         <tbody>
                             <?php 
+=======
+
+
+    
+
+
+
+            <div class="col-auto col-md-9 col-xl-10 mt-5 body">
+                <!-- <div class="container mt-4 box"> -->
+                <!-- <div class="div_background_dark "> -->
+                    <form action="" method="POST">
+                        <table class="table table-striped table table-bordered">
+                            <!-- <div class="row"> -->
+                            <thead style="background: black; color: white;">
+                                <tr>
+
+                                    <th scope="col" class="div_background_dark ">
+                                        <div class="col">Name</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="col">Email</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="col">Address</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="col">Contact No.</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="col">Status</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="col">Action</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <!-- </div> -->
+                            <tbody>
+                                <?php 
+>>>>>>> ee0a484716b819ed1cd4de910f4d1748aad97173
                                       $i = 1;
                                       $order_query = mysqli_query($con, "SELECT * FROM `order` ORDER BY `order`.`id` DESC " );
                                       
@@ -132,11 +182,11 @@
                                         <div class="col">
                                             <?php echo $row['first_name']." ".$row['last_name']  ?></div>
                                     </td>
-                                    <td>
-                                        <div class="col-1"><?php echo $row['email'] ?></div>
+                                    <td class="col-md-1">
+                                        <div class=""><?php echo $row['email'] ?></div>
                                     </td>
 
-                                    <td>
+                                    <td class="col-md-3">
                                         <div class="col"><?php echo $row['address'] ?></div>
                                     </td>
                                     <td>
@@ -157,7 +207,7 @@
                                     <?php elseif($row['order_status'] == 2): ?>
                                     <td class="text-center">
                                         <div class="col">
-                                            <span class="badge badge-success bg-success text-white">Confirmed</span>
+                                            <span class="badge badge-success bg-warning text-white">to Pick Up</span>
                                             <input type="hidden" value="<?php echo $row['order_status'] ?>"
                                                 name="update_status">
                                             <input type="hidden" value="<?php echo $row['order_user_id'] ?>"
@@ -173,10 +223,10 @@
                                     <?php endif; ?>
 
                                     <td>
-                                        <div class="container mt-3">
+                                        <div  class="container btn btn-primary mt-3">
+                                       
+                                                <a class="btn btn primary  text-light" href='admin-view-orders.php?id=<?php echo $row["id"] ?>'>View Orders</a>
                                             
-                                                <a href='admin-view-orders.php?id=<?php echo $row["id"] ?>'><button class="btn btn-primary text-light">View Orders</a>
-                                            </button>
                                         </div>
                                        
                                     </td>

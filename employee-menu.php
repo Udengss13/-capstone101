@@ -2,7 +2,7 @@
     require('php/connection.php');
 
    //call all Menu
-  $querymenu = "SELECT * FROM employee_menu"; //You don't need a ; like you do in SQL
+  $querymenu = "SELECT * FROM admin_menu"; //You don't need a ; like you do in SQL
   $resultmenu = mysqli_query($db_admin_account, $querymenu);
  
    //call all Category
@@ -102,13 +102,14 @@
     <!--Content of Menu-->
     <div class="container-xl-fluid mt-5 mb-5">
         <div class="px-3">
-            <h3 class="text-center c-white py-3">All Products</h3>
+            <h4 class="text-center c-white py-3">All Products</h4>
 
             <!-- Modal -->
+
             <div class="d-flex flex-row-reverse">
                 <button type="button" class="btn bg-button"
                     style="background: #EA6D52; border-radius: 15px; border-width: 7px;" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop">
+                    data-bs-target="#myModal">
                     Add
 
 
@@ -262,7 +263,7 @@
 
                                     <i class="fa-solid fa-pen" style="font-size:25px; padding: 10px"></i>
 
-                                    </button>
+                                   
                                     <a href="php/menu-process.php?id=<?php echo $rowmenu['Menu_id'];?>">
                                     <i class="fa-solid fa-trash-can"
                                         style="font-size:25px; color:red; padding: 10px"></i>

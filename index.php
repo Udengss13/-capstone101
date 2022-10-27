@@ -1,6 +1,6 @@
-
 <?php
   require('php/connection.php');
+  require_once "controllerUserData.php"; 
   
   $start_from = 0; 
   $queryimage = "SELECT * FROM admin_content_homepage ORDER BY `admin_content_homepage`.`Image_id` DESC"; //You dont need like you do in SQL;
@@ -16,12 +16,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
+ 
     <title>PetCo Homepage</title>
+
     <link rel="icon" href="asset/logopet.png" type="image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta https-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -32,7 +34,8 @@
     <!-- slider -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -120,7 +123,84 @@
 -->
         </div>
     </nav>
+<div class="container-fluid ">
+    <div class="waveWrapper waveAnimation  ">
+        <div class="waveWrapperInner top  mt-4 ">
+            <div class="wave waveTop  mt-4" style="background-image: url(asset/wave-top.png); "></div>
+        </div>
+        <div class="waveWrapperInner mid">
+            <div class="wave waveMid  mt-4" style="background-image: url(asset/wave-mid.png); "></div>
+        </div>
+        <div class="waveWrapperInner bottom">
+            <div class="wave waveBottom  mt-4" style="background-image: url(asset/wave-bot.png); "></div>
+        </div>
+    </div>
+    </div>
 
+
+    <div class="container Box mt-5 mb-5">
+        <div class="row">
+            <div class=" col-lg-3">
+                <img src="asset/shitzu.png" alt="DOG" class="dog" height="500px" />
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm- 2 mt-5 text-light text" style="margin-left: 10px; ">
+                <br>
+
+                <h3>WELCOME BACK</h3>
+                <h4>To keep connected with us</h4>
+                <h4>Please log-in you personal info</h4>
+            </div>
+            <div class="col-md-7 col-lg-4 col-sm- 4 form login-form">
+                <form action="login-user.php" method="POST" autocomplete="">
+                    <h1 class="text-center  mt-3 text-primary">Sign In</h1>
+
+                    <?php
+                        if(count($errors) > 0)
+                        {
+                            ?>
+                    <div class="alert alert-danger text-center">
+                        <?php
+                            foreach($errors as $showerror)
+                            {
+                                echo $showerror;
+                            }
+                             ?>
+                    </div>
+                    <?php
+                        }
+                        ?>
+                    <div class="form-group">
+                        <input class="form-control mb-3" type="email" name="email" placeholder="Email Address" required
+                            value="<?php echo $email ?>">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control mb-3" type="password" name="password" placeholder="Password"
+                            required>
+                    </div>
+                    <div class="link forget-pass text-end text-center"><a href="forgot-password.php">Forgot
+                            password?</a>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control button" type="submit" name="login" value="Sign In">
+                    </div>
+                    <div class="link login-link text-center mb-1 mt-3">Don't have an account? <a
+                            href="signup-user.php">Sign up
+                            now</a></div>
+                </form>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+    
 
     <!-- SLIDER Images -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
@@ -152,7 +232,7 @@
               
               ?>
                 <div class="carousel-item <?= $actives; ?>">
-                    <img src="<?= $row['image_path'] ?>" class="img-fluid" width="100%" height="500px">
+                    <img src="<?= $row['image_path'] ?>" class="img-fluid mt-5" width="100%" height="500px">
                 </div>
 
                 <?php $i++; } ?>
