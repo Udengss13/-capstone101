@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  
+}
 @media (min-width: 576px) {
     .h-sm-100 {
         height: 100%;

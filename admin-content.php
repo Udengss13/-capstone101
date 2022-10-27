@@ -11,21 +11,6 @@
 
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="asset/logopet.png" type="image/x-icon">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS only -->
-    <link rel="stylesheet" type="text/css" href="css/admin.css">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Admin || Content</title>
-=======
 <meta charset="UTF-8">
 <link rel="icon" href="asset/logopet.png" type="image/x-icon">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,76 +20,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-<title>Admin || Content</title>
->>>>>>> 2abc0e5da3bb0e72076c763733f11bc696626cee
+<title>Admin Content</title>
 </head>
 
 <body style="background:  #9FBACD;">
 
-<<<<<<< HEAD
-    <div class="nav-bar container-fluid overflow-hidden">
-        <div class="row vh-100 overflow-auto">
-             <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top">
-                 <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
-                <a href="/" class="navbar-brand d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"><img src="asset/logopet.png" alt="Saint Jude Logo" style="width: 50px; padding-left: 10px; padding-top: 5px;">
-                  <span class="nav-bar brand">PETCO. ADMIN</span>
-                </a>
-                <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
-                           <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fs-4 bi-person-lines-fill"></i><span class="ms-1 d-none d-sm-inline">Accounts</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
-                            <li><a class="dropdown-item" href="#">Admin Accounts</a></li>
-                            <li><a class="dropdown-item" href="admin-user-accounts.php">User Accounts</a></li>
-                            <li><a class="dropdown-item" href="#">Employee Accounts</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-sm-0 px-2">
-                            <i class="fs-4 bi-table"></i><span class="ms-1 d-none d-sm-inline">Sales</span></a>
-                    </li>
-			  <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fs-4 bi-archive"></i><span class="ms-1 d-none d-sm-inline">Pet Archives</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
-                            <li><a class="dropdown-item" href="#">Pet Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Pet Owners</a></li>
-                        </ul>
-                    </li>
-			 <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fs-4 bi-pencil-square"></i><span class="ms-1 d-none d-sm-inline">Content</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
-                            <li><a class="dropdown-item" href="admin-slider.php">Slider</a></li>
-                            <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="admin-orders.php" class="nav-link px-sm-0 px-2">
-                            <i class="fs-4 bi-bag-check"></i><span class="ms-1 d-none d-sm-inline">Orders</span> </a>
-                    </li>
-                </ul>
-                <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="Admin" width="28" height="28" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1">Cha</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-=======
     <!--Navbar-->
-
-
     <div class="container-fluid">
         <div class="row flex-nowrap">
             <div class=" col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
@@ -112,7 +33,7 @@
                     <a href="/"
                         class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"><img
                             src="asset/logopet.png" alt="Saint Jude Logo"
-                            style="width: 50px; padding-left: 10px; padding-top: 5px;">
+                            style="width: 60px; height: 50px; padding-top: 5px; padding-right: 5px;">
                         <span class="fs-5 d-none d-sm-inline">PETCO. ADMIN</span>
                     </a>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
@@ -123,26 +44,17 @@
                                     class="ms-1 d-none d-sm-inline">Dashboard</span>
                             </a>
                         </li>
->>>>>>> 2abc0e5da3bb0e72076c763733f11bc696626cee
                         <li>
-                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-person-lines-fill"></i> <span
-                                    class="ms-1 d-none d-sm-inline">Accounts</span> </a>
-                            <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Admin
-                                            Accounts</span></a>
-                                </li>
-                                <li>
-                                    <a href="admin-user-accounts.php" class="nav-link px-0"> <span
-                                            class="d-none d-sm-inline">User Accounts</span></a>
-                                </li>
-                                <li>
-                                    <a href="admin-user-accounts.php" class="nav-link px-0"> <span
-                                            class="d-none d-sm-inline">Employee Accounts</span></a>
-                                </li>
-                            </ul>
-                        </li>
+                        <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fs-4 bi-person-lines-fill"></i><span class="ms-1 d-none d-sm-inline">Accounts</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                            <li><a class="dropdown-item" href="#">Admin Accounts</a></li>
+                            <li><a class="dropdown-item" href="admin-user-accounts.php">User Accounts</a></li>
+                            <li><a class="dropdown-item" href="#">Employee Accounts</a></li>
+                        </ul>
+                    </li>
                         <li>
                             <a href="#" class="nav-link px-0 align-middle">
                                 <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Sales</span></a>
@@ -199,29 +111,6 @@
                         </div>
                 </div>
             </div>
-<<<<<<< HEAD
-        </div>
-    
-    <!-- <h2 class="text-center text-light pb-4 ">Dynamic boostrap 5 caroussel using php and mysqli</h2> -->
-    <div class="col py-3">
-        
-        <div class="row justify-content-center mb-5 ">
-            <div class="col-lg-12">
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <?php 
-                      $i=0;
-                      foreach($result as $row){
-                        $actives ='';
-                        if($i==0){
-                          $actives= 'active';
-                        }
-                      
-                      ?>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?=$i; ?>"
-                            class="<?=$actives; ?>" aria-current="true" aria-label="Slide 1"></button>
-                        <?php $i++;} ?>
-=======
 
 
 
@@ -229,8 +118,7 @@
                 <div class="w3-black">
                     <button class="w3-button w3-blue w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
                     <div class="w3-container">
-                        <h1 class="text-center c-white py-3">Image Content for Home</h1>
->>>>>>> 2abc0e5da3bb0e72076c763733f11bc696626cee
+                        <h3 class="text-center c-white py-3">Image Content for Home</h3>
                     </div>
                 </div>
                 <!--All Content for Image Here-->
@@ -239,7 +127,7 @@
                     class="row gap-2 justify-content-center">
                     <div class="row justify-content-md-center mb-5">
                         <div class="col-lg-7 col-md-6 col-sm-12">
-                            <div class="card d-flex justify-content-center">
+                            <div class="card d-flex justify-content-center mt-5">
                                 <div class="card-header">
                                     Upload New Image for Homepage
 
@@ -290,40 +178,68 @@
                         </div>
                 </form>
 
-                <!--Displaying data in table-->
-                <div class="div_background_light">
-                    <div class="table-responsive mt-4 mx-auto" style="width:95%;">
-                        <table class="table mt-3">
-                            <thead class="table-dark c-white">
-                                <th>Image ID</th>
-                                <th>Title</th>
-                                <th>Subtitle</th>
-                                <th>Body</th>
-                                <th>Delete</th>
-                            </thead>
-                            <?php while($rowimage =  mysqli_fetch_array($resultimage)){ ?>
-                            <tbody>
-                                <td class="text-nowrap c-white"><?php echo $rowimage['Image_id']; ?></td>
-                                <td class="text-nowrap c-white"><?php echo $rowimage['Image_title']; ?></td>
-                                <td class="text-nowrap c-white"><?php echo $rowimage['Image_subtitle']; ?></td>
-                                <td class="text-nowrap c-white"><?php echo $rowimage['Image_body']; ?></td>
+               
+            <!--Displaying data in table-->
+           <!--Displaying Data -->
+           <div class="container-fluid mt-4">
+                <table class="table table-striped table table-bordered">
+                    <!-- <div class="row"> -->
+                    <thead>
+                        <tr>
+                            <div class="row">
 
-                                <td class="c-red d-flex mt-1">
-
-                                    <a href="admin-edit-content.php?updateid=<?php echo $rowimage['Image_id'];?>">
+                                <th scope="col">
+                                    <div class="col">Image ID</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Title</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Subtitle</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Body</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Delete</div>
+                                </th>
+                        </tr>
+                    </thead>
+                    <?php while($rowimage =  mysqli_fetch_array($resultimage)){ ?>
+                        <tr>
+                            
+                            <td>
+                                <div class="col">
+                                <?php echo $rowimage['Image_id']; ?></div>
+                    </td>
+                    <td>
+                                <div class="col">
+                                <?php echo $rowimage['Image_title']; ?></div>
+                    </td>
+                    <td>
+                                <div class="col">
+                                <?php echo $rowimage['Image_subtitle']; ?></div>
+                    </td>
+                    <td>
+                                <div class="col">
+                                <?php echo $rowimage['Image_body']; ?></div>
+                    </td>
+                    <td class="col-1">
+                                <div class="col">
+                                <a href="admin-edit-content.php?updateid=<?php echo $rowimage['Image_id'];?>">
                                         <span class="btn btn-outline-success mx-2">Edit </span>
                                     </a>
+                                
 
                                     <a href="php/content-image-process.php?id=<?php echo $rowimage['Image_id'];?>"><input
                                             type="button" class="btn btn-outline-danger" value="Delete"></a>
-                                </td>
-                            </tbody>
-                            <?php } ?>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+                                    
+                                </a></div>
+
+                    </td>
+                    
+                    
+                    <?php } ?>
     
 
 

@@ -262,7 +262,7 @@
 
                                     <i class="fa-solid fa-pen" style="font-size:25px; padding: 10px"></i>
 
-                                    </button>
+                                   
                                     <a href="php/menu-process.php?id=<?php echo $rowmenu['Menu_id'];?>">
                                     <i class="fa-solid fa-trash-can"
                                         style="font-size:25px; color:red; padding: 10px"></i>
