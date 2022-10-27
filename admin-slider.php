@@ -67,16 +67,6 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
                         <li><a class="dropdown-item" href="admin-user-accounts.php">User Accounts</a></li>
                         <li><a class="dropdown-item" href="#">Employee Accounts</a></li>
                     </ul>
-<<<<<<< HEAD
-                </li>
-                <li>
-                    <a href="#" class="nav-link px-sm-0 px-2">
-                        <i class="fs-4 bi-table"></i><span class="ms-1 d-none d-sm-inline">Sales</span></a>
-                </li>
-          <li class="dropdown">
-                    <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fs-4 bi-archive"></i><span class="ms-1 d-none d-sm-inline">Pet Archives</span>
-=======
                     <li>
                         <a href="admin-orders.php" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-bag-check"></i> <span class="ms-1 d-none d-sm-inline">Orders</span> </a>
@@ -87,7 +77,6 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://github.com/mdo.png" alt="Admin" width="30" height="30" class="rounded-circle">
                         <span class="d-none d-sm-inline mx-1">Charlize</span>
->>>>>>> 2abc0e5da3bb0e72076c763733f11bc696626cee
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
                         <li><a class="dropdown-item" href="#">Pet Profile</a></li>

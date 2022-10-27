@@ -17,10 +17,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Css Wave Animation</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta https-equiv="X-UA-Compatible" content="ie=edge" />
+ 
     <title>PetCo Homepage</title>
 
     <link rel="icon" href="asset/logopet.png" type="image/x-icon">
