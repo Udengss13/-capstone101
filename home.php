@@ -48,8 +48,8 @@
           $fetch_user = mysqli_fetch_assoc($select_user); 
         };
       ?>
-        <p class="text-capitalize text-center">Welcome
-            <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></p>
+        <!-- <p class="text-capitalize text-center">Welcome
+            <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></p> -->
     </div>
 
 
