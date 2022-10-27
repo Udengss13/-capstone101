@@ -22,7 +22,7 @@
             mysqli_query($db_admin_account,$sql);            
             echo '<script> alert("Product Added Successfully");
                     window.location.href="../admin-menu.php";
-                    </script>'; 
+                    </s cript>'; 
         
             
         }

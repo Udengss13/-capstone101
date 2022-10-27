@@ -152,7 +152,7 @@
                     <form action="product.php" method="post">
                         <div class=" col-12 d-flex justify-content-center ">
                             <img class="img-responsive" src="asset/menu/<?php echo $rowimage['Menu_filename']; ?>"
-                            width="70vh" >
+                            width="400vh" >
                         </div>
                 </div>
 

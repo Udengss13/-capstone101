@@ -10,17 +10,12 @@
 ?>
 <?php
   //This is for calling the informaiton of user in fields.
-    $sqlInfo = mysqli_query($con, "SELECT * FROM order WHERE order_user_id = '$user_id'");
+    $sqlInfo = mysqli_query($con, "SELECT * FROM `order` where `order`.`order_status`");
 ?>
 
 <?php 
   if(isset($_POST['confirmed'])){
-    $update_status = $_POST['update_status'];
-    $update_status_id = $_POST['update_status_id'];
-    $update_status = 1;
-    
-    $update_status_query = mysqli_query($con, "UPDATE `order` SET  order_status = '1'
-    WHERE order_id = ".$_GET['id']);
+    $update_status_query = mysqli_query($con, "UPDATE `order` SET `order_status` = '1' WHERE `order`.`id` = ".$_GET['id']);
 
    if($update_status_query){
      header('location: admin-orders.php');
@@ -35,8 +30,8 @@
     $update_status_id = $_POST['update_status_id'];
     $update_status = 1;
     
-    $update_status_query = mysqli_query($con, "UPDATE `order` SET  order_status = '2'
-    WHERE order_id = ".$_GET['id']);
+    $update_status_query = mysqli_query($con, "UPDATE `order` SET `order_status` = '2' WHERE `order`.`id` = ".$_GET['id']);
+    
 
    if($update_status_query){
      header('location: admin-orders.php');
@@ -184,6 +179,8 @@
                                         $total += $row['qty'] * $row['product_price'];
                                                 ?>
                                 <tr>
+                                    <td><img src=" asset/menu/<?php echo $row['Menu_filename']; ?> "
+                                        class="zoom img-thumbnail img-responsive images_menu" height="50" width="50"></td>
                                     <td><?php echo $row['qty'] ?></td>
                                     <td><?php echo $row['Menu_name'] ?></td>
                                     <td>Php <?php echo number_Format($row['Menu_price'],2 )?></td>
@@ -198,35 +195,6 @@
 
 
                             </tbody>
-                            <!-- <tfoot> -->
-                            <?php if($row['order_status'] == 1): ?>
-                                    <td class="text-center">
-                                        <div class="col">
-                                            <span class="badge badge-success bg-success text-white">Confirmed</span>
-                                            <input type="hidden" value="<?php echo $row['order_status'] ?>"
-                                                name="update_status">
-                                            <input type="hidden" value="<?php echo $row['order_user_id'] ?>"
-                                                name="update_status_id">
-                                        </div>
-                                    </td>
-
-                                    <?php elseif($row['order_status'] == 2): ?>
-                                    <td class="text-center">
-                                        <div class="col">
-                                            <span class="badge badge-success bg-success text-white">Confirmed</span>
-                                            <input type="hidden" value="<?php echo $row['order_status'] ?>"
-                                                name="update_status">
-                                            <input type="hidden" value="<?php echo $row['order_user_id'] ?>"
-                                                name="update_status_id">
-                                        </div>
-                                    </td>
-
-                                    <?php else: ?>
-                                    <td class="text-center ">
-                                        <div class="col"><span class="badge badge-secondary bg-secondary text-dark">For
-                                                Verification</span></div>
-                                    </td>
-                                    <?php endif; ?>
                             <!-- </tfoot> -->
                         </table>
 

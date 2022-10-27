@@ -34,18 +34,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <style>
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-    </style>
 
 </head>
 
 <body>
 
     <div class="container-fluid">
-        <div class="row flex-nowrap">
+        <div class="row flex-nowrap body">
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                     <a href="/"
@@ -140,15 +135,16 @@
 
 
 
-            <div class="col-auto col-md-9 col-xl-10  ">
-                <div class="container mt-4">
+            <div class="col-auto col-md-9 col-xl-10 mt-5 body">
+                <!-- <div class="container mt-4 box"> -->
+                <!-- <div class="div_background_dark "> -->
                     <form action="" method="POST">
                         <table class="table table-striped table table-bordered">
                             <!-- <div class="row"> -->
-                            <thead>
+                            <thead style="background: black; color: white;">
                                 <tr>
 
-                                    <th scope="col">
+                                    <th scope="col" class="div_background_dark ">
                                         <div class="col">Name</div>
                                     </th>
                                     <th scope="col">
@@ -184,11 +180,11 @@
                                         <div class="col">
                                             <?php echo $row['first_name']." ".$row['last_name']  ?></div>
                                     </td>
-                                    <td>
-                                        <div class="col-1"><?php echo $row['email'] ?></div>
+                                    <td class="col-md-1">
+                                        <div class=""><?php echo $row['email'] ?></div>
                                     </td>
 
-                                    <td>
+                                    <td class="col-md-3">
                                         <div class="col"><?php echo $row['address'] ?></div>
                                     </td>
                                     <td>
@@ -209,7 +205,7 @@
                                     <?php elseif($row['order_status'] == 2): ?>
                                     <td class="text-center">
                                         <div class="col">
-                                            <span class="badge badge-success bg-success text-white">Confirmed</span>
+                                            <span class="badge badge-success bg-warning text-white">to Pick Up</span>
                                             <input type="hidden" value="<?php echo $row['order_status'] ?>"
                                                 name="update_status">
                                             <input type="hidden" value="<?php echo $row['order_user_id'] ?>"
@@ -225,10 +221,10 @@
                                     <?php endif; ?>
 
                                     <td>
-                                        <div class="container mt-3">
+                                        <div  class="container btn btn-primary mt-3">
+                                       
+                                                <a class="btn btn primary  text-light" href='admin-view-orders.php?id=<?php echo $row["id"] ?>'>View Orders</a>
                                             
-                                                <a href='admin-view-orders.php?id=<?php echo $row["id"] ?>'><button class="btn btn-primary text-light">View Orders</a>
-                                            </button>
                                         </div>
                                        
                                     </td>
