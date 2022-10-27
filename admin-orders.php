@@ -143,7 +143,6 @@
                             <!-- </div> -->
                             <tbody>
                                 <?php 
-
                                       $i = 1;
                                       $order_query = mysqli_query($con, "SELECT * FROM `order` ORDER BY `order`.`id` DESC " );
                                       
