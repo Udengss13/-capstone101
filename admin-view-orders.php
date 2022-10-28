@@ -62,7 +62,7 @@
 
 
 </head>
-
+<body style="background:  #9FBACD;">
 <div class="container-fluid overflow-hidden">
     <div class="row vh-100 overflow-auto">
         <div class="col-12 col-sm-3 col-md-2 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top">

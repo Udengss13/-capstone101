@@ -113,7 +113,7 @@
 
 
     <div class="col-md-9 col-xl-10 py-3">
-        <div class="card">
+        <!-- <div class="card"> -->
             <div class="card-body">
                 <form action="" method="POST">
                     <table class="table table-striped table table-bordered">
@@ -142,8 +142,10 @@
                                         <div class="col">
                                             <?php echo $row['first_name']." ".$row['last_name']  ?></div>
                                     </td>
-                                    <td class="col-sm-5 col-md-2 col-lg-2">
-                                        <?php echo $row['email'] ?>
+                                    <td class=" col-sm-5 col-md-2 col-lg-1"><input name="email" readonly
+                                                    class="c-white" type="text"
+                                                    style="background-color:transparent;border:0; "
+                                                    value="<?php echo $row['email']; ?>">
                                     </td>
 
                                     <td class="col-sm-5 col-md-2 col-lg-4">
