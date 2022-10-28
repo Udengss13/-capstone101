@@ -43,7 +43,7 @@
 
 <body>
     <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light ; ">
+    <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="asset/logopet.png" alt="Logo" class="logo" />
@@ -123,7 +123,7 @@
 -->
         </div>
     </nav>
-<div class="container-fluid ">
+<div class="container-fluid  ">
     <div class="waveWrapper waveAnimation  ">
         <div class="waveWrapperInner top  mt-4 ">
             <div class="wave waveTop  mt-4" style="background-image: url(asset/wave-top.png); "></div>
@@ -138,7 +138,7 @@
     </div>
 
 
-    <div class="container Box mt-5 mb-5">
+    <div class="container Box  mb-5">
         <div class="row">
             <div class=" col-lg-3">
                 <img src="asset/shitzu.png" alt="DOG" class="dog" height="500px" />

@@ -110,9 +110,10 @@
     
 
 
-
-            <div class="col-auto col-md-9 col-xl-10 mt-5 body">
-                <!-- <div class="container mt-4 box"> -->
+            <!-- <p class="col-auto col-md-9 col-sm-9 col-xl-10 mt-5 ">All Orders -->
+            <div class="col-auto col-md-9 col-sm-9 col-xl-10 mt-5 body">
+           <center> <h1 >All Orders</h1></center>
+                 <!-- <div class="container mt-4 box"> -->
                 <!-- <div class="div_background_dark "> -->
                     <form action="" method="POST">
                         <table class="table table-striped table table-bordered">
@@ -152,23 +153,23 @@
 
                                 <tr>
 
-                                    <td>
+                                    <td class="col-sm-5 col-md-2 col-lg-2">
                                         <div class="col">
                                             <?php echo $row['first_name']." ".$row['last_name']  ?></div>
                                     </td>
-                                    <td class="col-md-1">
-                                        <div class=""><?php echo $row['email'] ?></div>
+                                    <td class="col-sm-5 col-md-2 col-lg-2">
+                                        <?php echo $row['email'] ?>
                                     </td>
 
-                                    <td class="col-md-3">
+                                    <td class="col-sm-5 col-md-2 col-lg-4">
                                         <div class="col"><?php echo $row['address'] ?></div>
                                     </td>
-                                    <td>
+                                    <td class="col-sm-5 col-md-2 col-lg-2">
                                         <div class="col"><?php echo $row['contact'] ?></div>
                                     </td>
 
-                                    <?php if($row['order_status'] == 1): ?>
-                                    <td class="text-center">
+                                    <?php if($row['order_status'] == 'confirmed'): ?>
+                                    <td class="text-center col-sm-1 col-md-1 col-lg-1">
                                         <div class="col">
                                             <span class="badge badge-success bg-success text-white">Confirmed</span>
                                             <input type="hidden" value="<?php echo $row['order_status'] ?>"
@@ -178,10 +179,10 @@
                                         </div>
                                     </td>
 
-                                    <?php elseif($row['order_status'] == 2): ?>
-                                    <td class="text-center">
+                                    <?php elseif($row['order_status'] == 'pickup'): ?>
+                                    <td class="text-center col-sm-1 col-md-1 col-lg-1">
                                         <div class="col">
-                                            <span class="badge badge-success bg-warning text-white">to Pick Up</span>
+                                            <span class="badge badge-success bg-warning text-white">For Pick Up</span>
                                             <input type="hidden" value="<?php echo $row['order_status'] ?>"
                                                 name="update_status">
                                             <input type="hidden" value="<?php echo $row['order_user_id'] ?>"
@@ -190,13 +191,13 @@
                                     </td>
 
                                     <?php else: ?>
-                                    <td class="text-center ">
+                                    <td class="text-center col-sm-1 col-md-1 col-lg-1 ">
                                         <div class="col"><span class="badge badge-secondary bg-secondary text-dark">For
                                                 Verification</span></div>
                                     </td>
                                     <?php endif; ?>
 
-                                    <td>
+                                    <td class="col-sm-1 col-md-1 col-lg-1">
                                         <div  class="container btn btn-primary mt-3">
                                        
                                                 <a class="btn btn primary  text-light" href='admin-view-orders.php?id=<?php echo $row["id"] ?>'>View Orders</a>
