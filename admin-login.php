@@ -15,7 +15,7 @@
     <title>Admin Login</title>
 </head>
 
-<body style="background:  #9FBACD;">
+<body style="background-image: url('asset/TransparentBG.png'); ">
 
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg navbar-light;">
