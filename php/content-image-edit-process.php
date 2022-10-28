@@ -32,8 +32,4 @@ session_start();
        }      
 }
 
-
-
-
-
 ?>

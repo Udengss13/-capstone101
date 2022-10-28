@@ -18,6 +18,12 @@
 $users = "SELECT * FROM usertable where id='$user_id'"; //You dont need like you do in SQL;
 $userresult = mysqli_query($con, $queryimage);
 ?>
+<?php 
+                    $select_user = mysqli_query($con, "SELECT * FROM usertable WHERE id = '$user_id'");
+                    if(mysqli_num_rows($select_user) > 0){
+                    $fetch_user = mysqli_fetch_assoc($select_user); 
+                    };
+                ?>
 
 
 
@@ -34,6 +40,8 @@ $userresult = mysqli_query($con, $queryimage);
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/f8f3c8a43b.js" crossorigin="anonymous"></script>
+
 
     <!-- bootstrap Icon Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -43,15 +51,13 @@ $userresult = mysqli_query($con, $queryimage);
     <link href='fullcalendar/main.css' rel='stylesheet' />
     <script src='fullcalendar/main.js'></script>
     <script>
-
-      document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth'
+            initialView: 'dayGridMonth'
         });
         calendar.render();
-      });
-
+    });
     </script>
 </head>
 
@@ -119,7 +125,7 @@ $userresult = mysqli_query($con, $queryimage);
         </div>
     </nav>
 
-    <div class="container-fluid bg-light">
+    <div class="container-fluid ">
         <div class="container ">
             <!--1st row-->
             <div class="row mt-4">
@@ -128,24 +134,31 @@ $userresult = mysqli_query($con, $queryimage);
 
                 </div>
                 <div class="col-5 mt-2">
-                    <a href="edi_profile.php"> Edit <img src="asset/profile/edit.png" alt="Logo" style="width:7%; height:4vh" /></a>
-                    Message <img src="asset/profile/messages.png" alt="Logo" style="width:7%; height:4vh" /> 
-                    <a href="#imagesec"> My Pet <img src="asset/profile/paw.png" alt="Logo" style="width:7%; height:4vh" /></a>
+                    <a href="user-edit-profile.php?updateid=<?php echo $fetch_user['id'];?>">
+                        <span class="btn btn-primary mx-2">Edit Profile <i class="fa-solid fa-pen-to-square"></i></span>
+                    </a>
+
+                    <a href="user-edit-profiles.php?updateid=<?php echo $fetch_user['id'];?>">
+                        <span class="btn btn-success mx-2">Message <i class="fa-solid fa-message"></i></span>
+                    </a>
+                    
+                   
+                    <a href="#imagesec">
+                        <span class="btn btn-primary mx-2"> My Pet <i class="fa-solid fa-paw"></i></span>
+                    </a>
 
                 </div>
             </div>
+            
         </div>
     </div>
+    <hr>
+    
 
     <div class="container mt-5">
         <div class="row">
             <div class="col ">
-                <?php 
-                    $select_user = mysqli_query($con, "SELECT * FROM usertable WHERE id = '$user_id'");
-                    if(mysqli_num_rows($select_user) > 0){
-                    $fetch_user = mysqli_fetch_assoc($select_user); 
-                    };
-                ?>
+
                 <!-- <p class="text-capitalize text-center">Welcome
                     <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></p> -->
                 <div class="col profilebg ">
@@ -226,15 +239,15 @@ $userresult = mysqli_query($con, $queryimage);
 
             </div>
             <div class="col">
-            <div id='calendar'></div>
+                <div id='calendar'></div>
             </div>
         </div>
     </div>
 
     <!-- <div id='calendar'></div> -->
     <hr>
-        <!--ANNOUNCEMENT-->
-    <!-- <section class="flex-sect" id="imagesec"> -->
+    <!--ANNOUNCEMENT-->
+    <section class="flex-sect" id="imagesec">
     <div class="container mt-5">
         <div class="row">
             <div class="col ">
@@ -244,7 +257,7 @@ $userresult = mysqli_query($con, $queryimage);
                     $fetch_user = mysqli_fetch_assoc($select_pet); 
                     };
                 ?>
-                
+
                 <div class="col-lg-5 profilebg">
                     <!-- <div class="card mb-4">
                             <div class="card-body"> -->
@@ -300,7 +313,7 @@ $userresult = mysqli_query($con, $queryimage);
                         </div>
                     </div>
                     <hr>
-                    
+
                     <!-- </div>
                         </div> -->
                 </div>
@@ -309,8 +322,8 @@ $userresult = mysqli_query($con, $queryimage);
         </div>
     </div>
     </section>
-     <!--Footer-->
-     <footer class=" footer-banner mt-5" id="about">
+    <!--Footer-->
+    <footer class=" footer-banner mt-5" id="about">
         <div class="container text">
             <div class="row">
                 <div class="col-12 text-center">
