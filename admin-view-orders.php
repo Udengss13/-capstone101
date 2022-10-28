@@ -172,7 +172,7 @@
                             <?php if($fetch_user['order_status'] == 'confirmed'): ?>
                             <td class=" col-5">
                                 <div class="col">
-                                <span class="bg-light"> Order Status: </span> <span class="badge badge-success bg-success "> Confirmed</span>
+                                <span class="col"> Order Status: </span> <span class="badge badge-success bg-success "> Confirmed</span>
                                     <input type="hidden" value="<?php echo $fetch_user['order_status'] ?>"
                                         name="update_status">
                                     <input type="hidden" value="<?php echo $fetch_user['order_user_id'] ?>"
