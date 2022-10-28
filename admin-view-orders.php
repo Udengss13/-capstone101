@@ -156,7 +156,7 @@
                     <div >
                         <tr  class="col-5">
                             <!-- <table class="table table-striped table table-bordered"> -->
-                            <td class="text-capitalize " col-5>Name:
+                            <td class="text-capitalize " col-5> Name:
                                 <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></td>
                         </tr>
                         <tr class="col-5">
@@ -171,8 +171,8 @@
                         <tr class="col-5">
                             <?php if($fetch_user['order_status'] == 'confirmed'): ?>
                             <td class=" col-5">
-                                <div class="col ">
-                                <span class=""> Order Status: </span> <span class="badge badge-success bg-success "> Confirmed</span>
+                                <div class="col">
+                                <span class="bg-light"> Order Status: </span> <span class="badge badge-success bg-success "> Confirmed</span>
                                     <input type="hidden" value="<?php echo $fetch_user['order_status'] ?>"
                                         name="update_status">
                                     <input type="hidden" value="<?php echo $fetch_user['order_user_id'] ?>"
