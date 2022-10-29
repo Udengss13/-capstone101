@@ -2,7 +2,7 @@
     require('php/connection.php');
 
    //call all Menu
-  $querymenu = "SELECT * FROM admin_menu"; //You don't need a ; like you do in SQL
+  $querymenu = "SELECT * FROM employee_menu"; //You don't need a ; like you do in SQL
   $resultmenu = mysqli_query($db_admin_account, $querymenu);
  
    //call all Category
@@ -210,36 +210,36 @@
                         <tr>
                             <div class="row">
 
-                                <th scope="col">
+                                <th scope="col" style="text-align: center;">
                                     <div class="col">Image</div>
                                 </th>
-                                <th scope="col">
+                                <th scope="col" style="text-align: center;">
                                     <div class="col">Product Name</div>
                                 </th>
-                                <th scope="col">
+                                <th scope="col" style="text-align: center;">
                                     <div class="col">Description</div>
                                 </th>
-                                <th scope="col">
+                                <th scope="col" style="text-align: center;">
                                     <div class="col">Price</div>
                                 </th>
-                                <th scope="col">
+                                <th scope="col" style="text-align: center;">
                                     <div class="col">Product Type</div>
                                 </th>
-                                <th scope="col">
+                                <th scope="col" style="text-align: center;">
                                     <div class="col">Action</div>
                                 </th>
                         </tr>
                     </thead>
                     <?php while($rowmenu =  mysqli_fetch_array($resultmenu)){ ?>
                         <tr>
-                            <td>
+                            <td class="col-1" style="text-align: center;">
                                 <div class="col">
                             <a href="Petkoproj/<?php echo $rowmenu['Menu_dir']; ?>" class="fancybox "
                                     rel="ligthbox">
                                     <img src=" asset/menu/<?php echo $rowmenu['Menu_filename']; ?> "
                                         class="zoom img-thumbnail img-responsive images_menu"></a></div>
                     </td>
-                            <td>
+                            <td class="col-2" style="text-align: center;">
                                 <div class="col">
                                 <?php echo $rowmenu['Menu_name']; ?></div>
                     </td>
@@ -247,11 +247,11 @@
                                 <div class="col">
                                 <?php echo $rowmenu['Menu_description']; ?></div>
                     </td>
-                    <td>
+                    <td class="col-1" style="text-align: center;">
                                 <div class="col">
                                 <?php echo $rowmenu['Menu_price']; ?></div>
                     </td>
-                    <td>
+                    <td class="col-1" style="text-align: center;">
                                 <div class="col">
                                 <?php echo $rowmenu['Menu_category']; ?></div>
                     </td>

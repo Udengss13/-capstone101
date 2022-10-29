@@ -123,6 +123,7 @@
 -->
         </div>
     </nav>
+    
 <div class="container-fluid  ">
     <div class="waveWrapper waveAnimation  ">
         <div class="waveWrapperInner top  mt-4 ">
@@ -143,14 +144,14 @@
             <div class=" col-lg-3">
                 <img src="asset/shitzu.png" alt="DOG" class="dog" height="500px" />
             </div>
-            <div class="col-md-4 col-lg-4 col-sm- 2 mt-5 text-light text" style="margin-left: 10px; ">
+            <div class="col-md-4 col-lg-4 col-sm- 2 mt-5 text-light text" style="margin-left: 50px; ">
                 <br>
 
                 <h3>WELCOME BACK</h3>
                 <h4>To keep connected with us</h4>
                 <h4>Please log-in you personal info</h4>
             </div>
-            <div class="col-md-7 col-lg-4 col-sm- 4 form login-form">
+            <div class="col-md-7 col-lg-4 col-sm-4 mt-5 form login-form">
                 <form action="login-user.php" method="POST" autocomplete="">
                     <h1 class="text-center  mt-3 text-primary">Sign In</h1>
 
@@ -369,14 +370,14 @@
         <div class="container text">
             <div class="row">
                 <div class="col-13 text-center">
-                    <ul class="follow">
+                    <ul class="follow" style="color: white;">
                         <h3>Please follow us</h3>
 
-                        <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="50px"
+                        <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="40px"
                                 height="40px"></a>
-                        <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="50px"
+                        <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="40px"
                                 height="40px"></a>
-                        <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="50px"
+                        <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="40px"
                                 height="40px"></a>
                     </ul>
                     <h5>© 2022 All Rights Reserved. PetCo. Animal Clinic.</h5>
