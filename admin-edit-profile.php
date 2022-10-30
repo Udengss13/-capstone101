@@ -1,13 +1,39 @@
 <?php
-    require_once "php/admin-login-process.php";
-    require('php/connection.php');
+    
+    require_once "controllerUserData.php"; 
+     require('php/connection.php');
+   
+      $user_id = $_SESSION['user_id'];
 
-    $query = "SELECT * FROM admin_login"; //You don't need a like you do in SQL;
-    $result = mysqli_query($con, $query);
+      if(!isset($user_id)){
+        header('location: admin-login.php');
+      }
 
+   
+    //This is for message
+      if(isset($_SESSION['update_changes'])){
+          $applychanges = $_SESSION['update_changes'];
+          unset($_SESSION['update_changes']);
+      }
+      else{
+          $applychanges="";
+      }
+  
+  
+    
+    $queryimage = "SELECT * FROM admin_login"; //You don't need a like you do in SQL;
+    $resultimage = mysqli_query($db_admin_account, $queryimage);
+
+
+    if (isset($_GET['updateid'])){
+      $id = $_GET['updateid'];
+
+      $editprofile = "SELECT * FROM admin_login WHERE id = '$user_id'";
+      $result = mysqli_query($con, $editprofile);
+      $rowimageEdit = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    }
+    
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -19,7 +45,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-<title>Admin || Profile</title>
+<title>Admin || Edit Profile</title>
 </head>
 
 <body style="background:  #9FBACD;">
@@ -106,47 +132,59 @@
                 </div>
             </div>
 
-            
-     <div class="col py-3">
-                <div class="row mt-4">
-                    <div class="col">
-                        <h3 class="text-justify py-3">My Profile</h3>
-                        <img src="asset/cha.jpg" alt="Logo" style="width: 200px; padding-left: 5px; padding-top: 5px;">
-                    </div>
+<!--All Content Here-->
+<div class="container  mt-5">
+    <!-- <center><img src="asset/logopet.png" alt="Logo" style="position: absolute; z-index: -1;" /></center> -->
+
+
+        <h4 class="text-center c-white py-3">Edit Profile </h4>
+
+        <form action="php/profile-edit-process.php" method="post">
+            <div class="row justify-content-md-center mb-5">
+                <!-- <div class="col-lg-7 col-md-6 col-sm-12"> -->
+                <!-- <div class="card d-flex justify-content-center"> -->
+                <!-- <div class="card-header">
+                            Edit Information for Homepage
+                        </div> -->
+                <!--Success Message-->
+                <?php if($applychanges!=""){?>
+                <div class="alert alert-primary alert-dismissible fade show mt-3 mx-auto justify-content-md-center mb-2" role="alert"
+                    style="width: 90%;">
+                    <strong>Apply Changes Successfully!</strong> <?php echo $applychanges; ?>.
                 </div>
-            </div>
-            
-            <div class="col-4 mt-3">
-                    <a href="admin-edit-profile.php?updateid=<?php echo $fetch_user['id'];?>">
-                        <span class="btn btn-primary ms-1">Edit Profile <i class="bi bi-pencil-square"></i></span>
-                    </a>
-                    
-                    <a href="admin-edit-profile.php?updateid=<?php echo $fetch_user['id'];?>">
-                        <span class="btn btn-success ms-1">Settings <i class="bi bi-gear"></i></span>
-                    </a>
+                <?php } ?>
+                <!-- <ul class="list-group "> -->
+                <!--NAME-->
+                <!-- <div class="row justify-content-md-center mb-5">
+                    <div class="col-lg-12 col-md-6 col-sm-12">
+                        <div class="card  justify-content-center"> -->
+                            <div class="row justify-content-md-center mb-2">
+                                <label class="col-md-2 control-label ">Username:</label>
+                                <div class="col-md-4 inputGroupContainer">
+                                    <div class="input-group">
+                                        <input name="id" class="col-12" type="text"
+                                            value="<?php echo $rowimageEdit['id'];    ?>" hidden>
+                                        <!-- <span class="input-group-addon"><i class="fa-solid fa-user ff"></i></span> -->
+                                        <input name="username" class="form-control"
+                                            type="text" value="<?php echo $rowimageEdit['username'];   ?>" required>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <div class="container mt-5">
+                            <!-- Text input-->
 
-        <div class="row">
-            <div class="col ">
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">User Name:</p>
-                        </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['username']; ?></p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">Password:</p>
-                        </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['password']; ?></p>
-                        </div>
-                    </div>
-            
+                            <div class="row  justify-content-md-center mb-2">
+                                <label class="col-md-2 control-label">Password</label>
+                                <div class="col-md-4 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon ff"><i
+                                                class="glyphicon glyphicon-user fa-5x "></i></span>
+                                        <input name="password" class="form-control" type="text"
+                                            value="<?php echo $rowimageEdit['password'];   ?>" required>
+                                    </div>
+                                </div>
+                            </div>
+
  <!--DIVISION -->
 
 
@@ -156,5 +194,4 @@
     <script src="/js/script.js"></script>
 </body>
 
-</html>                    
-                    
+</html>

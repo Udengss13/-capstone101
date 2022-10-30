@@ -135,7 +135,6 @@
                         <span class="d-none d-sm-inline mx-1">Cha</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>
                         <li><a class="dropdown-item" href="admin-profile.php">Profile</a></li>
                         <li>
