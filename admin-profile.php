@@ -1,3 +1,13 @@
+<?php
+    require_once "php/admin-login-process.php";
+    require('php/connection.php');
+
+    $query = "SELECT * FROM admin_login"; //You don't need a like you do in SQL;
+    $result = mysqli_query($con, $query);
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -116,7 +126,27 @@
                         <span class="btn btn-success ms-1">Settings <i class="bi bi-gear"></i></span>
                     </a>
 
-                
+                    <div class="container mt-5">
+
+        <div class="row">
+            <div class="col ">
+                    <div class="row">
+                        <div class="col-sm-4 labels">
+                            <p class="mb-0">User Name:</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="c-blue mb-0"><?php echo $fetch_user['username']; ?></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4 labels">
+                            <p class="mb-0">Password:</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="c-blue mb-0"><?php echo $fetch_user['password']; ?></p>
+                        </div>
+                    </div>
             
                     
                     
