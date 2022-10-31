@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-<title>Admin Content</title>
+<title>Admin || Content</title>
 </head>
 
 <body style="background:  #9FBACD;">
@@ -91,14 +91,14 @@
                     <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
                             id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://github.com/mdo.png" alt="Admin" width="28" height="28"
+                            <img src="asset/cha.jpg" alt="Admin" width="28" height="28"
                                 class="rounded-circle">
                             <span class="d-none d-sm-inline mx-1">Cha</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                             <li><a class="dropdown-item" href="#">New project...</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="admin-profile.php">Profile</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -112,7 +112,7 @@
 
         <div class="col py-3">
             <div class="w3-main" >
-                <div class="w3-black">
+                <div class="w3-transparent">
                         <h3 class="text-center c-white py-3">Image Content for Home</h3>
                     </div>
                 </div>

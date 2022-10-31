@@ -116,8 +116,8 @@
         </div>
     </nav>
     <div>
-        <center><h2 class="bg-light p-2">Welcome, Employee!</h2></center>
-        </div>
+        <!-- <center><h2 class="bg-light p-2">Welcome, Employee!</h2></center>
+        </div> -->
 
 
 

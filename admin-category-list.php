@@ -91,7 +91,7 @@
 
                 <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="Admin" width="28" height="28" class="rounded-circle">
+                        <img src="asset/cha.jpg" alt="Admin" width="28" height="28" class="rounded-circle">
                         <span class="d-none d-sm-inline mx-1">Charlize</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">

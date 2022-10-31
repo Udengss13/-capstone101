@@ -6,18 +6,12 @@
    font-family: 'Poppins', sans-serif;
 }
 h3{
-    color: #e9eff2;
+    color: #ffffff;
     font-style: 'Gothic A1', sans-serif;
 }
 .d-flex{
     background: #02405f;
 }
-
-<<<<<<< HEAD
-body{
-  background: #9FBACD;
-}
-=======
 .nav-bar{
     background:  #9FBACD;
     border-bottom: 2px solid white;
@@ -81,4 +75,3 @@ body{
 .bg-button{
     background:#EA6D52;
   }
->>>>>>> 38f9940f7b0ed99dd33822e36ca285119f3b5caa
