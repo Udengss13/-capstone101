@@ -42,14 +42,13 @@ $userresult = mysqli_query($con, $queryimage);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/f8f3c8a43b.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="./fullcalendar/lib/main.min.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./fullcalendar/lib/main.min.js"></script>
 
-    <!-- bootstrap Icon Link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.11.3/main.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.11.3/main.min.js"></script>
 
-    <link href='fullcalendar/main.css' rel='stylesheet' />
-    <script src='fullcalendar/main.js'></script>
+    
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
@@ -146,6 +145,9 @@ $userresult = mysqli_query($con, $queryimage);
                     <a href="#imagesec">
                         <span class="btn btn-primary mx-2"> My Pet <i class="fa-solid fa-paw"></i></span>
                     </a>
+                    <a href="calendar.php">
+                        <span class="btn btn-primary mx-2">  Appointment <i class="fa-solid fa-paw"></i></span>
+                    </a>
 
                 </div>
             </div>
@@ -238,9 +240,7 @@ $userresult = mysqli_query($con, $queryimage);
                 </div>
 
             </div>
-            <div class="col">
-                <div id='calendar'></div>
-            </div>
+           
         </div>
     </div>
 

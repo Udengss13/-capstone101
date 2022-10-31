@@ -146,11 +146,11 @@
             <div class="col-md-4 col-lg-4 col-sm- 2 mt-5 text-light text" style="margin-left: 10px; ">
                 <br>
 
-                <h3>WELCOME BACK</h3>
-                <h4>To keep connected with us</h4>
-                <h4>Please log-in you personal info</h4>
+                <h3 class="text-center">WELCOME</h3>
+                <h4 class="text-center">To keep connected with us</h4>
+                <h4 class="text-center">Please log-in you personal info</h4>
             </div>
-            <div class="col-md-7 col-lg-4 col-sm- 4 form login-form">
+            <div class="col-md-7 col-lg-4 col-sm- 4 form login-form mt-4">
                 <form action="login-user.php" method="POST" autocomplete="">
                     <h1 class="text-center  mt-3 text-primary">Sign In</h1>
 

@@ -123,7 +123,7 @@
     <!-- <center><img src="asset/logopet.png" alt="Logo" style="position: absolute; z-index: -1;" /></center> -->
 
 
-        <h4 class="text-center c-white py-3">Edit Profile </h4>
+        <h4 class="text-center c-white py-3 text-light">Edit Profile </h4>
 
         <form action="php/profile-edit-process.php" method="post">
             <div class="row justify-content-md-center mb-5">
@@ -220,12 +220,12 @@
                                 <!--Back-->
                                 <div class="col-6">
                                     <button type="submit" name="update_profile"
-                                        class="btn btn-outline-success float-end"
+                                        class="btn btn-success float-end"
                                         style="max-width:450px;">Save <i class="fa-solid fa-floppy-disk"></i></button>
                                 </div>
                                 <div class="col-2">
                                     <a href="userprofile.php"><span
-                                            class="btn btn-outline-danger mx-2 float-end">Back <i class="fa-sharp fa-solid fa-arrow-left"></i></span></a>
+                                            class="btn btn-danger mx-2">Back <i class="fa-sharp fa-solid fa-arrow-left"></i></span></a>
                                 </div>
                                 <!--Add button-->
 

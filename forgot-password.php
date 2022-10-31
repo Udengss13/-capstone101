@@ -6,6 +6,7 @@
     <title>Forgot Password</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container" style="margin-top:10rem">
@@ -34,7 +35,7 @@
                         <input class="form-control button" type="submit" name="check-email" value="Continue">
                     </div>
                 </form>
-                <a href="login-user.php"><button class="btn form-control">Back</button></a>
+                <a href="index.php"><button class="btn form-control">Back</button></a>
             </div>
         </div>
     </div>
