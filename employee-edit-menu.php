@@ -130,7 +130,8 @@ session_start();
 
           <form action="php/edit-menu-process.php" method="post" enctype="multipart/form-data"
             class="row gap-2 justify-content-center">
-            <div class="card d-flex justify-content-center">
+            <div class="justify-content-center">
+            <div class="shadow-lg p-3 mb-5 bg-body rounded">
               <div class="card-header">
                 Update Products
               </div>
@@ -164,6 +165,7 @@ session_start();
                     </select>
 
                   </div>
+                  
 
                 </li>
 
@@ -177,11 +179,12 @@ session_start();
                 <li class="list-group-item">
                   <a href="employee-menu.php" class="float-end mx-2"><span class="btn btn-outline-danger">Back</span></a>
 
-                  <button type=" submit" name="update_changes" class="btn btn-outline-success float-end"
+                  <button type="submit" name="update_changes" class="btn btn-outline-success float-end"
                     style="max-width:450px;">Update</button>
 
                 </li>
               </ul>
+            </div>
             </div>
           </form>
         </div>

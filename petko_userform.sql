@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2022 at 04:45 AM
+-- Generation Time: Oct 31, 2022 at 11:57 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -24,12 +24,41 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin_menu`
+--
+
+CREATE TABLE `admin_menu` (
+  `Menu_id` int(11) NOT NULL,
+  `Menu_name` varchar(255) NOT NULL,
+  `Menu_description` varchar(255) NOT NULL,
+  `Menu_price` double NOT NULL,
+  `Menu_category` varchar(255) NOT NULL,
+  `Menu_dir` varchar(255) NOT NULL,
+  `Menu_filename` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin_menu`
+--
+
+INSERT INTO `admin_menu` (`Menu_id`, `Menu_name`, `Menu_description`, `Menu_price`, `Menu_category`, `Menu_dir`, `Menu_filename`) VALUES
+(55, 'Dog Snack', 'For Dog', 123, ' Dog Product', '../asset/menu/bonesdog.jpg', 'bonesdog.jpg'),
+(56, 'Furmagis Shampoo', 'For Dogs', 67, ' Dog Product', '../asset/menu/furmagic dog.jpg', 'furmagic dog.jpg'),
+(57, 'Chicken Turkey', 'For Cat', 150, ' Cat Food', '../asset/menu/Chickenturkeycat.jpg', 'Chickenturkeycat.jpg'),
+(58, 'Tuna Flavor Cat Food', 'Cat Food', 455, ' Cat Food', '../asset/menu/tunacat.jpg', 'tunacat.jpg'),
+(59, 'Dog Leash', 'For Dog', 89, ' Dog Product', '../asset/menu/dogleash.jpg', 'dogleash.jpg'),
+(60, 'snack Dog', 'Snack dog ', 234, ' Dog Product', '../asset/menu/snackdog.jpg', 'snackdog.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cart`
 --
 
 CREATE TABLE `cart` (
   `Cart_id` int(255) NOT NULL,
   `Cart_user_id` int(100) NOT NULL,
+  `product_id` varchar(255) NOT NULL,
   `Cart_name` varchar(255) NOT NULL,
   `Cart_price` varchar(255) NOT NULL,
   `Cart_image` varchar(255) NOT NULL,
@@ -40,8 +69,9 @@ CREATE TABLE `cart` (
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`Cart_id`, `Cart_user_id`, `Cart_name`, `Cart_price`, `Cart_image`, `Cart_quantity`) VALUES
-(231, 88, 'Whiskas', '299', 'whiskas1.jpg', 1);
+INSERT INTO `cart` (`Cart_id`, `Cart_user_id`, `product_id`, `Cart_name`, `Cart_price`, `Cart_image`, `Cart_quantity`) VALUES
+(441, 49, '57', 'Chicken Turkey', '150', 'Chickenturkeycat.jpg', 1),
+(442, 90, '57', 'Chicken Turkey', '150', 'Chickenturkeycat.jpg', 4);
 
 -- --------------------------------------------------------
 
@@ -58,10 +88,6 @@ CREATE TABLE `order` (
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `payment_method` varchar(255) NOT NULL,
-  `product_name` varchar(100) NOT NULL,
-  `quantity` int(100) NOT NULL,
-  `price` int(11) NOT NULL,
-  `total_price` int(100) NOT NULL,
   `order_status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -69,12 +95,12 @@ CREATE TABLE `order` (
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`id`, `order_user_id`, `first_name`, `last_name`, `contact`, `email`, `address`, `payment_method`, `product_name`, `quantity`, `price`, `total_price`, `order_status`) VALUES
-(131, 49, 'Melody', 'Santiago', '', 'melody@gmail.com', 'hagonoy', 'For pick up', 'Whiskas', 1, 299, 299, ''),
-(132, 49, 'Melody', 'Santiago', '', 'melody@gmail.com', 'hagonoy', 'For pick up', 'Cat Toys', 1, 150, 328, ''),
-(133, 88, 'Melody', 'Santiago', '09356547689', 'melody13santiago@gmail.com', 'Hagonoy', 'For pick up', 'Aozi', 1, 170, 348, '2'),
-(134, 88, 'Melody', 'Santiago', '09356547689', 'melody13santiago@gmail.com', 'Hagonoy', 'For pick up', 'Cat Toys', 4, 150, 600, '2'),
-(135, 88, 'Melody', 'Santiago', '09356547689', 'melody13santiago@gmail.com', 'Hagonoy', 'For pick up', 'Cuties Catz', 1, 150, 150, '2');
+INSERT INTO `order` (`id`, `order_user_id`, `first_name`, `last_name`, `contact`, `email`, `address`, `payment_method`, `order_status`) VALUES
+(322, 49, 'Melody', 'Santiago', '09358504939', 'melody@gmail.com', 'hagonoy', 'For pick up', 'pickup'),
+(323, 49, 'Melody', 'Santiago', '09358504939', 'melody@gmail.com', 'hagonoy', 'For pick up', 'confirmed'),
+(324, 90, 'Melody', 'Santiago', '', 'melody13santiago@gmail.com', 'San Agustin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, ', 'For pick up', 'pickup'),
+(325, 90, 'Melody', 'Santiago', '', 'melody13santiago@gmail.com', 'San Agustin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, ', 'For pick up', 'confirmed'),
+(326, 49, 'Melody', 'Santiago', '09358504939', 'melody@gmail.com', 'San Agustin Hagonoy, Bulacan', 'For pick up', 'confirmed');
 
 -- --------------------------------------------------------
 
@@ -86,8 +112,29 @@ CREATE TABLE `order_list` (
   `id` int(30) NOT NULL,
   `order_id` int(30) NOT NULL,
   `product_id` int(30) NOT NULL,
-  `qty` int(30) NOT NULL
+  `qty` int(30) NOT NULL,
+  `product_price` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `order_list`
+--
+
+INSERT INTO `order_list` (`id`, `order_id`, `product_id`, `qty`, `product_price`) VALUES
+(302, 322, 57, 1, 150),
+(303, 322, 56, 1, 67),
+(304, 322, 58, 1, 455),
+(305, 323, 58, 1, 455),
+(306, 323, 56, 1, 67),
+(307, 323, 55, 1, 123),
+(308, 324, 57, 1, 150),
+(309, 324, 56, 1, 67),
+(310, 324, 58, 1, 455),
+(311, 325, 58, 1, 455),
+(312, 325, 57, 1, 150),
+(313, 326, 56, 1, 67),
+(314, 326, 57, 1, 150),
+(315, 326, 58, 1, 455);
 
 -- --------------------------------------------------------
 
@@ -117,7 +164,10 @@ INSERT INTO `pettable` (`pet_id`, `user_id`, `pettype`, `petbreed`, `petname`, `
 (5, 85, 'dog', 'siberianhusky', 'Max', 'male', '2014-05-21'),
 (6, 86, '', '', 's', 'male', '1970-01-01'),
 (7, 87, 'Dog', 'siberianhusky', 'Coco', 'male', '2022-02-17'),
-(8, 88, 'Cat', 'siamese', 'Molly', 'female', '2022-10-12');
+(8, 88, 'Cat', 'siamese', 'Molly', 'female', '2022-10-12'),
+(9, 89, 'Dog', 'shittzu', 'Molly', 'female', '2021-05-19'),
+(10, 90, 'Dog', 'siberianhusky', 'Molly', 'female', '2022-10-02'),
+(11, 92, 'Dog', 'corgi', 'wewe', 'female', '2022-10-13');
 
 -- --------------------------------------------------------
 
@@ -144,12 +194,19 @@ CREATE TABLE `usertable` (
 --
 
 INSERT INTO `usertable` (`id`, `first_name`, `middle_name`, `last_name`, `suffix`, `address`, `email`, `password`, `code`, `status`, `contact`) VALUES
-(49, 'Melody', 'balaba', 'Santiago', '', 'hagonoy', 'melody@gmail.com', '123sasa', 12, 'verified', '09358504939'),
-(88, 'Melody', 'Balaba', 'Santiago', '', 'Hagonoy', 'melody13santiago@gmail.com', '123123', 0, 'verified', '09356547689');
+(49, 'Melody', 'balaba', 'Santiago', '', 'San Agustin HAgonoy, BulcanaSan Agustin HAgonoy, BulcanaSan Agustin HAgonoy, BulcanaSan Agustin HAgonoy, BulcanaSan Agustin HAgonoy, Bulcana\r\n', 'melody@gmail.com', '123sasa', 12, 'verified', '09358504939'),
+(90, 'melo', 'Balaba', 'Santiago', 'sese', 'San Agustin', 'melody13santiago@gmail.com', '123123', 0, 'verified', 'sasa'),
+(92, 'Melodyss', 'Balabas', 'Santigoas', '', 'sasas', 'santiago.melody.b.5355@gmail.com', '123123s', 221328, 'notverified', '');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin_menu`
+--
+ALTER TABLE `admin_menu`
+  ADD PRIMARY KEY (`Menu_id`);
 
 --
 -- Indexes for table `cart`
@@ -161,6 +218,12 @@ ALTER TABLE `cart`
 -- Indexes for table `order`
 --
 ALTER TABLE `order`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `order_list`
+--
+ALTER TABLE `order_list`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -180,28 +243,40 @@ ALTER TABLE `usertable`
 --
 
 --
+-- AUTO_INCREMENT for table `admin_menu`
+--
+ALTER TABLE `admin_menu`
+  MODIFY `Menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+
+--
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `Cart_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=232;
+  MODIFY `Cart_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=443;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=327;
+
+--
+-- AUTO_INCREMENT for table `order_list`
+--
+ALTER TABLE `order_list`
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=316;
 
 --
 -- AUTO_INCREMENT for table `pettable`
 --
 ALTER TABLE `pettable`
-  MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `usertable`
 --
 ALTER TABLE `usertable`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

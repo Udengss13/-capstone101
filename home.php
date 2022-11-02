@@ -140,7 +140,7 @@
                             <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></p> -->
                     </li>
                 </div>
-                <div class="dropdown mb-2 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1 " >
+                <div class="dropdown mb-2 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
               
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
                             id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">

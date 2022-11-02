@@ -358,7 +358,7 @@
     <?php   
                 if(!isset($_GET['search']) && !isset($_GET['select_category'])){
                 // $filtervalues = $_GET['search']; 
-                $menu = mysqli_query($db_admin_account,"SELECT * FROM admin_menu "); //You dont need like you do in SQL;
+                $menu = mysqli_query($db_admin_account,"SELECT * FROM employee_menu "); //You dont need like you do in SQL;
                         
                     if(mysqli_num_rows($menu)>0 ){
                         ?>
