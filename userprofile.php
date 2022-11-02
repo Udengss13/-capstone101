@@ -132,7 +132,7 @@ $userresult = mysqli_query($con, $queryimage);
                     <h2>My Profile</h2>
 
                 </div>
-                <div class="col-5 mt-2">
+                <div class="col-6 mt-2">
                     <a href="user-edit-profile.php?updateid=<?php echo $fetch_user['id'];?>">
                         <span class="btn btn-primary mx-2">Edit Profile <i class="fa-solid fa-pen-to-square"></i></span>
                     </a>
@@ -159,7 +159,7 @@ $userresult = mysqli_query($con, $queryimage);
 
     <div class="container mt-5">
         <div class="row">
-            <div class="col ">
+            <div class="col-6 ">
 
                 <!-- <p class="text-capitalize text-center">Welcome
                     <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></p> -->
@@ -168,7 +168,7 @@ $userresult = mysqli_query($con, $queryimage);
                             <div class="card-body"> -->
                     <div class="row">
                         <!-- <div class="col-sm-4 labels"> -->
-                        <img src="asset/profile/user.png" alt="Logo" style="width:40%; height:17vh" />
+                        <img src="asset/profiles/<?php echo $fetch_user['image_filename']?>" class="rounded-circle" alt="Logo" style="width:40%; height:17vh" />
                         <!-- </div> -->
                     </div>
                     <hr>

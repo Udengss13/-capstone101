@@ -2,8 +2,8 @@
     require('php/connection.php');
 
    //call all Menu
-  $querymenu = "SELECT * FROM employee_menu"; //You don't need a ; like you do in SQL
-  $resultmenu = mysqli_query($db_admin_account, $querymenu);
+  $querymenu = "SELECT * FROM admin_menu"; //You don't need a ; like you do in SQL
+  $resultmenu = mysqli_query($con, $querymenu);
  
    //call all Category
   $querycategory = "SELECT * FROM admin_category"; //You don't need a ; like you do in SQL
@@ -265,7 +265,7 @@
                                     <i class="fa-solid fa-pen" style="font-size:25px; padding: 10px"></i>
 
 
-                                    <a href="php/menu-process.php?id=<?php echo $rowmenu['Menu_id'];?>">
+                                    <a href="php/menu-process.php?id=<?php echo $rowmenu['Menu_id'];?>" onclick="return confirm('Are you sure you want to delete?')">
                                         <i class="fa-solid fa-trash-can"
                                             style="font-size:25px; color:red; padding: 10px"></i>
                                     </a>

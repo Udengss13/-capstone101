@@ -43,7 +43,7 @@
     }
     </script>
 
-    
+
 </head>
 
 <body>
@@ -120,7 +120,7 @@
             <h2 class="text-center text-white">Create Your Account </h2>
             <p class="text-center text-white">It's quick and easy to Petko.</p>
 
-            <form action="signup-user.php" method="POST" autocomplete="">
+            <form action="signup-user.php" method="POST" autocomplete="" enctype="multipart/form-data">
 
                 <!--Message Alert-->
                 <?php if(count($errors) == 1){ ?>
@@ -155,16 +155,53 @@
                     <div class="row ">
                         <div class="col-6">
                             <!--FName-->
-                            <div class="form-floating mt-3">
+                            <div class="form-floating mb-2">
+                                <input class="form-control" type="email" name="email" placeholder="Email Address"
+                                    required value="<?php echo $email ?>" id="floatingEmail" autocomplete="off">
+                                <label for="floatingEmail">Email</label>
+                            </div>
+                            <div class="form-floating mb-2">
+                                <input class="form-control" type="password" name="password" placeholder="Password"
+                                    required id="floatingPass">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+
+                            <!--Confirm Password-->
+                            <div class="form-floating mb-2">
+                                <input class="form-control" type="password" name="cpassword"
+                                    placeholder="Confirm password" required id="floatingConfirm">
+                                <label for="floatingConfirm">Confirm Password</label>
+                            </div>
+
+                            <div class="form-floating mb-2">
+
+                                <input class="form-control" type="text" name="contact" placeholder="Suffix"
+                                    id="floatingSuffix" autocomplete="off">
+                                <label for="floatingSuffix">Contact No</label>
+                            </div>
+                            <!--Address-->
+                            <div class="form-floating ">
+                                <input class="form-control" type="text" name="address" placeholder="Address" required
+                                    value="<?php echo $address ?>" id="floatingAddress" autocomplete="off">
+                                <label for="floatingAddress">Complete Address</label>
+                            </div>
+
+
+                            <!--Suffix-->
+
+                        </div>
+
+                        <!--2nd Column-->
+                        <div class="col-6 ">
+                            <div class="form-floating ">
                                 <input class="form-control mb-2" type="text" name="first_name" placeholder="First Name"
                                     required value="<?php echo $fname ?>" id="floatingFirst" autocomplete="off">
                                 <label for="floatingFirst">First Name</label>
                             </div>
-
                             <!--MName-->
                             <div class="form-floating mb-2">
                                 <input class="form-control" type="text" name="middle_name" placeholder="Middle Name"
-                                    required value="<?php echo $mname ?>" id="floatingMiddle" autocomplete="off">
+                                    value="<?php echo $mname ?>" id="floatingMiddle" autocomplete="off">
                                 <label for="floatingMiddle">Middle Name</label>
                             </div>
 
@@ -175,49 +212,18 @@
                                 <label for="floatingLast">Last Name</label>
                             </div>
 
-                            <!--Suffix-->
+
+
+
+                            <!--Password-->
                             <div class="form-floating mb-2">
                                 <input class="form-control" type="text" name="suffix" placeholder="Suffix"
                                     value="<?php echo $suffix ?>" id="floatingSuffix" autocomplete="off">
                                 <label for="floatingSuffix">Suffix</label>
                             </div>
 
-                            <div class="form-floating">
-                                <input class="form-control" type="text" name="contact" placeholder="Suffix"
-                                    id="floatingSuffix" autocomplete="off">
-                                <label for="floatingSuffix">Contact No</label>
-                            </div>
-                        </div>
 
-                        <!--2nd Column-->
-                        <div class="col-6 mt-3">
-                            <!--Email-->
-                            <div class="form-floating mb-2">
-                                <input class="form-control" type="email" name="email" placeholder="Email Address"
-                                    required value="<?php echo $email ?>" id="floatingEmail" autocomplete="off">
-                                <label for="floatingEmail">Email</label>
-                            </div>
-
-                            <!--Address-->
-                            <div class="form-floating mb-2">
-                                <input class="form-control" type="text" name="address" placeholder="Address" required
-                                    value="<?php echo $address ?>" id="floatingAddress" autocomplete="off">
-                                <label for="floatingAddress">Complete Address</label>
-                            </div>
-
-                            <!--Password-->
-                            <div class="form-floating mb-2">
-                                <input class="form-control" type="password" name="password" placeholder="Password"
-                                    required id="floatingPass">
-                                <label for="floatingPassword">Password</label>
-                            </div>
-
-                            <!--Confirm Password-->
-                            <div class="form-floating">
-                                <input class="form-control" type="password" name="cpassword"
-                                    placeholder="Confirm password" required id="floatingConfirm">
-                                <label for="floatingConfirm">Confirm Password</label>
-                            </div>
+                            <input type="file"  id="upload-news" name="photo"  required>
                         </div>
                         <!--end of row-->
                     </div>
@@ -237,7 +243,7 @@
                     <div id="dynamic_field">
                         <div class="row inline" id="row">
 
-                        <div class="col-4 form-group">
+                            <div class="col-4 form-group">
                                 <!-- <label for="exampleFormControlSelect1">Position</label> -->
                                 <select class="form-control" id="slct1" name="pettype"
                                     onchange="populate(this.id,'slct2')" value="<?php echo $pettype ?>">
@@ -251,14 +257,14 @@
                             <div class="col-4 form-group">
                                 <!-- <div class=" flex-nowrap"> -->
                                 <select class="form-control" id="slct2" name="petbreed">
-                                <option value="" disabled selected>Select Pet Breed</option>
+                                    <option value="" disabled selected>Select Pet Breed</option>
                                 </select>
                                 <!-- </div> -->
                             </div>
 
                             <div class="col-4 form-group">
-                                <input class="form-control" type="text" name="petname"
-                                    placeholder="Pet Name" required id="floatingAddress" autocomplete="off">
+                                <input class="form-control" type="text" name="petname" placeholder="Pet Name" required
+                                    id="floatingAddress" autocomplete="off">
                             </div>
                         </div>
 
@@ -304,31 +310,32 @@
     </body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 
-    <script>  
- $(document).ready(function(){  
-      var i=1;  
-      $('#add').click(function(){  
-           i++;  
-           $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
-      });  
-      $(document).on('click', '.btn_remove', function(){  
-           var button_id = $(this).attr("id");   
-           $('#row'+button_id+'').remove();  
-      });  
-      $('#submit').click(function(){            
-           $.ajax({  
-                url:"name.php",  
-                method:"POST",  
-                data:$('#add_name').serialize(),  
-                success:function(data)  
-                {  
-                     alert(data);  
-                     $('#add_name')[0].reset();  
-                }  
-           });  
-      });  
- });  
- </script>
+    <script>
+    $(document).ready(function() {
+        var i = 1;
+        $('#add').click(function() {
+            i++;
+            $('#dynamic_field').append('<tr id="row' + i +
+                '"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="' +
+                i + '" class="btn btn-danger btn_remove">X</button></td></tr>');
+        });
+        $(document).on('click', '.btn_remove', function() {
+            var button_id = $(this).attr("id");
+            $('#row' + button_id + '').remove();
+        });
+        $('#submit').click(function() {
+            $.ajax({
+                url: "name.php",
+                method: "POST",
+                data: $('#add_name').serialize(),
+                success: function(data) {
+                    alert(data);
+                    $('#add_name')[0].reset();
+                }
+            });
+        });
+    });
+    </script>
 
 
 

@@ -35,14 +35,14 @@
     //For deleting menu by ID
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-        $querymenu = "SELECT * FROM employee_menu WHERE Menu_id=$id"; 
-        $resultmenu = mysqli_query($db_admin_account, $querymenu);
+        $querymenu = "SELECT * FROM admin_menu WHERE Menu_id=$id"; 
+        $resultmenu = mysqli_query($con, $querymenu);
         $rowmenu =  mysqli_fetch_array($resultmenu);
 
         $filedir = $rowmenu['Menu_dir'];
 
-        $sqldelete = "DELETE FROM employee_menu WHERE Menu_id=$id";
-        $resultdelete = mysqli_query($db_admin_account, $sqldelete);
+        $sqldelete = "DELETE FROM admin_menu WHERE Menu_id=$id";
+        $resultdelete = mysqli_query($con, $sqldelete);
         unlink($filedir);
         echo '<script> alert("Product Deleted Succesfully");
         window.location.href="../employee-menu.php";

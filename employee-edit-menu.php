@@ -16,14 +16,14 @@ session_start();
   $resultcategory = mysqli_query($db_admin_account, $querycategory);
     
   //call all Menu
-  $querymenu = "SELECT * FROM employee_menu"; //You don't need a ; like you do in SQL
-  $resultmenu = mysqli_query($db_admin_account, $querymenu);
+  $querymenu = "SELECT * FROM admin_menu"; //You don't need a ; like you do in SQL
+  $resultmenu = mysqli_query($con, $querymenu);
 
   if(isset($_GET['editid'])){
       $menu_id = $_GET['editid'];
 
-      $query = "SELECT * FROM employee_menu WHERE Menu_id = $menu_id";
-      $result = mysqli_query($db_admin_account, $query);
+      $query = "SELECT * FROM admin_menu WHERE Menu_id = $menu_id";
+      $result = mysqli_query($con, $query);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
       if(empty($row['Menu_dir'])){
@@ -169,7 +169,7 @@ session_start();
 
                 <li class="list-group-item">
                   <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="upload-news" name="photo" required>
+                    <input type="file" class="custom-file-input" id="upload-news" name="photo" required >
                   </div>
                   <!-- <input name="photo" class="col-md-6 c-white" id="upload-news" type="file" required> -->
                 </li>

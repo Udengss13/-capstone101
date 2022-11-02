@@ -26,7 +26,9 @@
                 $messages[] = "No Erros in the Form";
             }
         
-            header("location: ../admin-content.php");
+            echo '<script> alert("Announcement posted Succesfully");
+            window.location.href="../admin-content.php";
+            </script>'; 
         }
         else
         {   
