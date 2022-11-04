@@ -134,7 +134,7 @@
                             <form action="php/menu-process.php" method="post" enctype="multipart/form-data"
                                 class="row gap-2 justify-content-center">
 
-                                <div class="card d-flex justify-content-center">
+                                <div class="justify-content-center">
                                     <div class="card-header">
                                         Product Information
                                     </div>
