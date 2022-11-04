@@ -61,8 +61,8 @@ $errors = array();
             $status = "notverified";
           
 
-            $insert_data = "INSERT INTO usertable (first_name, middle_name, last_name, suffix, address, email, password, code, status, contact, image_dir, image_filename)
-                            values('$fname', '$mname', '$lname', '$suffix', '$address', '$email', '$password', '$code', '$status', '$contact', '$filenamedir', '$filename')";
+            $insert_data = "INSERT INTO usertable (first_name, middle_name, last_name, suffix, address, email, password, code, status, contact, image_dir, image_filename, user_level)
+                            values('$fname', '$mname', '$lname', '$suffix', '$address', '$email', '$password', '$code', '$status', '$contact', '$filenamedir', '$filename', 'client')";
             $data_check1 = mysqli_query($con, $insert_data);
 
             $user_id = $con->insert_id;
@@ -161,12 +161,21 @@ $errors = array();
         if(mysqli_num_rows($res) > 0){
             $fetch = mysqli_fetch_assoc($res);
             $status = $fetch['status'];
-            if($status == 'verified'){
+            $user_level = $fetch['user_level'];
+            if($status == 'verified' and $user_level =='client'){
                 $_SESSION['user_id']= $fetch['id'];
                 $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
                   header('location: home.php');
-              }else{
+              }
+              elseif($status == 'verified' and $user_level =='employee'){
+                $_SESSION['user_id']= $fetch['id'];
+                $_SESSION['email'] = $email;
+                $_SESSION['password'] = $password;
+                  header('location: employee-dashboard.php');
+              }
+              
+              else{
                   $info = "It's look like you haven't still verify your email - $email";
                   $_SESSION['info'] = $info;
                   header('location: user-otp.php');

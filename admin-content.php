@@ -142,15 +142,15 @@
                         <div class="modal-content">
 
                             <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">Post an Announcement</h4>
+                            <div class="modal-header bg-primary text-white">
+                                <h4 class="modal-title ">Post an Announcement</h4>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                             </div>
 
                             <!-- Modal body -->
                             <div class="modal-body">
                                 <form action="php/content-image-process.php" method="post" enctype="multipart/form-data"
-                                    class="row gap-2 justify-content-center">
+                                    >
                                     <div class="row justify-content-md-center mb-5">
                                         <!-- <div class="col-lg-7 col-md-6 col-sm-12"> -->
                                         <!-- <div class="card d-flex justify-content-center mt-5"> -->
@@ -267,13 +267,13 @@
                         <td class="col-1">
                             <div class="col">
                                 <a href="admin-edit-content.php?updateid=<?php echo $rowimage['Image_id'];?>">
-                                    <span class="btn btn-outline-success mx-2">Edit </span>
+                                    <i class="fa-solid fa-pen" style="font-size:25px; "></i>
                                 </a>
 
 
                                 <a href="php/content-image-process.php?id=<?php echo $rowimage['Image_id'];?>"
-                                    onclick="return confirm('Are you sure you want to delete?')"><input type="button"
-                                        class="btn btn-outline-danger" value="Delete"></a>
+                                    onclick="return confirm('Are you sure you want to delete?')"><i class="fa-solid fa-trash-can"
+                                            style="font-size:25px; color:red;"></i></a>
 
                                 </a>
                             </div>

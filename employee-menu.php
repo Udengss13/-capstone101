@@ -179,11 +179,11 @@
                                             <!-- <input name="photo" class="col-md-6 c-white" id="upload-news" type="file" required> -->
                                         </li>
                                         <li class="list-group-item">
-                                        <button type="button" class="btn btn-danger float-end"
+                                            <button type="button" class="btn btn-danger float-end"
                                                 style="margin-left: 5px;" data-bs-dismiss="modal">Close</button>
                                             <button type="submit" name="news" class="btn btn-outline-success float-end"
                                                 style="max-width:450px;">Confirm</button>
-                                            
+
 
                                         </li>
 
@@ -258,17 +258,17 @@
                         </td>
                         <td class="col-1">
                             <div class="col">
-                                <a href="employee-edit-menu.php?editid=<?php echo $rowmenu['Menu_id']; ?>"
-                                    class="text-decoration-none c-green">
+                                <a href="employee-edit-menu.php?editid=<?php echo $rowmenu['Menu_id']; ?>">
 
 
                                     <i class="fa-solid fa-pen" style="font-size:25px; padding: 10px"></i>
+                                </a>
 
+                                <a href="php/menu-process.php?id=<?php echo $rowmenu['Menu_id'];?>"
+                                    onclick="return confirm('Are you sure you want to delete?')">
+                                    <i class="fa-solid fa-trash-can"
+                                        style="font-size:25px; color:red; padding: 10px"></i>
 
-                                    <a href="php/menu-process.php?id=<?php echo $rowmenu['Menu_id'];?>" onclick="return confirm('Are you sure you want to delete?')">
-                                        <i class="fa-solid fa-trash-can"
-                                            style="font-size:25px; color:red; padding: 10px"></i>
-                                    </a>
                                 </a>
                             </div>
 

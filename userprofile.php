@@ -146,7 +146,7 @@ $userresult = mysqli_query($con, $queryimage);
                         <span class="btn btn-primary mx-2"> My Pet <i class="fa-solid fa-paw"></i></span>
                     </a>
                     <a href="calendar.php">
-                        <span class="btn btn-primary mx-2">  Appointment <i class="fa-solid fa-paw"></i></span>
+                        <span class="btn btn-primary mx-2">  Appointment <i class="fa-regular fa-calendar-check"></i></span>
                     </a>
 
                 </div>
@@ -168,7 +168,7 @@ $userresult = mysqli_query($con, $queryimage);
                             <div class="card-body"> -->
                     <div class="row">
                         <!-- <div class="col-sm-4 labels"> -->
-                        <img src="asset/profiles/<?php echo $fetch_user['image_filename']?>" class="rounded-circle" alt="Logo" style="width:40%; height:17vh" />
+                        <img src="asset/profiles/<?php echo $fetch_user['image_filename']?>" class="rounded-circle" alt="Logo" style="width:30%; height:17vh" />
                         <!-- </div> -->
                     </div>
                     <hr>

@@ -204,7 +204,7 @@
                                 <span class="input-group-addon ff"><i
                                         class="glyphicon glyphicon-user fa-5x "></i></span>
                                 <input name="suffix" class="form-control" type="text"
-                                    value="<?php echo $rowimageEdit['suffix'];   ?>" required>
+                                    value="<?php echo $rowimageEdit['suffix'];   ?>" >
                             </div>
                         </div>
                     </div>
@@ -215,7 +215,7 @@
                                 <span class="input-group-addon ff"><i
                                         class="glyphicon glyphicon-user fa-5x "></i></span>
                                 <input name="contact" class="form-control" type="text"
-                                    value="<?php echo $rowimageEdit['contact'];   ?>" required>
+                                    value="<?php echo $rowimageEdit['contact'];   ?>" >
                             </div>
                         </div>
                     </div>
