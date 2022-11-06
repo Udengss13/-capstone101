@@ -21,6 +21,7 @@
       rel="stylesheet">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<<<<<<< HEAD
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./adminstyles.css">
 </head>
@@ -36,6 +37,103 @@
              <div class="close" id="close-btn">
                 <span class="material-icons-sharp">close</span>
              </div>
+=======
+
+<script src="https://kit.fontawesome.com/f8f3c8a43b.js" crossorigin="anonymous"></script>
+<title>Admin || Content</title>
+<style>
+@media only screen and (min-width:1115px) {
+    .images_menu {
+        width: 80%;
+        height: 10vh;
+    }
+}
+</style>
+</head>
+
+<body style="background:  #9FBACD;">
+
+    <!--Navbar-->
+    <div class="nav-bar container-fluid overflow-hidden">
+        <div class="row vh-100 overflow-auto">
+            <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 d-flexs sticky-top">
+                <div
+                    class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
+                    <a href="/"
+                        class="navbar-brand d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"><img
+                            src="asset/logopet.png" alt="Saint Jude Logo"
+                            style="width: 50px; padding-left: 10px; padding-top: 5px;">
+                        <span class="navbar-brand">PETCO. ADMIN</span>
+                    </a>
+                    <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start"
+                        id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-speedometer2"></i> <span
+                                    class="ms-1 d-none d-sm-inline">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fs-4 bi-person-lines-fill"></i><span
+                                    class="ms-1 d-none d-sm-inline">Accounts</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                                <li><a class="dropdown-item" href="#">Admin Accounts</a></li>
+                                <li><a class="dropdown-item" href="admin-user-accounts.php">User Accounts</a></li>
+                                <li><a class="dropdown-item" href="#">Employee Accounts</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link px-sm-0 px-2">
+                                <i class="fs-4 bi-table"></i><span class="ms-1 d-none d-sm-inline">Sales</span></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fs-4 bi-archive"></i><span class="ms-1 d-none d-sm-inline">Pet Archives</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                                <li><a class="dropdown-item" href="#">Pet Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Pet Owners</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fs-4 bi-pencil-square"></i><span
+                                    class="ms-1 d-none d-sm-inline">Content</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                                <li><a class="dropdown-item" href="admin-slider.php">Slider</a></li>
+                                <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="admin-orders.php" class="nav-link px-sm-0 px-2">
+                                <i class="fs-4 bi-bag-check"></i><span class="ms-1 d-none d-sm-inline">Orders</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                            id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="asset/cha.jpg" alt="Admin" width="28" height="28" class="rounded-circle">
+                            <span class="d-none d-sm-inline mx-1">Cha</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                            <li><a class="dropdown-item" href="#">New project...</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="admin-profile.php">Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="admin-login.php">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+>>>>>>> 065bf9441f1673352366161d059ca2b2edd4210d
             </div>
             <div class="sidebar">
                 <a href="admin-dashboard.php">
@@ -82,6 +180,7 @@
             </div>
         </aside>
 
+<<<<<<< HEAD
         <main>
             <h1>Image Content for Home</h1>
                     
@@ -139,15 +238,116 @@
 
                                     </ul>
                                 </div>
-                            </div>
-                        </div>
-                </form>
+=======
 
-               
+
+            <div class="col py-3">
+                <div class="w3-main">
+                    <div class="w3-transparent">
+                        <h3 class="text-center c-white py-3">Announcement</h3>
+                    </div>
+                </div>
+                <!--All Content for Image Here-->
+                <div class="d-flex flex-row-reverse">
+                    <button type="button" class="btn bg-button"
+                        style="background: #EA6D52; border-radius: 15px; border-width: 7px;" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop"><i class="fa-solid fa-circle-plus "></i>
+                        Add
+
+
+                    </button>
+                </div>
+                <!-- The Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header bg-primary text-white">
+                                <h4 class="modal-title ">Post an Announcement</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <form action="php/content-image-process.php" method="post" enctype="multipart/form-data"
+                                    >
+                                    <div class="row justify-content-md-center mb-5">
+                                        <!-- <div class="col-lg-7 col-md-6 col-sm-12"> -->
+                                        <!-- <div class="card d-flex justify-content-center mt-5"> -->
+                                        <div class="card-header">
+
+
+                                            <?php if(!empty($messages)){
+                                                            echo "<div class='alert alert-success'>";
+                                                                foreach ($messages as $message) {
+                                                                echo "<span class='glyphicon glyphicon-ok'></span>&nbsp;".$message."<br>";
+                                                                }
+                                                                echo "</div>";
+                                                                }
+                                                    ?>
+
+                                            <ul class="list-group list-group-flush">
+                                                <!--Title-->
+                                                <li class="list-group-item">
+                                                    <label>Title:</label>
+                                                    <input name="title" class="col-12" type="text"
+                                                        placeholder="News Title" required>
+                                                </li>
+                                                <!--Subtitle-->
+                                                <li class="list-group-item">
+                                                    <label>Subtitle:</label>
+                                                    <input name="subtitle" class="col-12" type="text"
+                                                        placeholder="News Subtitle" required>
+                                                </li>
+                                                <!--Body-->
+                                                <li class="list-group-item">
+                                                    <div> <label>Body:</label></div>
+                                                    <textarea name="paragraph" style="height:150px;" required
+                                                        class="col-12" placeholder="News Paragraph"></textarea>
+                                                </li>
+                                                <!--Choose File-->
+                                                <li class="list-group-item">
+                                                    <input name="photo" class="" id="upload-news" type="file" required>
+                                                </li>
+
+
+                                                <li class="list-group-item">
+                                                    <!--Add button-->
+                                                    <button type="button" class="btn btn-danger float-end"
+                                                        style="margin-left: 5px;" data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" name="upload_image_content"
+                                                        class="btn btn-outline-success float-end"
+                                                        style="max-width:450px;">Add</button>
+                                                </li>
+
+                                            </ul>
+                                            <!-- </div> -->
+                                            <!-- </div> -->
+                                        </div>
+                                </form>
+>>>>>>> 065bf9441f1673352366161d059ca2b2edd4210d
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
             <!--Displaying data in table-->
+<<<<<<< HEAD
            <!--Displaying Data -->
            
            <div class="container-fluid mt-4">
+=======
+            <!--Displaying Data -->
+            <div class="container-fluid mt-4">
+>>>>>>> 065bf9441f1673352366161d059ca2b2edd4210d
                 <table class="table table-striped table table-bordered">
                     <!-- <div class="row"> -->
                     <thead>
@@ -155,7 +355,7 @@
                             <div class="row">
 
                                 <th scope="col">
-                                    <div class="col">Image ID</div>
+                                    <div class="col">Image</div>
                                 </th>
                                 <th scope="col">
                                     <div class="col">Title</div>
@@ -172,42 +372,48 @@
                         </tr>
                     </thead>
                     <?php while($rowimage =  mysqli_fetch_array($resultimage)){ ?>
-                        <tr>
-                            
-                            <td>
-                                <div class="col">
-                                <?php echo $rowimage['Image_id']; ?></div>
-                    </td>
-                    <td>
-                                <div class="col">
+                    <tr>
+
+                        <td>
+                            <div class="col">
+                                <a href="Petkoproj/<?php echo $rowmimage['Image_dir']; ?>" class="fancybox "
+                                    rel="ligthbox">
+                                    <img src=" asset/homepage/<?php echo $rowimage['Image_filename']; ?> "
+                                        class="zoom img-thumbnail img-responsive images_menu"></a>
+                        </td>
+                        <td>
+                            <div class="col">
                                 <?php echo $rowimage['Image_title']; ?></div>
-                    </td>
-                    <td>
-                                <div class="col">
+                        </td>
+                        <td>
+                            <div class="col">
                                 <?php echo $rowimage['Image_subtitle']; ?></div>
-                    </td>
-                    <td>
-                                <div class="col">
+                        </td>
+                        <td>
+                            <div class="col">
                                 <?php echo $rowimage['Image_body']; ?></div>
-                    </td>
-                    <td class="col-1">
-                                <div class="col">
+                        </td>
+                        <td class="col-1">
+                            <div class="col">
                                 <a href="admin-edit-content.php?updateid=<?php echo $rowimage['Image_id'];?>">
-                                        <span class="btn btn-outline-success mx-2">Edit </span>
-                                    </a>
-                                
+                                    <i class="fa-solid fa-pen" style="font-size:25px; "></i>
+                                </a>
 
-                                    <a href="php/content-image-process.php?id=<?php echo $rowimage['Image_id'];?>"><input
-                                            type="button" class="btn btn-outline-danger" value="Delete"></a>
-                                    
-                                </a></div>
 
-                    </td>
-                    
-                    
-                    <?php } ?>
-    
+                                <a href="php/content-image-process.php?id=<?php echo $rowimage['Image_id'];?>"
+                                    onclick="return confirm('Are you sure you want to delete?')"><i class="fa-solid fa-trash-can"
+                                            style="font-size:25px; color:red;"></i></a>
 
+                                </a>
+                            </div>
+
+                        </td>
+
+
+                        <?php } ?>
+
+
+<<<<<<< HEAD
     </main>
     <!--DIVISION -->
 
@@ -218,6 +424,17 @@
     <script src="/js/script.js"></script>
 
 
+=======
+
+                        <!--DIVISION -->
+
+
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+                            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+                            crossorigin="anonymous">
+                        </script>
+                        <script src="/js/script.js"></script>
+>>>>>>> 065bf9441f1673352366161d059ca2b2edd4210d
 </body>
 
 </html>

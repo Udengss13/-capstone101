@@ -2,8 +2,8 @@
     require('php/connection.php');
 
    //call all Menu
-  $querymenu = "SELECT * FROM employee_menu"; //You don't need a ; like you do in SQL
-  $resultmenu = mysqli_query($db_admin_account, $querymenu);
+  $querymenu = "SELECT * FROM admin_menu"; //You don't need a ; like you do in SQL
+  $resultmenu = mysqli_query($con, $querymenu);
  
    //call all Category
   $querycategory = "SELECT * FROM admin_category"; //You don't need a ; like you do in SQL
@@ -109,7 +109,7 @@
             <div class="d-flex flex-row-reverse">
                 <button type="button" class="btn bg-button"
                     style="background: #EA6D52; border-radius: 15px; border-width: 7px;" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop">
+                    data-bs-target="#staticBackdrop"><i class="fa-solid fa-circle-plus "></i>
                     Add
 
 
@@ -134,7 +134,7 @@
                             <form action="php/menu-process.php" method="post" enctype="multipart/form-data"
                                 class="row gap-2 justify-content-center">
 
-                                <div class="card d-flex justify-content-center">
+                                <div class="justify-content-center">
                                     <div class="card-header">
                                         Product Information
                                     </div>
@@ -179,11 +179,11 @@
                                             <!-- <input name="photo" class="col-md-6 c-white" id="upload-news" type="file" required> -->
                                         </li>
                                         <li class="list-group-item">
-                                        <button type="button" class="btn btn-danger float-end"
+                                            <button type="button" class="btn btn-danger float-end"
                                                 style="margin-left: 5px;" data-bs-dismiss="modal">Close</button>
                                             <button type="submit" name="news" class="btn btn-outline-success float-end"
                                                 style="max-width:450px;">Confirm</button>
-                                            
+
 
                                         </li>
 
@@ -258,17 +258,17 @@
                         </td>
                         <td class="col-1">
                             <div class="col">
-                                <a href="employee-edit-menu.php?editid=<?php echo $rowmenu['Menu_id']; ?>"
-                                    class="text-decoration-none c-green">
+                                <a href="employee-edit-menu.php?editid=<?php echo $rowmenu['Menu_id']; ?>">
 
 
                                     <i class="fa-solid fa-pen" style="font-size:25px; padding: 10px"></i>
+                                </a>
 
+                                <a href="php/menu-process.php?id=<?php echo $rowmenu['Menu_id'];?>"
+                                    onclick="return confirm('Are you sure you want to delete?')">
+                                    <i class="fa-solid fa-trash-can"
+                                        style="font-size:25px; color:red; padding: 10px"></i>
 
-                                    <a href="php/menu-process.php?id=<?php echo $rowmenu['Menu_id'];?>">
-                                        <i class="fa-solid fa-trash-can"
-                                            style="font-size:25px; color:red; padding: 10px"></i>
-                                    </a>
                                 </a>
                             </div>
 

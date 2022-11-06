@@ -42,14 +42,13 @@ $userresult = mysqli_query($con, $queryimage);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/f8f3c8a43b.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="./fullcalendar/lib/main.min.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./fullcalendar/lib/main.min.js"></script>
 
-    <!-- bootstrap Icon Link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.11.3/main.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.11.3/main.min.js"></script>
 
-    <link href='fullcalendar/main.css' rel='stylesheet' />
-    <script src='fullcalendar/main.js'></script>
+
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
@@ -133,7 +132,7 @@ $userresult = mysqli_query($con, $queryimage);
                     <h2>My Profile</h2>
 
                 </div>
-                <div class="col-5 mt-2">
+                <div class="col-6 mt-2 ">
                     <a href="user-edit-profile.php?updateid=<?php echo $fetch_user['id'];?>">
                         <span class="btn btn-primary mx-2">Edit Profile <i class="fa-solid fa-pen-to-square"></i></span>
                     </a>
@@ -141,23 +140,27 @@ $userresult = mysqli_query($con, $queryimage);
                     <a href="user-edit-profiles.php?updateid=<?php echo $fetch_user['id'];?>">
                         <span class="btn btn-success mx-2">Message <i class="fa-solid fa-message"></i></span>
                     </a>
-                    
-                   
+
+
                     <a href="#imagesec">
                         <span class="btn btn-primary mx-2"> My Pet <i class="fa-solid fa-paw"></i></span>
+                    </a>
+                    <a href="appointment-user.php">
+                        <span class="btn btn-primary mx-2"> Appointment <i
+                                class="fa-regular fa-calendar-check"></i></span>
                     </a>
 
                 </div>
             </div>
-            
+
         </div>
     </div>
     <hr>
-    
+
 
     <div class="container mt-5">
         <div class="row">
-            <div class="col ">
+            <div class="col-6 ">
 
                 <!-- <p class="text-capitalize text-center">Welcome
                     <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></p> -->
@@ -166,7 +169,8 @@ $userresult = mysqli_query($con, $queryimage);
                             <div class="card-body"> -->
                     <div class="row">
                         <!-- <div class="col-sm-4 labels"> -->
-                        <img src="asset/profile/user.png" alt="Logo" style="width:40%; height:17vh" />
+                        <img src="asset/profiles/<?php echo $fetch_user['image_filename']?>" class="rounded-circle"
+                            alt="Logo" style="width:30%; height:17vh" />
                         <!-- </div> -->
                     </div>
                     <hr>
@@ -238,9 +242,7 @@ $userresult = mysqli_query($con, $queryimage);
                 </div>
 
             </div>
-            <div class="col">
-                <div id='calendar'></div>
-            </div>
+
         </div>
     </div>
 
@@ -248,79 +250,79 @@ $userresult = mysqli_query($con, $queryimage);
     <hr>
     <!--ANNOUNCEMENT-->
     <section class="flex-sect" id="imagesec">
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col ">
-                <?php 
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col ">
+                    <?php 
                     $select_pet = mysqli_query($con, "SELECT * FROM pettable WHERE user_id = '$user_id'");
                     if(mysqli_num_rows($select_user) > 0){
                     $fetch_user = mysqli_fetch_assoc($select_pet); 
                     };
                 ?>
 
-                <div class="col-lg-5 profilebg">
-                    <!-- <div class="card mb-4">
+                    <div class="col-lg-5 profilebg">
+                        <!-- <div class="card mb-4">
                             <div class="card-body"> -->
-                    <div class="row">
-                        <!-- <div class="col-sm-4 labels"> -->
-                        <img src="asset/profile/pets.png" alt="Logo" style="width:40%; height:17vh" />
-                        <!-- </div> -->
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">Pet Name:</p>
+                        <div class="row">
+                            <!-- <div class="col-sm-4 labels"> -->
+                            <img src="asset/profile/pets.png" alt="Logo" style="width:40%; height:17vh" />
+                            <!-- </div> -->
                         </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['petname']; ?></p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-4 labels">
+                                <p class="mb-0">Pet Name:</p>
+                            </div>
+                            <div class="col-sm-8">
+                                <p class="c-blue mb-0"><?php echo $fetch_user['petname']; ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">Pet Type:</p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-4 labels">
+                                <p class="mb-0">Pet Type:</p>
+                            </div>
+                            <div class="col-sm-8">
+                                <p class="c-blue mb-0"><?php echo $fetch_user['pettype']; ?></p>
+                            </div>
                         </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['pettype']; ?></p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-4 labels">
+                                <p class="mb-0">Pet Breed:</p>
+                            </div>
+                            <div class="col-sm-8">
+                                <p class="c-blue mb-0"><?php echo $fetch_user['petbreed']; ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">Pet Breed:</p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-4 labels">
+                                <p class="mb-0">Pet Sex:</p>
+                            </div>
+                            <div class="col-sm-8">
+                                <p class="c-blue mb-0"><?php echo $fetch_user['petsex']; ?></p>
+                            </div>
                         </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['petbreed']; ?></p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">Pet Sex:</p>
-                        </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['petsex']; ?></p>
-                        </div>
-                    </div>
-                    <hr>
+                        <hr>
 
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">Pet Birthday:</p>
+                        <div class="row">
+                            <div class="col-sm-4 labels">
+                                <p class="mb-0">Pet Birthday:</p>
+                            </div>
+                            <div class="col-sm-8">
+                                <p class="c-blue mb-0"><?php echo $fetch_user['petbday']; ?></p>
+                            </div>
                         </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['petbday']; ?></p>
-                        </div>
-                    </div>
-                    <hr>
+                        <hr>
 
-                    <!-- </div>
+                        <!-- </div>
                         </div> -->
-                </div>
+                    </div>
 
+                </div>
             </div>
         </div>
-    </div>
     </section>
     <!--Footer-->
     <footer class=" footer-banner mt-5" id="about">

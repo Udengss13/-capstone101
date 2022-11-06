@@ -77,6 +77,9 @@ body{
 .c-blue{
   color: #034D73;
 }
+.bg-trans{
+  background-color: rgba(238, 249, 255, 0.942);
+}
 
 /* Wave Banner STyle */
 * {

@@ -1,104 +1,144 @@
-<?php
+<?php require_once('php/connection.php') ?>
+<!DOCTYPE html>
+<html lang="en">
 
-// include 'Calendar.php';
-$calendar = new Calendar('2021-02-02');
-$calendar->add_event('Birthday', '2021-02-03', 1, 'green');
-$calendar->add_event('Doctors', '2021-02-04', 1, 'red');
-$calendar->add_event('Holiday', '2021-02-16', 7);
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduling</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./fullcalendar/lib/main.min.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./fullcalendar/lib/main.min.js"></script>
+    <style>
+        :root {
+            --bs-success-rgb: 71, 222, 152 !important;
+        }
 
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: Apple Chancery, cursive;
+        }
 
-class Calendar {
+        .btn-info.text-light:hover,
+        .btn-info.text-light:focus {
+            background: #000;
+        }
+        table, tbody, td, tfoot, th, thead, tr {
+            border-color: #ededed !important;
+            border-style: solid;
+            border-width: 1px !important;
+        }
+    </style>
+</head>
 
-    private $active_year, $active_month, $active_day;
-    private $events = [];
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient" id="topNavBar">
+        <div class="container">
+            <a class="navbar-brand" href="https://sourcecodester.com">
+            Sourcecodester
+            </a>
 
-    public function __construct($date = null) {
-        $this->active_year = $date != null ? date('Y', strtotime($date)) : date('Y');
-        $this->active_month = $date != null ? date('m', strtotime($date)) : date('m');
-        $this->active_day = $date != null ? date('d', strtotime($date)) : date('d');
-    }
-
-    public function add_event($txt, $date, $days = 1, $color = '') {
-        $color = $color ? ' ' . $color : $color;
-        $this->events[] = [$txt, $date, $days, $color];
-    }
-
-    public function __toString() {
-        $num_days = date('t', strtotime($this->active_day . '-' . $this->active_month . '-' . $this->active_year));
-        $num_days_last_month = date('j', strtotime('last day of previous month', strtotime($this->active_day . '-' . $this->active_month . '-' . $this->active_year)));
-        $days = [0 => 'Sun', 1 => 'Mon', 2 => 'Tue', 3 => 'Wed', 4 => 'Thu', 5 => 'Fri', 6 => 'Sat'];
-        $first_day_of_week = array_search(date('D', strtotime($this->active_year . '-' . $this->active_month . '-1')), $days);
-        $html = '<div class="calendar">';
-        $html .= '<div class="header">';
-        $html .= '<div class="month-year">';
-        $html .= date('F Y', strtotime($this->active_year . '-' . $this->active_month . '-' . $this->active_day));
-        $html .= '</div>';
-        $html .= '</div>';
-        $html .= '<div class="days">';
-        foreach ($days as $day) {
-            $html .= '
-                <div class="day_name">
-                    ' . $day . '
+            <div>
+                <b class="text-light">Sample Scheduling</b>
+            </div>
+        </div>
+    </nav>
+    <div class="container py-5" id="page-container">
+        <div class="row">
+            <div class="col-md-9">
+                <div id="calendar"></div>
+            </div>
+            <div class="col-md-3">
+                <div class="cardt rounded-0 shadow">
+                    <div class="card-header bg-gradient bg-primary text-light">
+                        <h5 class="card-title">Schedule Form</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="container-fluid">
+                            <form action="save_schedule.php" method="post" id="schedule-form">
+                                <input type="hidden" name="id" value="">
+                                <div class="form-group mb-2">
+                                    <label for="title" class="control-label">Title</label>
+                                    <input type="text" class="form-control form-control-sm rounded-0" name="title" id="title" required>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label for="description" class="control-label">Description</label>
+                                    <textarea rows="3" class="form-control form-control-sm rounded-0" name="description" id="description" required></textarea>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label for="start_datetime" class="control-label">Start</label>
+                                    <input type="datetime-local" class="form-control form-control-sm rounded-0" name="start_datetime" id="start_datetime" required>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="text-center">
+                            <button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i class="fa fa-save"></i> Save</button>
+                            <button class="btn btn-default border btn-sm rounded-0" type="reset" form="schedule-form"><i class="fa fa-reset"></i> Cancel</button>
+                        </div>
+                    </div>
                 </div>
-            ';
-        }
-        for ($i = $first_day_of_week; $i > 0; $i--) {
-            $html .= '
-                <div class="day_num ignore">
-                    ' . ($num_days_last_month-$i+1) . '
+            </div>
+        </div>
+    </div>
+    <!-- Event Details Modal -->
+    <div class="modal fade" tabindex="-1" data-bs-backdrop="static" id="event-details-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-0">
+                <div class="modal-header rounded-0">
+                    <h5 class="modal-title">Schedule Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            ';
-        }
-        for ($i = 1; $i <= $num_days; $i++) {
-            $selected = '';
-            if ($i == $this->active_day) {
-                $selected = ' selected';
-            }
-            $html .= '<div class="day_num' . $selected . '">';
-            $html .= '<span>' . $i . '</span>';
-            foreach ($this->events as $event) {
-                for ($d = 0; $d <= ($event[2]-1); $d++) {
-                    if (date('y-m-d', strtotime($this->active_year . '-' . $this->active_month . '-' . $i . ' -' . $d . ' day')) == date('y-m-d', strtotime($event[1]))) {
-                        $html .= '<div class="event' . $event[3] . '">';
-                        $html .= $event[0];
-                        $html .= '</div>';
-                    }
-                }
-            }
-            $html .= '</div>';
-        }
-        for ($i = 1; $i <= (42-$num_days-max($first_day_of_week, 0)); $i++) {
-            $html .= '
-                <div class="day_num ignore">
-                    ' . $i . '
+                <div class="modal-body rounded-0">
+                    <div class="container-fluid">
+                        <dl>
+                            <dt class="text-muted">Title</dt>
+                            <dd id="title" class="fw-bold fs-4"></dd>
+                            <dt class="text-muted">Description</dt>
+                            <dd id="description" class=""></dd>
+                            <dt class="text-muted">Start</dt>
+                            <dd id="start" class=""></dd>
+                            <dt class="text-muted">End</dt>
+                            <dd id="end" class=""></dd>
+                        </dl>
+                    </div>
                 </div>
-            ';
-        }
-        $html .= '</div>';
-        $html .= '</div>';
-        return $html;
-    }
+                <div class="modal-footer rounded-0">
+                    <div class="text-end">
+                        <button type="button" class="btn btn-primary btn-sm rounded-0" id="edit" data-id="">Edit</button>
+                        <button type="button" class="btn btn-danger btn-sm rounded-0" id="delete" data-id="">Delete</button>
+                        <button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Event Details Modal -->
 
+    <?php 
+$schedules = $conn->query("SELECT * FROM `schedule_list`");
+$sched_res = [];
+foreach($schedules->fetch_all(MYSQLI_ASSOC) as $row){
+    $row['sdate'] = date("F d, Y h:i A",strtotime($row['start_datetime']));
+    $row['edate'] = date("F d, Y h:i A",strtotime($row['end_datetime']));
+    $sched_res[$row['id']] = $row;
 }
 ?>
+<?php 
+if(isset($conn)) $conn->close();
+?>
+</body>
+<script>
+    var scheds = $.parseJSON('<?= json_encode($sched_res) ?>')
+</script>
+<script src="./js/script.js"></script>
 
-
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Event Calendar</title>
-		<link href="styling.css" rel="stylesheet" type="text/css">
-		<link href="calendar.css" rel="stylesheet" type="text/css">
-	</head>
-	<body>
-	    <nav class="navtop">
-	    	<div>
-	    		<h1>Event Calendar</h1>
-	    	</div>
-	    </nav>
-		<div class="content home">
-			<?=$calendar?>
-		</div>
-	</body>
 </html>

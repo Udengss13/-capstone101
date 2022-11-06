@@ -16,14 +16,14 @@ session_start();
   $resultcategory = mysqli_query($db_admin_account, $querycategory);
     
   //call all Menu
-  $querymenu = "SELECT * FROM employee_menu"; //You don't need a ; like you do in SQL
-  $resultmenu = mysqli_query($db_admin_account, $querymenu);
+  $querymenu = "SELECT * FROM admin_menu"; //You don't need a ; like you do in SQL
+  $resultmenu = mysqli_query($con, $querymenu);
 
   if(isset($_GET['editid'])){
       $menu_id = $_GET['editid'];
 
-      $query = "SELECT * FROM employee_menu WHERE Menu_id = $menu_id";
-      $result = mysqli_query($db_admin_account, $query);
+      $query = "SELECT * FROM admin_menu WHERE Menu_id = $menu_id";
+      $result = mysqli_query($con, $query);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
       if(empty($row['Menu_dir'])){
@@ -130,7 +130,8 @@ session_start();
 
           <form action="php/edit-menu-process.php" method="post" enctype="multipart/form-data"
             class="row gap-2 justify-content-center">
-            <div class="card d-flex justify-content-center">
+            <div class="justify-content-center">
+            <div class="shadow-lg p-3 mb-5 bg-body rounded">
               <div class="card-header">
                 Update Products
               </div>
@@ -164,12 +165,13 @@ session_start();
                     </select>
 
                   </div>
+                  
 
                 </li>
 
                 <li class="list-group-item">
                   <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="upload-news" name="photo" required>
+                    <input type="file" class="custom-file-input" id="upload-news" name="photo" required >
                   </div>
                   <!-- <input name="photo" class="col-md-6 c-white" id="upload-news" type="file" required> -->
                 </li>
@@ -177,11 +179,12 @@ session_start();
                 <li class="list-group-item">
                   <a href="employee-menu.php" class="float-end mx-2"><span class="btn btn-outline-danger">Back</span></a>
 
-                  <button type=" submit" name="update_changes" class="btn btn-outline-success float-end"
+                  <button type="submit" name="update_changes" class="btn btn-outline-success float-end"
                     style="max-width:450px;">Update</button>
 
                 </li>
               </ul>
+            </div>
             </div>
           </form>
         </div>

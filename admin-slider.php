@@ -43,7 +43,7 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
     <!--Navbar-->
     <div class="nav-bar container-fluid overflow-hidden">
         <div class="row vh-100 overflow-auto">
-            <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 d-flex sticky-top">
+            <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 d-flexs sticky-top">
                 <div
                     class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
                     <a href="/"
@@ -93,6 +93,7 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
                                     class="ms-1 d-none d-sm-inline">Content</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                                <li><a class="dropdown-item" href="admin-content.php">Announcement</a></li>
                                 <li><a class="dropdown-item" href="admin-slider.php">Slider</a></li>
                                 <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
                             </ul>

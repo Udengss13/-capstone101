@@ -13,28 +13,24 @@ session_start();
         $contact = $_POST['contact'];
         $address = $_POST['address'];
         
-        
-        // $paragraph = $_POST['paragraph'];
-        // $paragraph = nl2br($paragraph);
-        // $safe_input = mysqli_real_escape_string($db_admin_account,$paragraph);
+        $filenamedir = "../asset/profiles/".$_FILES["photo"]["name"];
+        $filename = $_FILES["photo"]["name"];
 
-          
-        // $filenamedir = "../asset/homepage/".$_FILES["photo"]["name"];
-        // $filename = $_FILES["photo"]["name"];
-        
-        // move file to a folder
-        // if(move_uploaded_file($_FILES["photo"]["tmp_name"], $filenamedir))
-        // {
-         $userquery = "UPDATE `usertable` SET `first_name`  = '$fname', `middle_name` = '$mname',`last_name` = '$lname', suffix = '$suffix',contact = '$contact', address = '$address' WHERE `usertable`.`id` = '$user_id'";
+         // move file to a folder
+         if(move_uploaded_file($_FILES["photo"]["tmp_name"], $filenamedir))
+         {
+         $userquery = "UPDATE `usertable` SET `first_name`  = '$fname', `middle_name` = '$mname',`last_name` = '$lname', suffix = '$suffix',contact = '$contact', address = '$address', 
+         image_dir = '$filenamedir', image_filename = '$filename' WHERE `usertable`.`id` = '$user_id'";
               
          if(mysqli_query($con, $userquery)){
+             
           $_SESSION['update_changes'] = "Your data has been edited successfully";
           header('location: ../user-edit-profile.php?updateid='.$user_id);
          }
          else{
           echo "mlai";
          }
-      //  }      
+       }      
 }
 
 ?>

@@ -41,6 +41,18 @@
      header('location: admin-orders.php');
    }
   }
+  if(isset($_POST['pickedup'])){
+    $update_status = $_POST['update_status'];
+    $update_status_id = $_POST['update_status_id'];
+    $update_status = 1;
+    
+    $update_status_query = mysqli_query($con, "UPDATE `order` SET `order_status` = 'pickedup' WHERE `order`.`id` = ".$_GET['id']);
+    
+
+   if($update_status_query){
+     header('location: admin-orders.php');
+   }
+  }
 ?>
 
 
@@ -67,7 +79,7 @@
 <!--Navbar-->
 <div class="nav-bar container-fluid overflow-hidden">
     <div class="row vh-100 overflow-auto">
-        <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 d-flex sticky-top">
+        <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 d-flexs sticky-top">
             <div
                 class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
                 <a href="/"
@@ -150,7 +162,7 @@
 
 
         <div class="col-auto col-md-9 col-sm-9 col-xl-10 mt-5 body">
-            <table class="table table-striped table-bordered">
+            <table class="table  table-bordered">
                 <?php 
                     $select_user = mysqli_query($con, "SELECT * FROM `order` WHERE id = ".$_GET['id']);
                     if(mysqli_num_rows($select_user) > 0){
@@ -201,7 +213,7 @@
                         <tr class="col-5">
                             <?php else: ?>
                             <td class=" ">
-                                <div class="col"><span class="badge badge-secondary  text-dark">
+                                <div class="col">
                                         Order Status: <span class="badge badge-success bg-secondary"> For
                                             Verification</span></div>
                             </td>
@@ -267,8 +279,10 @@
         </table>
 
         <div class="text-center">
-            <button type="submit" name="confirmed">Confirm</a></button>
-            <button class="btn " type="submit" name="pickup">For Pick Up</a></button>
+            <h5>Choose Status:</h5>
+            <button  class="btn bg-success border border-dark " type="submit" name="confirmed">Confirm</a></button>
+            <button class="btn bg-warning border border-dark  " type="submit" name="pickup">For Pick Up</a></button>
+            <button class="btn bg-info border border-dark " type="submit" name="pickedup">Picked Up</a></button>
             <a href="admin-orders.php"><span class="btn btn-outline-danger mx-2 float-end">Back</span></a>
 
         </div>

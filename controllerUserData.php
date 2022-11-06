@@ -16,6 +16,8 @@ $errors = array();
 
     //if user signup button
     if(isset($_POST['signup'])){
+
+ 
           //for captcha
         // if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
         //     // echo "<script>alert('Incorrect verification code');</script>" ;
@@ -37,6 +39,8 @@ $errors = array();
         $petsex = mysqli_real_escape_string($con, $_POST['petsex']);
         $petbday = date('Y-m-d', strtotime($_POST['petbday']));
         
+        $filenamedir = "asset/profiles/".$_FILES["photo"]["name"];
+        $filename = $_FILES["photo"]["name"];
        
 
         if($password !== $cpassword){
@@ -49,15 +53,16 @@ $errors = array();
             $errors['email'] = "Email that you have entered is already exist!";
         }
         
+       
 
-        if(count($errors) === 0){
+        if( count($errors) === 0 && move_uploaded_file($_FILES["photo"]["tmp_name"], $filenamedir)){
          
             $code = rand(999999, 111111);
             $status = "notverified";
           
 
-            $insert_data = "INSERT INTO usertable (first_name, middle_name, last_name, suffix, address, email, password, code, status, contact)
-                            values('$fname', '$mname', '$lname', '$suffix', '$address', '$email', '$password', '$code', '$status', '$contact')";
+            $insert_data = "INSERT INTO usertable (first_name, middle_name, last_name, suffix, address, email, password, code, status, contact, image_dir, image_filename, user_level)
+                            values('$fname', '$mname', '$lname', '$suffix', '$address', '$email', '$password', '$code', '$status', '$contact', '$filenamedir', '$filename', 'client')";
             $data_check1 = mysqli_query($con, $insert_data);
 
             $user_id = $con->insert_id;
@@ -156,12 +161,21 @@ $errors = array();
         if(mysqli_num_rows($res) > 0){
             $fetch = mysqli_fetch_assoc($res);
             $status = $fetch['status'];
-            if($status == 'verified'){
+            $user_level = $fetch['user_level'];
+            if($status == 'verified' and $user_level =='client'){
                 $_SESSION['user_id']= $fetch['id'];
                 $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
                   header('location: home.php');
-              }else{
+              }
+              elseif($status == 'verified' and $user_level =='employee'){
+                $_SESSION['user_id']= $fetch['id'];
+                $_SESSION['email'] = $email;
+                $_SESSION['password'] = $password;
+                  header('location: employee-dashboard.php');
+              }
+              
+              else{
                   $info = "It's look like you haven't still verify your email - $email";
                   $_SESSION['info'] = $info;
                   header('location: user-otp.php');

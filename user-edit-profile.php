@@ -120,121 +120,136 @@
 
     <!--All Content Here-->
     <div class="container  mt-5">
-    <!-- <center><img src="asset/logopet.png" alt="Logo" style="position: absolute; z-index: -1;" /></center> -->
+        <!-- <center><img src="asset/logopet.png" alt="Logo" style="position: absolute; z-index: -1;" /></center> -->
 
 
-        <h4 class="text-center c-white py-3">Edit Profile </h4>
+        <h4 class="text-center c-white py-3 text-light">Edit Profile </h4>
 
-        <form action="php/profile-edit-process.php" method="post">
-            <div class="row justify-content-md-center mb-5">
+        <form action="php/profile-edit-process.php" method="post" enctype="multipart/form-data">
+            <div class="row justify-content-md-center mb-5 ">
+                
                 <!-- <div class="col-lg-7 col-md-6 col-sm-12"> -->
-                <!-- <div class="card d-flex justify-content-center"> -->
-                <!-- <div class="card-header">
+                
+                    <!-- <div class="card-header">
                             Edit Information for Homepage
                         </div> -->
-                <!--Success Message-->
-                <?php if($applychanges!=""){?>
-                <div class="alert alert-primary alert-dismissible fade show mt-3 mx-auto justify-content-md-center mb-2" role="alert"
-                    style="width: 90%;">
-                    <strong>Apply Changes Successfully!</strong> <?php echo $applychanges; ?>.
-                </div>
-                <?php } ?>
-                <!-- <ul class="list-group "> -->
-                <!--NAME-->
-                <!-- <div class="row justify-content-md-center mb-5">
+                    <!--Success Message-->
+                    <?php if($applychanges!=""){?>
+                    <div class="alert alert-primary alert-dismissible fade show mt-3 mx-auto justify-content-md-center mb-2"
+                        role="alert" style="width: 50%;">
+                        <strong>Apply Changes Successfully!</strong> <?php echo $applychanges; ?>.
+                    </div>
+                    <?php } ?>
+                    <!-- <ul class="list-group "> -->
+                    <!--NAME-->
+                    <!-- <div class="row justify-content-md-center mb-5">
                     <div class="col-lg-12 col-md-6 col-sm-12">
                         <div class="card  justify-content-center"> -->
-                            <div class="row justify-content-md-center mb-2">
-                                <label class="col-md-2 control-label ">First Name:</label>
-                                <div class="col-md-4 inputGroupContainer">
-                                    <div class="input-group">
-                                        <input name="id" class="col-12" type="text"
-                                            value="<?php echo $rowimageEdit['id'];    ?>" hidden>
-                                        <!-- <span class="input-group-addon"><i class="fa-solid fa-user ff"></i></span> -->
-                                        <input name="fname" class="form-control"
-                                            type="text" value="<?php echo $rowimageEdit['first_name'];   ?>" required>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <!-- Text input-->
+                    <div class="row justify-content-md-center mb-2">
 
-                            <div class="row  justify-content-md-center mb-2">
-                                <label class="col-md-2 control-label">Middle Name</label>
-                                <div class="col-md-4 inputGroupContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon ff"><i
-                                                class="glyphicon glyphicon-user fa-5x "></i></span>
-                                        <input name="mname" class="form-control" type="text"
-                                            value="<?php echo $rowimageEdit['middle_name'];   ?>" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row justify-content-md-center mb-2">
-                                <label class="col-md-2 control-label">Last Name</label>
-                                <div class="col-md-4 inputGroupContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon ff"><i
-                                                class="glyphicon glyphicon-user fa-5x "></i></span>
-                                        <input name="lname" class="form-control" type="text"
-                                            value="<?php echo $rowimageEdit['last_name'];   ?>" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row justify-content-md-center mb-2">
-                                <label class="col-md-2 control-label">Suffix</label>
-                                <div class="col-md-4 inputGroupContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon ff"><i
-                                                class="glyphicon glyphicon-user fa-5x "></i></span>
-                                        <input name="suffix" class="form-control" type="text"
-                                            value="<?php echo $rowimageEdit['suffix'];   ?>" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row justify-content-md-center mb-2">
-                                <label class="col-md-2 control-label">Contact</label>
-                                <div class="col-md-4 inputGroupContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon ff"><i
-                                                class="glyphicon glyphicon-user fa-5x "></i></span>
-                                        <input name="contact" class="form-control" type="text"
-                                            value="<?php echo $rowimageEdit['contact'];   ?>" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row justify-content-md-center mb-2">
-                                <label class="col-md-2 control-label">Address</label>
-                                <div class="col-md-4 inputGroupContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon ff"><i
-                                                class="glyphicon glyphicon-user fa-5x "></i></span>
-                                        <input name="address" class="form-control" type="text"
-                                            value="<?php echo $rowimageEdit['address'];   ?>" required>
-                                    </div>
-                                </div>
-                            </div>
+                        <label class="col-md-2 control-label "></label>
+                        <div class="col-md-4 inputGroupContainer ">
+                            <div class="input-group">
+                                <input name="id" class="col-12" type="text" value="<?php echo $rowimageEdit['id']; ?>"
+                                    hidden>
+                                <!-- <span class="input-group-addon"><i class="fa-solid fa-user ff"></i></span> -->
+                                <img src="asset/profiles/<?php echo $rowimageEdit['image_filename']?>"
+                                    class="rounded-circle" alt="Logo" style="width:40%; height:17vh" />
 
-
-                            <div class="row mt-3">
-                                <!--Back-->
-                                <div class="col-6">
-                                    <button type="submit" name="update_profile"
-                                        class="btn btn-outline-success float-end"
-                                        style="max-width:450px;">Save <i class="fa-solid fa-floppy-disk"></i></button>
-                                </div>
-                                <div class="col-2">
-                                    <a href="userprofile.php"><span
-                                            class="btn btn-outline-danger mx-2 float-end">Back <i class="fa-sharp fa-solid fa-arrow-left"></i></span></a>
-                                </div>
-                                <!--Add button-->
-
+                                <input type="file" name="photo" required>
                             </div>
-                            <!-- </ul> -->
                         </div>
                     </div>
+
+                    <!-- Text input-->
+                    <div class="row  justify-content-md-center mb-2">
+                        <label class="col-md-2 control-label">First Name</label>
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon ff"><i
+                                        class="glyphicon glyphicon-user fa-5x "></i></span>
+                                <input name="fname" class="form-control" type="text"
+                                    value="<?php echo $rowimageEdit['first_name'];   ?>" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row  justify-content-md-center mb-2">
+                        <label class="col-md-2 control-label">Middle Name</label>
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon ff"><i
+                                        class="glyphicon glyphicon-user fa-5x "></i></span>
+                                <input name="mname" class="form-control" type="text"
+                                    value="<?php echo $rowimageEdit['middle_name'];   ?>" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-md-center mb-2">
+                        <label class="col-md-2 control-label">Last Name</label>
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon ff"><i
+                                        class="glyphicon glyphicon-user fa-5x "></i></span>
+                                <input name="lname" class="form-control" type="text"
+                                    value="<?php echo $rowimageEdit['last_name'];   ?>" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-md-center mb-2">
+                        <label class="col-md-2 control-label">Suffix</label>
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon ff"><i
+                                        class="glyphicon glyphicon-user fa-5x "></i></span>
+                                <input name="suffix" class="form-control" type="text"
+                                    value="<?php echo $rowimageEdit['suffix'];   ?>" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-md-center mb-2">
+                        <label class="col-md-2 control-label">Contact</label>
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon ff"><i
+                                        class="glyphicon glyphicon-user fa-5x "></i></span>
+                                <input name="contact" class="form-control" type="text"
+                                    value="<?php echo $rowimageEdit['contact'];   ?>" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-md-center mb-2">
+                        <label class="col-md-2 control-label">Address</label>
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon ff"><i
+                                        class="glyphicon glyphicon-user fa-5x "></i></span>
+                                <input name="address" class="form-control" type="text"
+                                    value="<?php echo $rowimageEdit['address'];   ?>" required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-3">
+                        <!--Back-->
+                        <div class="col-6">
+                            <button type="submit" name="update_profile" class="btn btn-success float-end"
+                                style="max-width:450px;">Save <i class="fa-solid fa-floppy-disk"></i></button>
+                        </div>
+                        <div class="col-2">
+                            <a href="userprofile.php"><span class="btn btn-danger mx-2">Back <i
+                                        class="fa-sharp fa-solid fa-arrow-left"></i></span></a>
+                        </div>
+                        <!--Add button-->
+
+                    </div>
+                    <!-- </ul> -->
                 </div>
             </div>
+
+
         </form>
     </div>
 
