@@ -109,7 +109,7 @@
             <div class="d-flex flex-row-reverse">
                 <button type="button" class="btn bg-button"
                     style="background: #EA6D52; border-radius: 15px; border-width: 7px;" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop">
+                    data-bs-target="#staticBackdrop"><i class="fa-solid fa-circle-plus "></i>
                     Add
 
 
