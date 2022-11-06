@@ -181,9 +181,9 @@ require_once "controllerAdmin.php";
                         </form>
                     </div>
                     <div class="col">
-                        <div class="dropdown  ms-auto ms-sm-0 flex-shrink-1  " style="background-color: #EA6D52;">
+                        <div class="dropdown  ms-auto ms-sm-0 flex-shrink-1 " style="background-color: #EA6D52; border-radius: 10px;">
 
-                            <a href="#" class="d-flex align-items-center  text-decoration-none dropdown-toggle btn"
+                            <a href="#" class="d-flex align-items-center text-decoration-none text-dark dropdown-toggle btn"
                                 id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-circle-plus text-primary"></i>
                                 Add User
@@ -195,7 +195,6 @@ require_once "controllerAdmin.php";
                                 <li><a class="dropdown-item" href="#">Admin</a></li>
                                 <li><a class="dropdown-item" href="adminAddEmployee.php">Employee</a></li>
                                 
-
                             </ul>
                         </div>
 
