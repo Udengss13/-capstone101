@@ -112,7 +112,7 @@
                     $select_rows = mysqli_query($con,"SELECT * FROM `cart` WHERE Cart_user_id = '$user_id'") or die ('query failed');
                     $row_count = mysqli_num_rows($select_rows);
                   ?>
-                  <div class="text-nowrap">
+                <div class="text-nowrap">
                     <li class="nav-item mt-3">
 
                         <a class="nav-link text-white" href="#imagesec">PET GALLERY</a>
@@ -140,25 +140,26 @@
                             <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></p> -->
                     </li>
                 </div>
-                <div class="dropdown mb-2 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
-              
-                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                            id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="asset/profiles/<?php echo $fetch_user['image_filename']?>" alt="user" style=" margin-left: 10px" width="28" height="28"
-                                class="rounded-circle">
-                            <span class="d-none d-sm-inline mx-2"><?php echo $fetch_user['first_name']?></span>
-                        </a>
-              
-                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                            <li><a class="dropdown-item" href="#">yes</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="userprofile.php">Profile</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="logout-user.php" onclick="return confirm('Are you sure do you want to sign out?')">Sign out</a></li>
-                        </ul>
-                    </div>
+                <div class="dropdown mb-2 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1 ">
+
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="asset/profiles/<?php echo $fetch_user['image_filename']?>" alt="user"
+                            style=" margin-left: 10px" width="28" height="28" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-2"><?php echo $fetch_user['first_name']?></span>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">My Orders</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="userprofile.php">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="logout-user.php"
+                                onclick="return confirm('Are you sure do you want to sign out?')">Sign out</a></li>
+                    </ul>
+                </div>
                 <!-- <div class="text-nowrap">
                     <li class="nav-item">
                         <a class="nav-link  text-white mt-2" href="logout-user.php"

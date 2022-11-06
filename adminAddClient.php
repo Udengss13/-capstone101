@@ -336,6 +336,8 @@
                             <div class="form-group mt-4 text-center">
                                 <input class="form-control btn  " style="background-color: #EA6D52; width: 20%"
                                     type="submit" name="signup" value="Create">
+                                    <a href="admin-user-accounts.php" class="btn btn-success text-light" onclick="return confirm('Are you sure you want to cancel it?')">Cancel</a>
+
                             </div>
 
                     </form>
