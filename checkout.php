@@ -55,7 +55,7 @@
             foreach($cart_query as $cart ){
 
                 $sql_cart ="SELECT * FROM admin_menu where Menu_id = '".$cart['product_id']."' ";
-                $result_cart = mysqli_query($db_admin_account, $sql_cart);
+                $result_cart = mysqli_query($con, $sql_cart);
                 $row_cart= mysqli_fetch_assoc($result_cart);
 
                 $price = $row_cart['Menu_price'];
