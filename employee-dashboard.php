@@ -80,7 +80,7 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white " href="admin-menu.php">PRODUCTS</a>
+                        <a class="nav-link text-white " href="employee-menu.php">PRODUCTS</a>
                     </li>
                 </div>
                 <div class="text-nowrap">

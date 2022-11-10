@@ -26,8 +26,9 @@ session_start();
           
           if(mysqli_query($con, $query)){
 
-          $_SESSION['update_changes'] = "Your data has been edited successfully";
-          header('location: ../employee-menu.php');
+            echo '<script> alert("Products updated Succesfully");
+            window.location.href="../employee-menu.php";
+            </script>';
           }
         }
         

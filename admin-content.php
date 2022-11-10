@@ -10,43 +10,25 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin|| Content</title>
-    <!-- MATERIAL CDN -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp"
-      rel="stylesheet">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+<html>
+<meta charset="UTF-8">
+<link rel="icon" href="asset/logopet.png" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-<<<<<<< HEAD
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="./adminstyles.css">
-</head>
-
-<body>
-    <div class="container">
-        <aside>
-            <div class="top">
-             <div class="logo">
-                <img src="asset/logopet.png">
-                <h2>PETCo.<span class="danger">ADMIN</span></h2>
-             </div>
-             <div class="close" id="close-btn">
-                <span class="material-icons-sharp">close</span>
-             </div>
-=======
-
-<script src="https://kit.fontawesome.com/f8f3c8a43b.js" crossorigin="anonymous"></script>
-
+    <script src="https://kit.fontawesome.com/f8f3c8a43b.js" crossorigin="anonymous"></script>
+    
+    
 <title>Admin Content</title>
 </head>
 
 <body style="background:  #9FBACD;">
 
-    <!--Navbar-->
+    
     <!--Navbar-->
     <div class="nav-bar container-fluid overflow-hidden">
         <div class="row vh-100 overflow-auto">
@@ -127,52 +109,7 @@
                         </ul>
                     </div>
                 </div>
->>>>>>> 065bf9441f1673352366161d059ca2b2edd4210d
             </div>
-            <div class="sidebar">
-                <a href="admin-dashboard.php">
-                    <span class="material-icons-sharp">grid_view</span>
-                    <h3>Dashboard</h3>
-                </a>
-                <a href="admin-user-accounts.php">
-                    <span class="material-icons-sharp">person</span>
-                    <h3>Customers</h3>
-                </a>
-                <a href="admin-orders.php">
-                    <span class="material-icons-sharp">receipt_long</span>
-                    <h3>Orders</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">insights</span>
-                    <h3>Analytics</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">mail_outline</span>
-                    <h3>Messages</h3>
-                    <span class="message-count">26</span>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">inventory</span>
-                    <h3>Products</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">report_gmailerrorred</span>
-                    <h3>Reports</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">settings</span>
-                    <h3>Settings</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">add</span>
-                    <h3>Add Product</h3>
-                </a>
-                <a href="admin-login.php">
-                    <span class="material-icons-sharp">logout</span>
-                    <h3>Logout</h3>
-                </a>
-            </div>
-
 
 
             <div class="col py-3">
@@ -198,8 +135,8 @@
                         <div class="modal-content">
 
                             <!-- Modal Header -->
-                            <div class="modal-header bg-primary text-white">
-                                <h4 class="modal-title ">Post an Announcement</h4>
+                            <div class="modal-header">
+                                <h4 class="modal-title">Post an Announcement</h4>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                             </div>
 
@@ -261,7 +198,6 @@
                                             <!-- </div> -->
                                         </div>
                                 </form>
->>>>>>> 065bf9441f1673352366161d059ca2b2edd4210d
                             </div>
 
 
@@ -274,14 +210,8 @@
 
 
             <!--Displaying data in table-->
-<<<<<<< HEAD
-           <!--Displaying Data -->
            
-           <div class="container-fluid mt-4">
-=======
-            <!--Displaying Data -->
             <div class="container-fluid mt-4">
->>>>>>> 065bf9441f1673352366161d059ca2b2edd4210d
                 <table class="table table-striped table table-bordered">
                     <!-- <div class="row"> -->
                     <thead>
@@ -327,8 +257,8 @@
                         <td class="col-1">
                             <div class="col">
                                 <a class="update" data-id="<?php echo $rowimage['Image_id'];?>">
-                                    <i class="fa-solid fa-pen" style="font-size:25px; padding: 10px"></i>
-
+                                <i class="fa-solid fa-pen" style="font-size:25px; padding: 10px"></i>
+                                    
                                 </a>
 
                                 <a href="php/content-image-process.php?id=<?php echo $rowimage['Image_id'];?>"
@@ -345,28 +275,17 @@
                         <?php } ?>
 
 
-<<<<<<< HEAD
-    </main>
-    <!--DIVISION -->
 
+                        <!--Modal for Updating the announcements -->
+                       
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-    </script>
-    <script src="/js/script.js"></script>
-
-
-=======
-
-                        <!--DIVISION -->
-                        <!-- ========================= -->
-                        <div id="update-modal" class="modal fade" data-bs-backdrop="static" role="dialog">
+                        <div id="update-modal" class="modal fade" data-bs-backdrop="static"  role="dialog">
                             <div class="modal-dialog modal-lg">
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Update Content</h4>
+                                        <h4 class="modal-title">Update Announcements</h4>
                                     </div>
                                     <div class="modal-body">
                                         <form action="php/content-image-edit-process.php" id="update-form" method="post"
@@ -414,7 +333,25 @@
                             crossorigin="anonymous">
                         </script>
                         <script src="/js/script.js"></script>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        <script>
+                        $(document).ready(function() {
+                            $(document).on('click', '.update', function() {
+                                var id = $(this).data('id');
+                                $('input[name="contentimageid"]').val(id);
+                                $.post("content_details.php", {
+                                    id: id
+                                }, function(data) {
+                                    var query = JSON.parse(data);
+                                    $('#utitle').val(query[1]);
+                                    $('#usubtitle').val(query[2]);
+                                    $('#uparagraph').val(query[3]);
+                                    console.log(query);
+                                });
+                                $('#update-modal').modal('show');
+                            });
+                        });
+                        </script>
 </body>
 
 </html>
-        

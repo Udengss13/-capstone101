@@ -71,7 +71,7 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white bg-primary" href="shop.php">Products</a>
+                        <a class="nav-link text-white bg-primary" href="employee-menu.php">Products</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
@@ -236,7 +236,7 @@
                     </thead>
                     <?php while($rowmenu =  mysqli_fetch_array($resultmenu)){ ?>
                     <tr>
-                    <td class="col-1" style="text-align: center;">
+                        <td class="col-1" style="text-align: center;">
                             <div class="col">
                                 <a href="Petkoproj/<?php echo $rowmenu['Menu_dir']; ?>" class="fancybox "
                                     rel="ligthbox">
@@ -375,7 +375,6 @@
                                 $('#update-modal').modal('show');
                             });
                         });
-                        
                         </script>
 </body>
 
