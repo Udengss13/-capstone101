@@ -18,7 +18,7 @@ session_start();
          // move file to a folder
          if(move_uploaded_file($_FILES["photo"]["tmp_name"], $filenamedir))
          {
-          $query = "UPDATE employee_menu SET Menu_name = '$title', Menu_description = '$safe_input', 
+          $query = "UPDATE admin_menu SET Menu_name = '$title', Menu_description = '$safe_input', 
           Menu_price = '$price', Menu_category = '$category_name', 
           Menu_dir = '$filenamedir', Menu_filename = '$filename' WHERE Menu_id = '$menuid'";
           
@@ -26,12 +26,13 @@ session_start();
           
           if(mysqli_query($con, $query)){
 
-          $_SESSION['update_changes'] = "Your data has been edited successfully";
-          header('location: ../employee-edit-menu.php?editid='.$menuid);
+            echo '<script> alert("Products updated Succesfully");
+            window.location.href="../employee-menu.php";
+            </script>';
           }
         }
         
     }
 
-
+?>
 ?>

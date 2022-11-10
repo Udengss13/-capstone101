@@ -17,9 +17,9 @@
         // move file to a folder
         if(move_uploaded_file($_FILES["photo"]["tmp_name"], $filenamedir))
         {
-            $sql = "INSERT INTO employee_menu (Menu_name, Menu_description, Menu_price, Menu_category,  Menu_dir, Menu_filename) 
+            $sql = "INSERT INTO admin_menu (Menu_name, Menu_description, Menu_price, Menu_category,  Menu_dir, Menu_filename) 
             VALUES('$title', '$safe_input', '$price', '$category_name', '$filenamedir', '$filename')";
-            mysqli_query($db_admin_account,$sql);            
+            mysqli_query($con,$sql);            
             echo '<script> alert("Product Added Successfully");
                     window.location.href="../employee-menu.php";
                     </script>'; 

@@ -1,27 +1,16 @@
-<?php
-    require_once "php/admin-login-process.php";
-    require('php/connection.php');
-
-    $query = "SELECT * FROM admin_login"; //You don't need a like you do in SQL;
-    $result = mysqli_query($con, $query);
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin|| Profile</title>
+    <title>Admin|| Edit Profile</title>
     <!-- MATERIAL CDN -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp"
       rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./adminstyles.css">
+    
 </head>
 
 <body>
@@ -80,48 +69,32 @@
                 </a>
             </div>
         </aside>
+        <!-- Text input-->
+        <div align="center">
 
-            
-     <div class="col py-3">
-                <div class="row mt-4">
-                    <div class="col">
-                        <h2 class="text-justify py-3">My Profile</h2>
-                        <img src="asset/cha.jpg" alt="Logo" style="width: 200px; padding-left: 5px; padding-top: 5px;">
+            <div class="row">
+                <div class="col-md-6 offset-3">
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" name="username" class="form-control" value="">
                     </div>
+                    <div class="form-group">
+                        <input type="text" name="userEmail" class="form-control" value="">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="userImage" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="update" class="btn btn-info" value="Update">
+                    </div>
+                </form>
                 </div>
+
             </div>
-            
-            <div class="col-4 mt-3">
-                    <a href="admin-edit-profile.php?updateid=<?php echo $fetch_user['id'];?>">
-                        <span class="btn btn-primary ms-1">Edit Profile <i class="bi bi-pencil-square"></i></span>
-                    </a>
-                    
-                    <a href="admin-edit-profile.php?updateid=<?php echo $fetch_user['id'];?>">
-                        <span class="btn btn-success ms-1">Settings <i class="bi bi-gear"></i></span>
-                    </a>
 
-                    <div class="container mt-5">
 
-        <div class="row">
-            <div class="col ">
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">User Name:</p>
-                        </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['username']; ?></p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">Password:</p>
-                        </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['password']; ?></p>
-                        </div>
-                    </div>
-            
+
+
  <!--DIVISION -->
 
 
@@ -131,5 +104,4 @@
     <script src="/js/script.js"></script>
 </body>
 
-</html>                    
-                    
+</html>

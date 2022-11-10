@@ -17,10 +17,11 @@
 
 <body>
     <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light;">
+      <!--Navigation Bar-->
+      <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="asset/logopet.png" alt="Logo" class="logo" /> </span>
+                <img src="asset/logopet.png" alt="Logo" class="logo" />
                 <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
                         CLINIC</b></span>
             </a>
@@ -35,18 +36,29 @@
             <ul class="navbar-nav me-auto my-0 my-lg-0 " style="--bs-scroll-height: 100px;">
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" style="border-radius:10px; margin-left:3px;"
-                            aria-current="page" href="index.php">HOME</a>
+                        <a class="nav-link text-white bg-primary " style="border-radius:10px;" aria-current="page"
+                            href="index.php">HOME</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="aboutUs.php">ABOUT US</a>
-                    </li>
-                </div>
-                <div class="text-nowrap">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="services.php">SERVICES</a>
+                        <div class="dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="#" id="dropdownMenuLink"
+                                data-bs-toggle="dropdown" aria-expanded="false">SERVICES</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Vaccination</a></li>
+                                <li><a class="dropdown-item" href="#">Confinement</a></li>
+                                <li><a class="dropdown-item" href="#">Pet Supplies</a></li>
+                                <li><a class="dropdown-item" href="#">Consultation</a></li>
+                                <li><a class="dropdown-item" href="#">Surgery</a></li>
+                                <li><a class="dropdown-item" href="#">Treatment</a></li>
+                                <li><a class="dropdown-item" href="#">Deworming</a></li>
+                                <li><a class="dropdown-item" href="#">Grooming</a></li>
+                                <li><a class="dropdown-item" href="#">Laboratory Tests</a></li>
+
+                            </ul>
+
+                        </div>
                     </li>
                 </div>
                 <div class="text-nowrap">
@@ -57,8 +69,13 @@
                 <div class="text-nowrap">
                     <li class="nav-item">
 
-                        <a class="nav-link text-white" href="petgallery.php">PET GALLERY</a>
+                        <a class="nav-link text-white" href="#imagesec">PET GALLERY</a>
 
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#about">ABOUT US</a>
                     </li>
                 </div>
 

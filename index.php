@@ -16,8 +16,9 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
- 
+
+<head>
+
     <title>PetCo Homepage</title>
 
     <link rel="icon" href="asset/logopet.png" type="image/x-icon">
@@ -67,11 +68,6 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#about">ABOUT US</a>
-                    </li>
-                </div>
-                <div class="text-nowrap">
-                    <li class="nav-item">
                         <div class="dropdown">
                             <a class="nav-link text-white dropdown-toggle" href="#" id="dropdownMenuLink"
                                 data-bs-toggle="dropdown" aria-expanded="false">SERVICES</a>
@@ -91,7 +87,6 @@
                         </div>
                     </li>
                 </div>
-
                 <div class="text-nowrap">
                     <li class="nav-item">
                         <a class="nav-link text-white" href="shop.php">SHOP</a>
@@ -104,6 +99,15 @@
 
                     </li>
                 </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#about">ABOUT US</a>
+                    </li>
+                </div>
+
+
+
+
                 <!-- <div class=" text-white">
          <?php echo  date("m/d/y") . "<br>"; ?>
        </div> -->
@@ -123,19 +127,19 @@
 -->
         </div>
     </nav>
-    
-<div class="container-fluid  ">
-    <div class="waveWrapper waveAnimation  ">
-        <div class="waveWrapperInner top  mt-4 ">
-            <div class="wave waveTop  mt-4" style="background-image: url(asset/wave-top.png); "></div>
+
+    <div class="container-fluid  ">
+        <div class="waveWrapper waveAnimation  ">
+            <div class="waveWrapperInner top  mt-4 ">
+                <div class="wave waveTop  mt-4" style="background-image: url(asset/wave-top.png); "></div>
+            </div>
+            <div class="waveWrapperInner mid">
+                <div class="wave waveMid  mt-4" style="background-image: url(asset/wave-mid.png); "></div>
+            </div>
+            <div class="waveWrapperInner bottom">
+                <div class="wave waveBottom  mt-4" style="background-image: url(asset/wave-bot.png); "></div>
+            </div>
         </div>
-        <div class="waveWrapperInner mid">
-            <div class="wave waveMid  mt-4" style="background-image: url(asset/wave-mid.png); "></div>
-        </div>
-        <div class="waveWrapperInner bottom">
-            <div class="wave waveBottom  mt-4" style="background-image: url(asset/wave-bot.png); "></div>
-        </div>
-    </div>
     </div>
 
 
@@ -201,7 +205,7 @@
 
 
 
-    
+
 
     <!-- SLIDER Images -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">

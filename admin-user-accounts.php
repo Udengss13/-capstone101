@@ -65,8 +65,8 @@ require_once "controllerAdmin.php";
 
 <body style="background:  #9FBACD;">
 
-    <!--Navbar-->
-    <div class="nav-bar container-fluid overflow-hidden">
+     <!--Navbar-->
+     <div class="nav-bar container-fluid overflow-hidden">
         <div class="row vh-100 overflow-auto">
             <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 d-flexs sticky-top">
                 <div
@@ -380,17 +380,9 @@ require_once "controllerAdmin.php";
                 </div>
             </div>
         </div>
-    </div>
-
-
-
-
-    <!-- DIVISION -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-    </script>
-    <script src="/js/script.js"></script>
+    </div>                             
+</main>        
 </body>
 
 </html>
+        

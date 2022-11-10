@@ -35,7 +35,7 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-<title>Admin Content</title>
+<title>Admin || Slider</title>
 </head>
 
 <body style="background:  #9FBACD;">
@@ -112,7 +112,6 @@ $result = $db_admin_account->query("SELECT image_path from admin_carousel_homepa
                             <span class="d-none d-sm-inline mx-1">Cha</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                            <li><a class="dropdown-item" href="#">New project...</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li><a class="dropdown-item" href="admin-profile.php">Profile</a></li>
                             <li>

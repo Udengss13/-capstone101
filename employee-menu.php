@@ -71,7 +71,7 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white bg-primary" href="shop.php">Products</a>
+                        <a class="nav-link text-white bg-primary" href="employee-menu.php">Products</a>
                     </li>
                 </div>
                 <div class="text-nowrap">

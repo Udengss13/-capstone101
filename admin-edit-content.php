@@ -1,51 +1,34 @@
 <?php
-    
+    require_once "php/user-list-process.php";
     require('php/connection.php');
+    require_once "php/content-image-process.php";
 
-    session_start();
-    //This is for message
-      if(isset($_SESSION['update_changes'])){
-          $applychanges = $_SESSION['update_changes'];
-          unset($_SESSION['update_changes']);
-      }
-      else{
-          $applychanges="";
-      }
-  
-  
     
     $queryimage = "SELECT * FROM admin_content_homepage"; //You don't need a like you do in SQL;
     $resultimage = mysqli_query($db_admin_account, $queryimage);
-
-
-    if (isset($_GET['updateid'])){
-      $id = $_GET['updateid'];
-
-      $queryimageEdit = "SELECT * FROM admin_content_homepage WHERE Image_id = '$id'";
-      $resultimageEdit = mysqli_query($db_admin_account, $queryimageEdit);
-      $rowimageEdit = mysqli_fetch_array($resultimageEdit, MYSQLI_ASSOC);
-    }
     
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="css/gallery.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <title>Admin Content</title>
+<html>
+<meta charset="UTF-8">
+<link rel="icon" href="asset/logopet.png" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/f8f3c8a43b.js" crossorigin="anonymous"></script>
+    
+    
+<title>Admin Content</title>
 </head>
 
-<body class="">
+<body style="background:  #9FBACD;">
 
+    
     <!--Navbar-->
     <div class="nav-bar container-fluid overflow-hidden">
         <div class="row vh-100 overflow-auto">
@@ -129,74 +112,246 @@
             </div>
 
 
-            <!--All Content Here-->
-            <div class=" col div_background_dark px-3">
-            <h4 class="text-center c-white py-3">Edit Information Content for Home </h4>
-
-            <form action="php/content-image-edit-process.php" method="post" enctype="multipart/form-data">
-                <div class="col justify-content-center mb-5">
-                    <div class="col-lg-7 col-md-6 col-sm-12">
-                        <!-- <div class="card d-flex justify-content-center"> -->
-                        <div class="card-header">
-              Edit Information for Homepage
-            </div>
-                        <!--Success Message-->
-                        <?php if($applychanges!=""){?>
-                        <div class="alert alert-primary alert-dismissible fade show mt-3 mx-auto" role="alert"
-                            style="width: 90%;">
-                            <strong>Apply Changes Successfully!</strong> <?php echo $applychanges; ?>.
-                        </div>
-                        <?php } ?>
-                        <ul class="list-group list-group-flush">
-                            <!--Title-->
-                            <li class="list-group-item">
-                                <label>Header Name:</label>
-                                <input name="contentimageid" class="col-12" type="text"
-                                    value="<?php echo $rowimageEdit['Image_id'];    ?>" hidden>
-                                <input name="title" class="col-12" type="text"
-                                    value="<?php echo $rowimageEdit['Image_title'];   ?>" required>
-                            </li>
-                            <!--Subtitle-->
-                            <li class=" list-group-item">
-                                <label>Subtitle:</label>
-                                <input name="subtitle" class="col-12" type="text"
-                                    value="<?php echo $rowimageEdit['Image_subtitle']  ?>" required>
-                            </li>
-                            <!--Body-->
-                            <li class="list-group-item">
-                                <div> <label>Body:</label></div>
-                                <textarea name="paragraph" style="height:150px;" required
-                                    class="col-12"><?php echo $rowimageEdit['Image_body']  ?></textarea>
-                            </li>
-                            <!--Choose File-->
-                            <li class="list-group-item">
-                                <input name="photo" class="" id="upload-news" type="file" required>
-                            </li>
-
-
-                            <li class="list-group-item">
-                                <!--Back-->
-                                <a href="admin-content.php"><span
-                                        class="btn btn-outline-danger mx-2 float-end">Back</span></a>
-
-                                <!--Add button-->
-                                <button type="submit" name="update_image_content"
-                                    class="btn btn-outline-success float-end" style="max-width:450px;">Update</button>
-                            </li>
-                        </ul>
+            <div class="col py-3">
+                <div class="w3-main">
+                    <div class="w3-transparent">
+                        <h3 class="text-center c-white py-3">Announcement</h3>
                     </div>
                 </div>
-        </div>
-        </form>
-    </div>
-    
+                <!--All Content for Image Here-->
+                <div class="d-flex flex-row-reverse">
+                    <button type="button" class="btn bg-button"
+                        style="background: #EA6D52; border-radius: 15px; border-width: 7px;" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop"><i class="fa-solid fa-circle-plus "></i>
+                        Add
+
+
+                    </button>
+                </div>
+                <!-- The Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Post an Announcement</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <form action="php/content-image-process.php" method="post"
+                                    enctype="multipart/form-data">
+                                    <div class="row justify-content-md-center mb-5">
+                                        <!-- <div class="col-lg-7 col-md-6 col-sm-12"> -->
+                                        <!-- <div class="card d-flex justify-content-center mt-5"> -->
+                                        <div class="card-header">
+
+
+                                            <?php if(!empty($messages)){
+                                                            echo "<div class='alert alert-success'>";
+                                                                foreach ($messages as $message) {
+                                                                echo "<span class='glyphicon glyphicon-ok'></span>&nbsp;".$message."<br>";
+                                                                }
+                                                                echo "</div>";
+                                                                }
+                                                    ?>
+
+                                            <ul class="list-group list-group-flush">
+                                                <!--Title-->
+                                                <li class="list-group-item">
+                                                    <label>Title:</label>
+                                                    <input name="title" class="col-12" type="text"
+                                                        placeholder="News Title" required>
+                                                </li>
+                                                <!--Subtitle-->
+                                                <li class="list-group-item">
+                                                    <label>Subtitle:</label>
+                                                    <input name="subtitle" class="col-12" type="text"
+                                                        placeholder="News Subtitle" required>
+                                                </li>
+                                                <!--Body-->
+                                                <li class="list-group-item">
+                                                    <div> <label>Body:</label></div>
+                                                    <textarea name="paragraph" style="height:150px;" required
+                                                        class="col-12" placeholder="News Paragraph"></textarea>
+                                                </li>
+                                                <!--Choose File-->
+                                                <li class="list-group-item">
+                                                    <input name="photo" class="" id="upload-news" type="file" required>
+                                                </li>
+
+
+                                                <li class="list-group-item">
+                                                    <!--Add button-->
+                                                    <button type="button" class="btn btn-danger float-end"
+                                                        style="margin-left: 5px;" data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" name="upload_image_content"
+                                                        class="btn btn-outline-success float-end"
+                                                        style="max-width:450px;">Add</button>
+                                                </li>
+
+                                            </ul>
+                                            <!-- </div> -->
+                                            <!-- </div> -->
+                                        </div>
+                                </form>
+                            </div>
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-    </script>
-    <script src="/js/script.js"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--Displaying data in table-->
+           
+            <div class="container-fluid mt-4">
+                <table class="table table-striped table table-bordered">
+                    <!-- <div class="row"> -->
+                    <thead>
+                        <tr>
+                            <div class="row">
+
+                                <th scope="col">
+                                    <div class="col">Image ID</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Title</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Subtitle</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Body</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="col">Delete</div>
+                                </th>
+                        </tr>
+                    </thead>
+                    <?php while($rowimage =  mysqli_fetch_array($resultimage)){ ?>
+                    <tr>
+
+                        <td>
+                            <div class="col">
+                                <?php echo $rowimage['Image_id']; ?></div>
+                        </td>
+                        <td>
+                            <div class="col">
+                                <?php echo $rowimage['Image_title']; ?></div>
+                        </td>
+                        <td>
+                            <div class="col">
+                                <?php echo $rowimage['Image_subtitle']; ?></div>
+                        </td>
+                        <td>
+                            <div class="col">
+                                <?php echo $rowimage['Image_body']; ?></div>
+                        </td>
+                        <td class="col-1">
+                            <div class="col">
+                                <a class="update" data-id="<?php echo $rowimage['Image_id'];?>">
+                                <i class="fa-solid fa-pen" style="font-size:25px; padding: 10px"></i>
+                                    
+                                </a>
+
+                                <a href="php/content-image-process.php?id=<?php echo $rowimage['Image_id'];?>"
+                                    onclick="return confirm('Are you sure you want to delete?')">
+                                    <i class="fa-solid fa-trash-can"
+                                        style="font-size:25px; color:red; padding: 10px"></i>
+
+                                </a>
+                            </div>
+
+                        </td>
+
+
+                        <?php } ?>
+
+
+
+                        <!--Modal for Updating the announcements -->
+                       
+
+                        <div id="update-modal" class="modal fade" data-bs-backdrop="static"  role="dialog">
+                            <div class="modal-dialog modal-lg">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Update Announcements</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="php/content-image-edit-process.php" id="update-form" method="post"
+                                            enctype="multipart/form-data" class="row gap-2 justify-content-center">
+
+
+                                            <ul class="list-group list-group-flush">
+                                                <!--Title-->
+                                                <li class="list-group-item">
+                                                    <label>Header Name:</label>
+                                                    <input name="contentimageid" class="col-12" type="text" hidden>
+                                                    <input name="title" class="col-12" id="utitle" type="text" required>
+                                                </li>
+                                                <!--Subtitle-->
+                                                <li class=" list-group-item">
+                                                    <label>Subtitle:</label>
+                                                    <input name="subtitle" class="col-12" id="usubtitle" type="text"
+                                                        required>
+                                                </li>
+                                                <!--Body-->
+                                                <li class="list-group-item">
+                                                    <div> <label>Body:</label></div>
+                                                    <textarea name="paragraph" id="uparagraph" style="height:150px;"
+                                                        required class="col-12"></textarea>
+                                                </li>
+                                                <!--Choose File-->
+                                                <li class="list-group-item">
+                                                    <input name="photo" class="" id="upload-news" type="file" required>
+                                                </li>
+                                            </ul>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" form="update-form" name="update_image_content"
+                                            class="btn btn-outline-success">Update</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+                            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+                            crossorigin="anonymous">
+                        </script>
+                        <script src="/js/script.js"></script>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        <script>
+                        $(document).ready(function() {
+                            $(document).on('click', '.update', function() {
+                                var id = $(this).data('id');
+                                $('input[name="contentimageid"]').val(id);
+                                $.post("content_details.php", {
+                                    id: id
+                                }, function(data) {
+                                    var query = JSON.parse(data);
+                                    $('#utitle').val(query[1]);
+                                    $('#usubtitle').val(query[2]);
+                                    $('#uparagraph').val(query[3]);
+                                    console.log(query);
+                                });
+                                $('#update-modal').modal('show');
+                            });
+                        });
+                        </script>
 </body>
 
 </html>
