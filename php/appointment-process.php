@@ -1,21 +1,21 @@
 <?php
     require("connection.php");
 
-    $user_id = $_SESSION['user_id'];
+    $service= "";      
+    $petname= "";      
 
     if(isset($_POST['appoint'])){
         
 
-        $service = $_POST['service'];
+        $service = mysqli_real_escape_string($con, $_POST['service']);
         $appointdate = date('Y-m-d', strtotime($_POST['appointdate']));
-
-        // $input = $_POST['input'];
         $appointtime = date('h:i A', strtotime($_POST['appointtime']));
-        $petname = $_POST['petname'];
+        // $petname = mysqli_real_escape_string($con,$_POST['petname']);
+        $user_id = $con->insert_id;
 
 
-            $sql = "INSERT INTO client_appointment (service, appoint_date, appoint_time, petname, user_id) 
-            VALUES('$service', '$appointdate', '$appointtime', '$petname', '$user_id' )";
+            $sql = "INSERT INTO client_appointment (service, appoint_date, appoint_time, user_id) 
+            VALUES('$service', '$appointdate', '$appointtime',  '$user_id' )";
             mysqli_query($con,$sql);            
             echo  'ok' ;
         

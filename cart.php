@@ -57,6 +57,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/f8f3c8a43b.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -224,7 +225,7 @@
     <div class="container">
         <div class="row">
             <div class="text-center  mt-4">
-                <h1 class="text-light">Your Cart</h1>
+                <h1 class=""><span><i class="fa-solid fa-cart-shopping"> </i> My Cart</h1></span>
             </div>
             <!--Table-->
             <div class="table-responsive-sm table-responsive-md table-responsive-lg mt-3">

@@ -35,6 +35,34 @@ $userresult = mysqli_query($con, $queryimage);
              
              ?>
 
+<?php
+         
+    if(isset($_POST['appoint'])){
+        $appno = uniqid('PETCO-');
+        
+
+        $service = mysqli_real_escape_string($con, $_POST['service']);
+        $appointdate = date('Y-m-d', strtotime($_POST['appointdate']));
+        $appointtime = date('h:i A', strtotime($_POST['appointtime']));
+        $petname =mysqli_real_escape_string($con,$_POST['petname']);
+
+            $sql = "INSERT INTO `client_appointment`( `service`, `appoint_no`, `appoint_date`, `appoint_time`, `petname`, `user_id`) 
+            VALUES ('$service','$appno','$appointdate','$appointtime','$petname','$user_id')";
+
+            if(mysqli_query($con, $sql)){
+                
+                echo '<script>
+                alert("Thank You! Your reservation has been made $petname!);
+                window.location.href="appointment-user.php";
+                </script>';
+            }
+                
+        
+            
+  
+    }
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -148,11 +176,14 @@ $userresult = mysqli_query($con, $queryimage);
 
                 <div class="text-nowrap">
                     <li class="nav-item">
+
                         <?php 
                             $select_user = mysqli_query($con, "SELECT * FROM usertable WHERE id = '$user_id'");
                             if(mysqli_num_rows($select_user) > 0){
                             $fetch_user = mysqli_fetch_assoc($select_user); 
                             };
+
+                   
                         ?>
                         <!-- <p class="nav-link text-white">
                             <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></p> -->
@@ -187,7 +218,7 @@ $userresult = mysqli_query($con, $queryimage);
             </ul>
         </div>
     </nav>
-    
+
 
 
     <!--Content of Menu-->
@@ -211,7 +242,7 @@ $userresult = mysqli_query($con, $queryimage);
             <!-- The Modal -->
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
 
                         <!-- Modal Header -->
@@ -222,7 +253,7 @@ $userresult = mysqli_query($con, $queryimage);
 
                         <!-- Modal body -->
                         <div class="modal-body">
-                            <form action="php/appointment-process.php" method="post" enctype="multipart/form-data"
+                            <form action="" method="post" enctype="multipart/form-data"
                                 class="row gap-2 justify-content-center">
 
                                 <div class="justify-content-center">
@@ -233,8 +264,7 @@ $userresult = mysqli_query($con, $queryimage);
                                                 <div class="col-2"> <label>Service: </label></div>
                                                 <div class="col-4">
 
-                                                    <select class="form-select form-select-md" name="service"
-                                                        required>
+                                                    <select class="form-select form-select-md" name="service" required>
                                                         <option value="">Select Service</option>
                                                         <?php while($row =  mysqli_fetch_array($resultservices)){ ?>
                                                         <option value=" <?php echo $row['service_name']; ?>">
@@ -267,19 +297,24 @@ $userresult = mysqli_query($con, $queryimage);
                                         </li>
                                         <li class="list-group-item mt-5">
                                             <div class="row">
-                                            <div class="col-2"> <label> Pet Name: </label></div>
+                                                <div class="col-2"> <label> Pet Name: </label></div>
                                                 <div class="col-4 ">
 
-                                                <input name="petname" class="form-control bg-transparent" type="text"
-                                                    value="<?php echo $fetch_pet['petname']; ?> " disabled>
+                                                    <?php $select_pet = mysqli_query($con, "SELECT * FROM pettable WHERE user_id = '$user_id'");
+                                                    if(mysqli_num_rows($select_user) > 0){
+                                                    $fetch_pet = mysqli_fetch_assoc($select_pet); 
+                                                    };?>
 
-                                                <!-- <?php while($row =  mysqli_fetch_array($fetch_pet)){ ?>
+                                                    <input name="petname" class="form-control bg-transparent"
+                                                        value="<?php echo $fetch_pet['petname']; ?> " readonly required>
+
+                                                    <!-- <?php while($row =  mysqli_fetch_array($fetch_pet)){ ?>
                                                     <option value=" <?php echo $row['petname']; ?>">
                                                         <?php echo $row['petname']; ?>
                                                     </option>
                                                     <?php } ?> -->
 
-                                            </div>
+                                                </div>
                                         </li>
 
 
@@ -288,12 +323,13 @@ $userresult = mysqli_query($con, $queryimage);
                                             <button type="button" class="btn btn-danger float-end"
                                                 style="margin-left: 5px;" data-bs-dismiss="modal"
                                                 onclick="return confirm('Are you sure you want to cancel?')">Cancel</button>
-                                            <button type="submit" name="appoint" class="btn btn-outline-success float-end"
-                                                style="max-width:450px;">Set Appointment</button>
+                                            <button type="submit" name="appoint"
+                                                class="btn btn-outline-success float-end" style="max-width:450px;">Set
+                                                Appointment</button>
 
 
                                         </li>
-                                       
+
 
 
                                     </ul>
@@ -311,12 +347,14 @@ $userresult = mysqli_query($con, $queryimage);
 
 
 
+
+
             <!--Displaying Data -->
             <div class="container mt-4">
                 <table class="table table-striped table table-bordered">
                     <!-- <div class="row"> -->
                     <thead>
-                        <tr>
+    
                             <div class="row">
 
                                 <th scope="col" style="text-align: center;">
@@ -326,10 +364,10 @@ $userresult = mysqli_query($con, $queryimage);
                                     <div class="col">Service Type</div>
                                 </th>
                                 <th scope="col" style="text-align: center;">
-                                    <div class="col">Pet Appointted</div>
+                                    <div class="col">Pet Name</div>
                                 </th>
                                 <th scope="col" style="text-align: center;">
-                                    <div class="col">Data</div>
+                                    <div class="col">Date</div>
                                 </th>
                                 <th scope="col" style="text-align: center;">
                                     <div class="col">Time</div>
@@ -337,12 +375,42 @@ $userresult = mysqli_query($con, $queryimage);
                                 <th scope="col" style="text-align: center;">
                                     <div class="col">Status</div>
                                 </th>
+                                <th scope="col" style="text-align: center;">
+                                    <div class="col">Action</div>
+                                </th>
                         </tr>
                     </thead>
-                    <!-- <?php while($rowmenu =  mysqli_fetch_array($resultmenu)){ ?> -->
-                    <tr>
+                    <?php 
+          $select_cart = mysqli_query($con, "SELECT * FROM `client_appointment`WHERE user_id = '$user_id' ORDER BY `client_appointment`.`appoint_date` ASC ");
+          $grand_total = 0;
 
-                        <!-- <?php } ?> -->
+          if(mysqli_num_rows($select_cart) > 0):
+            while($fetch_cart = mysqli_fetch_assoc($select_cart)):   
+        ?>
+                        <tr class="text-light ">
+                            <!--Image-->
+                            
+                            <td class="align-middle "><?= $fetch_cart['appoint_no'];?></td>
+                            <!--Price-->
+                            <td class="align-middle">
+                                <?php echo $fetch_cart['service'];?>
+                            </td>
+                            <td class="align-middle">
+                                <?php echo $fetch_cart['petname'];?>
+                            </td>
+                            <td class="align-middle">
+                                <?php echo $fetch_cart['appoint_date'];?>
+                            </td>
+                            <td class="align-middle">
+                                <?php echo $fetch_cart['appoint_time'];?>
+                            </td>
+                            
+                        <tr>
+            <?php
+            endwhile;
+        endif
+            ?>
+
 
             </div>
         </div>

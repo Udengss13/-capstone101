@@ -28,12 +28,12 @@ h3{
     font-size: 15px;
     text-shadow: 2px 2px 2px rgba(49, 44, 44, 0.767);
 }
-.nav-item:hover {
+/* .nav-item:hover {
     
     background-color: rgb(165, 165, 159);
     
   }
-  
+   */
 
     /* unvisited link */
     a:link {
@@ -56,6 +56,9 @@ h3{
   }
 .nav-link dropdown-toggle{
     background-color: rgb(156, 161, 164);
+}
+.nav-link:hover{
+  margin-left: 1rem;;
 }
 .ms-1{
     border-block: 50px;

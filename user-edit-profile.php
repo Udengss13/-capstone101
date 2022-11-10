@@ -221,7 +221,7 @@
                             <img src="asset/profiles/<?php echo $rowimageEdit['image_filename']?>"
                                 class="rounded-circle" alt="Logo" style="width:40%; height:17vh" />
 
-                            <input type="file" name="photo" required>
+                            <input type="file" name="photo" placeholder="laagy" required>
                         </div>
                     </div>
                 </div>
