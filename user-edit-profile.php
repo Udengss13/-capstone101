@@ -55,11 +55,10 @@
 
 <body class="">
 
-
+    <!--Navigation Bar-->
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-
             <a class="navbar-brand" href="#">
                 <img src="asset/logopet.png" alt="Logo" style="width:22%; height:8vh" />
                 <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
@@ -78,31 +77,65 @@
                 <div class="text-nowrap">
                     <li class="nav-item">
 
-                        <a class="nav-link active text-white mt-2" aria-current="page" href="home.php">HOME</a>
+                        <a class="nav-link  text-white mt-3" aria-current="page" href="home.php">HOME</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white mt-2" href="product.php">SHOP</a>
+                        <a class="nav-link text-white mt-3" href="#about">ABOUT US</a>
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link text-white dropdown-toggle mt-3" href="#" id="dropdownMenuLink"
+                                data-bs-toggle="dropdown" aria-expanded="false">SERVICES</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Vaccination</a></li>
+                                <li><a class="dropdown-item" href="#">Confinement</a></li>
+                                <li><a class="dropdown-item" href="#">Pet Supplies</a></li>
+                                <li><a class="dropdown-item" href="#">Consultation</a></li>
+                                <li><a class="dropdown-item" href="#">Surgery</a></li>
+                                <li><a class="dropdown-item" href="#">Treatment</a></li>
+                                <li><a class="dropdown-item" href="#">Deworming</a></li>
+                                <li><a class="dropdown-item" href="#">Grooming</a></li>
+                                <li><a class="dropdown-item" href="#">Laboratory Tests</a></li>
+
+                            </ul>
+
+                        </div>
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white mt-3 bg-primary" href="product.php">SHOP</a>
                     </li>
                 </div>
 
-                <div class="text-nowrap">
+                <!-- <div class="text-nowrap">
                     <li class="nav-item">
                         <a href="userprofile.php" class="nav-link text-white"><img src=" asset/picon.png" alt="PETCO"
                                 style="width: 40px;"></a>
                     </li>
-                </div>
+                </div> -->
 
                 <?php 
                     $select_rows = mysqli_query($con,"SELECT * FROM `cart` WHERE Cart_user_id = '$user_id'") or die ('query failed');
                     $row_count = mysqli_num_rows($select_rows);
                   ?>
+                <div class="text-nowrap">
+                    <li class="nav-item mt-3">
+
+                        <a class="nav-link text-white" href="#imagesec">PET GALLERY</a>
+
+
+
+                    </li>
+                </div>
 
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="cart.php"><img src=" asset/cart.png" alt="PETCO"
-                                style="width: 40px;"><span
+                        <a class="nav-link text-white mt-3" href="cart.php">CART<span
                                 class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
 
                     </li>
@@ -110,14 +143,45 @@
 
                 <div class="text-nowrap">
                     <li class="nav-item">
+                        <?php 
+                            $select_user = mysqli_query($con, "SELECT * FROM usertable WHERE id = '$user_id'");
+                            if(mysqli_num_rows($select_user) > 0){
+                            $fetch_user = mysqli_fetch_assoc($select_user); 
+                            };
+                        ?>
+                        <!-- <p class="nav-link text-white">
+                            <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></p> -->
+                    </li>
+                </div>
+                <div class="dropdown mb-2 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1 ">
+
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="asset/profiles/<?php echo $fetch_user['image_filename']?>" alt="user"
+                            style=" margin-left: 10px" width="28" height="28" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-2"><?php echo $fetch_user['first_name']?></span>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">yes</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="userprofile.php">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="logout-user.php"
+                                onclick="return confirm('Are you sure do you want to sign out?')">Sign out</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="text-nowrap">
+                    <li class="nav-item">
                         <a class="nav-link  text-white mt-2" href="logout-user.php"
                             onclick="return confirm('Are you sure do you want to logout?')">LOGOUT</a>
                     </li>
-                </div>
+                </div> -->
             </ul>
         </div>
     </nav>
-
     <!--All Content Here-->
     <div class="container  mt-5">
         <!-- <center><img src="asset/logopet.png" alt="Logo" style="position: absolute; z-index: -1;" /></center> -->
@@ -127,130 +191,124 @@
 
         <form action="php/profile-edit-process.php" method="post" enctype="multipart/form-data">
             <div class="row justify-content-md-center mb-5 ">
-                
+
                 <!-- <div class="col-lg-7 col-md-6 col-sm-12"> -->
-                
-                    <!-- <div class="card-header">
+
+                <!-- <div class="card-header">
                             Edit Information for Homepage
                         </div> -->
-                    <!--Success Message-->
-                    <?php if($applychanges!=""){?>
-                    <div class="alert alert-primary alert-dismissible fade show mt-3 mx-auto justify-content-md-center mb-2"
-                        role="alert" style="width: 50%;">
-                        <strong>Apply Changes Successfully!</strong> <?php echo $applychanges; ?>.
-                    </div>
-                    <?php } ?>
-                    <!-- <ul class="list-group "> -->
-                    <!--NAME-->
-                    <!-- <div class="row justify-content-md-center mb-5">
+                <!--Success Message-->
+                <?php if($applychanges!=""){?>
+                <div class="alert alert-primary alert-dismissible fade show mt-3 mx-auto justify-content-md-center mb-2"
+                    role="alert" style="width: 50%;">
+                    <strong>Apply Changes Successfully!</strong> <?php echo $applychanges; ?>.
+                </div>
+                <?php } ?>
+                <!-- <ul class="list-group "> -->
+                <!--NAME-->
+                <!-- <div class="row justify-content-md-center mb-5">
                     <div class="col-lg-12 col-md-6 col-sm-12">
                         <div class="card  justify-content-center"> -->
 
-                    <div class="row justify-content-md-center mb-2">
+                <div class="row justify-content-md-center mb-2">
 
-                        <label class="col-md-2 control-label "></label>
-                        <div class="col-md-4 inputGroupContainer ">
-                            <div class="input-group">
-                                <input name="id" class="col-12" type="text" value="<?php echo $rowimageEdit['id']; ?>"
-                                    hidden>
-                                <!-- <span class="input-group-addon"><i class="fa-solid fa-user ff"></i></span> -->
-                                <img src="asset/profiles/<?php echo $rowimageEdit['image_filename']?>"
-                                    class="rounded-circle" alt="Logo" style="width:40%; height:17vh" />
+                    <label class="col-md-2 control-label "></label>
+                    <div class="col-md-4 inputGroupContainer ">
+                        <div class="input-group">
+                            <input name="id" class="col-12" type="text" value="<?php echo $rowimageEdit['id']; ?>"
+                                hidden>
+                            <!-- <span class="input-group-addon"><i class="fa-solid fa-user ff"></i></span> -->
+                            <img src="asset/profiles/<?php echo $rowimageEdit['image_filename']?>"
+                                class="rounded-circle" alt="Logo" style="width:40%; height:17vh" />
 
-                                <input type="file" name="photo" required>
-                            </div>
+                            <input type="file" name="photo" required>
                         </div>
                     </div>
-
-                    <!-- Text input-->
-                    <div class="row  justify-content-md-center mb-2">
-                        <label class="col-md-2 control-label">First Name</label>
-                        <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon ff"><i
-                                        class="glyphicon glyphicon-user fa-5x "></i></span>
-                                <input name="fname" class="form-control" type="text"
-                                    value="<?php echo $rowimageEdit['first_name'];   ?>" required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row  justify-content-md-center mb-2">
-                        <label class="col-md-2 control-label">Middle Name</label>
-                        <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon ff"><i
-                                        class="glyphicon glyphicon-user fa-5x "></i></span>
-                                <input name="mname" class="form-control" type="text"
-                                    value="<?php echo $rowimageEdit['middle_name'];   ?>" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-md-center mb-2">
-                        <label class="col-md-2 control-label">Last Name</label>
-                        <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon ff"><i
-                                        class="glyphicon glyphicon-user fa-5x "></i></span>
-                                <input name="lname" class="form-control" type="text"
-                                    value="<?php echo $rowimageEdit['last_name'];   ?>" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-md-center mb-2">
-                        <label class="col-md-2 control-label">Suffix</label>
-                        <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon ff"><i
-                                        class="glyphicon glyphicon-user fa-5x "></i></span>
-                                <input name="suffix" class="form-control" type="text"
-                                    value="<?php echo $rowimageEdit['suffix'];   ?>" >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-md-center mb-2">
-                        <label class="col-md-2 control-label">Contact</label>
-                        <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon ff"><i
-                                        class="glyphicon glyphicon-user fa-5x "></i></span>
-                                <input name="contact" class="form-control" type="text"
-                                    value="<?php echo $rowimageEdit['contact'];   ?>" >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-md-center mb-2">
-                        <label class="col-md-2 control-label">Address</label>
-                        <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon ff"><i
-                                        class="glyphicon glyphicon-user fa-5x "></i></span>
-                                <input name="address" class="form-control" type="text"
-                                    value="<?php echo $rowimageEdit['address'];   ?>" required>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row mt-3">
-                        <!--Back-->
-                        <div class="col-6">
-                            <button type="submit" name="update_profile" class="btn btn-success float-end"
-                                style="max-width:450px;">Save <i class="fa-solid fa-floppy-disk"></i></button>
-                        </div>
-                        <div class="col-2">
-                            <a href="userprofile.php"><span class="btn btn-danger mx-2">Back <i
-                                        class="fa-sharp fa-solid fa-arrow-left"></i></span></a>
-                        </div>
-                        <!--Add button-->
-
-                    </div>
-                    <!-- </ul> -->
                 </div>
+
+                <!-- Text input-->
+                <div class="row  justify-content-md-center mb-2">
+                    <label class="col-md-2 control-label">First Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon ff"><i class="glyphicon glyphicon-user fa-5x "></i></span>
+                            <input name="fname" class="form-control" type="text"
+                                value="<?php echo $rowimageEdit['first_name'];   ?>" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row  justify-content-md-center mb-2">
+                    <label class="col-md-2 control-label">Middle Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon ff"><i class="glyphicon glyphicon-user fa-5x "></i></span>
+                            <input name="mname" class="form-control" type="text"
+                                value="<?php echo $rowimageEdit['middle_name'];   ?>" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center mb-2">
+                    <label class="col-md-2 control-label">Last Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon ff"><i class="glyphicon glyphicon-user fa-5x "></i></span>
+                            <input name="lname" class="form-control" type="text"
+                                value="<?php echo $rowimageEdit['last_name'];   ?>" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center mb-2">
+                    <label class="col-md-2 control-label">Suffix</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon ff"><i class="glyphicon glyphicon-user fa-5x "></i></span>
+                            <input name="suffix" class="form-control" type="text"
+                                value="<?php echo $rowimageEdit['suffix'];   ?>">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center mb-2">
+                    <label class="col-md-2 control-label">Contact</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon ff"><i class="glyphicon glyphicon-user fa-5x "></i></span>
+                            <input name="contact" class="form-control" type="text"
+                                value="<?php echo $rowimageEdit['contact'];   ?>">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center mb-2">
+                    <label class="col-md-2 control-label">Address</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon ff"><i class="glyphicon glyphicon-user fa-5x "></i></span>
+                            <input name="address" class="form-control" type="text"
+                                value="<?php echo $rowimageEdit['address'];   ?>" required>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mt-3">
+                    <!--Back-->
+                    <div class="col-6">
+                        <button type="submit" name="update_profile" class="btn btn-success float-end"
+                            style="max-width:450px;">Save <i class="fa-solid fa-floppy-disk"></i></button>
+                    </div>
+                    <div class="col-2">
+                        <a href="userprofile.php"><span class="btn btn-danger mx-2">Back <i
+                                    class="fa-sharp fa-solid fa-arrow-left"></i></span></a>
+                    </div>
+                    <!--Add button-->
+
+                </div>
+                <!-- </ul> -->
             </div>
+    </div>
 
 
-        </form>
+    </form>
     </div>
 
 

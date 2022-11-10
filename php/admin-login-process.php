@@ -16,10 +16,13 @@
       
       // If result matched $myusername and $mypassword, table row must be 1 row
       if($count == 1) {
-         header("location: ../admin-content.php");
+         header("location: ../admin-user-accounts.php");
       }
       else{
-         header("location: ../admin-login.php");
+         echo '<script> alert("username and password does not match");
+        window.location.href="../admin-login.php";
+        </script>'; 
+         // header("location: ../admin-login.php");
       }
    }
  

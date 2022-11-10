@@ -18,6 +18,9 @@
 <?php
   $quicktipsquery = "SELECT * FROM `admin_quicktips`"; //You dont need like you do in SQL;
   $quicktipsresult = mysqli_query($db_admin_account, $quicktipsquery);
+
+  $queryservice = "SELECT * FROM `service`"; //You don't need a ; like you do in SQL
+  $resultservices = mysqli_query($con, $queryservice);
 ?>
 
 
@@ -45,8 +48,7 @@
 
 
 
-    <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="asset/logopet.png" alt="Logo" style="width:22%; height:8vh" />
@@ -66,7 +68,7 @@
                 <div class="text-nowrap">
                     <li class="nav-item">
 
-                        <a class="nav-link bg-primary text-white mt-3" aria-current="page" href="home.php">HOME</a>
+                        <a class="nav-link  text-white mt-3 bg-primary" aria-current="page" href="home.php">HOME</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
@@ -79,22 +81,29 @@
                         <div class="dropdown">
                             <a class="nav-link text-white dropdown-toggle mt-3" href="#" id="dropdownMenuLink"
                                 data-bs-toggle="dropdown" aria-expanded="false">SERVICES</a>
+
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Vaccination</a></li>
-                                <li><a class="dropdown-item" href="#">Confinement</a></li>
-                                <li><a class="dropdown-item" href="#">Pet Supplies</a></li>
-                                <li><a class="dropdown-item" href="#">Consultation</a></li>
-                                <li><a class="dropdown-item" href="#">Surgery</a></li>
-                                <li><a class="dropdown-item" href="#">Treatment</a></li>
-                                <li><a class="dropdown-item" href="#">Deworming</a></li>
-                                <li><a class="dropdown-item" href="#">Grooming</a></li>
-                                <li><a class="dropdown-item" href="#">Laboratory Tests</a></li>
-
+                                <?php while($row =  mysqli_fetch_array($resultservices)){ ?>
+                                <li><a class="dropdown-item" href="#"
+                                        value=" <?php echo $row['service_name']; ?>"><?php echo $row['service_name']; ?></a>
+                                </li>
+                                <?php } ?>
                             </ul>
-
                         </div>
                     </li>
                 </div>
+                <!-- <div class="input-group ">
+                    <select class="form-select form-select-md"  name="category_name" required> sasasasa
+                        <option value="">Select Category</option>
+                        <?php while($row =  mysqli_fetch_array($resultservices)){ ?>
+                        <option value=" <?php echo $row['service_name']; ?>">
+                            <?php echo $row['service_name']; ?>
+                        </option>
+                        <?php } ?>
+                    </select>
+
+                </div> -->
+
                 <div class="text-nowrap">
                     <li class="nav-item">
                         <a class="nav-link text-white mt-3" href="product.php">SHOP</a>
@@ -122,11 +131,29 @@
 
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white mt-3" href="cart.php">CART<span
-                                class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
+                        <a class="nav-link text-white mt-3 " href="cart.php">CART
+                        <?php if($row_count>0){ ?> <span
+                                class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span><?php } ?>
+                            
+                            </a>
 
                     </li>
                 </div>
+                <?php 
+                        $selectMessages = mysqli_query($con,"SELECT * FROM `messages` WHERE employee_id = '$user_id' AND seen = 0 AND sender_id != $user_id") or die ('query failed');
+                        $count_message = mysqli_num_rows($selectMessages);
+                    if(isset($user_id)){
+                     ?>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white mt-3 " href="messages.php">MESSAGE
+                            <?php if($count_message>0){ ?> <span
+                                class="badge badge-light mx-1 bg-danger text-light"><?php echo $count_message ?></span><?php } ?>
+                        </a>
+
+                    </li>
+                </div>
+                <?php } ?>
 
                 <div class="text-nowrap">
                     <li class="nav-item">
@@ -169,7 +196,6 @@
             </ul>
         </div>
     </nav>
-
     <!-- 
     <div style="height: 100px;">
   <button onclick="fireSweetAlert()">Show sweet alert example</button>

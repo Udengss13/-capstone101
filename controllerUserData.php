@@ -1,5 +1,13 @@
 <?php 
 //https://www.codepile.net/pile/ap07x5A1
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'C:\xampp\htdocs\petko\PHPMailer\src\Exception.php';
+require 'C:\xampp\htdocs\petko\PHPMailer\src\PHPMailer.php';
+require 'C:\xampp\htdocs\petko\PHPMailer\src\SMTP.php';
+
 session_start();
 require "php/connection.php";
 $email = "";
@@ -72,22 +80,20 @@ $errors = array();
                  $data_check = mysqli_query($con, $query1); 
           
               if($data_check){
-                require 'phpmailer/PHPMailerAutoload.php';
-                $mail = new PHPMailer;
-                
-                $mail->isSMTP();
-                $mail->Host='smtp.gmail.com';
-                $mail->Port=587;
-                $mail->SMTPAuth=true;
-                $mail->SMTPSecure='tls';
+                $mail = new PHPMailer(true);
 
+                $mail->isSMTP();                                            //Send using SMTP
+                    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+                    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                    $mail->Username   = 'petcoanimalclinic@gmail.com';                     //SMTP username
+                    $mail->Password   = 'jnhffotwwjnftpft';                               //SMTP password
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+                    $mail->Port       = 465;   
 
-                $mail->Username='markanthony.perez.r@bulsu.edu.ph';
-                $mail->Password='anthonyandaxlroses';
+                    $mail->setFrom('from@example.com', 'Petco');
+                    $mail->addAddress($email);
 
-                $mail->setFrom('markanthony.perez.r@bulsu.edu.ph', 'PETKO');
-                $mail->addAddress($email);
-                $mail->addReplyTo('markanthony.perez.r@bulsu.edu.ph');
+               
 
                 $mail->isHTML(true);
                 $mail->Subject='Email Verification Code';
@@ -199,24 +205,23 @@ $errors = array();
             
             if($run_query){
                 
-                require 'phpmailer/PHPMailerAutoload.php';
-                $mail = new PHPMailer;
-                
-                $mail->isSMTP();
-                $mail->Host='smtp.gmail.com';
-                $mail->Port=587;
-                $mail->SMTPAuth=true;
-                $mail->SMTPSecure='tls';
+               $mail = new PHPMailer(true);
 
-                $mail->Username='markanthony.perez.r@bulsu.edu.ph';
-                $mail->Password='anthonyandaxlroses';
+                $mail->isSMTP();                                            //Send using SMTP
+                    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+                    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                    $mail->Username   = 'petcoanimalclinic@gmail.com';                     //SMTP username
+                    $mail->Password   = 'jnhffotwwjnftpft';                               //SMTP password
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+                    $mail->Port       = 465;   
 
-                $mail->setFrom('markanthony.peres.r@bulsu.edu.ph', 'PETKO');
-                $mail->addAddress($email);
-                $mail->addReplyTo('markanthony.peres.r@bulsu.edu.ph');
+                    $mail->setFrom('from@example.com', 'Petco');
+                    $mail->addAddress($email);
+
+               
 
                 $mail->isHTML(true);
-                $mail->Subject='Email Verification Code to Reset Password';
+                $mail->Subject='Email Reset Code';
                 $mail->Body='<h1 align=center>Your Code is: '.$code.'</h1>';
                 if($mail->send()){
                     $info = "We've sent a reset password code to your email: $email";

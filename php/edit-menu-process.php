@@ -7,7 +7,7 @@ session_start();
         $title = $_POST['title'];
         $paragraph = $_POST['paragraph'];
         $paragraph = nl2br($paragraph);
-        $safe_input = mysqli_real_escape_string($db_admin_account,$paragraph);
+        $safe_input = mysqli_real_escape_string($con,$paragraph);
 
         $price = $_POST['price'];
         $category_name = $_POST['category_name'];
@@ -24,7 +24,7 @@ session_start();
           
 
           
-          if(mysqli_query($db_admin_account, $query)){
+          if(mysqli_query($con, $query)){
 
           $_SESSION['update_changes'] = "Your data has been edited successfully";
           header('location: ../employee-edit-menu.php?editid='.$menuid);

@@ -85,6 +85,15 @@ require_once "controllerAdmin.php";
                                     class="ms-1 d-none d-sm-inline">Dashboard</span>
                             </a>
                         </li>
+                        <?php 
+                        $selectMessages = mysqli_query($con,"SELECT * FROM `messages` WHERE seen = 0 AND sender_id != 'petko'") or die ('query failed');
+                        $count_message = mysqli_num_rows($selectMessages);
+                        ?>
+                        <li>
+                            <a href="admin-message.php" class="nav-link px-sm-0 px-2">
+                                <i class="fa fa-envelope text-white"></i><span class="ms-1 d-none d-sm-inline"> Messages <?php if($count_message>0){ ?><span class="badge badge-danger text-white bg-danger"><?php echo $count_message; ?></span><?php } ?></span>
+                            </a>
+                        </li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -219,7 +228,7 @@ require_once "controllerAdmin.php";
                             <tr>
 
 
-                                <th scope="col">User ID</th>
+                                <!-- <th scope="col">User ID</th> -->
                                 <th scope="col">First Name</th>
                                 <th scope="col">Last Name</th>
                                 <!--<th  scope="col">Last Name</th> -->
@@ -235,10 +244,10 @@ require_once "controllerAdmin.php";
                             <?php while($row = mysqli_fetch_array($result)){ ?>
                             <form action="php/user-list-process.php" method="post">
                                 <tr>
-                                    <td class="col-sm-1 col-md-2 col-lg-1">
+                                    <!-- <td class="col-sm-1 col-md-2 col-lg-1">
 
                                         <div class="col"><?php echo $row['id'] ?></div>
-                                    </td>
+                                    </td> -->
                                     <td class="col-sm-1 col-md-1 col-lg-2">
                                         <div class="col">
                                             <?php echo $row['first_name']  ?></div>
@@ -260,17 +269,20 @@ require_once "controllerAdmin.php";
                                     </td>
 
                                     <td class=" col-sm-1 col-md-1 col-lg-1 ">
-                                        <div class="col-sm-1 text-success"><?php  if( $row['status']="verified"){
-                                                echo " Verified";
-                                                    }; ?></div>
-                                        <div class="col-sm-1 text-danger"><?php  if( $row['status']!="verified"){
-                                                    echo "Not Verified";
-                                                        }; ?></div>
+                                        <!-- <td> -->
+                                   
+                                        <input name="status" readonly class=" text-center " type="text"
+                                        style="background-color:transparent;border:0; color: " value="<?php  if( $row['status']!="verified"){
+                                                echo "Not Verified";}
+                                                else{
+                                                    echo "Verified";
+                                            }; 
+                                        ?>">
 
                                     </td>
                                     <td class="c-white text-nowrap text-center">
                                         <button data-bs-toggle="modal" data-bs-target="#id<?php echo $row['id'];?>"
-                                            type="button" class="btn btn-outline-danger">Delete</button>
+                                            type="button" class="btn btn-outline-danger">Archive</button>
                                     </td>
 
                                     <!-- Modal -->

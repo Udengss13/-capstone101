@@ -20,21 +20,15 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-
-<script src="https://kit.fontawesome.com/f8f3c8a43b.js" crossorigin="anonymous"></script>
-<title>Admin || Content</title>
-<style>
-@media only screen and (min-width:1115px) {
-    .images_menu {
-        width: 80%;
-        height: 10vh;
-    }
-}
-</style>
+    <script src="https://kit.fontawesome.com/f8f3c8a43b.js" crossorigin="anonymous"></script>
+    
+    
+<title>Admin Content</title>
 </head>
 
 <body style="background:  #9FBACD;">
 
+    
     <!--Navbar-->
     <div class="nav-bar container-fluid overflow-hidden">
         <div class="row vh-100 overflow-auto">
@@ -118,7 +112,6 @@
             </div>
 
 
-
             <div class="col py-3">
                 <div class="w3-main">
                     <div class="w3-transparent">
@@ -142,15 +135,15 @@
                         <div class="modal-content">
 
                             <!-- Modal Header -->
-                            <div class="modal-header bg-primary text-white">
-                                <h4 class="modal-title ">Post an Announcement</h4>
+                            <div class="modal-header">
+                                <h4 class="modal-title">Post an Announcement</h4>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                             </div>
 
                             <!-- Modal body -->
                             <div class="modal-body">
-                                <form action="php/content-image-process.php" method="post" enctype="multipart/form-data"
-                                    >
+                                <form action="php/content-image-process.php" method="post"
+                                    enctype="multipart/form-data">
                                     <div class="row justify-content-md-center mb-5">
                                         <!-- <div class="col-lg-7 col-md-6 col-sm-12"> -->
                                         <!-- <div class="card d-flex justify-content-center mt-5"> -->
@@ -162,7 +155,7 @@
                                                                 foreach ($messages as $message) {
                                                                 echo "<span class='glyphicon glyphicon-ok'></span>&nbsp;".$message."<br>";
                                                                 }
-                                                                echo "</div>";
+                                                                echo "</div>"; 
                                                                 }
                                                     ?>
 
@@ -217,7 +210,7 @@
 
 
             <!--Displaying data in table-->
-            <!--Displaying Data -->
+           
             <div class="container-fluid mt-4">
                 <table class="table table-striped table table-bordered">
                     <!-- <div class="row"> -->
@@ -226,7 +219,7 @@
                             <div class="row">
 
                                 <th scope="col">
-                                    <div class="col">Image</div>
+                                    <div class="col">Image </div>
                                 </th>
                                 <th scope="col">
                                     <div class="col">Title</div>
@@ -245,13 +238,15 @@
                     <?php while($rowimage =  mysqli_fetch_array($resultimage)){ ?>
                     <tr>
 
-                        <td>
+                            <td class="col-1" style="text-align: center;">
                             <div class="col">
-                                <a href="Petkoproj/<?php echo $rowmimage['Image_dir']; ?>" class="fancybox "
-                                    rel="ligthbox">
-                                    <img src=" asset/homepage/<?php echo $rowimage['Image_filename']; ?> "
-                                        class="zoom img-thumbnail img-responsive images_menu"></a>
+                                <!-- <a href="Petkoproj/<?php echo $rowmenu['Menu_dir']; ?>" class="fancybox "
+                                    rel="ligthbox"> -->
+                                    <img src=" asset/homepage/<?php echo $rowmenu['Image_filename']; ?> "
+                                        class="zoom img-thumbnail img-responsive images_menu">
+                            </div>
                         </td>
+                        
                         <td>
                             <div class="col">
                                 <?php echo $rowimage['Image_title']; ?></div>
@@ -266,14 +261,15 @@
                         </td>
                         <td class="col-1">
                             <div class="col">
-                                <a href="admin-edit-content.php?updateid=<?php echo $rowimage['Image_id'];?>">
-                                    <i class="fa-solid fa-pen" style="font-size:25px; "></i>
+                                <a class="update" data-id="<?php echo $rowimage['Image_id'];?>">
+                                <i class="fa-solid fa-pen" style="font-size:25px; padding: 10px"></i>
+                                    
                                 </a>
 
-
                                 <a href="php/content-image-process.php?id=<?php echo $rowimage['Image_id'];?>"
-                                    onclick="return confirm('Are you sure you want to delete?')"><i class="fa-solid fa-trash-can"
-                                            style="font-size:25px; color:red;"></i></a>
+                                    onclick="return confirm('Are you sure you want to delete?')">
+                                    <i class="fa-solid fa-trash-can"
+                                        style="font-size:25px; color:red; padding: 10px"></i>
 
                                 </a>
                             </div>
@@ -285,14 +281,82 @@
 
 
 
-                        <!--DIVISION -->
+                        <!--Modal for Updating the announcements -->
+                       
+
+                        <div id="update-modal" class="modal fade" data-bs-backdrop="static"  role="dialog">
+                            <div class="modal-dialog modal-lg">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Update Announcements</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="php/content-image-edit-process.php" id="update-form" method="post"
+                                            enctype="multipart/form-data" class="row gap-2 justify-content-center">
 
 
+                                            <ul class="list-group list-group-flush">
+                                                <!--Title-->
+                                                <li class="list-group-item">
+                                                    <label>Header Name:</label>
+                                                    <input name="contentimageid" class="col-12" type="text" hidden>
+                                                    <input name="title" class="col-12" id="utitle" type="text" required>
+                                                </li>
+                                                <!--Subtitle-->
+                                                <li class=" list-group-item">
+                                                    <label>Subtitle:</label>
+                                                    <input name="subtitle" class="col-12" id="usubtitle" type="text"
+                                                        required>
+                                                </li>
+                                                <!--Body-->
+                                                <li class="list-group-item">
+                                                    <div> <label>Body:</label></div>
+                                                    <textarea name="paragraph" id="uparagraph" style="height:150px;"
+                                                        required class="col-12"></textarea>
+                                                </li>
+                                                <!--Choose File-->
+                                                <li class="list-group-item">
+                                                    <input name="photo" class="" id="upload-news" type="file" required>
+                                                </li>
+                                            </ul>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" form="update-form" name="update_image_content"
+                                            class="btn btn-outline-success">Update</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
                             integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
                             crossorigin="anonymous">
                         </script>
                         <script src="/js/script.js"></script>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        <script>
+                        $(document).ready(function() {
+                            $(document).on('click', '.update', function() {
+                                var id = $(this).data('id');
+                                $('input[name="contentimageid"]').val(id);
+                                $.post("content_details.php", {
+                                    id: id
+                                }, function(data) {
+                                    var query = JSON.parse(data);
+                                    $('#utitle').val(query[1]);
+                                    $('#usubtitle').val(query[2]);
+                                    $('#uparagraph').val(query[3]);
+                                    console.log(query);
+                                });
+                                $('#update-modal').modal('show');
+                            });
+                        });
+                        </script>
 </body>
 
 </html>

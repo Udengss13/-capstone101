@@ -196,7 +196,7 @@
                                     <?php elseif($row['order_status'] == 'pickedup'): ?>
                                     <td class="text-center col-sm-1 col-md-1 col-lg-1">
                                         <div class="col">
-                                            <span class="badge badge-success bg-info text-white">For Pick Up</span>
+                                            <span class="badge badge-success bg-info text-dark">Picked Up</span>
                                             <input type="hidden" value="<?php echo $row['order_status'] ?>"
                                                 name="update_status">
                                             <input type="hidden" value="<?php echo $row['order_user_id'] ?>"
