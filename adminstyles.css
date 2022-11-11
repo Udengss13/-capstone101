@@ -25,6 +25,17 @@
 
     --box-shadow: 0 2rem 3rem var(--color-light); 
 }
+
+/* -------------------DARK THEME VARIABLES --------------*/
+.dark-theme-variables {
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant:#a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow:0 2rem 3rem var(--color-light);
+    }
+
 *{
     margin: 0;
     padding: 0;
@@ -591,10 +602,11 @@ main .recent-orders a {
         height: 100vh;
         padding-right: var(--card-padding);
         display: none;
+        animation: showMenu 400ms ease forwards;
     }
 
     @keyframes showMenu {
-        to{
+        to {
             left: 0;
         }
     }
@@ -687,3 +699,20 @@ main .recent-orders a {
         font-size: 2rem;
     }
 }   
+
+/*======== table ===========*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){
+    background-color: #f2f2f2
+}

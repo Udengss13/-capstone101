@@ -173,7 +173,7 @@
                             </tr>
                     
                             
-                    </table>
+                    </table> 
                     <a href="#">Show All</a>
                 </div>
             </main>
