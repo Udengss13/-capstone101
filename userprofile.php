@@ -41,31 +41,14 @@ $userresult = mysqli_query($con, $queryimage);
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/f8f3c8a43b.js" crossorigin="anonymous"></script>
+    <!-- -->
 
-    <link rel="stylesheet" href="./fullcalendar/lib/main.min.css">
-    <script src="./js/jquery-3.6.0.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./fullcalendar/lib/main.min.js"></script>
-
-
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth'
-        });
-        calendar.render();
-    });
-    </script>
 </head>
 
 <body>
     <!--Navigation Bar-->
-    <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid ">
             <a class="navbar-brand" href="#">
                 <img src="asset/logopet.png" alt="Logo" style="width:22%; height:8vh" />
                 <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
@@ -84,31 +67,63 @@ $userresult = mysqli_query($con, $queryimage);
                 <div class="text-nowrap">
                     <li class="nav-item">
 
-                        <a class="nav-link active text-white mt-2" aria-current="page" href="home.php">HOME</a>
+                        <a class="nav-link  text-white mt-3" aria-current="page" href="home.php">HOME</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white mt-2" href="product.php">SHOP</a>
+                        <a class="nav-link text-white mt-3" href="#about">ABOUT US</a>
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link text-white dropdown-toggle mt-3" href="#" id="dropdownMenuLink"
+                                data-bs-toggle="dropdown" aria-expanded="false">SERVICES</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Vaccination</a></li>
+                                <li><a class="dropdown-item" href="#">Confinement</a></li>
+                                <li><a class="dropdown-item" href="#">Pet Supplies</a></li>
+                                <li><a class="dropdown-item" href="#">Consultation</a></li>
+                                <li><a class="dropdown-item" href="#">Surgery</a></li>
+                                <li><a class="dropdown-item" href="#">Treatment</a></li>
+                                <li><a class="dropdown-item" href="#">Deworming</a></li>
+                                <li><a class="dropdown-item" href="#">Grooming</a></li>
+                                <li><a class="dropdown-item" href="#">Laboratory Tests</a></li>
+
+                            </ul>
+
+                        </div>
+                    </li>
+                </div>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white mt-3 " href="product.php">SHOP</a>
                     </li>
                 </div>
 
-                <div class="text-nowrap">
+                <!-- <div class="text-nowrap">
                     <li class="nav-item">
                         <a href="userprofile.php" class="nav-link text-white"><img src=" asset/picon.png" alt="PETCO"
                                 style="width: 40px;"></a>
                     </li>
-                </div>
+                </div> -->
 
                 <?php 
                     $select_rows = mysqli_query($con,"SELECT * FROM `cart` WHERE Cart_user_id = '$user_id'") or die ('query failed');
                     $row_count = mysqli_num_rows($select_rows);
                   ?>
+                <div class="text-nowrap">
+                    <li class="nav-item mt-3">
+
+                        <a class="nav-link text-white" href="#imagesec">PET GALLERY</a>
+
+                    </li>
+                </div>
 
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="cart.php"><img src=" asset/cart.png" alt="PETCO"
-                                style="width: 40px;"><span
+                        <a class="nav-link text-white mt-3 " href="cart.php">CART<span
                                 class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
 
                     </li>
@@ -116,137 +131,117 @@ $userresult = mysqli_query($con, $queryimage);
 
                 <div class="text-nowrap">
                     <li class="nav-item">
+                        <?php 
+                            $select_user = mysqli_query($con, "SELECT * FROM usertable WHERE id = '$user_id'");
+                            if(mysqli_num_rows($select_user) > 0){
+                            $fetch_user = mysqli_fetch_assoc($select_user); 
+                            };
+                        ?>
+                        <!-- <p class="nav-link text-white">
+                            <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></p> -->
+                    </li>
+                </div>
+                <div class="dropdown mb-2 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1 ">
+
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="asset/profiles/<?php echo $fetch_user['image_filename']?>" alt="user"
+                            style=" margin-left: 10px" width="28" height="28" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-2"><?php echo $fetch_user['first_name']?></span>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">yes</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="userprofile.php">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="logout-user.php"
+                                onclick="return confirm('Are you sure do you want to sign out?')">Sign out</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="text-nowrap">
+                    <li class="nav-item">
                         <a class="nav-link  text-white mt-2" href="logout-user.php"
                             onclick="return confirm('Are you sure do you want to logout?')">LOGOUT</a>
                     </li>
-                </div>
+                </div> -->
             </ul>
         </div>
     </nav>
 
-    <div class="container-fluid ">
-        <div class="container ">
-            <!--1st row-->
-            <div class="row mt-4">
-                <div class="col">
-                    <h2>My Profile</h2>
-
-                </div>
-                <div class="col-6 mt-2 ">
-                    <a href="user-edit-profile.php?updateid=<?php echo $fetch_user['id'];?>">
-                        <span class="btn btn-primary mx-2">Edit Profile <i class="fa-solid fa-pen-to-square"></i></span>
-                    </a>
-
-                    <a href="user-edit-profiles.php?updateid=<?php echo $fetch_user['id'];?>">
-                        <span class="btn btn-success mx-2">Message <i class="fa-solid fa-message"></i></span>
-                    </a>
 
 
-                    <a href="#imagesec">
-                        <span class="btn btn-primary mx-2"> My Pet <i class="fa-solid fa-paw"></i></span>
-                    </a>
-                    <a href="appointment-user.php">
-                        <span class="btn btn-primary mx-2"> Appointment <i
-                                class="fa-regular fa-calendar-check"></i></span>
-                    </a>
 
-                </div>
+    <div class="container mt-5 mb-5">
+
+        <div class="row mt-5">
+            <div class="col-1">
+
             </div>
-
-        </div>
-    </div>
-    <hr>
-
-
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-6 ">
-
-                <!-- <p class="text-capitalize text-center">Welcome
-                    <?php echo $fetch_user['first_name']." ". $fetch_user['last_name']; ?></p> -->
+            <div class="col-5 ">
                 <div class="col profilebg ">
-                    <!-- <div class="card mb-4">
-                            <div class="card-body"> -->
-                    <div class="row">
-                        <!-- <div class="col-sm-4 labels"> -->
-                        <img src="asset/profiles/<?php echo $fetch_user['image_filename']?>" class="rounded-circle"
-                            alt="Logo" style="width:30%; height:17vh" />
-                        <!-- </div> -->
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">First Name:</p>
+                    <div class="row ">
+                        <div class="row   ">
+                            <center><img src="asset/profiles/<?php echo $fetch_user['image_filename']?>"
+                                    class="rounded-circle shadow user-profile" alt="Logo"
+                                    style="width:50%; height:27vh" /></center>
                         </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['first_name']; ?></p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">Middle Name:</p>
-                        </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['middle_name']; ?></p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">Last Name:</p>
-                        </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['last_name']; ?></p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">Suffix:</p>
-                        </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['suffix']; ?></p>
-                        </div>
-                    </div>
-                    <hr>
+                        <div class="row mt-4 shadow">
+                            <h3 class="text-white  text-center mb-0 name">
+                                <?php echo $fetch_user['first_name']. " " .$fetch_user['middle_name'] . " " .$fetch_user['last_name']; ?>
+                            </h3>
+                            <h5 class="text-center text-secondary">Pet Owner</h5>
 
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">Contact Number:</p>
-                        </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['contact']; ?></p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">Address:</p>
-                        </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['address']; ?></p>
+
+                            <center> <a href="user-view-order.php?id=<?php echo $fetch_user['id']?>">
+                                    <span class="btn btn-outline-primary mx-2 mt-4">Orders <i
+                                            class="fa-solid fa-pen-to-square"></i></span>
+                                </a>
+                            </center>
+
+                            <center><a href="appointment-user.php?id=<?php echo $fetch_user['id']?>">
+                                    <span class="btn btn-outline-primary mx-2 mt-4 mb-4"> Appointment <i
+                                            class="fa-regular fa-calendar-check"></i></span>
+                                </a>
+                            </center>
+
                         </div>
                     </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-4 labels">
-                            <p class="mb-0">Email:</p>
-                        </div>
-                        <div class="col-sm-8">
-                            <p class="c-blue mb-0"><?php echo $fetch_user['email']; ?></p>
-                        </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-6 bg-white shadow rounded">
+
+                <div class="row">
+                    <div class="col-8">
+                        <h2 class="mt-3">About me..</h2>
                     </div>
-                    <!-- </div>
-                        </div> -->
+                    <!-- <div class="col">
+                        <a href="user-edit-profile.php?updateid=<?php echo $fetch_user['id'];?>">
+                            <span class="btn btn-danger bg-button mx-2 mt-2 text-white">Edit Profile <i
+                                    class="fa-solid fa-pen-to-square"></i></span>
+                        </a>
+                    </div> -->
                 </div>
 
+                <h5 class="c-blue  mt-5 mb-0 bg-gray rounded p-3 aboutme">
+                    <span><i class="fa-solid fa-phone"> </i> <?php echo $fetch_user['contact']?></span>
+                </h5>
+                <h5 class="c-blue  mt-2 mb-0 bg-gray rounded p-3 aboutme">
+                    <span><i class="fa-solid fa-house"></i> <?php echo $fetch_user['address']?></span>
+                </h5>
+                <h5 class="c-blue  mt-2 mb-0 bg-gray rounded p-3 aboutme">
+                    <span><i class="fa-solid fa-envelope"></i> <?php echo $fetch_user['email']?></span>
+                </h5>
             </div>
 
         </div>
     </div>
 
-    <!-- <div id='calendar'></div> -->
     <hr>
     <!--ANNOUNCEMENT-->
     <section class="flex-sect" id="imagesec">

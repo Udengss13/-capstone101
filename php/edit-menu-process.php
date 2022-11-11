@@ -7,7 +7,7 @@ session_start();
         $title = $_POST['title'];
         $paragraph = $_POST['paragraph'];
         $paragraph = nl2br($paragraph);
-        $safe_input = mysqli_real_escape_string($db_admin_account,$paragraph);
+        $safe_input = mysqli_real_escape_string($con,$paragraph);
 
         $price = $_POST['price'];
         $category_name = $_POST['category_name'];
@@ -18,20 +18,21 @@ session_start();
          // move file to a folder
          if(move_uploaded_file($_FILES["photo"]["tmp_name"], $filenamedir))
          {
-          $query = "UPDATE employee_menu SET Menu_name = '$title', Menu_description = '$safe_input', 
+          $query = "UPDATE admin_menu SET Menu_name = '$title', Menu_description = '$safe_input', 
           Menu_price = '$price', Menu_category = '$category_name', 
           Menu_dir = '$filenamedir', Menu_filename = '$filename' WHERE Menu_id = '$menuid'";
           
 
           
-          if(mysqli_query($db_admin_account, $query)){
+          if(mysqli_query($con, $query)){
 
-          $_SESSION['update_changes'] = "Your data has been edited successfully";
-          header('location: ../employee-edit-menu.php?editid='.$menuid);
+            echo '<script> alert("Products updated Succesfully");
+            window.location.href="../employee-menu.php";
+            </script>';
           }
         }
         
     }
 
-
+?>
 ?>

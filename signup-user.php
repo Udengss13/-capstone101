@@ -19,6 +19,16 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
+    <!-- <link href="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css"
+        rel="stylesheet">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js">
+    </script>
+
     <script>
     function populate(s1, s2) {
         var s1 = document.getElementById(s1);
@@ -223,7 +233,7 @@
                             </div>
 
 
-                            <input type="file"  id="upload-news" name="photo"  required>
+                            <input type="file" id="upload-news" name="photo" required>
                         </div>
                         <!--end of row-->
                     </div>
@@ -284,7 +294,8 @@
                             <div class="col-4">Pet Birthday
                                 <div class="form-group mb-3">
                                     <!-- <label for=""></label> -->
-                                    <input type="date" name="petbday" class="form-control" />
+                                    <input type="text" class="form-control" name="petbday" id="datepicker" />
+                                    <!-- <input type="date" name="petbday" class="form-control" /> -->
                                 </div>
                             </div>
                         </div>
@@ -305,6 +316,15 @@
                             href="login-user.php" class="text-primary">Login here</a></div>
             </form>
         </div>
+
+        <script>
+        $("#datepicker").datepicker({
+            format: "yyyy",
+            viewMode: "years",
+            minViewMode: "years",
+            autoclose: true //to close picker once year is selected
+        });
+        </script>
 
 
     </body>

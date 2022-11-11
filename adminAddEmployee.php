@@ -114,7 +114,7 @@
                     <div class="form-groups  ">
                         <a href=""><i class="fa-solid fa-circle-x"></i><a>
                     </div>
-                    <h2 class="text-center text-white">Create Client Account </h2>
+                    <h2 class="text-center text-white">Create Employee Account </h2>
                     <p class="text-center text-white">It's quick and easy to Petko.</p>
 
                     <form action="adminAddEmployee.php" method="POST" autocomplete="">

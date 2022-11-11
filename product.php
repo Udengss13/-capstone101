@@ -112,7 +112,7 @@
 <html lang="en">
 
 <head>
-    <title>Product</title>
+    <title>Shop</title>
     <link rel="icon" href="asset/logopet.png" type="image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -124,9 +124,8 @@
 </head>
 
 <body class="">
-   <!--Navigation Bar-->
-    <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg">
+  <!--Navigation Bar-->
+  <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="asset/logopet.png" alt="Logo" style="width:22%; height:8vh" />
@@ -177,7 +176,7 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white mt-3 bg-primary" href="product.php">SHOP</a>
+                        <a class="nav-link text-white mt-3 bg-primary " href="product.php">SHOP</a>
                     </li>
                 </div>
 
@@ -202,11 +201,29 @@
 
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white mt-3" href="cart.php">CART<span
-                                class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
+                        <a class="nav-link text-white mt-3 " href="cart.php">CART
+                            <?php if($row_count>0){ ?> <span
+                                class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span><?php } ?>
+
+                        </a>
 
                     </li>
                 </div>
+                <?php 
+                        $selectMessages = mysqli_query($con,"SELECT * FROM `messages` WHERE employee_id = '$user_id' AND seen = 0 AND sender_id != $user_id") or die ('query failed');
+                        $count_message = mysqli_num_rows($selectMessages);
+                    if(isset($user_id)){
+                     ?>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white mt-3" href="messages.php">MESSAGE
+                            <?php if($count_message>0){ ?> <span
+                                class="badge badge-light mx-1 bg-light text-dark"><?php echo $count_message ?></span><?php } ?>
+                        </a>
+
+                    </li>
+                </div>
+                <?php } ?>
 
                 <div class="text-nowrap">
                     <li class="nav-item">
@@ -250,56 +267,54 @@
         </div>
     </nav>
 
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-3">
+                <form action="product.php" method="GET">
+                    <div class="input-group flex-nowrap ">
+                        <select class="form-select form-select-md" name="select_category" required
+                            onchange="this.form.submit()">
+                            <option value="" name="select_all">Select Category</option>
+                            <?php while($rowcategory =  mysqli_fetch_array($resultcategory)){ ?>
+                            <option value=" <?php echo $rowcategory['category_name']; ?>">
+                                <?php echo $rowcategory['category_name']; ?>
+                            </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col-4 float-end">
+                <form action="product.php" method="GET">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="search" value="<?php if(isset($_GET['search'])) {
+                                            echo $_GET['search'];
+                                        }?>" placeholder="Brand, product name, price ">
+                        <!--Button Search-->
+                        <button class="btn btn-primary">Search</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
 
     <!-- For Category Container -->
-    <div class="container search mt-4">
+    <div class="container  search mt-4">
 
-        <form action="product.php" method="GET">
-            <div class="input-group flex-nowrap ">
-                <select class="form-select form-select-md" name="select_category" required
-                    onchange="this.form.submit()">
-                    <option value="" name="select_all">Select Category</option>
-                    <?php while($rowcategory =  mysqli_fetch_array($resultcategory)){ ?>
-                    <option value=" <?php echo $rowcategory['category_name']; ?>">
-                        <?php echo $rowcategory['category_name']; ?>
-                    </option>
-                    <?php } ?>
-                </select>
-            </div>
-        </form>
         <!-- </div>
         </div> -->
     </div>
 
 
     <!--Search Form-->
-    <div class="container ">
-        <div class="row">
-            <div class="col-6 float-end">
-                <div class="card mt-4">
-                    <div class="card-header">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <form action="product.php" method="GET">
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" name="search" value="<?php if(isset($_GET['search'])) {
-                        echo $_GET['search'];
-                      }?>" placeholder="Search Data">
-                                            <!--Button Search-->
-                                            <button class="btn btn-primary">Search</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 
 
 
@@ -439,7 +454,7 @@
 
                     <a href="home-view-image.php?id=<?php echo $fetch_product['Menu_id'] ?>" class=" w-100 mb-3"><img
                             src="asset/menu/<?php echo $fetch_product['Menu_filename']?>" alt="Image section"
-                            class="card-img-top  img-responsive " style="height:17rem; width:100%;"></a>
+                            class="card-img-top  img-responsive " style="height:15rem; width:100%;"></a>
                     <h4 class="mt-2"><?php echo $fetch_product['Menu_name']?></h4>
                     <div class="mt-2 text-light">Php <?php echo $fetch_product['Menu_price']?>
                         </h3>

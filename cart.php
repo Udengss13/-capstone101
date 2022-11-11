@@ -57,13 +57,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/f8f3c8a43b.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
-   <!--Navigation Bar-->
-   <nav class="navbar navbar-expand-lg">
+    <!--Navigation Bar-->
+     <!--Navigation Bar-->
+     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="asset/logopet.png" alt="Logo" style="width:22%; height:8vh" />
@@ -96,25 +98,32 @@
                         <div class="dropdown">
                             <a class="nav-link text-white dropdown-toggle mt-3" href="#" id="dropdownMenuLink"
                                 data-bs-toggle="dropdown" aria-expanded="false">SERVICES</a>
+
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Vaccination</a></li>
-                                <li><a class="dropdown-item" href="#">Confinement</a></li>
-                                <li><a class="dropdown-item" href="#">Pet Supplies</a></li>
-                                <li><a class="dropdown-item" href="#">Consultation</a></li>
-                                <li><a class="dropdown-item" href="#">Surgery</a></li>
-                                <li><a class="dropdown-item" href="#">Treatment</a></li>
-                                <li><a class="dropdown-item" href="#">Deworming</a></li>
-                                <li><a class="dropdown-item" href="#">Grooming</a></li>
-                                <li><a class="dropdown-item" href="#">Laboratory Tests</a></li>
-
+                                <?php while($row =  mysqli_fetch_array($resultservices)){ ?>
+                                <li><a class="dropdown-item" href="#"
+                                        value=" <?php echo $row['service_name']; ?>"><?php echo $row['service_name']; ?></a>
+                                </li>
+                                <?php } ?>
                             </ul>
-
                         </div>
                     </li>
                 </div>
+                <!-- <div class="input-group ">
+                    <select class="form-select form-select-md"  name="category_name" required> sasasasa
+                        <option value="">Select Category</option>
+                        <?php while($row =  mysqli_fetch_array($resultservices)){ ?>
+                        <option value=" <?php echo $row['service_name']; ?>">
+                            <?php echo $row['service_name']; ?>
+                        </option>
+                        <?php } ?>
+                    </select>
+
+                </div> -->
+
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white mt-3 bg-primary" href="product.php">SHOP</a>
+                        <a class="nav-link text-white mt-3" href="product.php">SHOP</a>
                     </li>
                 </div>
 
@@ -139,11 +148,29 @@
 
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white mt-3" href="cart.php">CART<span
-                                class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span></a>
+                        <a class="nav-link text-white mt-3 bg-primary" href="cart.php">CART
+                        <?php if($row_count>0){ ?> <span
+                                class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span><?php } ?>
+                            
+                            </a>
 
                     </li>
                 </div>
+                <?php 
+                        $selectMessages = mysqli_query($con,"SELECT * FROM `messages` WHERE employee_id = '$user_id' AND seen = 0 AND sender_id != $user_id") or die ('query failed');
+                        $count_message = mysqli_num_rows($selectMessages);
+                    if(isset($user_id)){
+                     ?>
+                <div class="text-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link text-white mt-3 " href="messages.php">MESSAGE
+                            <?php if($count_message>0){ ?> <span
+                                class="badge badge-light mx-1 bg-light text-dark"><?php echo $count_message ?></span><?php } ?>
+                        </a>
+
+                    </li>
+                </div>
+                <?php } ?>
 
                 <div class="text-nowrap">
                     <li class="nav-item">
@@ -167,7 +194,7 @@
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="#">yes</a></li>
+                        <li><a class="dropdown-item" href="#">My Orders</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>
                         <li><a class="dropdown-item" href="userprofile.php">Profile</a></li>
                         <li>
@@ -187,13 +214,18 @@
         </div>
     </nav>
 
+    <!--Button-->
+    <td colspan=""><a href="product.php" class=" btn "><span class="text fw-bold" style="color:#034D73"><i
+                    class="bi bi-arrow-left"> </i>Continue
+                Shopping</span></a></td>
+
 
 
 
     <div class="container">
         <div class="row">
             <div class="text-center  mt-4">
-                <h1 class="text-light">Your Cart</h1>
+                <h1 class=""><span><i class="fa-solid fa-cart-shopping"> </i> My Cart</h1></span>
             </div>
             <!--Table-->
             <div class="table-responsive-sm table-responsive-md table-responsive-lg mt-3">
@@ -229,13 +261,13 @@
                             <!--Input Number and Update Button-->
                             <td class="align-middle" class="">
                                 <form action="" method="post">
-                                <input type="hidden" name="update_quantity_id" min="1" max="10"
-                                    value="<?php echo $fetch_cart['Cart_id'] ?>">
-                                <input type="number" name="update_quantity" min="1" max="10"
-                                    value="<?php echo $fetch_cart['Cart_quantity'] ?>" class="col-5 prc">
-                                <input type="submit" value="Update" name="update_update_btn"
+                                    <input type="hidden" name="update_quantity_id" min="1" max="10"
+                                        value="<?php echo $fetch_cart['Cart_id'] ?>">
+                                    <input type="number" name="update_quantity" min="1" max="10"
+                                        value="<?php echo $fetch_cart['Cart_quantity'] ?>" class="col-5 prc">
+                                    <input type="submit" value="Update" name="update_update_btn"
                                         class="btn btn-success">
-                                        
+
                                 </form>
                             </td>
                             <!--Quantity-->
@@ -260,15 +292,12 @@
                     };
                     ?>
                         <tr>
-                            <!--Button-->
-                            <td colspan="3"><a href="product.php" class=" btn w-100"><span class="text fw-bold"
-                                        style="color:#034D73"><i class="bi bi-arrow-left"> </i>Continue
-                                        Shopping</span></a></td>
+
                             <!--Total-->
-                            <td colspan="1" class="text-center fw-bold align-middle">Total Cart:</td>
+                            <td colspan="4" class="text-center fw-bold align-middle">Total Cart:</td>
                             <td class="fw-bold fs-6 align-middle">Php
                                 <?php echo number_format($grand_total,2) ?></td>
-                                <output id="result"></output>
+                            <output id="result"></output>
                             <td><a href="cart.php?delete_all"
                                     class="btn btn-danger   <?php  echo ($grand_total > 1),'disabled'; ?>"
                                     onclick="return confirm('Do you want remove all your items from your cart?')">Delete

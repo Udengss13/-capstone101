@@ -84,6 +84,8 @@
 
         <main>
             <h1>Image Content for Home</h1>
+                <!--All Content for Image Here-->
+                
                 <form action="php/content-image-process.php" method="post" enctype="multipart/form-data"
                     class="row gap-2 justify-content-center">
                     <div class="row justify-content-md-center mb-5">

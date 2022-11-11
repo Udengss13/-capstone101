@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-   font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 h3{
     color: #ffffff;
@@ -28,12 +28,12 @@ h3{
     font-size: 15px;
     text-shadow: 2px 2px 2px rgba(49, 44, 44, 0.767);
 }
-.nav-item:hover {
+/* .nav-item:hover {
     
     background-color: rgb(165, 165, 159);
     
   }
-  
+   */
 
     /* unvisited link */
     a:link {
@@ -57,6 +57,9 @@ h3{
 .nav-link dropdown-toggle{
     background-color: rgb(156, 161, 164);
 }
+.nav-link:hover{
+  margin-left: 1rem;;
+}
 .ms-1{
     border-block: 50px;
     font-family: 'Gothic A1', sans-serif;
@@ -76,10 +79,7 @@ h3{
     background:#EA6D52;
   }
 
-<<<<<<< HEAD
-=======
   /* modal Bdoy */
   .modal-bod{
     background:  #9FBACD;
   }
->>>>>>> 065bf9441f1673352366161d059ca2b2edd4210d
