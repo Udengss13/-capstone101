@@ -434,7 +434,7 @@
                             <div class="chat_list active_chat">
                                 <div class="chat_people">
                                     <div class="chat_img"> <img style="width:100%;"
-                                            src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                                            src="asset\logopet.png" alt="sunil"> </div>
                                     <div class="chat_ib">
                                         <h5>Petco Animal Clinic <span
                                                 class="chat_date"><?php if(isset($selectQuery['created_at'])){ echo date('F d,Y',strtotime($selectQuery['created_at'])); } ?></span>
@@ -470,7 +470,7 @@
                         <?php }else{ ?>
                         <div class="incoming_msg">
                             <div class="incoming_msg_img"> <img style="width:100%;"
-                                    src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                                    src="asset\logopet.png" alt="sunil"> </div>
                             <div class="received_msg">
                                 <div class="received_withd_msg">
                                     <p><?php echo $fetch_message['message']; ?></p>

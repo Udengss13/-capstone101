@@ -22,7 +22,7 @@
     $update_status_query = mysqli_query($con, "UPDATE `order` SET `order_status` = 'confirmed' WHERE `order`.`id` = ".$_GET['id']);
 
    if($update_status_query){
-     header('location: admin-orders.php');
+    header('location: admin-view-orders.php?id='.$_GET['id']);
    }
    else{
     echo "amlii";
@@ -38,7 +38,7 @@
     
 
    if($update_status_query){
-     header('location: admin-orders.php');
+    header('location: admin-view-orders.php?id='.$_GET['id']);
    }
   }
   if(isset($_POST['pickedup'])){
@@ -50,7 +50,8 @@
     
 
    if($update_status_query){
-     header('location: admin-orders.php');
+    header('location: admin-view-orders.php?id='.$_GET['id']);
+    //  header('location: admin-orders.php');
    }
   }
 ?>
@@ -186,6 +187,11 @@
                             </td>
                         </tr>
                         <tr class="col-5">
+                            <td class="text-capitalize col-5 justify-content">Email:
+                                <?php echo $fetch_user['email'] ?>
+                            </td>
+                        </tr>
+                        <tr class="col-5">
                             <?php if($fetch_user['order_status'] == 'confirmed'): ?>
                             <td class=" col-5">
                                 <div class="col">
@@ -203,6 +209,17 @@
                             <td class="">
                                 <div class="col">
                                     Order Status: <span class="badge badge-success bg-warning">For Pick Up</span>
+                                    <input type="hidden" value="<?php echo $fetch_user['order_status'] ?>"
+                                        name="update_status">
+                                    <input type="hidden" value="<?php echo $fetch_user['order_user_id'] ?>"
+                                        name="update_status_id">
+                                </div>
+                            </td>
+                        </tr>
+                            <?php elseif($fetch_user['order_status'] == 'pickedup'): ?>
+                            <td class="">
+                                <div class="col">
+                                    Order Status: <span class="badge badge-info bg-info text-dark">Picked Up</span>
                                     <input type="hidden" value="<?php echo $fetch_user['order_status'] ?>"
                                         name="update_status">
                                     <input type="hidden" value="<?php echo $fetch_user['order_user_id'] ?>"
@@ -280,7 +297,7 @@
 
         <div class="text-center">
             <h5>Choose Status:</h5>
-            <button  class="btn bg-success border border-dark " type="submit" name="confirmed">Confirm</a></button>
+            <button  class="btn btn-warning bg-success border border-dark " type="submit" name="confirmed">Confirm</a></button>
             <button class="btn bg-warning border border-dark  " type="submit" name="pickup">For Pick Up</a></button>
             <button class="btn bg-info border border-dark " type="submit" name="pickedup">Picked Up</a></button>
             <a href="admin-orders.php"><span class="btn btn-outline-danger mx-2 float-end">Back</span></a>

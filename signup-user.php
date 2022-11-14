@@ -183,26 +183,6 @@
                                 <label for="floatingConfirm">Confirm Password</label>
                             </div>
 
-                            <div class="form-floating mb-2">
-
-                                <input class="form-control" type="text" name="contact" placeholder="Suffix"
-                                    id="floatingSuffix" autocomplete="off">
-                                <label for="floatingSuffix">Contact No</label>
-                            </div>
-                            <!--Address-->
-                            <div class="form-floating ">
-                                <input class="form-control" type="text" name="address" placeholder="Address" required
-                                    value="<?php echo $address ?>" id="floatingAddress" autocomplete="off">
-                                <label for="floatingAddress">Complete Address</label>
-                            </div>
-
-
-                            <!--Suffix-->
-
-                        </div>
-
-                        <!--2nd Column-->
-                        <div class="col-6 ">
                             <div class="form-floating ">
                                 <input class="form-control mb-2" type="text" name="first_name" placeholder="First Name"
                                     required value="<?php echo $fname ?>" id="floatingFirst" autocomplete="off">
@@ -220,6 +200,30 @@
                                 <input class="form-control mb-2" type="text" name="last_name" placeholder="Last Name"
                                     required value="<?php echo $lname ?>" id="floatingLast" autocomplete="off">
                                 <label for="floatingLast">Last Name</label>
+                            </div>
+
+
+
+
+
+
+                            <!--Suffix-->
+
+                        </div>
+
+                        <!--2nd Column-->
+                        <div class="col-6 ">
+                            <div class="form-floating mb-2">
+
+                                <input class="form-control" type="text" name="contact" placeholder="Suffix"
+                                    id="floatingSuffix" autocomplete="off">
+                                <label for="floatingSuffix">Contact No</label>
+                            </div>
+                            <!--Address-->
+                            <div class="form-floating mb-2 ">
+                                <input class="form-control" type="text" name="address" placeholder="Address" required
+                                    value="<?php echo $address ?>" id="floatingAddress" autocomplete="off">
+                                <label for="floatingAddress">Complete Address</label>
                             </div>
 
 
@@ -248,65 +252,74 @@
                                 need below.</p>
                         </div>
                     </div>
-
+                    <button type="button" name="add" id="add" class="btn btn-success">Add More Pets</button>
 
                     <div id="dynamic_field">
-                        <div class="row inline" id="row">
+                        <div class="rows border border-primary">
+                            <div class="row inline">
+                                <div class="col-4 form-group">Pet Type:
+                                    <!-- <label for="exampleFormControlSelect1">Position</label> onchange="populate(this.id,'slct2')"-->
+                                    <select class="form-control" name="pettype" value="<?php echo $pettype ?>">
+                                        <option value="" disabled selected>Select Pet Type</option>
+                                        <option value="Dog">Dog</option>
+                                        <option value="Cat">Cat</option>
+                                    </select>
 
-                            <div class="col-4 form-group">
-                                <!-- <label for="exampleFormControlSelect1">Position</label> -->
-                                <select class="form-control" id="slct1" name="pettype"
-                                    onchange="populate(this.id,'slct2')" value="<?php echo $pettype ?>">
-                                    <option value="" disabled selected>Select Pet Type</option>
-                                    <option value="Dog">Dog</option>
-                                    <option value="Cat">Cat</option>
-                                </select>
-                            </div>
-
-
-                            <div class="col-4 form-group">
-                                <!-- <div class=" flex-nowrap"> -->
-                                <select class="form-control" id="slct2" name="petbreed">
-                                    <option value="" disabled selected>Select Pet Breed</option>
-                                </select>
-                                <!-- </div> -->
-                            </div>
-
-                            <div class="col-4 form-group">
-                                <input class="form-control" type="text" name="petname" placeholder="Pet Name" required
-                                    id="floatingAddress" autocomplete="off">
-                            </div>
-                        </div>
+                                </div>
 
 
+                                <div class="col-4 form-group"> Pet Breed
+                                    <input list="browsers" class="form-control" name="petbreed" id="browser">
+                                    <datalist id="browsers">
+                                        <option value="amercan bully">
+                                        <option value="chowchow">
+                                        <option value="corgi">
+                                        <option value="englishbulldog">
+                                        <option value="frenchbulldog">
+                                        <option value="abyssinian">
+                                        <option value="siamese">
+                                        <option value="golden retriever">
+                                        <option value="pomeranian">
+                                        <option value="poodle">
+                                        <option value="pug">
+                                        <option value="siberian husky">
+                                        <option value="shittzu">
 
-                        <div class="row mt-4">
-                            <div class="col-4 form-group">Pet Sex:
-                                <!-- <div class=" flex-nowrap"> -->
-                                <select class="form-control" name="petsex">
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
 
-                                </select>
+                                    </datalist>
+                                    <!-- </div> -->
+                                </div>
 
-                                <!-- </div> -->
-                            </div>
-                            <div class="col-4">Pet Birthday
-                                <div class="form-group mb-3">
-                                    <!-- <label for=""></label> -->
-                                    <input type="text" class="form-control" name="petbday" id="datepicker" />
-                                    <!-- <input type="date" name="petbday" class="form-control" /> -->
+                                <div class="col-4 form-group"> Pet Name
+                                    <input class="form-control" type="text" name="petname" placeholder="Pet Name"
+                                        required id="floatingAddress" autocomplete="off">
                                 </div>
                             </div>
+
+
+
+                            <div class="row mt-4">
+                                <div class="col-4 form-group">Pet Sex:
+                                    <!-- <div class=" flex-nowrap"> -->
+                                    <select class="form-control" name="petsex">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+
+                                    </select>
+
+                                    <!-- </div> -->
+                                </div>
+                                <div class="col-4">Pet Birthday
+                                    <div class="form-group mb-3">
+                                        <!-- <label for=""></label> -->
+                                        <input type="text" class="form-control" name="petbday" id="datepicker" />
+                                        <!-- <input type="date" name="petbday" class="form-control" /> -->
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-
                     </div>
-
-
-
-
-
-
 
                     <div class="form-group mt-4 text-center">
                         <input class="form-control btn  " style="background-color: #EA6D52; width: 20%" type="submit"
@@ -317,10 +330,13 @@
             </form>
         </div>
 
+
         <script>
         $("#datepicker").datepicker({
             format: "yyyy",
+            "mmm",
             viewMode: "years",
+            "months",
             minViewMode: "years",
             autoclose: true //to close picker once year is selected
         });
@@ -335,24 +351,14 @@
         var i = 1;
         $('#add').click(function() {
             i++;
-            $('#dynamic_field').append('<tr id="row' + i +
-                '"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="' +
+            $('#dynamic_field').append('<div class="rows border border-primary mt-2" id="row' + i +
+                '">  <div class="row inline"> <div class="col-4 form-group">Pet Type:<select class="form-control" name="pettype" value="<?php echo $pettype ?>"> <option value="" disabled selected>Select Pet Type</option><option value="Dog">Dog</option><option value="Cat">Cat</option></select></div><div class="col-4 form-group"> Pet Breed<input list="browsers" class="form-control" name="petbreed" id="browser"><datalist id="browsers"><option value="amercan bully"><option value="chowchow"><option value="corgi"><option value="englishbulldog"><option value="frenchbulldog"><option value="abyssinian"><option value="siamese"><option value="golden retriever"><option value="pomeranian"><option value="poodle"><option value="pug"><option value="siberian husky"><option value="shittzu"></datalist></div><div class="col-4 form-group"> Pet Name<input class="form-control" type="text" name="petname" placeholder="Pet Name" required id="floatingAddress" autocomplete="off"></div></div><div class="row mt-4"><div class="col-4 form-group">Pet Sex:<select class="form-control" name="petsex"><option value="male">Male</option><option value="female">Female</option></select></div><div class="col-4">Pet Birthday<div class="form-group mb-3"><input type="text" class="form-control" name="petbday" id="datepicker" /></div></div> </div><td><button type="button" name="remove" id="' +
                 i + '" class="btn btn-danger btn_remove">X</button></td></tr>');
         });
+
         $(document).on('click', '.btn_remove', function() {
             var button_id = $(this).attr("id");
             $('#row' + button_id + '').remove();
-        });
-        $('#submit').click(function() {
-            $.ajax({
-                url: "name.php",
-                method: "POST",
-                data: $('#add_name').serialize(),
-                success: function(data) {
-                    alert(data);
-                    $('#add_name')[0].reset();
-                }
-            });
         });
     });
     </script>
