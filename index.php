@@ -297,27 +297,25 @@
     </section>
 
     <!-- About us -->
-    <section class="flex-sect" id="about" style="background-color:#9FBACD;">>
+    <section class="flex-sect" id="about" style="background-image: url('asset/TransparentBG.png');">
         <section id="imagesection" class="div_background_light py-4">
             <div class="container-fluid px-5">
                 <div class="col-lg-12 col-md-12">
-                    <div class="justify-content-center row col-md-12 rounded-3">
-                        <div style="width: 100%; height: 30px; border-bottom: 2px solid white; text-align: center">
-                            <span style="font-size: 40px; background-color:#9FBACD; color: white">
-                                ABOUT US
-                                <!--Padding is optional-->
-                            </span>
+                <div class="justify-content-center row col-md-12 rounded-3">
+                                            <h3 class="col-12  text-center fw-bold"
+                                                style="color: Dark Gray">
+                                                ABOUT US</h3>
+                                            <hr>
                         </div>
                         <div class="row box" style="height:300px;">
-                            <h4 style="color: white">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                when an unknown printer took a galley of type and scrambled it to make a type specimen
-                                book. It has survived not only five centuries, but also the leap into electronic
-                                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                                release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h4>
+                            <h4 style= "font-size:1.7vw; color: gray">PetCo. Animal Clinic was established in June 2021, and they started offering services in their Grand Opening last July 3, 2021.
+                             Mr. Karl Ken Sto owned it. Domingo. It started with just an Idea of having a Pet Shop because he has a friend who is a Veterinarian, and he’s the one injecting Mr. Sto. Domingo’s pets. He also sees that some people around their area have to go too far to find an accessible Pet Clinic, 
+                             and that is where they started building the PetCo. Their intention to provide an accessible Pet Clinic around their area is why their ideas turned into a Clinic that offers many pet services. The PetCo. Animal Clinic is currently residing at 389 Parada, Sta. Maria, Bulacan, their main branch. 
+                             PetCo. Animal Clinic specializes in Vaccination, Consultation, Confinement, Surgery, Pet Supplies, etc., for cats and dogs only.</h4>
                         </div>
-
+            </section>
+                
+    </section>
                         <!--ANNOUNCEMENT-->
                         <section class="flex-sect" id="imagesec">
                             <section id="imagesection" class="div_background_light py-4">
@@ -365,11 +363,11 @@
                                 </div>
                     </div>
                 </div>
-            </div>
+            </div> 
 
 
-        </section>
     </section>
+
     <footer class=" footer-banner" id="about">
         <div class="container text">
             <div class="row">
@@ -387,7 +385,7 @@
                     <h5>© 2022 All Rights Reserved. PetCo. Animal Clinic.</h5>
                 </div>
 
-
+                                            
     </footer>
 
 
