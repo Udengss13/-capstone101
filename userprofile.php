@@ -171,7 +171,67 @@ $userresult = mysqli_query($con, $queryimage);
         </div>
     </nav>
 
+    <div class="container mt-5 mb-5">
+        <h5 class="text-white">My Order Reservation</h5>
+        <div class="row justify-content-center">
+            <?php 
+                    $select_rows = mysqli_query($con,"SELECT * FROM `order` WHERE order_user_id= '$user_id' and order_status= ' ' ") or die ('query failed');
+                    $row_count = mysqli_num_rows($select_rows);
+                  ?>
+            <div class="col-3 shadow p-4">
+                <center>
+                    <!-- <?php if($row_count>0){ ?> <span
+                        class="badge badge-light mx-1 bg-light text-dark"><?php echo $row_count ?></span><?php } ?>
 
+                    </a> -->
+
+                    <?php if($row_count>0){ ?><span class="badge badge-light bg-button text-white no"><?php echo $row_count ?></span><?php } 
+                     else{ ?><span class=" text-white no"></span><?php } ?>
+                    <h1 class="icons"><i class="fa-solid fa-clipboard-list"></i></h1>
+                    For Verification
+                </center>
+            </div>
+            <div class="col-3 shadow p-4">
+                <center>
+                    <?php 
+                    $select_rows = mysqli_query($con,"SELECT * FROM `order` WHERE order_user_id= '$user_id' and order_status= 'confirmed' ") or die ('query failed');
+                    $row_count = mysqli_num_rows($select_rows);
+                  ?>
+                    <?php if($row_count>0){ ?><span class="badge badge-light bg-button text-white no"><?php echo $row_count ?></span><?php } 
+                     else{ ?><span class=" text-white no"></span><?php } ?>
+                    <h1 class="icons"><i class="fa-solid fa-circle-check"></i></h1>
+                    Confirmed
+                </center>
+            </div>
+            <div class="col-3 shadow p-4">
+                <?php 
+                    $select_rows = mysqli_query($con,"SELECT * FROM `order` WHERE order_user_id= '$user_id' and order_status= 'pickup' ") or die ('query failed');
+                    $row_count = mysqli_num_rows($select_rows);
+                  ?>
+                <center>
+                <?php if($row_count>0){ ?><span class="badge badge-light bg-button text-white no"><?php echo $row_count ?></span><?php } 
+                     else{ ?><span class=" text-white no"></span><?php } ?>
+                    <h1 class="icons"><i class="fa-solid fa-box"></i></h1>
+                    For pick up
+                </center>
+            </div>
+            <div class="col-3 shadow p-4">
+                <?php 
+                    $select_rows = mysqli_query($con,"SELECT * FROM `order` WHERE order_user_id= '$user_id' and order_status= 'pickedup' ") or die ('query failed');
+                    $row_count = mysqli_num_rows($select_rows);
+                  ?>
+                <center>
+                <?php if($row_count>0){ ?><span class="badge badge-light bg-button text-white no"><?php echo $row_count ?></span><?php } 
+                     else{ ?><span class=" text-white no"></span><?php } ?>
+                    <h1 class="icons"><i class="fa-solid fa-basket-shopping"></i></h1>
+                    Picked Up
+                </center>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <br><br>
 
 
     <div class="container mt-5 mb-5">

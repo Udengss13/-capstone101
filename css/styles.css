@@ -112,7 +112,22 @@ body{
   border-radius: 10px;
   
 }
+.icons{
+  color:#EA6D52;
+  
+}
+.icons:hover , .no:hover{
+color: red;
 
+}
+.no{
+  margin-left: 3rem;
+}
+.fa-circle-check, .fa-box, .fa-basket-shopping,.fa-clipboard-list{
+  text-shadow: 0 5px 3px rgb(222, 222, 222);
+}
+
+/* -------------------------------------- */
 .c-blue{
   color: #034D73;
 }
@@ -243,7 +258,7 @@ body{
 }
 .card:hover{
   margin-top:-5px;
-  box-shadow:0 20px 30px 0 skyblue;
+  box-shadow:0 20px 30px 0 rgb(91, 99, 103);
 }
 
 /*Css for About us---------------------------------------------------------------------------------------*/

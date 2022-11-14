@@ -45,6 +45,7 @@ $userresult = mysqli_query($con, $queryimage);
         $appointdate = date('Y-m-d', strtotime($_POST['appointdate']));
         $appointtime = date('h:i A', strtotime($_POST['appointtime']));
         $petname =mysqli_real_escape_string($con,$_POST['petname']);
+        
 
             $sql = "INSERT INTO `client_appointment`( `service`, `appoint_no`, `appoint_date`, `appoint_time`, `petname`, `user_id`) 
             VALUES ('$service','$appno','$appointdate','$appointtime','$petname','$user_id')";
@@ -282,7 +283,8 @@ $userresult = mysqli_query($con, $queryimage);
                                                 <div class="col-2"> <label> Date: </label></div>
                                                 <div class="col-4 ">
 
-                                                    <input type="date" name="appointdate" class="form-control" />
+                                                    <input type="date" name="appointdate" class="form-control"
+                                                        required />
                                                 </div>
                                             </div>
                                         </li>
@@ -291,7 +293,8 @@ $userresult = mysqli_query($con, $queryimage);
                                                 <div class="col-2"> <label> Time: </label></div>
                                                 <div class="col-4 ">
 
-                                                    <input type="time" name="appointtime" class="form-control" />
+                                                    <input type="time" name="appointtime" class="form-control"
+                                                        required />
                                                 </div>
                                             </div>
                                         </li>
@@ -353,62 +356,72 @@ $userresult = mysqli_query($con, $queryimage);
             <div class="container mt-4">
                 <table class="table table-striped table table-bordered">
                     <!-- <div class="row"> -->
-                    <thead>
-    
-                            <div class="row">
 
-                                <th scope="col" style="text-align: center;">
-                                    <div class="col">Appointment No.</div>
-                                </th>
-                                <th scope="col" style="text-align: center;">
-                                    <div class="col">Service Type</div>
-                                </th>
-                                <th scope="col" style="text-align: center;">
-                                    <div class="col">Pet Name</div>
-                                </th>
-                                <th scope="col" style="text-align: center;">
-                                    <div class="col">Date</div>
-                                </th>
-                                <th scope="col" style="text-align: center;">
-                                    <div class="col">Time</div>
-                                </th>
-                                <th scope="col" style="text-align: center;">
-                                    <div class="col">Status</div>
-                                </th>
-                                <th scope="col" style="text-align: center;">
-                                    <div class="col">Action</div>
-                                </th>
-                        </tr>
-                    </thead>
                     <?php 
           $select_cart = mysqli_query($con, "SELECT * FROM `client_appointment`WHERE user_id = '$user_id' ORDER BY `client_appointment`.`appoint_date` ASC ");
           $grand_total = 0;
 
-          if(mysqli_num_rows($select_cart) > 0):
-            while($fetch_cart = mysqli_fetch_assoc($select_cart)):   
-        ?>
-                        <tr class="text-light ">
-                            <!--Image-->
-                            
-                            <td class="align-middle "><?= $fetch_cart['appoint_no'];?></td>
-                            <!--Price-->
-                            <td class="align-middle">
-                                <?php echo $fetch_cart['service'];?>
-                            </td>
-                            <td class="align-middle">
-                                <?php echo $fetch_cart['petname'];?>
-                            </td>
-                            <td class="align-middle">
-                                <?php echo $fetch_cart['appoint_date'];?>
-                            </td>
-                            <td class="align-middle">
-                                <?php echo $fetch_cart['appoint_time'];?>
-                            </td>
-                            
-                        <tr>
-            <?php
-            endwhile;
-        endif
+                if(mysqli_num_rows($select_cart) > 0){
+                    ?>
+                    <thead>
+
+                        <div class="row">
+
+                            <th scope="col" style="text-align: center;">
+                                <div class="col">Appointment No.</div>
+                            </th>
+                            <th scope="col" style="text-align: center;">
+                                <div class="col">Service Type</div>
+                            </th>
+                            <th scope="col" style="text-align: center;">
+                                <div class="col">Pet Name</div>
+                            </th>
+                            <th scope="col" style="text-align: center;">
+                                <div class="col">Date</div>
+                            </th>
+                            <th scope="col" style="text-align: center;">
+                                <div class="col">Time</div>
+                            </th>
+                            <th scope="col" style="text-align: center;">
+                                <div class="col">Status</div>
+                            </th>
+                            <th scope="col" style="text-align: center;">
+                                <div class="col">Action</div>
+                            </th>
+                            </tr>
+                    </thead>
+                    <?php
+                    while($fetch_cart = mysqli_fetch_assoc($select_cart)):   
+                    ?>
+                    <tr class="text-light ">
+                        <!--Image-->
+
+                        <td class="align-middle "><?= $fetch_cart['appoint_no'];?></td>
+                        <!--Price-->
+                        <td class="align-middle">
+                            <?php echo $fetch_cart['service'];?>
+                        </td>
+                        <td class="align-middle">
+                            <?php echo $fetch_cart['petname'];?>
+                        </td>
+                        <td class="align-middle">
+                            <?php echo $fetch_cart['appoint_date'];?>
+                        </td>
+                        <td class="align-middle">
+                            <?php echo $fetch_cart['appoint_time'];?>
+                        </td>
+
+                    <tr>
+                        <?php
+                    endwhile;
+                }
+
+                 else{
+                    ?><tbody class="text-light ">
+                            <center><h1><img src="asset/oops.png" alt="Logo" class="rounded"/></h1></center>
+                        </tbody><?php
+                }
+        
             ?>
 
 

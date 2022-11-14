@@ -48,7 +48,7 @@
         $insertOrder = mysqli_query($con, "INSERT INTO  `order` (order_user_id, first_name,  last_name, contact, email, address, payment_method)
                                                         VALUES ('$user_id' , '$fname',  '$lname', '$contact', '$email', '$address', '$paymentmethod')") or die('Query failed!'); // '$paymentmethod', '$product_name', '$quantity', '$price', '$price_total'
  
-
+// SELECT * FROM order WHERE order_user_id = 120
         if($insertOrder){
             $order_id = mysqli_insert_id($con);  
 
@@ -62,8 +62,8 @@
                 $quantity= $cart['Cart_quantity'];
                 
                
-                $insertorderlist= mysqli_query($con, "INSERT INTO  `order_list` (order_id, product_id, qty, product_price) 
-                                                                VALUES ('$order_id' , '".$cart['product_id']."',  '$quantity', '$price')") or die('Query failed!'); // '$paymentmethod', '$product_name', '$quantity', '$price', '$price_total'
+                $insertorderlist= mysqli_query($con, "INSERT INTO  `order_list` (order_id, product_id, qty, product_price, user_id) 
+                                                                VALUES ('$order_id' , '".$cart['product_id']."',  '$quantity', '$price', '$user_id')") or die('Query failed!'); // '$paymentmethod', '$product_name', '$quantity', '$price', '$price_total'
              
              if($insertorderlist){
                 mysqli_query($con, "DELETE FROM `cart` WHERE Cart_user_id = '$user_id'");
@@ -336,11 +336,13 @@
         <div class="col-6 mb-2">
             <div class="input-group mb-3">
                 <span class="input-group-text " id="basic-addon1">Payment Method</span>
-                <select name="paymentmethod" class="form-select" required>
+                <input type="text" class="form-control bg-light" name="paymentmethod" value="For Pick Up" readonly
+                    required>
+                <!-- <select name="paymentmethod" class="form-select" required>
                     <option value="">Select your Payment Method</option>
                     <option value="For pick up">For Pick Up</option>
 
-                </select>
+                </select> -->
             </div>
         </div>
 
@@ -348,7 +350,7 @@
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Address</span>
                 <input type="text" class="form-control bg-light" name="address" value="<?= $rowInfo['address'];?>"
-                    required readonly>
+                    required >
             </div>
         </div>
 
