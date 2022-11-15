@@ -18,19 +18,23 @@ if(isset($_POST['delete_user'])){
     // If result matched $myusername and $mypassword, table row must be 1 row
     if($count == 1) {
         //This is for deleting user
-      $sqldelete = "DELETE FROM usertable WHERE id = $user_id";
+      // $sqldelete = "DELETE FROM usertable WHERE id = $user_id";
+
+      $sqldelete = "UPDATE `usertable` SET `archive` = 'archive' WHERE id = $user_id";
+
       mysqli_query($con, $sqldelete);
-      echo '<script> alert("You Delete '. $fname ." ".'in the list");
+      echo '<script> alert("You Succesfully Archive '. $fname ." ".'in the list");
             window.location.href="../admin-user-accounts.php";
             </script>';
-    }
+    }  
     else {
       echo '<script> alert("Password Incorrect!");
       window.location.href="../admin-user-accounts.php";
       </script>';
   
     }
-  }
+  
+}
    
   
 

@@ -3,7 +3,7 @@
     require('php/connection.php');
     
 
-    $querys = "SELECT * FROM `usertable` WHERE archive =''";  //You don't need a like you do in SQL;
+    $querys = "SELECT * FROM `usertable` WHERE archive ='archive'";  //You don't need a like you do in SQL;
     $results = mysqli_query($con, $querys);
     
 
@@ -127,7 +127,7 @@ require_once "controllerAdmin.php";
             <!---End of Aside-->
             <div class="col-md-9 col-xl-10 py-3">
                 <div class="mt-4 rounded mb-5">
-                    <h4 class="c-white rounded-top py-2" style="text-align:center;">- User Information -</h4>
+                    <h4 class="c-white rounded-top py-2" style="text-align:center;">- Archive Information -</h4>
                     <!--Search-->
                     <div class="row">
                         <div class="col-10">
@@ -143,25 +143,7 @@ require_once "controllerAdmin.php";
                                 </div>
                             </form>
                         </div>
-                        <div class="col">
-                            <div class="dropdown  ms-auto ms-sm-0 flex-shrink-1 "
-                                style="background-color: #EA6D52; border-radius: 10px;">
-
-                                <a href="#"
-                                    class="d-flex align-items-center text-decoration-none text-dark dropdown-toggle btn"
-                                    id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa-solid fa-circle-plus text-primary"></i>
-                                    Add User
-                                </a>
-
-                                <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
-                                    aria-labelledby="dropdownUser1">
-                                    <li><a class="dropdown-item" href="adminAddClient.php">Client</a></li>
-                                    <li><a class="dropdown-item" href="#">Admin</a></li>
-                                    <li><a class="dropdown-item" href="adminAddEmployee.php">Employee</a></li>
-
-                                </ul>
-                            </div>
+                    
 
                             <div class="d-flex flex-row-reverse">
 
@@ -179,7 +161,7 @@ require_once "controllerAdmin.php";
                                     <th scope="col">Email</th>
                                     <th scope="col">User Level</th>
                                     <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
+                                    <!-- <th scope="col">Action</th> -->
                                 </thead>
 
                                 <tbody>
@@ -215,10 +197,10 @@ require_once "controllerAdmin.php";
                                             </td>
 
 
-                                            <td class="c-white text-nowrap"><button data-bs-toggle="modal"
+                                            <!-- <td class="c-white text-nowrap"><button data-bs-toggle="modal"
                                                     data-bs-target="#id<?php echo $row['id'];?>" type="button"
                                                     class="btn btn-outline-danger">Archive</button>
-                                            </td>
+                                            </td> -->
                                             <!-- Modal -->
                                             <div class="modal fade" id="id<?php echo $row['id'] ;?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
