@@ -307,7 +307,7 @@
                                                 ABOUT US</h3>
                                             <hr>
                         </div>
-                        <div class="row box" style="height:300px;">
+                        <div class="row box" style="height:350px;">
                             <h4 style= "font-size:1.7vw; color: gray">PetCo. Animal Clinic was established in June 2021, and they started offering services in their Grand Opening last July 3, 2021.
                              Mr. Karl Ken Sto owned it. Domingo. It started with just an Idea of having a Pet Shop because he has a friend who is a Veterinarian, and he’s the one injecting Mr. Sto. Domingo’s pets. He also sees that some people around their area have to go too far to find an accessible Pet Clinic, 
                              and that is where they started building the PetCo. Their intention to provide an accessible Pet Clinic around their area is why their ideas turned into a Clinic that offers many pet services. The PetCo. Animal Clinic is currently residing at 389 Parada, Sta. Maria, Bulacan, their main branch. 
