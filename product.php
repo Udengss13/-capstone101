@@ -1,13 +1,21 @@
 <?php require_once "controllerUserData.php"; 
      require('php/connection.php');
 
-    //https://www.codepile.net/pile/NYN5P9Qq
-       //call all Category
-    //    $id = $_GET['id'];
+     $user_id = $_SESSION['user_id'];
+     $queryimage = "SELECT * FROM usertable where id= $user_id";
+     $resultimage = mysqli_query($con, $queryimage);
 
-    //    //call all Menu's
-    //    $querymenu = "SELECT * FROM admin_menu WHERE Menu_id = $id"; //You don't need a ; like you do in SQL
-    //    $resultimage = mysqli_query($db_admin_account, $querymenu);
+     if(mysqli_num_rows($resultimage) > 0){
+       $fetch = mysqli_fetch_assoc($resultimage); 
+       };
+
+    
+
+     if(isset($user_id) and $fetch['user_level']=='employee'){
+       header('location:index.php');
+
+     }
+    //https://www.codepile.net/pile/NYN5P9Qq
 
       $querycategory = "SELECT * FROM admin_category"; 
       $resultcategory = mysqli_query($db_admin_account, $querycategory);   
@@ -125,8 +133,8 @@
 </head>
 
 <body class="">
-  <!--Navigation Bar-->
-  <nav class="navbar navbar-expand-lg">
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="asset/logopet.png" alt="Logo" style="width:22%; height:8vh" />
@@ -344,7 +352,7 @@
                             alt="Image section" class="card-img-top  img-responsive "
                             style="height:17rem; width:100%;"></a>
                     <h4 class="mt-2"><?php echo $fetch_product_select['Menu_name']?></h4>
-                    <div class="mt-2 text-light">Php <?php echo $fetch_product_select['Menu_price']?></h3>
+                    <div class="mt-2 text-light ">Php <?php echo $fetch_product_select['Menu_price']?></h3>
 
                     </div>
 
@@ -360,8 +368,8 @@
                     <!--Add to cart button-->
                     <!-- <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
                         class=" btn btn-outline-secondary w-100 mb-3">View</a> -->
-                    <input type="submit" name="add_to_cart" value="Add to Cart"
-                        class="btn btn-danger bg-button text w-90">
+                    <center><input type="submit" name="add_to_cart" value="Add to Cart"
+                            class="btn btn-danger bg-button text w-90"></center>
 
                 </div>
             </form>
@@ -417,8 +425,8 @@
                     <!--Add to cart button-->
                     <!-- <a href="home-view-image.php?id=<?php echo $fetch_product_select['Menu_id'] ?>"
                         class=" btn btn-outline-secondary w-100 mb-3">View</a> -->
-                    <input type="submit" name="add_to_cart" value="Add to Cart"
-                        class="btn btn-danger bg-button text w-90">
+                    <center><input type="submit" name="add_to_cart" value="Add to Cart"
+                            class="btn btn-danger bg-button text w-90"></center>
 
                 </div>
             </form>
@@ -450,18 +458,35 @@
             <?php
                             while($fetch_product = mysqli_fetch_assoc($menu)){
                             ?>
-            <form action="product.php" method="post">
+            <form action="product.php" method="post" class="bg-light m-2 rounded">
                 <div class="m-3 mb-3 rounded-3 ">
 
                     <a href="home-view-image.php?id=<?php echo $fetch_product['Menu_id'] ?>" class=" w-100 mb-3"><img
                             src="asset/menu/<?php echo $fetch_product['Menu_filename']?>" alt="Image section"
-                            class="card-img-top  img-responsive " style="height:15rem; width:100%;"></a>
-                    <h4 class="mt-2"><?php echo $fetch_product['Menu_name']?></h4>
-                    
-                    <div class="mt-2 text-light">Php <?php echo $fetch_product['Menu_price']?>
+                            class="card-img-top  img-responsive " style="height:13rem; width:100%;"></a>
+
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center"><?php echo $fetch_product['Menu_name']?></h5>
+                        
+                        <p class="card-text d-inline-block text-truncate mt-1">
+                        <?php echo $fetch_product['Menu_description'] ?>
+                        </p>
+                        <h6 class="card-text  text-dark mb-2 text-center">
+                        Php <?php echo $fetch_product['Menu_price']?>.00
+                        </h6>
+                        
+                    </div>
+
+                    <!-- <h4 class="mt-2"><?php echo $fetch_product['Menu_name']?></h4>
+                    <h6 class="card-text text-center text-muted">
+                        <?php echo $fetch_product['Menu_description'] ?>
+                    </h6>
+
+
+                    <div class="mt-2 ">Php <?php echo $fetch_product['Menu_price']?>
                         </h3>
 
-                    </div>
+                    </div> -->
 
                     <!--hidden inputs-->
                     <input type="hidden" name="product_id" value="<?php echo $fetch_product['Menu_id'] ?>">
@@ -474,8 +499,8 @@
                     <!--Add to cart button-->
                     <!-- <a href="home-view-image.php?id=<?php echo $fetch_product['Menu_id'] ?>"
                         class=" btn btn-outline-secondary w-100 mb-3">View</a> -->
-                    <input type="submit" name="add_to_cart" value="Add to Cart"
-                        class="btn btn-danger bg-button text w-90">
+                    <center><input type="submit" name="add_to_cart" value="Add to Cart"
+                            class="btn btn-danger bg-button text w-90"></center>
 
                 </div>
             </form>

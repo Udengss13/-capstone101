@@ -216,8 +216,8 @@
                 <div class="col-6">
                     <?php while($rowimage =  mysqli_fetch_array($resultimage)){ ?>
                     <form action="product.php" method="post">
-                        <div class=" col-12 d-flex justify-content-center ">
-                            <img class="img-responsive" src="asset/menu/<?php echo $rowimage['Menu_filename']; ?>"
+                        <div class=" col-12 d-flex justify-content-center rounded">
+                            <img class="img-responsive rounded " src="asset/menu/<?php echo $rowimage['Menu_filename']; ?>"
                             width="400vh" >
                         </div>
                 </div>

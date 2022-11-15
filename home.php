@@ -2,9 +2,23 @@
      require('php/connection.php');
    
       $user_id = $_SESSION['user_id'];
+      $queryimage = "SELECT * FROM usertable where id= $user_id";
+      $resultimage = mysqli_query($con, $queryimage);
 
-      if(!isset($user_id)){
-        header('location: login-user.php');
+      if(mysqli_num_rows($resultimage) > 0){
+        $fetch = mysqli_fetch_assoc($resultimage); 
+        };
+
+     
+
+      if(isset($user_id) and $fetch['user_level']=='employee'){
+        header('location:index.php');
+
+      }
+
+
+      if(!isset($user_id) ){
+        header('location: index.php');
       }
 
       $start_from = 0; 

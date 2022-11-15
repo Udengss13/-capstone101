@@ -1,5 +1,20 @@
 <?php require_once "controllerUserData.php"; 
      require('php/connection.php');
+
+     $user_id = $_SESSION['user_id'];
+     $queryimage = "SELECT * FROM usertable where id= $user_id";
+     $resultimage = mysqli_query($con, $queryimage);
+
+     if(mysqli_num_rows($resultimage) > 0){
+       $fetch = mysqli_fetch_assoc($resultimage); 
+       };
+
+    
+
+     if(isset($user_id) and $fetch['user_level']=='employee'){
+       header('location:index.php');
+
+     }
    
       $user_id = $_SESSION['user_id'];
 

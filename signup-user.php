@@ -332,7 +332,7 @@
                             name="signup" value="Sign up">
                     </div>
                     <div class="link login-link text-center text-white">Already have an account? <a
-                            href="login-user.php" class="text-primary">Login here</a></div>
+                            href="index.php" class="text-primary">Login here</a></div>
             </form>
         </div>
 

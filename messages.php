@@ -2,10 +2,25 @@
      require_once "controllerUserData.php"; 
      require('php/connection.php');
 
+     $user_id = $_SESSION['user_id'];
+     $queryimage = "SELECT * FROM usertable where id= $user_id";
+     $resultimage = mysqli_query($con, $queryimage);
+
+     if(mysqli_num_rows($resultimage) > 0){
+       $fetch = mysqli_fetch_assoc($resultimage); 
+       };
+
+    
+
+     if(isset($user_id) and $fetch['user_level']=='employee'){
+       header('location:index.php');
+
+     }
+
     $user_id = $_SESSION['user_id'];
 
     if(!isset($user_id)){
-      header('location: login-user.php');
+      header('location: index.php');
     }
     $update = mysqli_query($con, "UPDATE messages SET seen=1 WHERE employee_id=$user_id AND sender_id='petko'");
 

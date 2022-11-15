@@ -181,19 +181,26 @@ $errors = array();
                   header('location: home.php');
               }
               elseif($status == 'verified' and $user_level =='employee'){
+
+                if($archive != 'archive'){
                 $_SESSION['user_id']= $fetch['id'];
                 $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
                   header('location: employee-dashboard.php');
+                }
+                else{
+                    $errors['email'] = "Invalid email or password";
+                }
               }
               
-              else{
+             else{
                   $info = "It's look like you haven't still verify your email - $email";
                   $_SESSION['info'] = $info;
                   header('location: user-otp.php');
               }
            
-        }else{
+        }
+        else{
             $errors['email'] = "Invalid email or password";
         }
         

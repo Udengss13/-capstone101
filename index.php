@@ -155,15 +155,15 @@
                 <h4 class="text-center">To keep connected with us</h4>
                 <h4 class="text-center">Please log-in you personal info</h4>
             </div>
-            <div class="col-md-7 col-lg-4 col-sm-4 mt-5 form login-form">
-                <form action="login-user.php" method="POST" autocomplete="">
+            <div class="col-md-7 col-lg-4 col-sm-10 mt-5 form login-form">
+                <form action="index.php" method="POST" autocomplete="">
                     <h1 class="text-center  mt-3 text-primary">Sign In</h1>
 
                     <?php
                         if(count($errors) > 0)
                         {
                             ?>
-                    <div class="alert alert-danger text-center">
+                   <div class="alert alert-danger text-center text-white bg-danger"> <i class="fa-solid fa-circle-exclamation"></i>
                         <?php
                             foreach($errors as $showerror)
                             {
@@ -301,99 +301,104 @@
         <section id="imagesection" class="div_background_light py-4">
             <div class="container-fluid px-5">
                 <div class="col-lg-12 col-md-12">
-                <div class="justify-content-center row col-md-12 rounded-3">
-                                            <h3 class="col-12  text-center fw-bold"
-                                                style="color: Dark Gray">
-                                                ABOUT US</h3>
-                                            <hr>
-                        </div>
-                        <div class="row box" style="height:350px;">
-                            <h4 style= "font-size:1.7vw; color: gray">PetCo. Animal Clinic was established in June 2021, and they started offering services in their Grand Opening last July 3, 2021.
-                             Mr. Karl Ken Sto owned it. Domingo. It started with just an Idea of having a Pet Shop because he has a friend who is a Veterinarian, and he’s the one injecting Mr. Sto. Domingo’s pets. He also sees that some people around their area have to go too far to find an accessible Pet Clinic, 
-                             and that is where they started building the PetCo. Their intention to provide an accessible Pet Clinic around their area is why their ideas turned into a Clinic that offers many pet services. The PetCo. Animal Clinic is currently residing at 389 Parada, Sta. Maria, Bulacan, their main branch. 
-                             PetCo. Animal Clinic specializes in Vaccination, Consultation, Confinement, Surgery, Pet Supplies, etc., for cats and dogs only.</h4>
-                        </div>
-            </section>
-                
+                    <div class="justify-content-center row col-md-12 rounded-3">
+                        <h3 class="col-12  text-center fw-bold" style="color: Dark Gray">
+                            ABOUT US</h3>
+                        <hr>
+                    </div>
+                    <div class="row box" style="height:350px;">
+                        <h4 style="font-size:1.7vw; color: gray">PetCo. Animal Clinic was established in June 2021, and
+                            they started offering services in their Grand Opening last July 3, 2021.
+                            Mr. Karl Ken Sto owned it. Domingo. It started with just an Idea of having a Pet Shop
+                            because he has a friend who is a Veterinarian, and he’s the one injecting Mr. Sto. Domingo’s
+                            pets. He also sees that some people around their area have to go too far to find an
+                            accessible Pet Clinic,
+                            and that is where they started building the PetCo. Their intention to provide an accessible
+                            Pet Clinic around their area is why their ideas turned into a Clinic that offers many pet
+                            services. The PetCo. Animal Clinic is currently residing at 389 Parada, Sta. Maria, Bulacan,
+                            their main branch.
+                            PetCo. Animal Clinic specializes in Vaccination, Consultation, Confinement, Surgery, Pet
+                            Supplies, etc., for cats and dogs only.</h4>
+                    </div>
+        </section>
+
     </section>
-                        <!--ANNOUNCEMENT-->
-                        <section class="flex-sect" id="imagesec">
-                            <section id="imagesection" class="div_background_light py-4">
-                                <div class="container-fluid px-5 mt-3">
-                                    <div class="col-lg-12 col-md-12">
-                                        <div class="justify-content-center row col-md-12 rounded-3">
-                                            <h3 class="col-12  text-center fw-bolder"
-                                                style="text-shadow: 3px 1px 3px  lightblue; color: rgb(13, 13, 103)">
-                                                ANNOUNCEMENT</h3>
-                                            <hr>
+    <!--ANNOUNCEMENT-->
+    <section class="flex-sect" id="imagesec">
+        <section id="imagesection" class="div_background_light py-4">
+            <div class="container-fluid px-5 mt-3">
+                <div class="col-lg-12 col-md-12">
+                    <div class="justify-content-center row col-md-12 rounded-3">
+                        <h3 class="col-12  text-center fw-bolder"
+                            style="text-shadow: 3px 1px 3px  lightblue; color: rgb(13, 13, 103)">
+                            ANNOUNCEMENT</h3>
+                        <hr>
 
-                                            <!--Pictures-->
+                        <!--Pictures-->
 
-                                            <?php while($rowimage = mysqli_fetch_array($resultimage)) {?>
+                        <?php while($rowimage = mysqli_fetch_array($resultimage)) {?>
 
-                                            <div class="col-lg-3 col-xs-1 col-sm-5 card mx-3 my-4"
-                                                style="height:350px;">
+                        <div class="col-lg-3 col-xs-1 col-sm-5 card mx-3 my-4" style="height:350px;">
 
 
-                                                <img src="asset/homepage/<?php echo $rowimage['Image_filename'] ?>"
-                                                    class="card-img-top pt-3 img-responsive "
-                                                    style="height:200px; width:100%;">
-                                                <div class="card-body d-flex flex-column">
-                                                    <h5 class="card-title text-center">
-                                                        <?php echo $rowimage['Image_title'] ?></h5>
-                                                    <!-- <h6 class="card-text text-center text-muted">
+                            <img src="asset/homepage/<?php echo $rowimage['Image_filename'] ?>"
+                                class="card-img-top pt-3 img-responsive " style="height:200px; width:100%;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-center">
+                                    <?php echo $rowimage['Image_title'] ?></h5>
+                                <!-- <h6 class="card-text text-center text-muted">
                                     <?php echo $rowimage['Image_subtitle'] ?>
                                 </h6>
                                 <p class="card-text d-inline-block text-truncate">
                                     <?php echo $rowimage['Image_body'];?>
                                 </p> -->
-                                                    <div class="mb-4">
-                                                        <a href="index-view-image.php?id=<?php echo $rowimage['Image_id'] ?>"
-                                                            class=" btn btn-success w-100">View Details</a>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                            <?php }?>
-
-
-                                        </div>
-                                    </div>
+                                <div class="mb-4">
+                                    <a href="index-view-image.php?id=<?php echo $rowimage['Image_id'] ?>"
+                                        class=" btn btn-success w-100">View Details</a>
                                 </div>
+
+                            </div>
+                        </div>
+
+                        <?php }?>
+
+
                     </div>
                 </div>
-            </div> 
+            </div>
 
 
-    </section>
 
-    <footer class=" footer-banner" id="about">
-        <div class="container text">
-            <div class="row">
-                <div class="col-13 text-center">
-                    <ul class="follow" style="color: white;">
-                        <h3>Please follow us</h3>
+        </section>
 
-                        <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="40px"
-                                height="40px"></a>
-                        <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="40px"
-                                height="40px"></a>
-                        <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="40px"
-                                height="40px"></a>
-                    </ul>
-                    <h5>© 2022 All Rights Reserved. PetCo. Animal Clinic.</h5>
+        <footer class=" footer-banner" id="about">
+            <div class="container text">
+                <div class="row">
+                    <div class="col-13 text-center">
+                        <ul class="follow" style="color: white;">
+                            <h3>Please follow us</h3>
+
+                            <a href="https://www.facebook.com/"><img src="asset/facebook.png" width="40px"
+                                    height="40px"></a>
+                            <a href="https://www.instagram.com//"><img src="asset/instagram.png" width="40px"
+                                    height="40px"></a>
+                            <a href="https://www.messenger.com/"><img src="asset/messenger.png" width="40px"
+                                    height="40px"></a>
+                        </ul>
+                        <h5>© 2022 All Rights Reserved. PetCo. Animal Clinic.</h5>
+                    </div>
                 </div>
-
-                                            
-    </footer>
+            </div>
 
 
+        </footer>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-    </script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>

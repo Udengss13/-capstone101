@@ -1,5 +1,21 @@
 <?php
-    require('php/connection.php');
+   require_once "controllerUserData.php"; 
+   require('php/connection.php');
+
+   $user_id = $_SESSION['user_id'];
+   $queryimage = "SELECT * FROM usertable where id= $user_id";
+   $resultimage = mysqli_query($con, $queryimage);
+
+   if(mysqli_num_rows($resultimage) > 0){
+     $fetch = mysqli_fetch_assoc($resultimage); 
+     };
+
+  
+
+   if(isset($user_id) and $fetch['user_level']=='client'){
+     header('location:index.php');
+
+   }
 
    //call all Menu
   $querymenu = "SELECT * FROM admin_menu"; //You don't need a ; like you do in SQL

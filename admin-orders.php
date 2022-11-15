@@ -88,6 +88,7 @@
                                     class="ms-1 d-none d-sm-inline">Content</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
+                                <li><a class="dropdown-item" href="admin-content.php">Announcement</a></li>
                                 <li><a class="dropdown-item" href="admin-slider.php">Slider</a></li>
                                 <li><a class="dropdown-item" href="admin-quicktips.php">Quicktips</a></li>
                             </ul>
