@@ -310,10 +310,10 @@ $userresult = mysqli_query($con, $queryimage);
                 <div class="col ">
                     <?php 
                     $select_pet = mysqli_query($con, "SELECT * FROM pettable WHERE user_id = '$user_id'");
-                    if(mysqli_num_rows($select_user) > 0){
-                    $fetch_user = mysqli_fetch_assoc($select_pet); 
-                    };
-                ?>
+                   
+
+                    while($row=$select_pet->fetch_assoc()):
+                    ?>
 
                     <div class="col-lg-5 profilebg">
                         <!-- <div class="card mb-4">
@@ -329,7 +329,7 @@ $userresult = mysqli_query($con, $queryimage);
                                 <p class="mb-0">Pet Name:</p>
                             </div>
                             <div class="col-sm-8">
-                                <p class="c-blue mb-0"><?php echo $fetch_user['petname']; ?></p>
+                                <p class="c-blue mb-0"><?php echo $row['petname']; ?></p>
                             </div>
                         </div>
                         <hr>
@@ -338,7 +338,7 @@ $userresult = mysqli_query($con, $queryimage);
                                 <p class="mb-0">Pet Type:</p>
                             </div>
                             <div class="col-sm-8">
-                                <p class="c-blue mb-0"><?php echo $fetch_user['pettype']; ?></p>
+                                <p class="c-blue mb-0"><?php echo $row['pettype']; ?></p>
                             </div>
                         </div>
                         <hr>
@@ -347,7 +347,7 @@ $userresult = mysqli_query($con, $queryimage);
                                 <p class="mb-0">Pet Breed:</p>
                             </div>
                             <div class="col-sm-8">
-                                <p class="c-blue mb-0"><?php echo $fetch_user['petbreed']; ?></p>
+                                <p class="c-blue mb-0"><?php echo $row['petbreed']; ?></p>
                             </div>
                         </div>
                         <hr>
@@ -356,7 +356,7 @@ $userresult = mysqli_query($con, $queryimage);
                                 <p class="mb-0">Pet Sex:</p>
                             </div>
                             <div class="col-sm-8">
-                                <p class="c-blue mb-0"><?php echo $fetch_user['petsex']; ?></p>
+                                <p class="c-blue mb-0"><?php echo $row['petsex']; ?></p>
                             </div>
                         </div>
                         <hr>
@@ -366,7 +366,7 @@ $userresult = mysqli_query($con, $queryimage);
                                 <p class="mb-0">Pet Birthday:</p>
                             </div>
                             <div class="col-sm-8">
-                                <p class="c-blue mb-0"><?php echo $fetch_user['petbday']; ?></p>
+                                <p class="c-blue mb-0"><?php echo $row['petbday']; ?></p>
                             </div>
                         </div>
                         <hr>
@@ -374,6 +374,7 @@ $userresult = mysqli_query($con, $queryimage);
                         <!-- </div>
                         </div> -->
                     </div>
+                    <?php endwhile; ?>
 
                 </div>
             </div>

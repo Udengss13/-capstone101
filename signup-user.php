@@ -236,8 +236,14 @@
                                 <label for="floatingSuffix">Suffix</label>
                             </div>
 
+                            <div class="form-floating mb-2">
+                                <div class="row">
+                                    <label for="floatingSuffix " class="col-4  p-2 rounded">Choose Profile
+                                        picture:</label>
+                                    <input type="file" id="upload-news" class="col" name="photo" required>
 
-                            <input type="file" id="upload-news" name="photo" required>
+                                </div>
+                            </div>
                         </div>
                         <!--end of row-->
                     </div>
@@ -255,11 +261,11 @@
                     <button type="button" name="add" id="add" class="btn btn-success">Add More Pets</button>
 
                     <div id="dynamic_field">
-                        <div class="rows border border-primary">
+                        <div class="rows border border-primary p-3 rounded">
                             <div class="row inline">
                                 <div class="col-4 form-group">Pet Type:
                                     <!-- <label for="exampleFormControlSelect1">Position</label> onchange="populate(this.id,'slct2')"-->
-                                    <select class="form-control" name="pettype" value="<?php echo $pettype ?>">
+                                    <select class="form-control" name="pettype[]" value="<?php echo $pettype ?>">
                                         <option value="" disabled selected>Select Pet Type</option>
                                         <option value="Dog">Dog</option>
                                         <option value="Cat">Cat</option>
@@ -269,7 +275,7 @@
 
 
                                 <div class="col-4 form-group"> Pet Breed
-                                    <input list="browsers" class="form-control" name="petbreed" id="browser">
+                                    <input list="browsers" class="form-control" name="petbreed[]" id="browser">
                                     <datalist id="browsers">
                                         <option value="amercan bully">
                                         <option value="chowchow">
@@ -291,17 +297,17 @@
                                 </div>
 
                                 <div class="col-4 form-group"> Pet Name
-                                    <input class="form-control" type="text" name="petname" placeholder="Pet Name"
+                                    <input class="form-control" type="text" name="petname[]" placeholder="Pet Name"
                                         required id="floatingAddress" autocomplete="off">
                                 </div>
                             </div>
 
 
 
-                            <div class="row mt-4">
+                            <div class="row mt-2">
                                 <div class="col-4 form-group">Pet Sex:
                                     <!-- <div class=" flex-nowrap"> -->
-                                    <select class="form-control" name="petsex">
+                                    <select class="form-control" name="petsex[]">
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
 
@@ -312,7 +318,7 @@
                                 <div class="col-4">Pet Birthday
                                     <div class="form-group mb-3">
                                         <!-- <label for=""></label> -->
-                                        <input type="text" class="form-control" name="petbday" id="datepicker" />
+                                        <input type="text" class="form-control" name="petbday[]" id="datepicker" />
                                         <!-- <input type="date" name="petbday" class="form-control" /> -->
                                     </div>
                                 </div>
@@ -334,9 +340,7 @@
         <script>
         $("#datepicker").datepicker({
             format: "yyyy",
-            "mmm",
             viewMode: "years",
-            "months",
             minViewMode: "years",
             autoclose: true //to close picker once year is selected
         });
@@ -351,9 +355,17 @@
         var i = 1;
         $('#add').click(function() {
             i++;
-            $('#dynamic_field').append('<div class="rows border border-primary mt-2" id="row' + i +
-                '">  <div class="row inline"> <div class="col-4 form-group">Pet Type:<select class="form-control" name="pettype" value="<?php echo $pettype ?>"> <option value="" disabled selected>Select Pet Type</option><option value="Dog">Dog</option><option value="Cat">Cat</option></select></div><div class="col-4 form-group"> Pet Breed<input list="browsers" class="form-control" name="petbreed" id="browser"><datalist id="browsers"><option value="amercan bully"><option value="chowchow"><option value="corgi"><option value="englishbulldog"><option value="frenchbulldog"><option value="abyssinian"><option value="siamese"><option value="golden retriever"><option value="pomeranian"><option value="poodle"><option value="pug"><option value="siberian husky"><option value="shittzu"></datalist></div><div class="col-4 form-group"> Pet Name<input class="form-control" type="text" name="petname" placeholder="Pet Name" required id="floatingAddress" autocomplete="off"></div></div><div class="row mt-4"><div class="col-4 form-group">Pet Sex:<select class="form-control" name="petsex"><option value="male">Male</option><option value="female">Female</option></select></div><div class="col-4">Pet Birthday<div class="form-group mb-3"><input type="text" class="form-control" name="petbday" id="datepicker" /></div></div> </div><td><button type="button" name="remove" id="' +
-                i + '" class="btn btn-danger btn_remove">X</button></td></tr>');
+            $('#dynamic_field').append(
+                '<div class="rows border border-primary mt-2 p-3 rounded" id="row' + i +
+                '">  <div class="row inline"> <div class="col-4 form-group">Pet Type:<select class="form-control" name="pettype[]" value="<?php echo $pettype ?>"> <option value="" disabled selected>Select Pet Type</option><option value="Dog">Dog</option><option value="Cat">Cat</option></select></div><div class="col-4 form-group"> Pet Breed<input list="browsers" class="form-control" name="petbreed[]" id="browser"><datalist id="browsers"><option value="amercan bully"><option value="chowchow"><option value="corgi"><option value="englishbulldog"><option value="frenchbulldog"><option value="abyssinian"><option value="siamese"><option value="golden retriever"><option value="pomeranian"><option value="poodle"><option value="pug"><option value="siberian husky"><option value="shittzu"></datalist></div><div class="col-4 form-group"> Pet Name<input class="form-control" type="text" name="petname[]" placeholder="Pet Name" required id="floatingAddress" autocomplete="off"></div></div><div class="row mt-2"><div class="col-4 form-group">Pet Sex:<select class="form-control" name="petsex[]"><option value="male">Male</option><option value="female">Female</option></select></div><div class="col-4">Pet Birthday<div class="form-group mb-3"><input type="text" class="form-control" name="petbday[]" id="datepicker" /></div></div> </div><td><button type="button" name="remove" id="' +
+                i + '" class="btn btn-danger btn_remove">Remove pet</button></td></tr>');
+
+            $("#datepicker").datepicker({
+                format: "yyyy",
+                viewMode: "years",
+                minViewMode: "years",
+                autoclose: true //to close picker once year is selected
+            });
         });
 
         $(document).on('click', '.btn_remove', function() {

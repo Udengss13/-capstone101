@@ -141,6 +141,7 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Address</th>
                                     <th scope="col">Contact</th>
+                                    <th scope="col">Order Date</th>
                                     <th scope="col">Status</th>
                                 </tr>
                             </thead>
@@ -169,6 +170,9 @@
                                     </td>
                                     <td class="col-sm-5 col-md-2 col-lg-2">
                                         <div class="col"><?php echo $row['contact'] ?></div>
+                                    </td>
+                                    <td class="col-sm-5 col-md-2 col-lg-2">
+                                        <div class="col"><?php echo date("Y-M-d h:i a",strtotime($row['orderdate']))?></div>
                                     </td>
 
                                     <?php if($row['order_status'] == 'confirmed'): ?>

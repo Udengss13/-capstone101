@@ -62,6 +62,7 @@
         alert("Product is already in your cart!");
         window.location.href="product.php";
         </script>';
+        // header('location: admin-view-orders.php?id='.$_GET['id']);
     }else{
         $insert_product = mysqli_query($con, "INSERT INTO `cart`(Cart_user_id, product_id, Cart_name, Cart_price, Cart_image, Cart_quantity) 
         VALUES ('$user_id', '$product_id','$product_name', '$product_price', '$product_image', '$product_quantity')");
@@ -456,6 +457,7 @@
                             src="asset/menu/<?php echo $fetch_product['Menu_filename']?>" alt="Image section"
                             class="card-img-top  img-responsive " style="height:15rem; width:100%;"></a>
                     <h4 class="mt-2"><?php echo $fetch_product['Menu_name']?></h4>
+                    
                     <div class="mt-2 text-light">Php <?php echo $fetch_product['Menu_price']?>
                         </h3>
 
