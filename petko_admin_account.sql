@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2022 at 04:44 AM
+-- Generation Time: Nov 14, 2022 at 01:45 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -37,8 +37,7 @@ CREATE TABLE `admin_carousel_homepage` (
 --
 
 INSERT INTO `admin_carousel_homepage` (`id`, `image_path`) VALUES
-(78, 'asset/sliderimage/cares.png'),
-(79, 'asset/sliderimage/300193579_630308145367225_8714117307495412135_n.png');
+(80, 'asset/sliderimage/cares.png');
 
 -- --------------------------------------------------------
 
@@ -57,11 +56,8 @@ CREATE TABLE `admin_category` (
 --
 
 INSERT INTO `admin_category` (`category_id`, `category_name`, `category_details`) VALUES
-(20, 'Dog Food', 'for Dog'),
 (21, 'Dog Product', 'for dog'),
-(35, 'Cat Food', 'for Cat'),
-(36, 'Cat product', 'cat product details'),
-(37, 'cat cat', 'cat');
+(35, 'Cat Food', 'for Cat');
 
 -- --------------------------------------------------------
 
@@ -83,12 +79,8 @@ CREATE TABLE `admin_content_homepage` (
 --
 
 INSERT INTO `admin_content_homepage` (`Image_id`, `Image_title`, `Image_subtitle`, `Image_body`, `Image_dir`, `Image_filename`) VALUES
-(44, '1st year ANNIVERSARY!!', 'Mark your calendars and save the date!!', 'Petco. Animal clinic will be celebrating its 1st year ANNIVERSARY!!<br />\r\nMark your calendars and save the date!!<br />\r\nBE READY FOR A LOT OF FREEBIES AND PROMOS THIS COMING Month of July 2022!! <br />\r\nOur promotions and offers include: <br />\r\n✂️: discounted for our full groom services <br />\r\n🏥: 25% Off Progesterone test, Relaxin test, Smear test and Ultrasound (to be scheduled by appointment) <br />\r\n📝: FREE check-up/consultation every Tuesdays <br />\r\n 🩼: FREE FREE Anti-Rabies from July 2- July 3, 2022 ( Saturday - Sunday ) 50 SLOTS per day <br />\r\n🩼: 50 pesos discount on all vaccines<br />\r\n🩺: Low cost KAPON promo.<br />\r\n       REQUIRED:<br />\r\n       up to 3years old below CBC<br />\r\n       3years old and above  CBC and CHEM<br />\r\nPlease see attach photos below!<br />\r\nFeel free to send us a message for inquiries. <br />\r\nThank you! See you there!<br />\r\nPetco. Animal clinic<br />\r\n📍389 Parada Sta. Maria, Bulacan (beside Sto. Niño Parish Church)<br />\r\n📞 0956 071 7662/0960 846 5020', '../asset/homepage/june27.jpg', 'june27.jpg'),
-(46, 'FREE CONSULTATION EVERY TUESDAYS! ', 'Attention beloved Pet.Co clients! 🥰', 'Since our founding in 1965, we’ve been trailblazing new standards in pet care,<br /><br />\r\n delivering comprehensive wellness solutions through our products and services, and creating communities that deepen the pet-pet parent bond. We operate more than 1,500 Petco locations <br /><br />\r\nacross the U.S., Mexico and Puerto Rico, including a growing network of more<br /><br />\r\n than 100 in-store veterinary hospitals, and offer a complete online resource for pet health and wellness at petco.com and on the Petco app.<br />\r\near friends, here\'s a little something special from us to beat the rainy season blues.🤗Rainy days will not stop us in bringing the Best Love in grooming your furbabies! Get FREE DEWORMING for every FULL GROOM valid from Sept. 5, 2022 to Oct. 5, 2022! (Terms and conditions apply)<br />\r\n<br />\r\n* 5kgs and below are FREE succeeding kgs will be charged with additional 50pesos full groom package. Full Groom starts at php. 400!<br />\r\n<br />\r\nAlways remember to get your furbabies groomed because it does not only help maintain a healthy coat and fur, it is also as important for their welfare.<br />\r\n<br />\r\nLocation : Brgy. Parada beside Sto.Nino parish church!!<br />\r\n<br />\r\nSee tou there fur lovers..😘😘😘🐕', '../asset/homepage/sep2.jpg', 'sep2.jpg'),
-(47, 'dsd', 'dsds', 'Since our founding in 1965, we’ve been trailblazing new standards in pet care, delivering comprehensive wellness solutions through our products and services, and creating communities that deepen the pet-pet parent bond. We operate more than 1,500 Petco locations across the U.S., Mexico and Puerto Rico, including a growing network of more than 100 in-store veterinary hospitals, and offer a complete online resource for pet health and wellness at petco.com and on the Petco app.', '../asset/homepage/freeantirabies.jpg', 'freeantirabies.jpg'),
-(49, 'Bulacan Congress', 'Bulacan Congress ', 'Bulacan Congress are Here', '../asset/homepage/sep2.jpg', 'sep2.jpg'),
-(51, 'asa', 'sasa', 'sasa', '../asset/homepage/sep2.jpg', 'sep2.jpg'),
-(52, 'Free Anti- Rabies', 'Every Tuesday', '-It is officially the start of our rainy season  while some of you may know that during the rainy or wet season, our fur-babies are easily exposed or susceptible to viral diseases.', '../asset/homepage/antirabies.jpg', 'antirabies.jpg');
+(57, 'Free Anti Rabies', 'Hello Petco ', 'We are now here to announce that petco are now ', '../asset/homepage/freeantirabies.jpg', 'freeantirabies.jpg'),
+(58, 'sasa', 'sas', 'sasa', '../asset/homepage/easter.jpg', 'easter.jpg');
 
 -- --------------------------------------------------------
 
@@ -111,36 +103,6 @@ INSERT INTO `admin_login` (`username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin_menu`
---
-
-CREATE TABLE `admin_menu` (
-  `Menu_id` int(11) NOT NULL,
-  `Menu_name` varchar(255) NOT NULL,
-  `Menu_description` varchar(255) NOT NULL,
-  `Menu_price` double NOT NULL,
-  `Menu_category` varchar(255) NOT NULL,
-  `Menu_dir` varchar(255) NOT NULL,
-  `Menu_filename` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `admin_menu`
---
-
-INSERT INTO `admin_menu` (`Menu_id`, `Menu_name`, `Menu_description`, `Menu_price`, `Menu_category`, `Menu_dir`, `Menu_filename`) VALUES
-(27, 'Aozi', 'Pure natural organic food. Naturally healthy. Europe’s top pet food formula! Food therapy, rich energy, nutrients in golden ratio, meat 38%.<br />\r\n', 170, ' Cat Food', '../asset/menu/aozicat.jpg', 'aozicat.jpg'),
-(29, 'Zoi Cat Tuna Flavor', 'Suitable for all adult cat breeds. Which is delicious and contain essential Vitamin, Minerals, and Amino acid for your beloved cat.<br />\r\n• Reduce risk of kidney disease through Sodium control.<br />\r\n• Maintain healthy gums and teeth and lowers the risk', 178, ' Cat Food', '../asset/menu/tunacat.jpg', 'tunacat.jpg'),
-(30, 'Cat Toys', 'Feather teaser for cat', 150, ' Cat Product', '../asset/menu/cattogys.jpg', 'cattogys.jpg'),
-(36, 'Whiskas', 'Whiskas is there for the whole journey. Developing delicious food for your feline friends. Let your cat grow with Whiskas. Feed them a healthy & tasty diet full of natural goodness. Whiskas is there for the whole journey. Developing delicious food for you', 299, ' Cat Food', '../asset/menu/whiskas1.jpg', 'whiskas1.jpg'),
-(37, 'Pedigree ', 'Chunky Ground Dinner with Chicken', 300, ' Dog Food', '../asset/menu/pedigree.jpg', 'pedigree.jpg'),
-(38, 'Cuties Catz', 'Tuna Flavored Cat Foo', 150, ' Cat Food', '../asset/menu/tunacat.jpg', 'tunacat.jpg'),
-(39, 'Alpo', 'Alpo Dog Food.', 123, ' Dog Food', '../asset/menu/alpo.jpg', 'alpo.jpg'),
-(40, 'Dog Leash', 'This fashion-forward dog leash is a great way to show off your favorite characters or brands.', 500, ' Dog Product', '../asset/menu/furmagic dog.jpg', 'furmagic dog.jpg');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `admin_quicktips`
 --
 
@@ -151,13 +113,115 @@ CREATE TABLE `admin_quicktips` (
   `image_filename` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `admin_quicktips`
+-- Table structure for table `messages`
 --
 
-INSERT INTO `admin_quicktips` (`id`, `info`, `image_dir`, `image_filename`) VALUES
-(10, 'Cold Weather Safety', '../asset/quicktips 1.png', 'quicktips 1.png'),
-(11, 'Using Cleaning Supplies', '../asset/quicktips 2.png', 'quicktips 2.png');
+CREATE TABLE `messages` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `employee_id` int(11) DEFAULT NULL,
+  `message` text DEFAULT NULL,
+  `seen` tinyint(1) DEFAULT 0,
+  `created_at` datetime DEFAULT NULL,
+  `sender_name` varchar(255) DEFAULT NULL,
+  `receiver_name` varchar(255) DEFAULT NULL,
+  `sender_id` varchar(255) DEFAULT NULL,
+  `admin` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `employee_id`, `message`, `seen`, `created_at`, `sender_name`, `receiver_name`, `sender_id`, `admin`) VALUES
+(2, 49, 'Hello', 1, '2022-11-08 21:45:51', 'Melody Santiago ', 'Administrator', '49', 'petko'),
+(4, 49, 'Sample message!', 1, '2022-11-08 21:53:16', 'Melody Santiago ', 'Administrator', '49', 'petko'),
+(5, 49, 'heyy', 1, '2022-11-09 08:50:52', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(6, 49, 'are we good ? ', 1, '2022-11-09 08:51:20', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(8, 49, 'heyyy', 1, '2022-11-09 10:26:32', 'Melody Santiago ', 'Administrator', '49', 'petko'),
+(9, 49, 'good', 1, '2022-11-09 10:26:53', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(10, 49, 'heyyy', 1, '2022-11-09 10:26:59', 'Melody Santiago ', 'Administrator', '49', 'petko'),
+(11, 49, 'sample', 1, '2022-11-09 10:27:06', 'Melody Santiago ', 'Administrator', '49', 'petko'),
+(12, 49, 'good', 1, '2022-11-09 10:27:11', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(13, 49, 'sample', 1, '2022-11-09 10:27:35', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(14, 49, 'test', 1, '2022-11-09 10:28:01', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(15, 49, 'sample', 1, '2022-11-09 10:28:18', 'Melody Santiago ', 'Administrator', '49', 'petko'),
+(16, 93, 'saasa', 1, '2022-11-09 11:57:45', 'Melody Santiago ', 'Administrator', '93', 'petko'),
+(17, 93, 'xxzxz', 1, '2022-11-09 11:57:52', 'Melody Santiago ', 'Administrator', '93', 'petko'),
+(18, 93, 'heloo', 1, '2022-11-09 12:04:29', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(19, 49, 'saasa', 1, '2022-11-09 12:07:10', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(20, 93, 'dsds', 1, '2022-11-09 12:07:24', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(21, 93, 'Melody gumagana na ba?', 1, '2022-11-09 12:09:15', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(22, 93, 'alex ok na kaya?', 1, '2022-11-09 12:10:03', 'Melody Santiago ', 'Administrator', '93', 'petko'),
+(23, 93, 'Melody gumagana na ba?', 1, '2022-11-09 12:10:07', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(24, 93, 'alex ok na kaya?', 1, '2022-11-09 12:10:48', 'Melody Santiago ', 'Administrator', '93', 'petko'),
+(25, 93, 'baka', 1, '2022-11-09 12:11:01', 'Melody Santiago ', 'Administrator', '93', 'petko'),
+(26, 49, 'hello admin', 1, '2022-11-09 12:15:18', 'Melody Santiago ', 'Administrator', '49', 'petko'),
+(27, 49, 'Melody gumagana na ba?', 1, '2022-11-09 12:15:42', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(28, 49, 'hello admin', 1, '2022-11-09 12:15:46', 'Melody Santiago ', 'Administrator', '49', 'petko'),
+(29, 49, 'hello', 1, '2022-11-09 12:19:39', 'Charlize marfil ', 'Administrator', '49', 'petko'),
+(30, 49, 'Melody gumagana na ba?', 1, '2022-11-09 12:19:44', 'Charlize marfil ', 'Charlize marfil ', 'petko', 'petko'),
+(31, 49, 'cahrlize', 1, '2022-11-09 12:20:41', 'Charlize marfil ', 'Charlize marfil ', 'petko', 'petko'),
+(32, 49, 'hello', 1, '2022-11-09 12:20:51', 'Charlize marfil ', 'Administrator', '49', 'petko'),
+(33, 49, 'Melody gumagana na ba?', 1, '2022-11-09 12:21:08', 'Charlize marfil ', 'Administrator', '49', 'petko'),
+(34, 49, 'cahrlize', 1, '2022-11-09 12:21:21', 'Charlize marfil ', 'Charlize marfil ', 'petko', 'petko'),
+(35, 49, 'oo', 1, '2022-11-09 12:22:59', 'Charlize marfil ', 'Administrator', '49', 'petko'),
+(36, 49, 'cahrlize', 1, '2022-11-09 12:23:07', 'Charlize marfil ', 'Charlize marfil ', 'petko', 'petko'),
+(37, 49, 'heloo', 1, '2022-11-09 12:24:37', 'Charlize marfil ', 'Administrator', '49', 'petko'),
+(38, 49, 'cahrlize', 1, '2022-11-09 12:24:49', 'Charlize marfil ', 'Charlize marfil ', 'petko', 'petko'),
+(39, 49, 'heloo', 1, '2022-11-09 12:26:17', 'Charlize marfil ', 'Administrator', '49', 'petko'),
+(41, 49, 'cahrlize', 1, '2022-11-09 12:28:02', 'Charlize marfil ', 'Charlize marfil ', 'petko', 'petko'),
+(42, 49, 'heloo', 1, '2022-11-09 12:29:08', 'Charlize marfil ', 'Administrator', '49', 'petko'),
+(43, 49, 'heloo', 1, '2022-11-09 12:30:16', 'Charlize marfil ', 'Administrator', '49', 'petko'),
+(44, 49, 'cahrlize', 1, '2022-11-09 12:30:21', 'Charlize marfil ', 'Charlize marfil ', 'petko', 'petko'),
+(45, 49, 'cahrlize', 1, '2022-11-09 12:31:24', 'Charlize marfil ', 'Charlize marfil ', 'petko', 'petko'),
+(46, 49, 'cahrlize', 1, '2022-11-09 12:32:10', 'Charlize marfil ', 'Charlize marfil ', 'petko', 'petko'),
+(47, 49, 'sasasa', 1, '2022-11-09 12:40:18', 'Charlize marfil ', 'Charlize marfil ', 'petko', 'petko'),
+(48, 49, 'adminn', 1, '2022-11-09 12:40:53', 'Charlize marfil ', 'Administrator', '49', 'petko'),
+(49, 49, 'sasasa', 1, '2022-11-09 12:41:00', 'Charlize marfil ', 'Charlize marfil ', 'petko', 'petko'),
+(50, 49, 'adminn', 1, '2022-11-09 12:42:06', 'Charlize marfil ', 'Administrator', '49', 'petko'),
+(51, 49, 'adminn', 1, '2022-11-09 12:43:15', 'Charlize marfil ', 'Administrator', '49', 'petko'),
+(52, 49, 'sasasa', 1, '2022-11-09 12:43:41', 'Charlize marfil ', 'Charlize marfil ', 'petko', 'petko'),
+(53, 49, 'heloo charlize', 1, '2022-11-09 12:44:59', 'Charlize marfil ', 'Charlize marfil ', 'petko', 'petko'),
+(54, 49, 'hello melody', 1, '2022-11-09 13:13:53', 'Melody marfil ', 'Melody marfil ', 'petko', 'petko'),
+(55, 49, 'hello melody', 1, '2022-11-09 13:34:40', 'Melody marfil ', 'Melody marfil ', 'petko', 'petko'),
+(56, 93, 'helllo Admin', 1, '2022-11-09 13:37:07', 'Melody Santiago ', 'Administrator', '93', 'petko'),
+(57, 93, 'dsdsds', 1, '2022-11-09 13:39:08', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(58, 93, 'hello melody Balaba Santiago', 1, '2022-11-09 13:54:32', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(59, 93, 'sasaa', 1, '2022-11-09 13:56:01', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(60, 93, 'huy', 1, '2022-11-09 14:00:30', 'Melody Santiago ', 'Administrator', '93', 'petko'),
+(65, 93, 'hello Melody,  Welcome to Petco Animal Clinic ', 1, '2022-11-09 16:21:44', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(66, 93, 'hello Melody,  Welcome to Petco Animal Clinic ', 1, '2022-11-09 16:21:54', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(67, 93, 'dsdsd', 1, '2022-11-09 16:22:20', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(68, 93, 'test', 1, '2022-11-09 16:23:31', 'Melody Santiago ', 'Administrator', '93', 'petko'),
+(69, 93, 'dsdsd', 1, '2022-11-09 16:23:35', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(70, 93, 'dsdsd', 1, '2022-11-09 16:23:48', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(71, 93, 'dsdsd', 1, '2022-11-09 16:24:58', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(72, 93, 'test', 1, '2022-11-09 16:26:46', 'Melody Santiago ', 'Administrator', '93', 'petko'),
+(73, 93, 'test', 1, '2022-11-09 16:27:02', 'Melody Santiago ', 'Administrator', '93', 'petko'),
+(74, 93, 'dsdsd', 1, '2022-11-09 16:28:46', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(75, 93, 'hello', 1, '2022-11-09 16:29:02', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(76, 93, 'test', 1, '2022-11-09 16:29:08', 'Melody Santiago ', 'Administrator', '93', 'petko'),
+(77, 93, 'test', 1, '2022-11-09 16:29:16', 'Melody Santiago ', 'Administrator', '93', 'petko'),
+(78, 93, 'hello', 1, '2022-11-09 16:31:03', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(79, 93, 'hello', 1, '2022-11-09 16:32:33', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(80, 93, 'hello', 1, '2022-11-09 16:33:49', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(81, 93, 'hello', 1, '2022-11-09 16:34:27', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(82, 93, 'hello', 1, '2022-11-09 16:35:10', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(83, 93, 'Hello, Petco Animal Clinic', 1, '2022-11-09 18:44:30', 'Melody Santiago ', 'Administrator', '93', 'petko'),
+(84, 119, 'sasasa', 1, '2022-11-09 22:00:19', 'adelaida Santiago ', 'Administrator', '119', 'petko'),
+(85, 119, 'hello', 1, '2022-11-09 22:03:53', 'adelaida Santiago ', 'Administrator', '119', 'petko'),
+(86, 119, 'wqwqwq', 1, '2022-11-09 22:04:23', 'adelaida Santiago ', 'adelaida Santiago ', '119', 'petko'),
+(87, 119, 'aa', 1, '2022-11-09 22:05:41', 'adelaida Santiago ', 'adelaida Santiago ', '119', 'petko'),
+(88, 119, 'wwqwq', 1, '2022-11-09 22:06:21', 'adelaida Santiago ', 'Administrator', '119', 'petko'),
+(89, 119, 'ewewew', 1, '2022-11-09 22:06:28', 'adelaida Santiago ', 'Administrator', '119', 'petko'),
+(90, 119, 'ewewew', 0, '2022-11-09 22:12:41', 'adelaida Santiago ', 'Administrator', '119', 'petko'),
+(91, 119, 'sasasa', 0, '2022-11-09 22:24:40', 'adelaida Santiago ', 'Administrator', '119', 'petko'),
+(92, 104, 'sasasa', 1, '2022-11-09 22:26:43', 'Alexandra Bautista ', 'Administrator', '104', 'petko'),
+(93, 119, 'heloo', 0, '2022-11-09 22:33:40', 'adelaida Santiago ', 'Administrator', '119', 'petko'),
+(94, 119, 'wqwq', 0, '2022-11-09 22:33:52', 'adelaida Santiago ', 'Administrator', '119', 'petko');
 
 --
 -- Indexes for dumped tables
@@ -182,15 +246,15 @@ ALTER TABLE `admin_content_homepage`
   ADD PRIMARY KEY (`Image_id`);
 
 --
--- Indexes for table `admin_menu`
---
-ALTER TABLE `admin_menu`
-  ADD PRIMARY KEY (`Menu_id`);
-
---
 -- Indexes for table `admin_quicktips`
 --
 ALTER TABLE `admin_quicktips`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -201,31 +265,31 @@ ALTER TABLE `admin_quicktips`
 -- AUTO_INCREMENT for table `admin_carousel_homepage`
 --
 ALTER TABLE `admin_carousel_homepage`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `admin_category`
 --
 ALTER TABLE `admin_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `admin_content_homepage`
 --
 ALTER TABLE `admin_content_homepage`
-  MODIFY `Image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
-
---
--- AUTO_INCREMENT for table `admin_menu`
---
-ALTER TABLE `admin_menu`
-  MODIFY `Menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `Image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `admin_quicktips`
 --
 ALTER TABLE `admin_quicktips`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
