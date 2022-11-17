@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2022 at 01:45 AM
+-- Generation Time: Nov 16, 2022 at 05:42 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -89,6 +89,7 @@ INSERT INTO `admin_content_homepage` (`Image_id`, `Image_title`, `Image_subtitle
 --
 
 CREATE TABLE `admin_login` (
+  `admin_id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -97,8 +98,8 @@ CREATE TABLE `admin_login` (
 -- Dumping data for table `admin_login`
 --
 
-INSERT INTO `admin_login` (`username`, `password`) VALUES
-('petko', 'adminpassword');
+INSERT INTO `admin_login` (`admin_id`, `username`, `password`) VALUES
+(1, 'petko', 'adminpassword');
 
 -- --------------------------------------------------------
 
@@ -246,6 +247,12 @@ ALTER TABLE `admin_content_homepage`
   ADD PRIMARY KEY (`Image_id`);
 
 --
+-- Indexes for table `admin_login`
+--
+ALTER TABLE `admin_login`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
 -- Indexes for table `admin_quicktips`
 --
 ALTER TABLE `admin_quicktips`
@@ -278,6 +285,12 @@ ALTER TABLE `admin_category`
 --
 ALTER TABLE `admin_content_homepage`
   MODIFY `Image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+
+--
+-- AUTO_INCREMENT for table `admin_login`
+--
+ALTER TABLE `admin_login`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `admin_quicktips`
