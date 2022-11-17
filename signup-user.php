@@ -277,7 +277,7 @@
                                 <div class="col-4 form-group"> Pet Breed
                                     <input list="browsers" class="form-control" name="petbreed[]" id="browser">
                                     <datalist id="browsers">
-                                        <option value="amercan bully">
+                                        <option value="american bully">
                                         <option value="chowchow">
                                         <option value="corgi">
                                         <option value="englishbulldog">
@@ -318,7 +318,8 @@
                                 <div class="col-4">Pet Birthday
                                     <div class="form-group mb-3">
                                         <!-- <label for=""></label> -->
-                                        <input type="text" class="form-control" name="petbday[]" id="datepicker" />
+                                        <input type="month" id="start"  class="form-control" name="petbday[]" min="2000-03" value="2018-05">
+                                        <!-- <input type="text" class="form-control" name="petbday[]" id="datepicker" /> -->
                                         <!-- <input type="date" name="petbday" class="form-control" /> -->
                                     </div>
                                 </div>
@@ -331,8 +332,8 @@
                         <input class="form-control btn  " style="background-color: #EA6D52; width: 20%" type="submit"
                             name="signup" value="Sign up">
                     </div>
-                    <div class="link login-link text-center text-white">Already have an account? <a
-                            href="index.php" class="text-primary">Login here</a></div>
+                    <div class="link login-link text-center text-white">Already have an account? <a href="index.php"
+                            class="text-primary">Login here</a></div>
             </form>
         </div>
 
@@ -357,7 +358,7 @@
             i++;
             $('#dynamic_field').append(
                 '<div class="rows border border-primary mt-2 p-3 rounded" id="row' + i +
-                '">  <div class="row inline"> <div class="col-4 form-group">Pet Type:<select class="form-control" name="pettype[]" value="<?php echo $pettype ?>"> <option value="" disabled selected>Select Pet Type</option><option value="Dog">Dog</option><option value="Cat">Cat</option></select></div><div class="col-4 form-group"> Pet Breed<input list="browsers" class="form-control" name="petbreed[]" id="browser"><datalist id="browsers"><option value="amercan bully"><option value="chowchow"><option value="corgi"><option value="englishbulldog"><option value="frenchbulldog"><option value="abyssinian"><option value="siamese"><option value="golden retriever"><option value="pomeranian"><option value="poodle"><option value="pug"><option value="siberian husky"><option value="shittzu"></datalist></div><div class="col-4 form-group"> Pet Name<input class="form-control" type="text" name="petname[]" placeholder="Pet Name" required id="floatingAddress" autocomplete="off"></div></div><div class="row mt-2"><div class="col-4 form-group">Pet Sex:<select class="form-control" name="petsex[]"><option value="male">Male</option><option value="female">Female</option></select></div><div class="col-4">Pet Birthday<div class="form-group mb-3"><input type="text" class="form-control" name="petbday[]" id="datepicker" /></div></div> </div><td><button type="button" name="remove" id="' +
+                '">  <div class="row inline"> <div class="col-4 form-group">Pet Type:<select class="form-control" name="pettype[]" value="<?php echo $pettype ?>"> <option value="" disabled selected>Select Pet Type</option><option value="Dog">Dog</option><option value="Cat">Cat</option></select></div><div class="col-4 form-group"> Pet Breed<input list="browsers" class="form-control" name="petbreed[]" id="browser"><datalist id="browsers"><option value="american bully"><option value="chowchow"><option value="corgi"><option value="englishbulldog"><option value="frenchbulldog"><option value="abyssinian"><option value="siamese"><option value="golden retriever"><option value="pomeranian"><option value="poodle"><option value="pug"><option value="siberian husky"><option value="shittzu"></datalist></div><div class="col-4 form-group"> Pet Name<input class="form-control" type="text" name="petname[]" placeholder="Pet Name" required id="floatingAddress" autocomplete="off"></div></div><div class="row mt-2"><div class="col-4 form-group">Pet Sex:<select class="form-control" name="petsex[]"><option value="male">Male</option><option value="female">Female</option></select></div><div class="col-4">Pet Birthday<div class="form-group mb-3"><input type="month" id="start"  class="form-control" name="petbday[]" min="2000-03" value="2018-05"></div></div> </div><td><button type="button" name="remove" id="' +
                 i + '" class="btn btn-danger btn_remove">Remove pet</button></td></tr>');
 
             $("#datepicker").datepicker({

@@ -2,15 +2,15 @@
      require('php/connection.php');
      
     //GET USER ID IN REGISTRATION
-    $user_id = $_SESSION['user_id'];
+    // $user_id = $_SESSION['user_id'];
 
-    if(!isset($user_id)){
-      header('location: login-user.php');
-    }
+    // if(!isset($user_id)){
+    //   header('location: login-user.php');
+    // }
 ?>
 <?php
   //This is for calling the informaiton of user in fields.
-    $sqlInfo = mysqli_query($con, "SELECT * FROM order WHERE order_user_id = '$user_id'");
+    // $sqlInfo = mysqli_query($con, "SELECT * FROM order WHERE order_user_id = '$user_id'");
 ?>
 
 
@@ -144,6 +144,7 @@
                                     <th scope="col">Contact</th>
                                     <th scope="col">Order Date</th>
                                     <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

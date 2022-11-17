@@ -242,7 +242,7 @@
                             <div class="col">
                                 <!-- <a href="Petkoproj/<?php echo $rowmenu['Menu_dir']; ?>" class="fancybox "
                                     rel="ligthbox"> -->
-                                    <img src=" asset/homepage/<?php echo $rowmenu['Image_filename']; ?> "
+                                    <img src="asset/homepage/<?php echo $rowmenu['Image_filename']; ?> "
                                         class="zoom img-thumbnail img-responsive images_menu">
                             </div>
                         </td>

@@ -18,15 +18,15 @@
    }
 
    //call all Menu
-  $querymenu = "SELECT * FROM admin_menu"; //You don't need a ; like you do in SQL
+  $querymenu = "SELECT * FROM `client_appointment`"; //You don't need a ; like you do in SQL
   $resultmenu = mysqli_query($con, $querymenu); 
  
-   //call all Category
-  $querycategory = "SELECT * FROM admin_category"; //You don't need a ; like you do in SQL
-  $resultcategory = mysqli_query($db_admin_account, $querycategory);
+//    //call all Category
+//   $querycategory = "SELECT * FROM admin_category"; //You don't need a ; like you do in SQL
+//   $resultcategory = mysqli_query($db_admin_account, $querycategory);
 
-  $querycategory = "SELECT * FROM admin_category"; //You don't need a ; like you do in SQL
-  $resultcategorys = mysqli_query($db_admin_account, $querycategory);
+//   $querycategory = "SELECT * FROM admin_category"; //You don't need a ; like you do in SQL
+//   $resultcategorys = mysqli_query($db_admin_account, $querycategory);
 
 
 
@@ -87,12 +87,12 @@
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white bg-primary" href="employee-menu.php">Products</a>
+                        <a class="nav-link text-white " href="employee-menu.php">Products</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="appointment.php">Appointments</a>
+                        <a class="nav-link text-white bg-primary" href="appointment.php">Appointments</a>
                     </li>
                 </div>
                 <div class="text-nowrap">
@@ -230,55 +230,51 @@
                         <tr>
                             <div class="row">
 
-                                <th scope="col" style="text-align: center;">
-                                    <div class="col">Image</div>
-                                </th>
-                                <th scope="col" style="text-align: center;">
-                                    <div class="col">Product Name</div>
-                                </th>
-                                <th scope="col" style="text-align: center;">
-                                    <div class="col">Description</div>
-                                </th>
-                                <th scope="col" style="text-align: center;">
-                                    <div class="col">Price</div>
-                                </th>
-                                <th scope="col" style="text-align: center;">
-                                    <div class="col">Category</div>
-                                </th>
-                                <th scope="col" style="text-align: center;">
-                                    <div class="col">Action</div>
-                                </th>
+                            <th scope="col" style="text-align: center;">
+                                <div class="col">Appointment No.</div>
+                            </th>
+                            <th scope="col" style="text-align: center;">
+                                <div class="col">Service Type</div>
+                            </th>
+                            <th scope="col" style="text-align: center;">
+                                <div class="col">Pet Name</div>
+                            </th>
+                            <th scope="col" style="text-align: center;">
+                                <div class="col">Date</div>
+                            </th>
+                            <th scope="col" style="text-align: center;">
+                                <div class="col">Time</div>
+                            </th>
+                            <!-- <th scope="col" style="text-align: center;">
+                                <div class="col">Status</div>
+                            </th> -->
+                            <th scope="col" style="text-align: center;">
+                                <div class="col">Action</div>
+                            </th>
                         </tr>
                     </thead>
                     <?php while($rowmenu =  mysqli_fetch_array($resultmenu)){ ?>
                     <tr>
-                        <td class="col-1" style="text-align: center;">
-                            <div class="col">
-                                <a href="Petkoproj/<?php echo $rowmenu['Menu_dir']; ?>" class="fancybox "
-                                    rel="ligthbox">
-                                    <img src=" asset/menu/<?php echo $rowmenu['Menu_filename']; ?> "
-                                        class="zoom img-thumbnail img-responsive images_menu"></a>
-                            </div>
+                    <tr class="text-light ">
+                        <!--Image-->
+
+                        <td class="align-middle "><?= $rowmenu['appoint_no'];?></td>
+                        <!--Price-->
+                        <td class="align-middle">
+                            <?php echo $rowmenu['service'];?>
                         </td>
-                        <td style="text-align: center;">
-                            <div class="col">
-                                <?php echo $rowmenu['Menu_name']; ?></div>
+                        <td class="align-middle">
+                            <?php echo $rowmenu['petname'];?>
                         </td>
-                        <td style="text-align: center;">
-                            <div class="col">
-                                <?php echo $rowmenu['Menu_description']; ?></div>
+                        <td class="align-middle">
+                            <?php echo $rowmenu['appoint_date'];?>
                         </td>
-                        <td class="col-1" style="text-align: center;">
-                            <div class="col">
-                                <?php echo $rowmenu['Menu_price']; ?></div>
-                        </td>
-                        <td class="col-1" style="text-align: center;">
-                            <div class="col">
-                                <?php echo $rowmenu['Menu_category']; ?></div>
+                        <td class="align-middle">
+                            <?php echo $rowmenu['appoint_time'];?>
                         </td>
                         <td class="col-1">
                             <div class="col">
-                                <a class="text-decoration-none c-green update"
+                                <!-- <a class="text-decoration-none c-green update"
                                     data-id="<?php echo $rowmenu['Menu_id']; ?>">
 
 
@@ -288,10 +284,17 @@
                                 <a href="php/menu-process.php?id=<?php echo $rowmenu['Menu_id'];?>">
                                     <i class="fa-solid fa-trash-can"
                                         style="font-size:25px; color:red; padding: 10px"></i>
-                                </a>
+
+                                </a> -->
+                                <a class="btn btn primary  text-light bg-primary"
+                                                href='admin-view-orders.php?id=<?php echo $row["id"] ?>'>View Appointments</a>
+
                             </div>
 
                         </td>
+
+                    <tr>
+                        
 
                         <?php } ?>
                         <!-- --========================= -->

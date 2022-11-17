@@ -2,11 +2,11 @@
      require('php/connection.php');
      
     //GET USER ID IN REGISTRATION
-    $user_id = $_SESSION['user_id'];
+    // $user_id = $_SESSION['user_id'];
 
-    if(!isset($user_id)){
-      header('location: login-user.php');
-    }
+    // if(!isset($user_id)){
+    //   header('location: login-user.php');
+    // }
 ?>
 <?php
   //This is for calling the informaiton of user in fields.

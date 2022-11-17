@@ -200,7 +200,8 @@ $userresult = mysqli_query($con, $queryimage);
 
                     </a> -->
 
-                    <?php if($row_count>0){ ?><span class="badge badge-light bg-button text-white no"><?php echo $row_count ?></span><?php } 
+                    <?php if($row_count>0){ ?><span
+                        class="badge badge-light bg-button text-white no"><?php echo $row_count ?></span><?php } 
                      else{ ?><span class=" text-white no"></span><?php } ?>
                     <h1 class="icons"><i class="fa-solid fa-clipboard-list"></i></h1>
                     For Verification
@@ -212,7 +213,8 @@ $userresult = mysqli_query($con, $queryimage);
                     $select_rows = mysqli_query($con,"SELECT * FROM `order` WHERE order_user_id= '$user_id' and order_status= 'confirmed' ") or die ('query failed');
                     $row_count = mysqli_num_rows($select_rows);
                   ?>
-                    <?php if($row_count>0){ ?><span class="badge badge-light bg-button text-white no"><?php echo $row_count ?></span><?php } 
+                    <?php if($row_count>0){ ?><span
+                        class="badge badge-light bg-button text-white no"><?php echo $row_count ?></span><?php } 
                      else{ ?><span class=" text-white no"></span><?php } ?>
                     <h1 class="icons"><i class="fa-solid fa-circle-check"></i></h1>
                     Confirmed
@@ -224,7 +226,8 @@ $userresult = mysqli_query($con, $queryimage);
                     $row_count = mysqli_num_rows($select_rows);
                   ?>
                 <center>
-                <?php if($row_count>0){ ?><span class="badge badge-light bg-button text-white no"><?php echo $row_count ?></span><?php } 
+                    <?php if($row_count>0){ ?><span
+                        class="badge badge-light bg-button text-white no"><?php echo $row_count ?></span><?php } 
                      else{ ?><span class=" text-white no"></span><?php } ?>
                     <h1 class="icons"><i class="fa-solid fa-box"></i></h1>
                     For pick up
@@ -236,7 +239,8 @@ $userresult = mysqli_query($con, $queryimage);
                     $row_count = mysqli_num_rows($select_rows);
                   ?>
                 <center>
-                <?php if($row_count>0){ ?><span class="badge badge-light bg-button text-white no"><?php echo $row_count ?></span><?php } 
+                    <?php if($row_count>0){ ?><span
+                        class="badge badge-light bg-button text-white no"><?php echo $row_count ?></span><?php } 
                      else{ ?><span class=" text-white no"></span><?php } ?>
                     <h1 class="icons"><i class="fa-solid fa-basket-shopping"></i></h1>
                     Picked Up
@@ -270,6 +274,12 @@ $userresult = mysqli_query($con, $queryimage);
                             <h5 class="text-center text-secondary">Pet Owner</h5>
 
 
+                            <center>
+                                <a href="user-edit-profile.php?updateid=<?php echo $fetch_user['id'];?>">
+                                    <span class="btn btn-danger bg-button mx-2 mt-2 text-white">Edit Profile <i
+                                            class="fa-solid fa-pen-to-square"></i></span>
+                                </a>
+                                </center>
                             <center> <a href="user-view-order.php?id=<?php echo $fetch_user['id']?>">
                                     <span class="btn btn-outline-primary mx-2 mt-4">Orders <i
                                             class="fa-solid fa-pen-to-square"></i></span>

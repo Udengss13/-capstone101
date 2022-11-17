@@ -46,6 +46,10 @@ $errors = array();
         // $petname = mysqli_real_escape_string($con, $_POST['petname']);
         // $petsex = mysqli_real_escape_string($con, $_POST['petsex']);
         // $petbday = date('Y-m-d', strtotime($_POST['petbday']));
+        // $date=date_create($_POST['petbday']);
+        // // echo date_format($date,"m/y");
+
+        // date_format('m/y', $_POST['petbday'])
         
         $pettype = count($_POST["pettype"]);  
 
@@ -82,7 +86,7 @@ $errors = array();
                 foreach ($_POST['pettype'] as $key => $value) {
 
                  $query1 = "INSERT INTO `pettable`(`user_id`, `pettype`, `petbreed`, `petname` ,`petsex`, `petbday`) 
-                 VALUES ('" . $user_id . "','" . $_POST['pettype'][$key] . "', '" . $_POST['petbreed'][$key] . "', '" . $_POST['petname'][$key] . "' , '" . $_POST['petsex'][$key] . "', '" . date('Y', strtotime($_POST['petbday'][$key])) . "')";
+                 VALUES ('" . $user_id . "','" . $_POST['pettype'][$key] . "', '" . $_POST['petbreed'][$key] . "', '" . $_POST['petname'][$key] . "' , '" . $_POST['petsex'][$key] . "', '" .strtotime('m/y', $_POST['petbday'][$key]) . "')";
                  $data_check = mysqli_query($con, $query1); 
                 }
                 
