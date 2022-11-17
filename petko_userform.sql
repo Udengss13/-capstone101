@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2022 at 01:44 AM
+-- Generation Time: Nov 16, 2022 at 05:42 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -42,9 +42,10 @@ CREATE TABLE `admin_menu` (
 --
 
 INSERT INTO `admin_menu` (`Menu_id`, `Menu_name`, `Menu_description`, `Menu_price`, `Menu_category`, `Menu_dir`, `Menu_filename`) VALUES
-(58, 'Tuna Flavor Cat Food', 'Cat Food', 455, ' Cat Food', '../asset/menu/tunacat.jpg', 'tunacat.jpg'),
+(58, 'Tuna Flavor Cat Food', 'Cat Food Tuna Flavor Cat FoodTuna Flavor Cat FoodTuna Flavor Cat FoodTuna Flavor Cat Foodvvv', 455, ' Cat Food', '../asset/menu/furmagic dog.jpg', 'furmagic dog.jpg'),
 (59, 'Dog Leash', 'For Dog', 89, ' Dog Product', '../asset/menu/dogleash.jpg', 'dogleash.jpg'),
-(60, 'snack Dog', 'Snack dog ', 234, ' Dog Product', '../asset/menu/snackdog.jpg', 'snackdog.jpg');
+(60, 'snack Dog', 'Snack dog ', 234, ' Dog Product', '../asset/menu/snackdog.jpg', 'snackdog.jpg'),
+(61, 'Tuna shrimp', 'For Cats 100ml for healthy For Cats 100ml for healthyFor Cats 100ml for healthy', 267, ' Cat Food', '../asset/menu/tunaatshrimpcat.jpg', 'tunaatshrimpcat.jpg');
 
 -- --------------------------------------------------------
 
@@ -68,7 +69,9 @@ CREATE TABLE `cart` (
 
 INSERT INTO `cart` (`Cart_id`, `Cart_user_id`, `product_id`, `Cart_name`, `Cart_price`, `Cart_image`, `Cart_quantity`) VALUES
 (441, 49, '57', 'Chicken Turkey', '150', 'Chickenturkeycat.jpg', 1),
-(442, 90, '57', 'Chicken Turkey', '150', 'Chickenturkeycat.jpg', 4);
+(442, 90, '57', 'Chicken Turkey', '150', 'Chickenturkeycat.jpg', 4),
+(466, 121, '59', 'Dog Leash', '89', 'dogleash.jpg', 3),
+(467, 121, '60', 'snack Dog', '234', 'snackdog.jpg', 3);
 
 -- --------------------------------------------------------
 
@@ -109,7 +112,8 @@ INSERT INTO `client_appointment` (`id`, `service`, `appoint_no`, `appoint_date`,
 (34, ' laboratory', 'PETCO-636dbdc216a96', '1970-01-01', '01:14:00', 'as ', '120'),
 (35, ' treatment', 'PETCO-636dbde250c25', '2022-11-15', '02:13:00', 'as ', '120'),
 (36, ' confinement', 'PETCO-636dc036c455e', '1970-01-01', '01:23:00', 'as ', '120'),
-(40, ' confinement', 'PETCO-636fa497a24df', '2022-11-17', '01:52:00', 'Molly ', '93');
+(40, ' confinement', 'PETCO-636fa497a24df', '2022-11-17', '01:52:00', 'Molly ', '93'),
+(41, ' vaccination', 'PETCO-6371d621005ed', '2022-11-16', '03:46:00', 'sasa ', '127');
 
 -- --------------------------------------------------------
 
@@ -231,7 +235,10 @@ INSERT INTO `messages` (`id`, `employee_id`, `message`, `seen`, `created_at`, `s
 (103, 120, 'hello sasa sasa', 1, '2022-11-11 14:58:06', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
 (104, 120, 'hello petco', 1, '2022-11-11 15:02:48', 'Melody Santiago ', 'Administrator', '120', 'petko'),
 (105, 120, 'hello petco', 1, '2022-11-11 15:03:17', 'Melody Santiago ', 'Administrator', '120', 'petko'),
-(106, 120, 'hello sasa sasa', 1, '2022-11-11 15:03:29', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko');
+(106, 120, 'hello sasa sasa', 1, '2022-11-11 15:03:29', 'Melody Santiago ', 'Melody Santiago ', 'petko', 'petko'),
+(107, 128, 'hello petko', 1, '2022-11-15 09:01:43', 'sasas sas sa', 'Administrator', '128', 'petko'),
+(108, 128, 'hello Melody,  Welcome to Petco Animal Clinic ', 1, '2022-11-15 09:02:08', 'sasas sas sa', 'sasas sas sa', 'petko', 'petko'),
+(109, 128, 'hindi pa nacoconfirm order ko?', 0, '2022-11-15 18:19:18', 'sasas sas sa', 'Administrator', '128', 'petko');
 
 -- --------------------------------------------------------
 
@@ -248,34 +255,37 @@ CREATE TABLE `order` (
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `payment_method` varchar(255) NOT NULL,
-  `order_status` varchar(255) NOT NULL
+  `order_status` varchar(255) NOT NULL,
+  `orderdate` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`id`, `order_user_id`, `first_name`, `last_name`, `contact`, `email`, `address`, `payment_method`, `order_status`) VALUES
-(322, 49, 'Melody', 'Santiago', '09358504939', 'melody@gmail.com', 'hagonoy', 'For pick up', 'confirmed'),
-(323, 49, 'Melody', 'Santiago', '09358504939', 'melody@gmail.com', 'hagonoy', 'For pick up', 'confirmed'),
-(324, 90, 'Melody', 'Santiago', '', 'melody13santiago@gmail.com', 'San Agustin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, ', 'For pick up', 'pickup'),
-(325, 90, 'Melody', 'Santiago', '', 'melody13santiago@gmail.com', 'San Agustin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, ', 'For pick up', 'confirmed'),
-(326, 49, 'Melody', 'Santiago', '09358504939', 'melody@gmail.com', 'San Agustin Hagonoy, Bulacan', 'For pick up', 'pickup'),
-(327, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For pick up', 'pickup'),
-(328, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For pick up', 'pickup'),
-(329, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For pick up', 'pickup'),
-(330, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For pick up', 'pickup'),
-(331, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For pick up', 'pickup'),
-(332, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For pick up', 'pickup'),
-(333, 120, 'Melody', 'Santiago', '09358504939', 'melody13santiago@gmail.com', 'san agustin', 'For Pick Up', 'pickedup'),
-(334, 120, 'Melody', 'Santiago', '09358504939', 'melody13santiago@gmail.com', 'san agustin', 'For Pick Up', 'pickedup'),
-(335, 120, 'Melody', 'Santiago', '09358504939', 'melody13santiago@gmail.com', 'san agustin', 'For Pick Up', 'pickup'),
-(336, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For Pick Up', ''),
-(337, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For Pick Up', ''),
-(338, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For Pick Up', ''),
-(339, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For Pick Up', ''),
-(340, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For Pick Up', ''),
-(341, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For Pick Up', '');
+INSERT INTO `order` (`id`, `order_user_id`, `first_name`, `last_name`, `contact`, `email`, `address`, `payment_method`, `order_status`, `orderdate`) VALUES
+(322, 49, 'Melody', 'Santiago', '09358504939', 'melody@gmail.com', 'hagonoy', 'For pick up', 'pickedup', '0000-00-00 00:00:00'),
+(323, 49, 'Melody', 'Santiago', '09358504939', 'melody@gmail.com', 'hagonoy', 'For pick up', 'pickedup', '0000-00-00 00:00:00'),
+(324, 90, 'Melody', 'Santiago', '', 'melody13santiago@gmail.com', 'San Agustin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, ', 'For pick up', 'pickup', '0000-00-00 00:00:00'),
+(325, 90, 'Melody', 'Santiago', '', 'melody13santiago@gmail.com', 'San Agustin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, Bulacanin Hagonoy, ', 'For pick up', 'confirmed', '0000-00-00 00:00:00'),
+(326, 49, 'Melody', 'Santiago', '09358504939', 'melody@gmail.com', 'San Agustin Hagonoy, Bulacan', 'For pick up', 'pickup', '0000-00-00 00:00:00'),
+(327, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For pick up', 'pickup', '0000-00-00 00:00:00'),
+(328, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For pick up', 'pickup', '0000-00-00 00:00:00'),
+(329, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For pick up', 'pickup', '0000-00-00 00:00:00'),
+(330, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For pick up', 'pickup', '0000-00-00 00:00:00'),
+(331, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For pick up', 'pickup', '0000-00-00 00:00:00'),
+(332, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For pick up', 'pickup', '0000-00-00 00:00:00'),
+(333, 120, 'Melody', 'Santiago', '09358504939', 'melody13santiago@gmail.com', 'san agustin', 'For Pick Up', 'pickedup', '0000-00-00 00:00:00'),
+(334, 120, 'Melody', 'Santiago', '09358504939', 'melody13santiago@gmail.com', 'san agustin', 'For Pick Up', 'pickedup', '0000-00-00 00:00:00'),
+(335, 120, 'Melody', 'Santiago', '09358504939', 'melody13santiago@gmail.com', 'san agustin', 'For Pick Up', 'pickup', '0000-00-00 00:00:00'),
+(336, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For Pick Up', '', '0000-00-00 00:00:00'),
+(337, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For Pick Up', '', '0000-00-00 00:00:00'),
+(338, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For Pick Up', '', '0000-00-00 00:00:00'),
+(339, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For Pick Up', '', '0000-00-00 00:00:00'),
+(340, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For Pick Up', '', '0000-00-00 00:00:00'),
+(341, 93, 'Melody', 'Santiago', '23333', 'santiago.melody.b.5355@gmail.com', 'cxcx', 'For Pick Up', '', '0000-00-00 00:00:00'),
+(342, 128, 'sasas', 'sas', '', 'melody13santiago@gmail.com', 'sa', 'For Pick Up', '1', '2022-11-14 14:14:05'),
+(343, 127, 'ssasa', 'sa', '', 'santiago.melody.b.5355@gmail.com', 'as', 'For Pick Up', 'confirmed', '2022-11-15 16:38:03');
 
 -- --------------------------------------------------------
 
@@ -332,7 +342,10 @@ INSERT INTO `order_list` (`id`, `order_id`, `product_id`, `qty`, `product_price`
 (334, 338, 59, 1, 89, '93'),
 (335, 339, 58, 1, 455, ''),
 (336, 339, 59, 1, 89, ''),
-(337, 341, 59, 1, 89, '93');
+(337, 341, 59, 1, 89, '93'),
+(338, 342, 59, 1, 89, '128'),
+(339, 342, 60, 1, 234, '128'),
+(340, 343, 60, 2, 234, '127');
 
 -- --------------------------------------------------------
 
@@ -390,7 +403,22 @@ INSERT INTO `pettable` (`pet_id`, `user_id`, `pettype`, `petbreed`, `petname`, `
 (33, 118, 'Dog', 'chowchow', 'sasa', 'female', '2022-11-01'),
 (34, 119, 'Dog', 'chowchow', 'sasa', 'female', '2022-11-09'),
 (35, 120, 'Dog', 'poodle', 'as', 'female', '2022-11-10'),
-(36, 121, 'Dog', 'Opera', 'molly', 'female', '2022-11-14');
+(36, 121, 'Dog', 'Opera', 'molly', 'female', '2022-11-14'),
+(37, 122, 'Dog', 'abyssinian', 'sasa', 'female', '0000-00-00'),
+(38, 123, 'Dog', 'siberian husky', 'sasa', 'male', '0000-00-00'),
+(39, 124, 'Dog', 'ssa', 'sasa', 'male', '0000-00-00'),
+(40, 125, 'Cat', 'abyssinian', 'polka', 'female', '0000-00-00'),
+(41, 126, 'Dog', 'abyssinian', 'sasa', 'female', '0000-00-00'),
+(42, 127, 'Cat', 'chowchow', 'sasa', 'female', '0000-00-00'),
+(43, 127, 'Dog', 'pomeranian', 'molly', 'female', '0000-00-00'),
+(44, 128, 'Dog', 'amercan bully', 'molly', 'male', '0000-00-00'),
+(45, 128, 'Cat', 'siamese', 'polka', 'female', '0000-00-00'),
+(46, 129, 'Dog', 'shittzu', 'Molly', 'female', '0000-00-00'),
+(47, 129, 'Cat', 'siamese', 'Polka', 'female', '0000-00-00'),
+(48, 130, 'Dog', 'englishbulldog', 'kitchie', 'male', '0000-00-00'),
+(49, 130, 'Cat', 'frenchbulldog', 'coco', 'female', '0000-00-00'),
+(50, 132, 'Cat', 'shittzu', 'sasa', 'female', '0000-00-00'),
+(51, 132, 'Dog', 'corgi', 'sasa', 'male', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -438,22 +466,21 @@ CREATE TABLE `usertable` (
   `contact` varchar(100) NOT NULL,
   `image_dir` varchar(255) NOT NULL,
   `image_filename` varchar(255) NOT NULL,
-  `user_level` varchar(255) NOT NULL
+  `user_level` varchar(255) NOT NULL,
+  `archive` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `usertable`
 --
 
-INSERT INTO `usertable` (`id`, `first_name`, `middle_name`, `last_name`, `suffix`, `position`, `address`, `email`, `password`, `code`, `status`, `contact`, `image_dir`, `image_filename`, `user_level`) VALUES
-(49, 'Melody', 'denice', 'marfil', '', '', 'San Agustin HAgonoy, BulcanaSan Agustin HAgonoy, BulcanaSan Agustin HAgonoy, BulcanaSan Agustin HAgonoy, BulcanaSan Agustin HAgonoy, Bulcana', 'melody@gmail.com', '123sasa', 12, 'verified', '09358504939', '../asset/profiles/cha.jpg', 'cha.jpg', 'client'),
-(93, 'Melody', 'Balaba', 'Santiago', '', '', 'cxcx', 'santiago.melody.b.5355@gmail.com', 'qwqw', 0, 'verified', '23333', '../asset/profiles/cha.jpg', 'cha.jpg', 'client'),
-(98, 'xzxzxz', 'xzxzxz', 'zxzz', '', '', 'xz', 'melody121s@gand.ca', 'qqq', 225701, 'verified', 'xzxz', '../asset/profiles/dectsuit.png', 'dectsuit.png', 'client'),
-(99, 'sasa', 'sa', 'sa', 'sa', 'veterinarian', 'assa', 'asa@mm.com', '111', 276514, 'verified', 'sa', '', '', 'employee'),
-(100, 'Charlize', 'F', 'Marfil', '', 'receptionist', 'ssasassa', 'cha@gmail.com', '111', 383075, 'verified', '0903289832929', '', '', 'employee'),
-(101, 'alexandra', 'F', 'saba', '', 'veterinarian', 'a', 'sasas@gmail.com', '1111', 471111, 'verified', '212121', '', '', 'employee'),
-(104, 'Alexandra', 'Figueras', 'Bautista', '', 'veterinarian', 'Sta Maria Bulacan', 'Alexandrabautista1000@gmail.com', 'qwerty', 777303, 'verified', '09155222500', '', '', 'employee'),
-(121, 'Melody', 'Balaba', 'Santiago', '', '', 'sasas', 'melody13santiago@gmail.com', '111', 0, 'verified', '0393782732', 'asset/profiles/cha.jpg', 'cha.jpg', 'client');
+INSERT INTO `usertable` (`id`, `first_name`, `middle_name`, `last_name`, `suffix`, `position`, `address`, `email`, `password`, `code`, `status`, `contact`, `image_dir`, `image_filename`, `user_level`, `archive`) VALUES
+(99, 'sasa', 'sa', 'sa', 'sa', 'veterinarian', 'assa', 'asa@mm.com', '111', 276514, 'verified', 'sa', '', '', 'employee', 'archive'),
+(100, 'Charlize', 'F', 'Marfil', '', 'receptionist', 'ssasassa', 'cha@gmail.com', '111', 383075, 'verified', '0903289832929', '', '', 'employee', 'archive'),
+(101, 'alexandra', 'F', 'saba', '', 'veterinarian', 'a', 'sasas@gmail.com', '1111', 471111, 'verified', '212121', '', '', 'employee', 'archive'),
+(104, 'Alexandra', 'Figueras', 'Bautista', '', 'veterinarian', 'Sta Maria Bulacan', 'Alexandrabautista1000@gmail.com', 'qwerty', 777303, 'verified', '09155222500', '', '', 'employee', 'archive'),
+(127, 'ssasa', 'sasa', 'sa', 'sa', '', 'as', 'santiago.melody.b.5355@gmail.com', '111', 0, 'verified', 'sasa', 'asset/profiles/cha.jpg', 'cha.jpg', 'client', ''),
+(132, 'sasa', 'sa', 'sa', '', '', '2478 Purok 7', 'melody13santiago@gmail.com', '111', 0, 'verified', '1111', 'asset/profiles/cha.jpg', 'cha.jpg', 'client', '');
 
 --
 -- Indexes for dumped tables
@@ -521,43 +548,43 @@ ALTER TABLE `usertable`
 -- AUTO_INCREMENT for table `admin_menu`
 --
 ALTER TABLE `admin_menu`
-  MODIFY `Menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `Menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `Cart_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=466;
+  MODIFY `Cart_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=471;
 
 --
 -- AUTO_INCREMENT for table `client_appointment`
 --
 ALTER TABLE `client_appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=342;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=344;
 
 --
 -- AUTO_INCREMENT for table `order_list`
 --
 ALTER TABLE `order_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=338;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=341;
 
 --
 -- AUTO_INCREMENT for table `pettable`
 --
 ALTER TABLE `pettable`
-  MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `service`
@@ -569,7 +596,7 @@ ALTER TABLE `service`
 -- AUTO_INCREMENT for table `usertable`
 --
 ALTER TABLE `usertable`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

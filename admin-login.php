@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg navbar-light;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="asset/logopet.png" alt="Logo" class="logo" /> </span>
+                <img src="asset/petko logo.png" alt="Logo" class="logo" /> </span>
                 <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETCO. ANIMAL
                         CLINIC</b></span>
             </a>

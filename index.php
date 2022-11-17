@@ -47,7 +47,7 @@
     <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="asset/logopet.png" alt="Logo" class="logo" />
+                <img src="asset/petko logo.png" alt="Logo" class="logo" />
                 <span style="text-shadow: 2px 2px 2px  rgba(49, 44, 44, 0.767);" class="text-white"><b>PETKO ANIMAL
                         CLINIC</b></span>
             </a>
@@ -146,7 +146,7 @@
     <div class="container Box  mb-5">
         <div class="row">
             <div class=" col-lg-3">
-                <img src="asset/shitzu.png" alt="DOG" class="dog" height="500px" />
+                <img src="asset/petko sign in.png" alt="DOG" class="dog" height="500px" />
             </div>
             <div class="col-md-4 col-lg-4 col-sm- 2 mt-5 text-light text" style="margin-left: 50px; ">
                 <br>
